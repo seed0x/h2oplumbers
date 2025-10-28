@@ -1,7 +1,7 @@
 /**
  * Services Configuration
  * 
- * This file defines all plumbing services offered by All County Plumbers.
+ * This file defines all plumbing services offered by H2O Plumbers.
  * Edit this file to add, remove, or modify services.
  * 
  * After making changes:
@@ -273,3 +273,5 @@ export const getActiveServices = (): ServiceConfig[] => {
 export const getEmergencyServices = (): ServiceConfig[] => {
   return services.filter(service => service.isEmergency && service.isActive);
 };
+
+

@@ -13,7 +13,7 @@ import { HeroCouponBanner } from '@/components/sections/unified-hero';
 
 export const metadata: Metadata = generateSocialMeta({
   ...socialMetaTemplates.services,
-  title: 'Family Plumbing Services | Vancouver, Battle Ground, Longview | Clark & Cowlitz County | All County Plumbing'
+  title: 'Family Plumbing Services | Vancouver, Battle Ground, Longview | Clark & Cowlitz County | H2O Plumbing'
 });
 
 export default function ServicesPage() {
@@ -389,7 +389,7 @@ export default function ServicesPage() {
       <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-heading font-bold uppercase tracking-tight text-slate-900 mb-8 text-center">Why Choose All County Plumbing?</h2>
+            <h2 className="text-4xl font-heading font-bold uppercase tracking-tight text-slate-900 mb-8 text-center">Why Choose H2O Plumbing?</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div>
@@ -449,7 +449,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold uppercase tracking-tight mb-4">Ready for Professional Plumbing Service?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-            Contact All County Plumbing today for reliable family plumbing services throughout Vancouver, 
+            Contact H2O Plumbing today for reliable family plumbing services throughout Vancouver, 
             Clark County & Cowlitz County. We're here to take care of your family's plumbing needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -472,6 +472,8 @@ export default function ServicesPage() {
     </PromotionsProvider>
   );
 }
+
+
 
 
 

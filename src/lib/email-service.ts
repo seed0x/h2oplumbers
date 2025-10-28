@@ -143,18 +143,18 @@ export async function sendCustomerConfirmation(bookingData: BookingEmailData): P
     const mailOptions = {
       from: process.env.EMAIL_FROM || 'noreply@allcountyplumbing.net',
       to: bookingData.customerEmail,
-      subject: `✅ Booking Confirmation - All County Plumbing - ${bookingData.bookingId}`,
+      subject: `✅ Booking Confirmation - H2O Plumbing - ${bookingData.bookingId}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: #10b981; color: white; padding: 20px; border-radius: 8px 8px 0 0;">
             <h1 style="margin: 0; font-size: 24px;">✅ Booking Confirmation</h1>
-            <p style="margin: 5px 0 0 0; opacity: 0.9;">All County Plumbing</p>
+            <p style="margin: 5px 0 0 0; opacity: 0.9;">H2O Plumbing</p>
           </div>
           
           <div style="background: #f8fafc; padding: 20px; border: 1px solid #e2e8f0; border-top: none;">
             <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
               <p>Dear ${bookingData.customerName},</p>
-              <p>Thank you for choosing All County Plumbing! We've received your booking request and will contact you within 2 hours to confirm your appointment.</p>
+              <p>Thank you for choosing H2O Plumbing! We've received your booking request and will contact you within 2 hours to confirm your appointment.</p>
               
               <h2 style="color: #dc2626;">Your Booking Details</h2>
               <table style="width: 100%; border-collapse: collapse; background: #f8fafc; border-radius: 8px; overflow: hidden;">
@@ -189,13 +189,13 @@ export async function sendCustomerConfirmation(bookingData: BookingEmailData): P
                 <h3 style="color: #dc2626;">Need immediate assistance?</h3>
                 <p style="margin: 10px 0;">
                   📞 <strong>Call us:</strong> <a href="tel:+13608832506" style="color: #dc2626;">(360) 883-2506</a><br>
-                  📧 <strong>Email:</strong> <a href="mailto:office@all-county-plumbing.net" style="color: #dc2626;">office@all-county-plumbing.net</a>
+                  📧 <strong>Email:</strong> <a href="mailto:office@h2oplumbers.com" style="color: #dc2626;">office@h2oplumbers.com</a>
                 </p>
               </div>
               
               <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center;">
                 <p style="color: #64748b; font-size: 14px; margin: 0;">
-                  Thank you for choosing All County Plumbing!<br>
+                  Thank you for choosing H2O Plumbing!<br>
                   <strong>Licensed & Insured</strong> • <strong>Family Owned Since 2004</strong>
                 </p>
               </div>
@@ -213,3 +213,5 @@ export async function sendCustomerConfirmation(bookingData: BookingEmailData): P
     return false;
   }
 }
+
+

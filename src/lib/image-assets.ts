@@ -104,15 +104,15 @@ export const IMAGE_SETTINGS = {
 
 // Alt text templates for accessibility
 export const ALT_TEXTS = {
-  logo: 'All County Plumbing LLC - Professional Plumbing Services',
+  logo: 'H2O Plumbing LLC - Professional Plumbing Services',
   fleet: {
-    van: 'All County Plumbing service van ready for residential and commercial plumbing calls',
-    truck: 'All County Plumbing work truck equipped for major plumbing projects'
+    van: 'H2O Plumbing service van ready for residential and commercial plumbing calls',
+    truck: 'H2O Plumbing work truck equipped for major plumbing projects'
   },
   team: {
-    josh: 'Josh Veach - Licensed Plumber at All County Plumbing',
-    ron: 'Ron Veach - Owner and Master Plumber at All County Plumbing',
-    family: 'The Veach family team at All County Plumbing LLC'
+    josh: 'Josh Veach - Licensed Plumber at H2O Plumbing',
+    ron: 'Ron Veach - Owner and Master Plumber at H2O Plumbing',
+    family: 'The Veach family team at H2O Plumbing LLC'
   },
   services: {
     drainCleaning: 'Drain cleaning service icon',
@@ -121,3 +121,5 @@ export const ALT_TEXTS = {
     installation: 'Plumbing installation service icon'
   }
 };
+
+

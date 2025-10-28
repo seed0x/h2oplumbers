@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions | All County Plumbing',
-  description: 'Terms and conditions for All County Plumbing services. View our service terms, warranties, disclaimers, and conditions of use.',
+  title: 'Terms & Conditions | H2O Plumbing',
+  description: 'Terms and conditions for H2O Plumbing services. View our service terms, warranties, disclaimers, and conditions of use.',
 };
 
 export default function TermsPage() {
@@ -13,3 +13,5 @@ export default function TermsPage() {
     </div>
   );
 }
+
+

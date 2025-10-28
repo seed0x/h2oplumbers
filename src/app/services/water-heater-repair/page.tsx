@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { getPromotion } from '@/config/promotions';
 
 export const metadata: Metadata = {
-  title: `Water Heater Repair Vancouver, Battle Ground, Longview WA | Clark & Cowlitz County | All County`,
+  title: `Water Heater Repair Vancouver, Battle Ground, Longview WA | Clark & Cowlitz County | H2O`,
   description: `Expert water heater repair, installation & replacement in Vancouver, Battle Ground, Longview, Camas, Washougal, Ridgefield, Woodland. Serving Clark County & Cowlitz County. Tank & tankless systems. Same-day service. Licensed plumbers. Call ${BUSINESS_DATA.phone}!`,
   keywords: `water heater repair Vancouver WA, water heater Longview WA, tankless water heater Battle Ground, water heater installation Clark County, water heater Cowlitz County, hot water heater Camas Washougal`,
 };
@@ -214,7 +214,7 @@ export default function WaterHeaterRepairPage() {
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6">Complete <span className="text-brand-red">Water Heater</span> Solutions</h2>
               <p className="text-xl text-slate-600 max-w-3xl mx-auto">
                 Whether you need same-day repairs, routine maintenance, or a complete water heater replacement, 
-                All County Plumbing provides expert service for all types of water heating systems.
+                H2O Plumbing provides expert service for all types of water heating systems.
               </p>
             </div>
 
@@ -502,13 +502,13 @@ export default function WaterHeaterRepairPage() {
         </div>
       </section>
 
-      {/* Why Choose All County Plumbing */}
+      {/* Why Choose H2O Plumbing */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6">
-                Why Choose <span className="text-brand-red">All County Plumbing</span> for Water Heaters?
+                Why Choose <span className="text-brand-red">H2O Plumbing</span> for Water Heaters?
               </h2>
               <p className="text-xl text-slate-600 max-w-3xl mx-auto">
                 Family-owned and trusted since 2004, serving Southwest Washington with expert water heater services.
@@ -789,7 +789,7 @@ export default function WaterHeaterRepairPage() {
             Ready for Reliable <span className="text-brand-red">Hot Water?</span>
           </h2>
           <p className="text-xl mb-10 max-w-3xl mx-auto text-slate-300 leading-relaxed">
-            From same-day repairs to new installations, All County Plumbing provides expert water heater 
+            From same-day repairs to new installations, H2O Plumbing provides expert water heater 
             services throughout Vancouver, Battle Ground, Ridgefield, Camas, Washougal, Longview, Woodland, Kalama, and all surrounding communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -812,6 +812,8 @@ export default function WaterHeaterRepairPage() {
     </div>
   );
 }
+
+
 
 
 

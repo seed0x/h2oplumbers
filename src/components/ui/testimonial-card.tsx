@@ -39,3 +39,5 @@ export const TestimonialCard = ({ quote, author, rating, source }: TestimonialCa
     </div>
   );
 };
+
+

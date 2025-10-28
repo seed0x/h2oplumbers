@@ -35,7 +35,7 @@ export default function RootLayout({
   const businessData = {
     name: BUSINESS_DATA.name,
     description: "Professional plumbing services in Southwest Washington. Same-day repairs, drain cleaning, water heater installation, pipe repair and replacement for residential and commercial properties.",
-    url: "https://allcountyplumbers.com",
+    url: "https://h2oplumbers.com",
     telephone: BUSINESS_DATA.phoneRaw,
     email: BUSINESS_DATA.email,
     address: {
@@ -155,7 +155,7 @@ export default function RootLayout({
                   <h3 className="text-sm font-heading font-bold tracking-wide uppercase mb-5 text-white">Contact</h3>
                   <ul className="space-y-3 text-sm text-slate-300">
                     <li><span className="font-heading font-semibold text-white">Phone:</span> <a href="tel:+13608832506" className="hover:text-brand-red transition-colors">{BUSINESS_DATA.phone}</a></li>
-                    <li><span className="font-heading font-semibold text-white">Email:</span> <a href="mailto:office@all-county-plumbing.net" className="hover:text-brand-red transition-colors">{BUSINESS_DATA.email}</a></li>
+                    <li><span className="font-heading font-semibold text-white">Email:</span> <a href="mailto:office@h2oplumbers.com" className="hover:text-brand-red transition-colors">{BUSINESS_DATA.email}</a></li>
                     <li><span className="font-heading font-semibold text-white">Address:</span> {BUSINESS_DATA.address.full}</li>
                     <li><span className="font-heading font-semibold text-white">Hours:</span> {BUSINESS_DATA.hours.display}</li>
                   </ul>
@@ -182,8 +182,8 @@ export default function RootLayout({
                 </div>
               </div>
               <div className="border-t border-slate-700 pt-6 text-center text-xs text-slate-400">
-                <p className="mb-2">© 2024 All County Plumbing | <a href="/privacy" className="hover:text-brand-red transition-colors">Privacy Policy</a> | <a href="/terms" className="hover:text-brand-red transition-colors">Terms</a> | <a href="/sitemap.xml" className="hover:text-brand-red transition-colors">Sitemap</a></p>
-                <p>All content © All County Plumbing. All rights reserved.</p>
+                <p className="mb-2">© 2024 H2O Plumbing | <a href="/privacy" className="hover:text-brand-red transition-colors">Privacy Policy</a> | <a href="/terms" className="hover:text-brand-red transition-colors">Terms</a> | <a href="/sitemap.xml" className="hover:text-brand-red transition-colors">Sitemap</a></p>
+                <p>All content © H2O Plumbing. All rights reserved.</p>
               </div>
             </div>
           </footer>
@@ -210,3 +210,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+

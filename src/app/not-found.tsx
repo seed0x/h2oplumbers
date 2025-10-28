@@ -6,7 +6,7 @@ import { Home, Search, Phone, ArrowLeft } from 'lucide-react'
 import { MasterButton } from '@/components/ui/master-button'
 
 export const metadata: Metadata = {
-  title: '404 - Page Not Found | All County Plumbing',
+  title: '404 - Page Not Found | H2O Plumbing',
   description: 'The page you\'re looking for doesn\'t exist. Find plumbing services, contact information, and more on our homepage.',
   robots: 'noindex, nofollow'
 }
@@ -69,7 +69,7 @@ export default function NotFound() {
                 <a 
                   href="tel:+13608832506" 
                   className="text-primary font-medium hover:text-primary-dark"
-                  aria-label="Call All County Plumbing"
+                  aria-label="Call H2O Plumbing"
                 >
                   (360) 883-2506
                 </a>
@@ -134,4 +134,6 @@ export default function NotFound() {
     </div>
   )
 }
+
+
 

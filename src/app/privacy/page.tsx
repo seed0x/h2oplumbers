@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | All County Plumbing',
-  description: 'All County Plumbing privacy policy. Learn how we collect, use, and protect your personal information when you visit our website or use our services.',
+  title: 'Privacy Policy | H2O Plumbing',
+  description: 'H2O Plumbing privacy policy. Learn how we collect, use, and protect your personal information when you visit our website or use our services.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -13,3 +13,5 @@ export default function PrivacyPolicyPage() {
     </div>
   );
 }
+
+

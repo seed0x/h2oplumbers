@@ -297,3 +297,5 @@ export function FleetGallery({ vehicles, className = '' }: FleetGalleryProps) {
     </div>
   );
 }
+
+

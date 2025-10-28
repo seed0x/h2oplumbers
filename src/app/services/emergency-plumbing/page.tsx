@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: `Same-Day Plumber Vancouver, Battle Ground, Longview WA | Clark & Cowlitz County | All County`,
+  title: `Same-Day Plumber Vancouver, Battle Ground, Longview WA | Clark & Cowlitz County | H2O`,
   description: `Same-day plumber serving Vancouver, Battle Ground, Longview, Camas, Washougal, Ridgefield, Woodland. Clark County & Cowlitz County. Burst pipes, severe leaks, sewer backups. Licensed, insured, fast response. Call ${BUSINESS_DATA.phone}.`,
   keywords: `same day plumber Vancouver WA, emergency plumber Longview, burst pipe Battle Ground, urgent plumbing Camas Washougal, emergency plumber Clark County Cowlitz County`,
 };
@@ -46,7 +46,7 @@ export default function SameDayPlumbingPage() {
                   Same-Day Plumbing Service in Southwest Washington
                 </h1>
                 <p className="text-xl md:text-2xl mb-8 leading-relaxed text-slate-200">
-                  Plumbing problems can't wait. When you need fast help, All County Plumbing is here to provide professional same-day plumbing services throughout Clark County and Cowlitz County. Serving Vancouver, Battle Ground, Ridgefield, Camas, Washougal, La Center, Longview, Woodland, Kalama, and all surrounding communities.
+                  Plumbing problems can't wait. When you need fast help, H2O Plumbing is here to provide professional same-day plumbing services throughout Clark County and Cowlitz County. Serving Vancouver, Battle Ground, Ridgefield, Camas, Washougal, La Center, Longview, Woodland, Kalama, and all surrounding communities.
                 </p>
                 
                 {/* Quick Contact Options */}
@@ -303,7 +303,7 @@ export default function SameDayPlumbingPage() {
               Our <span className="text-brand-red">Same-Day Response</span> Process
             </h2>
             <p className="text-xl text-slate-600 mb-16 text-center max-w-3xl mx-auto">
-              When you call All County Plumbing for same-day service, here's what you can expect:
+              When you call H2O Plumbing for same-day service, here's what you can expect:
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -464,7 +464,7 @@ export default function SameDayPlumbingPage() {
             </h2>
             <p className="text-xl mb-16 text-white/90 max-w-3xl mx-auto">
               When urgent plumbing issues strike, you need a team you can trust to respond quickly and fix 
-              the problem right the first time. Here's why families from Vancouver to Longview, Battle Ground to Woodland, and Camas to Ridgefield choose All County Plumbing:
+              the problem right the first time. Here's why families from Vancouver to Longview, Battle Ground to Woodland, and Camas to Ridgefield choose H2O Plumbing:
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -513,7 +513,7 @@ export default function SameDayPlumbingPage() {
             Don't Let a Plumbing <span className="text-brand-red">Emergency</span> Ruin Your Day
           </h2>
           <p className="text-xl mb-10 max-w-3xl mx-auto text-slate-300 leading-relaxed">
-            When plumbing disasters strike, All County Plumbing is here to help. Call now for fast, 
+            When plumbing disasters strike, H2O Plumbing is here to help. Call now for fast, 
             professional same-day plumbing services throughout Vancouver, Battle Ground, Longview, Camas, Washougal, Ridgefield, Woodland, and all of Southwest Washington.
           </p>
           <a 
@@ -528,6 +528,8 @@ export default function SameDayPlumbingPage() {
     </div>
   );
 }
+
+
 
 
 

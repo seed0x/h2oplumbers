@@ -4,7 +4,7 @@ import { BUSINESS_DATA } from '@/lib/business-data';
 import { Calendar, Clock, Shield, Wrench, AlertTriangle, Droplet } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '5 Signs of a Hidden Water Leak | All County Plumbing',
+  title: '5 Signs of a Hidden Water Leak | H2O Plumbing',
   description: 'Learn to spot the early warning signs of a hidden water leak in your home. Catching leaks early can save you from costly repairs and water damage.',
 };
 
@@ -80,7 +80,7 @@ export default function HiddenWaterLeakPage() {
               <p>You can check for a leak by using your water meter. First, make sure all water is turned off in your home. Then, check your water meter. If the dial is spinning, it means water is flowing somewhere on your property, indicating a leak.</p>
 
               <h2>What to Do If You Suspect a Leak</h2>
-              <p>If you notice any of these signs, it's important to act quickly. A professional plumber can perform a leak detection service to pinpoint the exact location of the leak without causing unnecessary damage to your home. At <Link href="/contact" className="text-brand-red hover:text-brand-red-dark font-semibold">All County Plumbing</Link>, we use advanced acoustic and thermal imaging technology to find and repair hidden leaks efficiently.</p>
+              <p>If you notice any of these signs, it's important to act quickly. A professional plumber can perform a leak detection service to pinpoint the exact location of the leak without causing unnecessary damage to your home. At <Link href="/contact" className="text-brand-red hover:text-brand-red-dark font-semibold">H2O Plumbing</Link>, we use advanced acoustic and thermal imaging technology to find and repair hidden leaks efficiently.</p>
             </div>
           </div>
         </div>
@@ -130,3 +130,5 @@ export default function HiddenWaterLeakPage() {
     </div>
   );
 }
+
+

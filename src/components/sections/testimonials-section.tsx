@@ -3,7 +3,7 @@ import { MessageSquare } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "All County Plumbing was fast, professional, and fixed our leak in no time. We've found our go-to plumber for our home in Vancouver. Highly recommend!",
+    quote: "H2O Plumbing was fast, professional, and fixed our leak in no time. We've found our go-to plumber for our home in Vancouver. Highly recommend!",
     author: "Sarah J., Vancouver",
     rating: 5,
     source: 'Google',
@@ -46,3 +46,5 @@ export const TestimonialsSection = () => {
     </section>
   );
 };
+
+

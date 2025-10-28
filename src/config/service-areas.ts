@@ -6,7 +6,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     slug: 'vancouver-wa-plumber',
     name: 'Vancouver',
     meta: {
-      title: 'Plumbers Vancouver WA | Emergency Plumber Near Me | All County Plumbing',
+      title: 'Plumbers Vancouver WA | Emergency Plumber Near Me | H2O Plumbing',
       description: 'Top-rated plumbers in Vancouver, WA. Fast emergency plumber near you, drain cleaning, water heater repair, repiping. Licensed & insured. Serving all Vancouver neighborhoods: Downtown, East Vancouver, Cascade Park, Salmon Creek, Hazel Dell. Call (360) 883-2506 for same-day service!',
       keywords: 'plumbers vancouver wa, plumber vancouver, vancouver plumbers, plumbers near me, emergency plumber vancouver wa, plumbing contractors vancouver wa, licensed plumber vancouver washington, drain cleaning vancouver, clark county plumbing'
     },
@@ -27,12 +27,12 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
       { author: 'John D.', area: 'Salmon Creek', quote: 'Best plumber in Vancouver! Fixed our leaking pipe same day. Professional, courteous, and reasonably priced. Highly recommend.' },
       { author: 'Sarah L.', area: 'Cascade Park', quote: 'Called them for a water heater replacement. They helped us choose the perfect unit and installed it quickly. Great plumbing contractors!' },
       { author: 'Mike R.', area: 'Downtown Vancouver', quote: 'Emergency drain cleaning for our restaurant. They cleared a major clog during peak hours without disrupting service. True professionals.' },
-      { author: 'Jennifer K.', area: 'Hazel Dell', quote: 'After searching "plumbers near me" I found All County. They arrived within an hour and solved our plumbing emergency. Will use them again!' },
+      { author: 'Jennifer K.', area: 'Hazel Dell', quote: 'After searching "plumbers near me" I found H2O. They arrived within an hour and solved our plumbing emergency. Will use them again!' },
       { author: 'Robert T.', area: 'East Vancouver', quote: 'Excellent service from start to finish. The plumber explained everything clearly and the pricing was fair. Best plumbing company in Clark County.' }
     ],
     cta: {
       headline: "Vancouver WA's Top-Rated Plumbers",
-      blurb: 'When you need a reliable plumber in Vancouver, Washington, trust All County Plumbing. We\'re your local plumbing contractors serving all of Clark County with emergency service, drain cleaning, water heaters, and complete plumbing solutions. Licensed, insured, and family-owned since 2004. Call now for same-day service!'
+      blurb: 'When you need a reliable plumber in Vancouver, Washington, trust H2O Plumbing. We\'re your local plumbing contractors serving all of Clark County with emergency service, drain cleaning, water heaters, and complete plumbing solutions. Licensed, insured, and family-owned since 2004. Call now for same-day service!'
     }
   }
   ,
@@ -40,7 +40,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     slug: 'camas-plumber',
     name: 'Camas',
     meta: {
-      title: 'Camas WA Plumber | Local Plumbing Services | All County Plumbing',
+      title: 'Camas WA Plumber | Local Plumbing Services | H2O Plumbing',
       description: 'Professional plumber in Camas, WA. Emergency plumbing, drain cleaning, water heater repair. Licensed & insured local experts. Call (360) 883-2506 today!',
       keywords: 'Camas WA plumber, plumber Camas Washington, emergency plumbing Camas, drain cleaning Camas WA, water heater repair Camas'
     },
@@ -64,14 +64,14 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     ],
     cta: {
       headline: "Camas's Trusted Plumber",
-      blurb: 'From historic homes to new builds, Camas relies on All County for dependable plumbing service.'
+      blurb: 'From historic homes to new builds, Camas relies on H2O for dependable plumbing service.'
     }
   },
   {
     slug: 'battle-ground-plumber',
     name: 'Battle Ground',
     meta: {
-      title: 'Battle Ground WA Plumber | Plumbing Services | All County Plumbing',
+      title: 'Battle Ground WA Plumber | Plumbing Services | H2O Plumbing',
       description: 'Reliable plumber in Battle Ground, WA for emergency repairs, drain cleaning, and water heaters. Call (360) 883-2506 today!',
       keywords: 'Battle Ground plumber, plumber Battle Ground WA, emergency plumbing Battle Ground, drain cleaning Battle Ground, water heater repair Battle Ground'
     },
@@ -101,7 +101,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     slug: 'ridgefield-plumber',
     name: 'Ridgefield',
     meta: {
-      title: 'Ridgefield WA Plumber | Local Plumbing Services | All County Plumbing',
+      title: 'Ridgefield WA Plumber | Local Plumbing Services | H2O Plumbing',
       description: 'Expert plumber in Ridgefield, WA for homes & businesses. Emergency service, drains, water heaters. Call today!',
       keywords: 'Ridgefield plumber, plumber Ridgefield WA, emergency plumbing Ridgefield, drain cleaning Ridgefield, water heater repair Ridgefield'
     },
@@ -131,7 +131,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     slug: 'la-center-plumber',
     name: 'La Center',
     meta: {
-      title: 'La Center WA Plumber | Trusted Local Plumbing | All County Plumbing',
+      title: 'La Center WA Plumber | Trusted Local Plumbing | H2O Plumbing',
       description: 'Serving La Center with reliable plumbing repairs, installs & maintenance. Call (360) 883-2506.',
       keywords: 'La Center plumber, plumber La Center WA, emergency plumbing La Center, drain cleaning La Center'
     },
@@ -160,7 +160,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     slug: 'woodland-plumber',
     name: 'Woodland',
     meta: {
-      title: 'Woodland WA Plumber | Local Plumbing Experts | All County Plumbing',
+      title: 'Woodland WA Plumber | Local Plumbing Experts | H2O Plumbing',
       description: 'Professional plumber in Woodland for repairs, drain service & water heaters. Call now!',
       keywords: 'Woodland plumber, plumber Woodland WA, emergency plumbing Woodland, drain cleaning Woodland'
     },
@@ -190,7 +190,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     slug: 'washougal-plumber',
     name: 'Washougal',
     meta: {
-      title: 'Washougal WA Plumber | River Community Plumbing | All County Plumbing',
+      title: 'Washougal WA Plumber | River Community Plumbing | H2O Plumbing',
       description: 'Washougal plumbing services: emergency repairs, drains, heaters & more. Call (360) 883-2506.',
       keywords: 'Washougal plumber, plumber Washougal WA, emergency plumbing Washougal, drain cleaning Washougal'
     },
@@ -219,7 +219,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     slug: 'longview-plumber',
     name: 'Longview',
     meta: {
-      title: 'Longview WA Plumber | Professional Plumbing Services | All County Plumbing',
+      title: 'Longview WA Plumber | Professional Plumbing Services | H2O Plumbing',
       description: 'Serving Longview with dependable plumbing repairs, drain cleaning & water heater service.',
       keywords: 'Longview plumber, plumber Longview WA, emergency plumbing Longview, drain cleaning Longview'
     },
@@ -250,3 +250,5 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
 export function getServiceArea(slug: string) {
   return serviceAreas.find(sa => sa.slug === slug);
 }
+
+

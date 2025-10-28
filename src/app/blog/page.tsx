@@ -4,7 +4,7 @@ import { BUSINESS_DATA } from '@/lib/business-data';
 import { BookOpen, Calendar, ArrowRight, Wrench, Lightbulb, Shield, Droplets, ThermometerSnowflake, FileText } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Plumbing Tips & Expert Advice Blog | All County Plumbing',
+  title: 'Plumbing Tips & Expert Advice Blog | H2O Plumbing',
   description: 'Expert plumbing advice from Vancouver\'s trusted family plumbers. Learn maintenance tips, repair guides, and home improvement insights from 20+ years of experience.',
 };
 
@@ -208,3 +208,5 @@ export default function BlogPage() {
     </div>
   );
 }
+
+

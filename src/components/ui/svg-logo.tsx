@@ -7,7 +7,7 @@ interface SvgLogoProps {
   className?: string;
 }
 
-// SVG version of All County Plumbing logo (simplified representation)
+// SVG version of H2O Plumbing logo (simplified representation)
 export function SvgLogo({ variant = 'default', size = 160, className = '' }: SvgLogoProps) {
   const colors = {
     default: {
@@ -81,7 +81,7 @@ export function SvgLogo({ variant = 'default', size = 160, className = '' }: Svg
       {/* Company name text */}
       <g fontSize="10" fontFamily="Arial, sans-serif" fontWeight="600">
         <text x="60" y="20" fill={colorScheme.secondary}>
-          ALL COUNTY
+          H2O
         </text>
         <text x="60" y="32" fill={colorScheme.primary} fontSize="12" fontWeight="700">
           PLUMBING
@@ -211,3 +211,5 @@ export function LogoPattern({ size = 100, opacity = 0.03, className = '' }: {
     </svg>
   );
 }
+
+

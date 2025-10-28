@@ -112,7 +112,7 @@ export function SocialProofNotifications() {
     {
       id: 'milestone-1',
       type: 'milestone',
-      name: 'All County Plumbing',
+      name: 'H2O Plumbing',
       location: 'Southwest WA',
       time: 'Today',
       icon: Award,
@@ -122,7 +122,7 @@ export function SocialProofNotifications() {
     {
       id: 'milestone-2',
       type: 'milestone',
-      name: 'All County Plumbing',
+      name: 'H2O Plumbing',
       location: 'Southwest WA',
       time: 'This week',
       icon: Users,
@@ -251,6 +251,8 @@ export function SocialProofNotifications() {
     </>
   )
 }
+
+
 
 
 

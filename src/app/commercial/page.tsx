@@ -247,7 +247,7 @@ export default function CommercialPage() {
             Ready to <span className="text-brand-red">Partner</span> With Us?
           </h2>
           <p className="text-xl md:text-2xl text-slate-200 mb-12 leading-relaxed">
-            Join the 50+ businesses who trust All County Plumbing for reliable, code-compliant commercial plumbing. 
+            Join the 50+ businesses who trust H2O Plumbing for reliable, code-compliant commercial plumbing. 
             From routine maintenance to emergency repairs, we're here 24/7.
           </p>
           
@@ -465,7 +465,7 @@ export default function CommercialPage() {
                 <span className="text-slate-700 font-medium">Business Client Rating</span>
               </div>
               <p className="italic text-slate-600 text-sm">
-                "All County has been our trusted plumbing partner for years. Their response time and professionalism 
+                "H2O has been our trusted plumbing partner for years. Their response time and professionalism 
                 ensure our operations continue without interruption."
               </p>
               <p className="text-slate-900 font-medium text-sm mt-2">— Sarah Martinez, Operations Manager, Riverview Restaurant</p>
@@ -529,7 +529,7 @@ export default function CommercialPage() {
                 Do you provide 24/7 commercial plumbing services in Vancouver?
               </h3>
               <p className="text-slate-700 leading-relaxed">
-                Yes, All County Plumbing offers 24/7 emergency commercial plumbing services throughout Vancouver, Battle Ground, Camas, and all of Clark County. We understand that plumbing emergencies don't follow business hours, and we prioritize urgent commercial calls to get you back in business fast.
+                Yes, H2O Plumbing offers 24/7 emergency commercial plumbing services throughout Vancouver, Battle Ground, Camas, and all of Clark County. We understand that plumbing emergencies don't follow business hours, and we prioritize urgent commercial calls to get you back in business fast.
               </p>
             </div>
             <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
@@ -553,7 +553,7 @@ export default function CommercialPage() {
                 Are you licensed for commercial plumbing in Washington State?
               </h3>
               <p className="text-slate-700 leading-relaxed">
-                Yes, All County Plumbing is fully licensed, bonded, and insured for commercial plumbing work in Washington State. We maintain all required certifications for backflow testing, grease trap installation, and comply with all local building codes in Clark County and Cowlitz County.
+                Yes, H2O Plumbing is fully licensed, bonded, and insured for commercial plumbing work in Washington State. We maintain all required certifications for backflow testing, grease trap installation, and comply with all local building codes in Clark County and Cowlitz County.
               </p>
             </div>
           </div>
@@ -607,10 +607,10 @@ export default function CommercialPage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          "name": "All County Plumbers LLC - Commercial Plumbing",
-          "image": "https://allcountyplumbers.com/logo.png",
-          "@id": "https://allcountyplumbers.com/commercial",
-          "url": "https://allcountyplumbers.com/commercial",
+          "name": "H2O Plumbing Services - Commercial Plumbing",
+          "image": "https://h2oplumbers.com/logo.png",
+          "@id": "https://h2oplumbers.com/commercial",
+          "url": "https://h2oplumbers.com/commercial",
           "telephone": "+13608832506",
           "priceRange": "$$",
           "address": {
@@ -704,7 +704,7 @@ export default function CommercialPage() {
               "name": "Do you provide 24/7 commercial plumbing services in Vancouver?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, All County Plumbing offers 24/7 emergency commercial plumbing services throughout Vancouver, Battle Ground, Camas, and all of Clark County. We prioritize urgent commercial calls to get you back in business fast."
+                "text": "Yes, H2O Plumbing offers 24/7 emergency commercial plumbing services throughout Vancouver, Battle Ground, Camas, and all of Clark County. We prioritize urgent commercial calls to get you back in business fast."
               }
             },
             {
@@ -721,6 +721,8 @@ export default function CommercialPage() {
     </div>
   );
 }
+
+
 
 
 

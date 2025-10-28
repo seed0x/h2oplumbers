@@ -15,7 +15,7 @@ import { generateSocialMeta, socialMetaTemplates } from '@/lib/social-meta'
 
 export const metadata: Metadata = generateSocialMeta({
   ...socialMetaTemplates.services,
-  title: 'New Construction Plumbing Vancouver WA | Builder Partner | All County Plumbing',
+  title: 'New Construction Plumbing Vancouver WA | Builder Partner | H2O Plumbing',
   description: 'Trusted new construction plumbing for builders in Vancouver, Battle Ground & Clark County. Residential, commercial & multi-family projects. Licensed, on-time delivery.',
 });
 
@@ -214,7 +214,7 @@ export default function NewConstructionPage() {
             Ready to <span className="text-brand-red">Partner</span> With Us?
           </h2>
           <p className="text-xl md:text-2xl text-slate-200 mb-12 leading-relaxed">
-            Join the 20+ builders who trust All County Plumbing for reliable, code-compliant plumbing systems. 
+            Join the 20+ builders who trust H2O Plumbing for reliable, code-compliant plumbing systems. 
             From rough-in to final inspection, we deliver on time, every time.
           </p>
           
@@ -312,7 +312,7 @@ export default function NewConstructionPage() {
                 <span className="text-slate-700 font-medium">Builder Rating</span>
               </div>
               <p className="italic text-slate-600 text-sm">
-                "All County has been reliable and professional on every project. Their attention to detail and code compliance keeps us on schedule."
+                "H2O has been reliable and professional on every project. Their attention to detail and code compliance keeps us on schedule."
               </p>
               <p className="text-slate-900 font-medium text-sm mt-2">— Local Builder, Vancouver WA</p>
             </div>
@@ -532,7 +532,7 @@ export default function NewConstructionPage() {
           "name": "New Construction Plumbing Services",
           "provider": {
             "@type": "LocalBusiness",
-            "name": "All County Plumbers LLC",
+            "name": "H2O Plumbing Services",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Battle Ground",
@@ -574,6 +574,8 @@ export default function NewConstructionPage() {
     </div>
   )
 }
+
+
 
 
 

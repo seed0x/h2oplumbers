@@ -22,7 +22,7 @@ const teamMembers = [
     initials: 'RV',
     photo: '/images/ron-veach.jpg',
     certifications: ['Business Development', 'Quality Assurance', 'Customer Relations'],
-    description: 'Founded All County Plumbing with a mission to serve every customer with honesty and care. Leads the company with integrity and dedication to excellence.'
+    description: 'Founded H2O Plumbing with a mission to serve every customer with honesty and care. Leads the company with integrity and dedication to excellence.'
   },
   {
     name: 'Josh Veach',
@@ -75,7 +75,7 @@ const journey = [
   { 
     year: BUSINESS_DATA.established, 
     title: 'A Father\'s Dream Begins', 
-    desc: `Ron Veach starts All County Plumbing with one truck, a toolbox, and an unwavering commitment to treat every customer like family. The journey begins in ${BUSINESS_DATA.address.city}.`,
+    desc: `Ron Veach starts H2O Plumbing with one truck, a toolbox, and an unwavering commitment to treat every customer like family. The journey begins in ${BUSINESS_DATA.address.city}.`,
     icon: <Wrench className="w-6 h-6" />
   },
   { 
@@ -150,7 +150,7 @@ export default function AboutPage() {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
-              About <span className="text-brand-red">All County Plumbing</span>
+              About <span className="text-brand-red">H2O Plumbing</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-slate-200 mb-10 max-w-3xl mx-auto leading-relaxed">
@@ -196,7 +196,7 @@ export default function AboutPage() {
                   Today, with Josh Veach running operations alongside his father Ron, we carry forward that same family-first philosophy. For over {BUSINESS_DATA.yearsInBusiness} years, we have been honored to serve families throughout Clark County. We are not just fixing pipes - we are building lasting relationships with our neighbors.
                 </p>
                 <p className="text-base text-gray-700 leading-relaxed">
-                  Being family-owned means something special to us. We answer our own phones, show up when we say we will, and treat your home with respect. That is the All County Plumbing difference.
+                  Being family-owned means something special to us. We answer our own phones, show up when we say we will, and treat your home with respect. That is the H2O Plumbing difference.
                 </p>
               </div>
             </div>
@@ -326,7 +326,7 @@ export default function AboutPage() {
           </div>
           {/* Family / Culture Gallery */}
           <div className="mt-24">
-            <h3 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-6 text-center uppercase">Meet the All County <span className="text-brand-red">Family</span></h3>
+            <h3 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-6 text-center uppercase">Meet the H2O <span className="text-brand-red">Family</span></h3>
             <p className="text-lg text-slate-600 text-center max-w-3xl mx-auto mb-10">These are not stock photos - they are real moments from our family, our team, and the Clark County homes we are honored to serve.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
@@ -340,7 +340,7 @@ export default function AboutPage() {
                 { src: '/images/about_us_page_photos/teven & Dave on the field.webp', alt: 'Teven and Dave On The Field' },
                 { src: '/images/work/sewer-hookups.jpg', alt: 'Sewer Hookup Work in Progress' },
                 { src: '/images/work/commercial-plumbing.jpg', alt: 'Commercial Plumbing Project' },
-                { src: '/images/family-Allcountyteam.webp', alt: 'All County Team Family Photo' }
+                { src: '/images/family-Allcountyteam.webp', alt: 'H2O Team Family Photo' }
               ].map(img => (
                 <div key={img.alt} className="relative group overflow-hidden rounded-lg shadow-sm border border-gray-100">
                   <Image 
@@ -442,7 +442,7 @@ export default function AboutPage() {
             Let Our <span className="text-brand-red">Family</span> Serve Yours
           </h2>
           <p className="text-xl mb-10 max-w-3xl mx-auto text-slate-300 leading-relaxed">
-            When you call All County Plumbing, you are not getting a corporate call center - you are getting Ron, Josh, and our local team who genuinely care about your home. Experience the family difference in Vancouver, Battle Ground, Camas, and throughout Clark County.
+            When you call H2O Plumbing, you are not getting a corporate call center - you are getting Ron, Josh, and our local team who genuinely care about your home. Experience the family difference in Vancouver, Battle Ground, Camas, and throughout Clark County.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -463,6 +463,8 @@ export default function AboutPage() {
     </div>
   )
 }
+
+
 
 
 

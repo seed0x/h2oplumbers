@@ -4,8 +4,8 @@ import { Logo } from '../../components/ui/logo';
 import { Star, Award, Users, Clock } from 'lucide-react';
 
 export const metadata = {
-  title: 'Meet Our Team - All County Plumbing | Experienced Plumbers',
-  description: 'Meet the experienced team at All County Plumbing. Family-owned business with certified plumbers serving Battle Ground, WA and surrounding areas.',
+  title: 'Meet Our Team - H2O Plumbing | Experienced Plumbers',
+  description: 'Meet the experienced team at H2O Plumbing. Family-owned business with certified plumbers serving Battle Ground, WA and surrounding areas.',
 };
 
 // Sample team data - replace with actual team photos when provided
@@ -14,7 +14,7 @@ const teamMembers = [
     name: 'Ron Veach',
     role: 'Founder & Master Plumber',
     image: '/images/ron-veach.jpg',
-    bio: 'Ron founded All County Plumbing in 2004 and continues to lead with a focus on craftsmanship, honesty, and community.',
+    bio: 'Ron founded H2O Plumbing in 2004 and continues to lead with a focus on craftsmanship, honesty, and community.',
     experience: '20+ Years Experience'
   },
   {
@@ -44,7 +44,7 @@ const teamMembers = [
 const workGallery = [
   {
     src: '/images/work/all_county_plumbing_codee.jpg',
-    alt: 'All County Plumbing technician preparing pipe fittings on site',
+    alt: 'H2O Plumbing technician preparing pipe fittings on site',
     category: 'Residential Service',
     description: 'Our licensed technicians arrive prepared for everything from leak repairs to fixture replacements.'
   },
@@ -84,14 +84,14 @@ const workGallery = [
 const fleetImages = [
   {
     src: '/images/Work Van Good Image.png',
-    alt: 'All County Plumbing service van parked at a customer home',
+    alt: 'H2O Plumbing service van parked at a customer home',
     description: 'Fully stocked service van ready for residential and commercial calls across Clark County.',
     year: '2024',
     type: 'Ford Transit'
   },
   {
     src: '/images/truck-1.jpg',
-    alt: 'All County Plumbing service truck at a job site',
+    alt: 'H2O Plumbing service truck at a job site',
     description: 'Service truck equipped with essential parts to complete most jobs in a single visit.',
     year: '2023',
     type: 'Service Truck'
@@ -137,7 +137,7 @@ export default function TeamPage() {
               Family-Owned, Professionally Trained
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              At All County Plumbing, we're more than just a plumbing company – we're your neighbors, 
+              At H2O Plumbing, we're more than just a plumbing company – we're your neighbors, 
               committed to providing honest, reliable service to every family we serve. Meet the team 
               that makes the difference.
             </p>
@@ -225,7 +225,7 @@ export default function TeamPage() {
           <div className="mb-8">
             <Logo size="md" variant="white" className="mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Experience the All County Difference?
+              Ready to Experience the H2O Difference?
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
               Contact our team of professionals today for honest, reliable plumbing services 
@@ -252,3 +252,5 @@ export default function TeamPage() {
     </>
   );
 }
+
+

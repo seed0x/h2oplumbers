@@ -6,7 +6,7 @@ const teamMembers = [
     name: 'Ron Veach',
     title: 'Founder & Master Plumber',
     imageUrl: '/images/ron-veach.jpg',
-    bio: "With over 30 years of experience, Ron founded All County to bring honest, family-focused plumbing to our community."
+    bio: "With over 30 years of experience, Ron founded H2O to bring honest, family-focused plumbing to our community."
   },
   {
     name: 'Josh Veach',
@@ -46,3 +46,5 @@ export const MeetTheTeamSection = () => {
     </section>
   );
 };
+
+

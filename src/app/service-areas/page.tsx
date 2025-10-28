@@ -258,11 +258,11 @@ export default function ServiceAreasPage() {
         </div>
       </section>
 
-      {/* Why Families Choose All County Plumbing */}
+      {/* Why Families Choose H2O Plumbing */}
       <section className="py-20 px-4 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight text-slate-900 mb-4">Why Vancouver & Clark County Choose All County Plumbing</h2>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight text-slate-900 mb-4">Why Vancouver & Clark County Choose H2O Plumbing</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               As a Battle Ground-based, family-owned plumbing company, we've built our reputation on reliable service throughout Southwest Washington. Serving Vancouver, Clark County, and Cowlitz County since 2004 with honest pricing, licensed technicians, and quality workmanship you can trust.
             </p>
@@ -349,6 +349,8 @@ export default function ServiceAreasPage() {
     </div>
   )
 }
+
+
 
 
 

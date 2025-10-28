@@ -96,7 +96,7 @@ const sharePlatforms: SharePlatform[] = [
 
 export function SocialShare({
   url,
-  title = 'All County Plumbing - Professional Plumbing Services',
+  title = 'H2O Plumbing - Professional Plumbing Services',
   description = 'Licensed plumbers serving Southwest Washington since 2004. Emergency repairs, drain cleaning, water heaters & more. Available 24/7.',
   hashtags = ['Plumbing', 'WashingtonState', 'EmergencyService'],
   via = 'AllCountyPLBG',
@@ -372,5 +372,7 @@ export function SocialFollowButtons({ showFollowers = false, className = '' }: {
     </div>
   )
 }
+
+
 
 

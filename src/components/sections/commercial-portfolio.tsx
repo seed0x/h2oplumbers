@@ -42,7 +42,7 @@ const commercialClients: CommercialClient[] = [
     clientCount: 45,
     specialties: ['Grease Trap Systems', 'Commercial Kitchen Plumbing', 'Hood Suppression Hookups', 'Health Dept Compliance'],
     testimonial: {
-      quote: 'All County Plumbing understands the urgency of restaurant operations. They\'ve kept our locations running smoothly for years.',
+      quote: 'H2O Plumbing understands the urgency of restaurant operations. They\'ve kept our locations running smoothly for years.',
       author: 'Maria Gonzalez',
       company: 'Local Restaurant Chain',
       location: 'Vancouver, WA'
@@ -263,7 +263,7 @@ export function CommercialPortfolio() {
         <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 mb-12">
           <div className="text-center mb-8">
             <h3 className="text-3xl md:text-4xl font-heading font-bold uppercase tracking-tight text-slate-900 mb-4">
-              Why Businesses Choose All County Plumbing
+              Why Businesses Choose H2O Plumbing
             </h3>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
               We understand that plumbing issues can disrupt your business operations and affect your bottom line. 
@@ -302,7 +302,7 @@ export function CommercialPortfolio() {
             Ready to Partner With Us?
           </h3>
           <p className="text-lg mb-8 max-w-2xl mx-auto text-slate-200">
-            Join hundreds of Southwest Washington businesses who trust All County Plumbing 
+            Join hundreds of Southwest Washington businesses who trust H2O Plumbing 
             for reliable, professional commercial plumbing services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -318,4 +318,6 @@ export function CommercialPortfolio() {
     </section>
   );
 }
+
+
 

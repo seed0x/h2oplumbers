@@ -57,3 +57,5 @@ export function trackCopy(base: Omit<PromoAnalyticsEvent, 'timestamp' | 'type'>)
 export function trackExpired(base: Omit<PromoAnalyticsEvent, 'timestamp' | 'type'>) {
   trackPromoEvent({ ...base, type: 'expired' });
 }
+
+

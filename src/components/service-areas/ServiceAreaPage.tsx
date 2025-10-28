@@ -261,7 +261,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
                 backgroundPosition: 'center'
               }}></div>
               <div className="relative z-10">
-                <h3 className="text-3xl font-heading font-bold text-center mb-8 uppercase">Why {data.name} Families Choose <span className="text-brand-red">All County Plumbing</span></h3>
+                <h3 className="text-3xl font-heading font-bold text-center mb-8 uppercase">Why {data.name} Families Choose <span className="text-brand-red">H2O Plumbing</span></h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-brand-red/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -307,7 +307,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <img 
                     src="/images/truck-1.jpg" 
-                    alt={`All County Plumbing service van serving ${data.name}, WA`}
+                    alt={`H2O Plumbing service van serving ${data.name}, WA`}
                     className="w-full h-auto object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -448,7 +448,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
               <h3 className="text-3xl font-heading font-bold text-slate-900 mb-6 uppercase">What Your {data.name} <span className="text-brand-red">Neighbors Are Saying</span></h3>
               <p className="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
                 Don't just take our word for it. Here's what families throughout {data.name} 
-                are saying about their experience with All County Plumbing.
+                are saying about their experience with H2O Plumbing.
               </p>
             </div>
             
@@ -517,5 +517,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
     </div>
   )
 }
+
+
 
 

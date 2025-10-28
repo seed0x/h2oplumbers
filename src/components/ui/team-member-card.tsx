@@ -26,3 +26,5 @@ export const TeamMemberCard = ({ name, title, imageUrl, bio }: TeamMemberProps) 
     </div>
   );
 };
+
+

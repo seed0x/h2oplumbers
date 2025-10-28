@@ -81,7 +81,7 @@ export function OptimizedImage({
     watermark ? (
       <div className="absolute bottom-2 right-2 opacity-30">
         <div className="bg-white/90 rounded px-2 py-1 text-xs text-brand-gray font-medium">
-          All County Plumbing
+          H2O Plumbing
         </div>
       </div>
     ) : null
@@ -260,3 +260,5 @@ export function generateBlurDataURL(width: number, height: number): string {
   
   return 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k='
 }
+
+

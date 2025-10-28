@@ -35,7 +35,7 @@ export function LocalBusinessStructuredData() {
     '@type': ['LocalBusiness', 'PlumbingService'], // Multiple types for better categorization
     '@id': `${BUSINESS_DATA.website}#business`,
     name: BUSINESS_DATA.name,
-    alternateName: 'All County Plumbing',
+    alternateName: 'H2O Plumbing',
     description: `Professional plumbing services in ${BUSINESS_DATA.serviceArea.primary} and ${BUSINESS_DATA.serviceArea.counties.join(', ')}. Family-owned since ${BUSINESS_DATA.established} with ${BUSINESS_DATA.yearsInBusiness} years of experience in residential, commercial, and new construction plumbing.`,
     url: BUSINESS_DATA.website,
     telephone: BUSINESS_DATA.phoneRaw,
@@ -154,7 +154,7 @@ export function PlumbingServiceStructuredData() {
     serviceType: 'Plumbing Services',
     provider: {
       '@type': 'LocalBusiness',
-      name: 'All County Plumbers',
+      name: 'H2O Plumbers',
       '@id': '#business'
     },
     hasOfferCatalog: {
@@ -245,3 +245,5 @@ export function BreadcrumbStructuredData({ items }: { items: Array<{ name: strin
     />
   )
 }
+
+

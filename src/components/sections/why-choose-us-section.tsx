@@ -10,7 +10,7 @@ export const WhyChooseUsSection = () => {
             <Award className="h-4 w-4" />
             Why Choose Us
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold uppercase tracking-tight text-slate-900 mb-4">Why Families Choose All County Plumbing</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold uppercase tracking-tight text-slate-900 mb-4">Why Families Choose H2O Plumbing</h2>
           <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
             As a family business serving other families, we understand what matters most - <strong className="text-brand-red">reliable service, honest pricing,</strong> 
             and treating your home with the same care we'd give our own. Here's why families trust us:
@@ -47,7 +47,7 @@ export const WhyChooseUsSection = () => {
             <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4">Family Values, Family Service</h3>
             <p className="text-slate-600 leading-relaxed">
               Three generations of plumbers serving Southwest Washington families. We treat your home like our own 
-              and your family like ours. That's the All County difference.
+              and your family like ours. That's the H2O difference.
             </p>
           </div>
         </div>
@@ -55,3 +55,5 @@ export const WhyChooseUsSection = () => {
     </section>
   );
 };
+
+

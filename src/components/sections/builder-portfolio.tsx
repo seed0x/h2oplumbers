@@ -32,7 +32,7 @@ const builders: Builder[] = [
     locations: ['Vancouver WA', 'Battle Ground', 'Camas'],
     projectTypes: ['Luxury Homes', 'Master-Planned Communities'],
     testimonial: {
-      quote: 'All County Plumbing has been instrumental in our Vancouver developments. Their expertise and reliability are unmatched.',
+      quote: 'H2O Plumbing has been instrumental in our Vancouver developments. Their expertise and reliability are unmatched.',
       author: 'Mike Rodriguez',
       title: 'Project Manager'
     },
@@ -134,7 +134,7 @@ export function BuilderPortfolio() {
             Trusted by Leading <span className="text-brand-red">Builders</span>
           </h2>
           <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
-            All County Plumbing works with residential and commercial builders throughout Southwest Washington,
+            H2O Plumbing works with residential and commercial builders throughout Southwest Washington,
             delivering reliable plumbing systems for projects of all sizes.
           </p>
           
@@ -241,6 +241,8 @@ export function BuilderPortfolio() {
     </section>
   );
 }
+
+
 
 
 

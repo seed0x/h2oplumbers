@@ -160,3 +160,5 @@ export type PromotionKey = keyof typeof promotions;
 export function getPromotion(key: PromotionKey) {
   return promotions[key];
 }
+
+

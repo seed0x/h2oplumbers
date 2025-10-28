@@ -4,7 +4,7 @@ import { BUSINESS_DATA } from '@/lib/business-data';
 import { Calendar, Clock, Droplets, Wrench, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Tank vs. Tankless Water Heaters | All County Plumbing',
+  title: 'Tank vs. Tankless Water Heaters | H2O Plumbing',
   description: 'Compare traditional tank and modern tankless water heaters to decide which is best for your home. Learn about the pros and cons of each system.',
 };
 
@@ -102,7 +102,7 @@ export default function TankVsTanklessPage() {
                 <li>A <strong>tankless water heater</strong> is a great investment if you're looking for long-term energy savings, have a high demand for hot water, and can afford the higher upfront cost.</li>
               </ul>
 
-              <p>If you're still unsure, the experts at <Link href="/contact" className="text-brand-red hover:text-brand-red-dark font-semibold">All County Plumbing</Link> can help. We can assess your home's specific needs and provide a professional recommendation. Contact us today for a consultation!</p>
+              <p>If you're still unsure, the experts at <Link href="/contact" className="text-brand-red hover:text-brand-red-dark font-semibold">H2O Plumbing</Link> can help. We can assess your home's specific needs and provide a professional recommendation. Contact us today for a consultation!</p>
             </div>
           </div>
         </div>
@@ -152,3 +152,5 @@ export default function TankVsTanklessPage() {
     </div>
   );
 }
+
+

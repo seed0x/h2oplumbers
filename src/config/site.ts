@@ -3,15 +3,15 @@ import { BUSINESS_DATA } from '@/lib/business-data';
 
 export const siteConfig = {
   name: BUSINESS_DATA.name,
-  description: "Professional plumbing services for residential and commercial properties in Battle Ground, WA and surrounding areas.",
-  url: "https://allcountyplumbers.com",
+  description: "Professional plumbing services for residential and commercial properties in Vancouver, WA and surrounding areas. Get 10% Off Any Plumbing Services Today!",
+  url: "https://h2oplumbers.com",
   ogImage: "/images/og-image.jpg",
   links: {
-    facebook: "https://www.facebook.com/AllCountyPlumbers",
-    twitter: "https://twitter.com/plumber_wa",
-    instagram: "https://www.instagram.com/PlumberVancouverWA",
-    yelp: "https://www.yelp.com/biz/all-county-plumbing-vancouver-4",
-    sisterCompany: "https://www.h2oplumbers.com/",
+    facebook: "https://www.facebook.com/h2oplumbers",
+    twitter: "https://twitter.com/h2oplumbers",
+    instagram: "https://www.instagram.com/h2oplumbers",
+    yelp: "https://www.yelp.com/biz/h2o-plumbing-vancouver",
+    sisterCompany: "https://h2oplumbers.com",
   }
 };
 
@@ -30,10 +30,10 @@ export const contactInfo: ContactInfo = {
   license: BUSINESS_DATA.licenses.display,
   founded: BUSINESS_DATA.established,
   socialLinks: {
-    facebook: "https://www.facebook.com/AllCountyPlumbers",
-    twitter: "https://twitter.com/plumber_wa",
-    instagram: "https://www.instagram.com/PlumberVancouverWA",
-    yelp: "https://www.yelp.com/biz/all-county-plumbing-vancouver-4",
+    facebook: "https://www.facebook.com/h2oplumbers",
+    twitter: "https://twitter.com/h2oplumbers",
+    instagram: "https://www.instagram.com/h2oplumbers",
+    yelp: "https://www.yelp.com/biz/h2o-plumbing-vancouver",
   }
 };
 
@@ -88,14 +88,6 @@ export const navItems: NavItem[] = [
         title: "La Center",
         href: "/service-areas/la-center-plumber",
       },
-      {
-        title: "Woodland",
-        href: "/service-areas/woodland-plumber",
-      },
-      {
-        title: "Longview",
-        href: "/service-areas/longview-plumber",
-      },
     ],
   },
   {
@@ -121,7 +113,7 @@ export const services: Record<string, ServiceItem[]> = {
       icon: "home",
       slug: "residential-plumbing",
       metaData: {
-        title: "Residential Plumbing Services | All County Plumbing",
+        title: "Residential Plumbing Services | H2O Plumbing",
         description: "Professional residential plumbing services including repairs, installations, and maintenance for homeowners in Battle Ground, WA.",
         keywords: "residential plumbing, home plumbing services, bathroom plumbing, kitchen plumbing, Battle Ground",
       }
@@ -133,7 +125,7 @@ export const services: Record<string, ServiceItem[]> = {
       icon: "pipe",
       slug: "plumbing-repipes",
       metaData: {
-        title: "Home Repiping Services | All County Plumbing",
+        title: "Home Repiping Services | H2O Plumbing",
         description: "Professional home repiping services with copper or PEX pipes for residential properties in Battle Ground, WA.",
         keywords: "repiping services, copper pipes, PEX pipes, residential repiping, whole house repipe",
       }
@@ -145,7 +137,7 @@ export const services: Record<string, ServiceItem[]> = {
       icon: "bath",
       slug: "plumbing-remodel",
       metaData: {
-        title: "Bathroom & Kitchen Remodel Plumbing | All County Plumbing",
+        title: "Bathroom & Kitchen Remodel Plumbing | H2O Plumbing",
         description: "Professional plumbing services for bathroom and kitchen remodeling projects in Battle Ground, WA.",
         keywords: "bathroom remodel, kitchen remodel, plumbing remodel, fixture installation",
       }
@@ -159,7 +151,7 @@ export const services: Record<string, ServiceItem[]> = {
       icon: "building",
       slug: "commercial-plumbing",
       metaData: {
-        title: "Commercial Plumbing Services | All County Plumbing",
+        title: "Commercial Plumbing Services | H2O Plumbing",
         description: "Professional commercial plumbing services for businesses and commercial properties in Battle Ground, WA.",
         keywords: "commercial plumbing, business plumbing, office plumbing, commercial property",
       }
@@ -171,7 +163,7 @@ export const services: Record<string, ServiceItem[]> = {
       icon: "drain",
       slug: "drain-cleaning",
       metaData: {
-        title: "Commercial Drain Cleaning Services | All County Plumbing",
+        title: "Commercial Drain Cleaning Services | H2O Plumbing",
         description: "Professional drain cleaning services including hydro jetting and snake drain cleaning for commercial properties in Battle Ground, WA.",
         keywords: "drain cleaning, hydro jetting, snake drain cleaning, clogged drains",
       }
@@ -183,7 +175,7 @@ export const services: Record<string, ServiceItem[]> = {
       icon: "water",
       slug: "water-heater-services",
       metaData: {
-        title: "Commercial Water Heater Services | All County Plumbing",
+        title: "Commercial Water Heater Services | H2O Plumbing",
         description: "Professional commercial water heater installation, repair, and maintenance services in Battle Ground, WA.",
         keywords: "commercial water heater, water heater repair, water heater installation",
       }
@@ -197,7 +189,7 @@ export const services: Record<string, ServiceItem[]> = {
       icon: "construction",
       slug: "new-construction-plumbing",
       metaData: {
-        title: "New Construction Plumbing Services | All County Plumbing",
+        title: "New Construction Plumbing Services | H2O Plumbing",
         description: "Professional plumbing services for new residential and commercial construction projects in Battle Ground, WA.",
         keywords: "new construction plumbing, new build plumbing, construction projects",
       }
@@ -209,7 +201,7 @@ export const services: Record<string, ServiceItem[]> = {
       icon: "home",
       slug: "custom-home-plumbing",
       metaData: {
-        title: "Custom Home Plumbing Services | All County Plumbing",
+        title: "Custom Home Plumbing Services | H2O Plumbing",
         description: "Professional plumbing solutions for custom home construction projects in Battle Ground, WA.",
         keywords: "custom home plumbing, luxury home plumbing, custom build plumbing",
       }
@@ -221,10 +213,12 @@ export const services: Record<string, ServiceItem[]> = {
       icon: "building",
       slug: "commercial-construction",
       metaData: {
-        title: "Commercial Construction Plumbing | All County Plumbing",
+        title: "Commercial Construction Plumbing | H2O Plumbing",
         description: "Professional plumbing systems installation for new commercial construction projects in Battle Ground, WA.",
         keywords: "commercial construction plumbing, new business plumbing, commercial build",
       }
     },
   ],
 };
+
+

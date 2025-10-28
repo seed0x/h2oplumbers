@@ -65,7 +65,7 @@ export function WatermarkedImage({
         <div className="bg-white bg-opacity-90 rounded px-2 py-1 shadow-sm">
           <Image
             src="/images/all-county-plumbing-logo.png"
-            alt="All County Plumbing"
+            alt="H2O Plumbing"
             width={sizeClasses[watermarkSize] === 'w-16 h-5' ? 64 : sizeClasses[watermarkSize] === 'w-20 h-6' ? 80 : 96}
             height={sizeClasses[watermarkSize] === 'w-16 h-5' ? 20 : sizeClasses[watermarkSize] === 'w-20 h-6' ? 24 : 32}
             className={cn('object-contain', sizeClasses[watermarkSize])}
@@ -98,7 +98,7 @@ export function TextWatermarkedImage({
   className = '',
   fill = false,
   priority = false,
-  watermarkText = 'All County Plumbing',
+  watermarkText = 'H2O Plumbing',
   watermarkPosition = 'bottom-right',
   watermarkOpacity = 0.8
 }: TextWatermarkProps) {
@@ -135,3 +135,5 @@ export function TextWatermarkedImage({
     </div>
   );
 }
+
+

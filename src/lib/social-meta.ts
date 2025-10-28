@@ -22,7 +22,7 @@ export function generateSocialMeta({
   image = '/images/social/all-county-plumbing-social.jpg',
   url,
   type = 'website',
-  siteName = 'All County Plumbing',
+  siteName = 'H2O Plumbing',
   locale = 'en_US',
   publishedTime,
   modifiedTime,
@@ -98,32 +98,32 @@ export function generateSocialMeta({
 // Pre-configured metadata for common pages
 export const socialMetaTemplates = {
   homepage: {
-    title: 'All County Plumbing | Licensed Plumbers in Vancouver, WA & Clark County',
+    title: 'H2O Plumbing | Licensed Plumbers in Vancouver, WA & Clark County',
     description: 'Expert plumbing services in Vancouver, WA. 24/7 emergency plumbers near you, drain cleaning, water heater repair, repiping & more. Licensed & insured. Serving Clark County since 2004. Call (360) 883-2506.',
     image: '/images/social/homepage-social.jpg',
     url: '/',
   },
   services: {
-    title: 'Professional Plumbing Services | All County Plumbing',
+    title: 'Professional Plumbing Services | H2O Plumbing',
     description: 'Complete plumbing services: emergency repairs, drain cleaning, water heater installation, leak repair & more. Licensed, insured, and available 24/7.',
     image: '/images/social/services-social.jpg',
     url: '/services',
   },
   emergency: {
-    title: '24/7 Emergency Plumbing Services | All County Plumbing',
+    title: '24/7 Emergency Plumbing Services | H2O Plumbing',
     description: 'Emergency plumbing services available 24/7 in Southwest Washington. Fast response, licensed plumbers. Call (360) 883-2506 for immediate help.',
     image: '/images/social/emergency-social.jpg',
     url: '/services/emergency-plumbing',
   },
   contact: {
-    title: 'Contact All County Plumbing | Get Your Free Quote Today',
-    description: 'Contact All County Plumbing for professional plumbing services in Southwest Washington. Get your free quote today. Call (360) 883-2506.',
+    title: 'Contact H2O Plumbing | Get Your Free Quote Today',
+    description: 'Contact H2O Plumbing for professional plumbing services in Southwest Washington. Get your free quote today. Call (360) 883-2506.',
     image: '/images/social/contact-social.jpg',
     url: '/contact',
   },
   reviews: {
-    title: 'Customer Reviews | All County Plumbing',
-    description: 'Read what customers say about All County Plumbing. 4.9/5 stars on Google, Yelp & Facebook. Trusted licensed plumbers since 2004.',
+    title: 'Customer Reviews | H2O Plumbing',
+    description: 'Read what customers say about H2O Plumbing. 4.9/5 stars on Google, Yelp & Facebook. Trusted licensed plumbers since 2004.',
     image: '/images/social/reviews-social.jpg',
     url: '/reviews',
   },
@@ -133,8 +133,8 @@ export const socialMetaTemplates = {
 export const socialProfileSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'All County Plumbing',
-  alternateName: 'All County Plumbers',
+  name: 'H2O Plumbing',
+  alternateName: 'H2O Plumbers',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://all-county-plumbing.com',
   logo: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://all-county-plumbing.com'}/images/logos/all-county-plumbing-logo.png`,
   sameAs: [
@@ -166,3 +166,5 @@ export const socialProfileSchema = {
   foundingDate: '2004',
   description: 'Licensed plumbing contractors providing emergency repairs, drain cleaning, water heater services and complete plumbing solutions in Southwest Washington since 2004.',
 }
+
+

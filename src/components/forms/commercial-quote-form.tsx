@@ -296,7 +296,7 @@ export function CommercialQuoteForm({
             Request Received!
           </h3>
           <p className="text-slate-600 mb-6">
-            Thank you for choosing All County Plumbing for your commercial needs. 
+            Thank you for choosing H2O Plumbing for your commercial needs. 
             Our team will review your requirements and respond within 4 hours.
           </p>
           <div className="bg-slate-50 rounded-lg p-4 text-left border border-slate-200">
@@ -671,6 +671,8 @@ export function CommercialQuoteForm({
     </Card>
   );
 }
+
+
 
 
 

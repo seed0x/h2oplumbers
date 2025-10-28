@@ -4,8 +4,8 @@ import { LazyServiceAreaChecker, ComponentSkeleton } from '../../components/perf
 import { MapPin, Clock, Shield, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Service Areas | All County Plumbing',
-  description: 'Check if All County Plumbing serves your area. We provide plumbing services throughout Battle Ground, Vancouver, and surrounding Clark County areas.',
+  title: 'Service Areas | H2O Plumbing',
+  description: 'Check if H2O Plumbing serves your area. We provide plumbing services throughout Battle Ground, Vancouver, and surrounding Clark County areas.',
 };
 
 export default function ServiceAreaPage() {
@@ -35,7 +35,7 @@ export default function ServiceAreaPage() {
         {/* Why Choose Us Section */}
         <div className="mt-16 text-center max-w-5xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-tight text-slate-900 mb-12">
-            Why Choose All County Plumbing?
+            Why Choose H2O Plumbing?
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -71,3 +71,5 @@ export default function ServiceAreaPage() {
     </div>
   );
 }
+
+

@@ -13,7 +13,7 @@ export function TeamHeroImage() {
     <div className="hero-team-image" aria-hidden="true">
       <Image 
         src="/images/team-hero.png" 
-        alt="All County Plumbing team" 
+        alt="H2O Plumbing team" 
         width={900} 
         height={900} 
         priority 
@@ -31,3 +31,5 @@ export function TeamHeroImage() {
     </div>
   );
 }
+
+

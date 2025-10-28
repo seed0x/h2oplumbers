@@ -43,7 +43,7 @@ export const authOptions: NextAuthOptions = {
       // Allow only specific admin emails
       const adminEmails = [
         process.env.ADMIN_EMAIL,
-        'admin@allcountyplumbers.com',
+        'admin@h2oplumbers.com',
         // Add other admin emails here
       ].filter(Boolean)
       
@@ -74,3 +74,5 @@ export const authOptions: NextAuthOptions = {
     error: '/admin/auth/error',
   },
 }
+
+

@@ -101,7 +101,7 @@ export function OptimizedImage({
         >
           <div className="text-center">
             <div className="text-2xl mb-2">🔧</div>
-            <div className="text-sm opacity-80">All County Plumbing</div>
+            <div className="text-sm opacity-80">H2O Plumbing</div>
           </div>
         </div>
       );
@@ -339,3 +339,5 @@ export function BeforeAfterImage({
     </div>
   );
 }
+
+

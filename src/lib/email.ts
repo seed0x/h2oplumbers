@@ -69,7 +69,7 @@ export async function sendBookingConfirmation(data: BookingConfirmationData) {
   const { customerEmail, customerName, appointment } = data
   await sendEmail({
     to: customerEmail,
-    subject: 'Appointment Confirmation - All County Plumbing',
+    subject: 'Appointment Confirmation - H2O Plumbing',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #1e40af;">Appointment Confirmed</h2>
@@ -101,7 +101,7 @@ export async function sendBookingConfirmation(data: BookingConfirmationData) {
         <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
         
         <p style="color: #6b7280; font-size: 14px;">
-          All County Plumbing<br>
+          H2O Plumbing<br>
           ${process.env.BUSINESS_EMAIL}<br>
           ${process.env.BUSINESS_PHONE}
         </p>
@@ -130,7 +130,7 @@ export async function sendQuoteEmail(data: {
 
   await sendEmail({
     to: customerEmail,
-    subject: 'Your Plumbing Quote - All County Plumbing',
+    subject: 'Your Plumbing Quote - H2O Plumbing',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #1e40af;">Your Plumbing Quote</h2>
@@ -164,7 +164,7 @@ export async function sendQuoteEmail(data: {
         <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
         
         <p style="color: #6b7280; font-size: 14px;">
-          All County Plumbing<br>
+          H2O Plumbing<br>
           ${process.env.BUSINESS_EMAIL}<br>
           ${process.env.BUSINESS_PHONE}
         </p>
@@ -172,3 +172,5 @@ export async function sendQuoteEmail(data: {
     `,
   })
 }
+
+

@@ -4,8 +4,8 @@ import { BUSINESS_DATA } from '@/lib/business-data'
 import { Star, Heart, ThumbsUp, MessageCircle, Award, Users, ExternalLink } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Customer Reviews & Testimonials | All County Plumbing',
-  description: 'Read real customer reviews from homeowners and businesses across Southwest Washington. See why families trust All County Plumbing for honest, reliable service since 2004.'
+  title: 'Customer Reviews & Testimonials | H2O Plumbing',
+  description: 'Read real customer reviews from homeowners and businesses across Southwest Washington. See why families trust H2O Plumbing for honest, reliable service since 2004.'
 }
 
 interface PlatformBadgeProps { platform: string; rating: string; count: string; icon: React.ReactNode; url: string; }
@@ -26,7 +26,7 @@ interface UnifiedReview {
 }
 
 const unifiedReviews: UnifiedReview[] = [
-  { id: 1, platform: 'Google', stars: 5, text: 'All County Plumbing was fast, professional, and fixed our leak in no time. We\'ve found our go-to plumber for our home in Vancouver. Highly recommend!', author: 'Sarah J.', time: '2 weeks ago', location: 'Vancouver, WA' },
+  { id: 1, platform: 'Google', stars: 5, text: 'H2O Plumbing was fast, professional, and fixed our leak in no time. We\'ve found our go-to plumber for our home in Vancouver. Highly recommend!', author: 'Sarah J.', time: '2 weeks ago', location: 'Vancouver, WA' },
   { id: 2, platform: 'Yelp', stars: 5, text: 'The team was courteous and knowledgeable. They explained everything clearly and the price was fair for our water heater replacement. Will call them again.', author: 'Mark T.', time: '1 month ago', location: 'Battle Ground, WA' },
   { id: 3, platform: 'Facebook', stars: 5, text: 'I\'ve used them for both my business and my home. Consistently great service and they always stand by their work. The best plumbers in Camas.', author: 'David L.', time: '3 weeks ago', location: 'Camas, WA' },
   { id: 4, platform: 'Google', stars: 5, text: 'Transparent pricing and clean work. They treated my home with respect and got the job done right the first time.', author: 'Jennifer M.', time: '5 days ago', location: 'Ridgefield, WA' },
@@ -227,6 +227,8 @@ export default function ReviewsPage() {
     </div>
   )
 }
+
+
 
 
 

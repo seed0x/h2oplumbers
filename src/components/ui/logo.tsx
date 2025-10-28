@@ -64,11 +64,11 @@ export function Logo({
   const TextFallback = () => (
     <div className={cn('flex flex-col leading-none select-none', {
       'items-start': true
-    })} aria-label="All County Plumbing textual logo">
+    })} aria-label="H2O Plumbing textual logo">
   <span className="logo-main font-extrabold tracking-tight text-[var(--acp-red)]" style={{
         fontSize: size === 'xs' ? 20 : size === 'sm' ? 22 : size === 'md' ? 24 : size === 'lg' ? 28 : 32,
         letterSpacing: '-0.5px'
-      }}>ALL COUNTY</span>
+      }}>H2O</span>
   <span className="logo-sub font-semibold text-[var(--acp-navy)]" style={{
         fontSize: size === 'xs' ? 12 : size === 'sm' ? 13 : size === 'md' ? 15 : size === 'lg' ? 16 : 18
       }}>PLUMBING</span>
@@ -79,7 +79,7 @@ export function Logo({
     imageError ? <TextFallback /> : (
       <Image
         src={logoSrc}
-        alt="All County Plumbing LLC - Professional Plumbing Services"
+        alt="H2O Plumbing LLC - Professional Plumbing Services"
         width={width}
         height={height}
         priority={priority}
@@ -97,7 +97,7 @@ export function Logo({
     <Link 
       href={href} 
       className={cn('flex items-center group', className)}
-      aria-label="All County Plumbing Home"
+      aria-label="H2O Plumbing Home"
     >
       <LogoImage />
       {!hideText && (
@@ -129,3 +129,5 @@ export function LogoLoader({ size = 'md', className = '' }: Pick<LogoProps, 'siz
     />
   );
 }
+
+

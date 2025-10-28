@@ -135,3 +135,5 @@ export function LazyImage(props: SmartImageProps) {
 export function ThumbnailImage(props: SmartImageProps) {
   return <SmartImage {...props} priority={false} quality={75} />
 }
+
+

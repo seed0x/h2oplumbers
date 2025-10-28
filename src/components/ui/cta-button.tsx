@@ -126,3 +126,5 @@ export function BookingCTA(props: Omit<CTAButtonProps, 'variant'>) {
 export function ContactCTA(props: Omit<CTAButtonProps, 'variant'>) {
   return <CTAButton {...props} variant="contact" />;
 }
+
+

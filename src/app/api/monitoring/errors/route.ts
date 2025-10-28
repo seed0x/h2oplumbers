@@ -123,7 +123,7 @@ async function sendErrorNotification(errorData: ErrorReport, errorInfo: { count:
   const subject = `${errorData.severity?.toUpperCase()} Error Alert: ${errorData.message}`
   
   const emailBody = `
-<h2>Error Alert - All County Plumbers Website</h2>
+<h2>Error Alert - H2O Plumbers Website</h2>
 
 <h3>Error Details:</h3>
 <ul>
@@ -155,12 +155,12 @@ ${JSON.stringify(errorData.context, null, 2)}
 </pre>
 ` : ''}
 
-<p><em>This is an automated error notification from All County Plumbers website monitoring.</em></p>
+<p><em>This is an automated error notification from H2O Plumbers website monitoring.</em></p>
 `
 
   try {
     await resend.emails.send({
-      from: 'errors@allcountyplumbers.com',
+      from: 'errors@h2oplumbers.com',
       to: process.env.ADMIN_EMAIL,
       subject,
       html: emailBody
@@ -181,3 +181,5 @@ function cleanupOldErrors() {
     }
   })
 }
+
+

@@ -67,7 +67,7 @@ export function UnifiedHero({ promotion }: UnifiedHeroProps) {
               size="lg"
               className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              <a href="tel:+13608832506" aria-label="Call All County Plumbing">Call (360) 883-2506</a>
+              <a href="tel:+13608832506" aria-label="Call H2O Plumbing">Call (360) 883-2506</a>
             </Button>
             <Button
               asChild
@@ -198,3 +198,5 @@ export function HeroCouponBanner({ promotion }: UnifiedHeroProps) {
     </div>
   );
 }
+
+

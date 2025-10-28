@@ -317,7 +317,7 @@ async function sendFormNotification(formType: string, data: any, leadId: string)
   const urgencyFlag = formType === 'emergency' ? '🚨 EMERGENCY - ' : '';
   
   const emailResult = await sendEmail({
-    to: process.env.CONTACT_NOTIFICATION_EMAIL || process.env.NOTIFICATION_EMAIL || 'scheduling@all-county-plumbing.net',
+    to: process.env.CONTACT_NOTIFICATION_EMAIL || process.env.NOTIFICATION_EMAIL || 'scheduling@h2oplumbers.com',
     subject: `${urgencyFlag}New ${formType.toUpperCase()} Form - ${name}`,
     html: getEmailTemplate(formType, data, leadId)
   });
@@ -418,10 +418,12 @@ function getEmailTemplate(formType: string, data: any, leadId: string): string {
       <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
       
       <p style="color: #6b7280; font-size: 14px; text-align: center;">
-        All County Plumbers Contact Form<br>
+        H2O Plumbers Contact Form<br>
         <a href="tel:+13608832506">(360) 883-2506</a> • 
-        <a href="mailto:scheduling@all-county-plumbing.net">scheduling@all-county-plumbing.net</a>
+        <a href="mailto:scheduling@h2oplumbers.com">scheduling@h2oplumbers.com</a>
       </p>
     </div>
   `;
 }
+
+

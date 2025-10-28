@@ -22,8 +22,8 @@ export function generateAppleTouchIcons() {
 
 // Updated manifest.json content
 export const webManifest = {
-  name: "All County Plumbing - Professional Plumbing Services",
-  short_name: "All County Plumbing",
+  name: "H2O Plumbing - Professional Plumbing Services",
+  short_name: "H2O Plumbing",
   description: "Professional plumbing services in Battle Ground, WA. Family-owned and licensed since 2004.",
   start_url: "/",
   display: "standalone",
@@ -57,7 +57,7 @@ export const webManifest = {
     {
       name: "Call Now",
       short_name: "Call",
-      description: "Call All County Plumbing immediately",
+      description: "Call H2O Plumbing immediately",
       url: "tel:+13608832506",
       icons: [{ src: "/favicons/shortcut-call.png", sizes: "96x96" }]
     },
@@ -89,3 +89,5 @@ export const browserConfig = {
     square310x310logo: "/favicons/mstile-310x310.png"
   }
 };
+
+

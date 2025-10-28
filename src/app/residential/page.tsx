@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export const metadata: Metadata = {
-  title: 'Residential Plumbing Services Vancouver, Longview WA | Clark & Cowlitz County | All County',
+  title: 'Residential Plumbing Services Vancouver, Longview WA | Clark & Cowlitz County | H2O',
   description: 'Professional residential plumbing for homeowners in Vancouver, Longview, Camas, Washougal, Ridgefield. Same-day service, water heater repair, drain cleaning, repiping. Family-owned since 2004. Licensed & insured.',
   keywords: 'residential plumbing, home plumber Vancouver WA, same-day plumbing Longview, water heater repair, drain cleaning Camas, repipe Ridgefield, plumber Clark County',
 }
@@ -366,7 +366,7 @@ export default function ResidentialPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-                Why Homeowners Choose <span className="text-brand-red">All County Plumbing</span>
+                Why Homeowners Choose <span className="text-brand-red">H2O Plumbing</span>
               </h2>
               <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
                 Three generations of family plumbing experience serving families throughout Southwest Washington.
@@ -426,7 +426,7 @@ export default function ResidentialPage() {
             Ready for Reliable <span className="text-brand-red">Home Plumbing Service?</span>
           </h2>
           <p className="text-xl mb-10 max-w-3xl mx-auto text-slate-300 leading-relaxed">
-            From same-day repairs to complete installations, All County Plumbing provides expert residential plumbing services throughout Vancouver, Longview, Castle Rock, Ridgefield, Camas, Washougal, and all surrounding communities in Clark and Cowlitz Counties.
+            From same-day repairs to complete installations, H2O Plumbing provides expert residential plumbing services throughout Vancouver, Longview, Castle Rock, Ridgefield, Camas, Washougal, and all surrounding communities in Clark and Cowlitz Counties.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
@@ -495,6 +495,8 @@ export default function ResidentialPage() {
     </div>
   )
 }
+
+
 
 
 

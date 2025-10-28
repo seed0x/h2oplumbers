@@ -20,3 +20,5 @@ export async function submitQuickQuote({ name, phone, service }: QuickQuotePaylo
   if (!res.ok) throw new Error('Quote request failed');
   return res.json().catch(() => ({}));
 }
+
+

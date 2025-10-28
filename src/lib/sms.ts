@@ -41,7 +41,7 @@ export async function sendBookingReminder(data: {
 }) {
   const { customerPhone, customerName, appointmentDate, serviceName } = data
   
-  const message = `Hi ${customerName}! This is a reminder for your ${serviceName} appointment tomorrow at ${appointmentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}. All County Plumbing will see you then! Call ${process.env.BUSINESS_PHONE} if you need to reschedule.`
+  const message = `Hi ${customerName}! This is a reminder for your ${serviceName} appointment tomorrow at ${appointmentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}. H2O Plumbing will see you then! Call ${process.env.BUSINESS_PHONE} if you need to reschedule.`
   
   return sendSMSNotification({
     to: customerPhone,
@@ -64,3 +64,5 @@ export async function sendEmergencyDispatch(data: {
     message,
   })
 }
+
+

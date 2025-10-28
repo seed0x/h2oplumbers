@@ -3,7 +3,7 @@ import { Suspense } from 'react'
 import { LazyCostCalculator, ComponentSkeleton } from '../../components/performance/dynamic-components'
 
 export const metadata: Metadata = {
-  title: 'Plumbing Cost Calculator | All County Plumbing',
+  title: 'Plumbing Cost Calculator | H2O Plumbing',
   description: 'Get an instant estimate for your plumbing project. Our cost calculator helps you budget for repairs, installations, and maintenance services.',
 };
 
@@ -48,3 +48,5 @@ export default function CalculatorPage() {
     </div>
   );
 }
+
+

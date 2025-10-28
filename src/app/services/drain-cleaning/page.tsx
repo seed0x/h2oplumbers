@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { getPromotion } from '@/config/promotions';
 
 export const metadata: Metadata = {
-  title: `Drain Cleaning Vancouver, Battle Ground, Longview WA | Clark & Cowlitz County | All County`,
+  title: `Drain Cleaning Vancouver, Battle Ground, Longview WA | Clark & Cowlitz County | H2O`,
   description: `Professional drain cleaning in Vancouver, Battle Ground, Longview, Amboy, Yacolt. Serving Clark County & Cowlitz County. Kitchen sinks, bathroom drains, sewer lines. Hydro jetting, camera inspections. Licensed plumbers. Call today!`,
   keywords: `drain cleaning Vancouver WA, drain cleaning Longview WA, clogged drain Battle Ground, hydro jetting Clark County, sewer line cleaning Cowlitz County, drain snake Amboy Yacolt`,
 };
@@ -213,7 +213,7 @@ export default function DrainCleaningPage() {
                 Complete <span className="text-brand-red">Drain Cleaning</span> Solutions
               </h2>
               <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                All County Plumbing provides comprehensive drain cleaning services for every type of blockage 
+                H2O Plumbing provides comprehensive drain cleaning services for every type of blockage 
                 and drainage issue throughout Southwest Washington, including all of Clark County and Cowlitz County.
               </p>
             </div>
@@ -627,7 +627,7 @@ export default function DrainCleaningPage() {
             Professional <span className="text-brand-red">Drain Cleaning</span> You Can Trust
           </h2>
           <p className="text-xl mb-10 max-w-3xl mx-auto text-slate-300 leading-relaxed">
-            Don't let clogged drains disrupt your daily routine. Contact All County Plumbing today for 
+            Don't let clogged drains disrupt your daily routine. Contact H2O Plumbing today for 
             fast, effective drain cleaning services throughout Vancouver, Battle Ground, Camas, Washougal, Ridgefield, Longview, Woodland, and all of Southwest Washington.
           </p>
           <a 
@@ -642,5 +642,7 @@ export default function DrainCleaningPage() {
     </div>
   );
 }
+
+
 
 

@@ -110,3 +110,5 @@ export async function updateBookingStatus(id: string, status: StoredBooking['sta
     return false;
   }
 }
+
+

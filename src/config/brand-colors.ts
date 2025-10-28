@@ -1,31 +1,31 @@
-// Consolidated All County Plumbing Color System
+// H2O Plumbing Color System
 export const brandColors = {
-  // Primary brand colors (red tones)
+  // Primary brand colors (blue tones)
   primary: {
-    50: '#fef2f2',   // Lightest red
-    100: '#fee2e2',
-    200: '#fecaca',
-    300: '#fca5a5',
-    400: '#f87171',
-    500: '#dc2626',  // Main brand red
-    600: '#dc2626',  // Same as 500 for consistency
-    700: '#b91c1c',  // Hover state
-    800: '#991b1b',
-    900: '#991b1b',  // Dark variant
-  },
-  
-  // Secondary brand colors (navy/blue tones)
-  secondary: {
     50: '#eff6ff',   // Lightest blue
     100: '#dbeafe',
     200: '#bfdbfe',
     300: '#93c5fd',
     400: '#60a5fa',
-    500: '#1e3a8a',  // Main brand navy
-    600: '#1e3a8a',  // Same as 500
-    700: '#1e40af',  // Hover state
-    800: '#1e3a8a',
-    900: '#1e293b',  // Dark variant
+    500: '#0ea5e9',  // Main brand blue (sky-500)
+    600: '#0284c7',  // Darker blue
+    700: '#0369a1',  // Hover state
+    800: '#075985',
+    900: '#0c4a6e',  // Dark variant
+  },
+  
+  // Secondary brand colors (cyan/teal tones)
+  secondary: {
+    50: '#ecfeff',   // Lightest cyan
+    100: '#cffafe',
+    200: '#a5f3fc',
+    300: '#67e8f9',
+    400: '#22d3ee',
+    500: '#06b6d4',  // Main brand cyan
+    600: '#0891b2',  // Same as hover
+    700: '#0e7490',  // Hover state
+    800: '#155e75',
+    900: '#164e63',  // Dark variant
   },
   
   // Success/Phone actions (green tones)
@@ -168,3 +168,5 @@ const brandConfig = {
 };
 
 export default brandConfig;
+
+

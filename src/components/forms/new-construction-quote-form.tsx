@@ -289,7 +289,7 @@ export function NewConstructionQuoteForm({
             Quote Request Submitted Successfully!
           </h3>
           <p className="text-gray-600 mb-6">
-            Thank you for your interest in partnering with All County Plumbing. 
+            Thank you for your interest in partnering with H2O Plumbing. 
             We'll review your project details and contact you within 24 hours with a detailed quote.
           </p>
           <div className="bg-secondary-50 rounded-lg p-4 text-left">
@@ -649,6 +649,8 @@ export function NewConstructionQuoteForm({
     </Card>
   );
 }
+
+
 
 
 

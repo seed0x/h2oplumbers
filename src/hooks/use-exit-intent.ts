@@ -23,3 +23,5 @@ export const useExitIntent = (onExitIntent: () => void) => {
     };
   }, [onExitIntent, triggered]);
 };
+
+

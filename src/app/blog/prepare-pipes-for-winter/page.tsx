@@ -4,7 +4,7 @@ import { BUSINESS_DATA } from '@/lib/business-data';
 import { Calendar, Clock, ThermometerSnowflake, AlertTriangle, Wrench, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'How to Prepare Your Pipes for a Pacific Northwest Winter | All County Plumbing',
+  title: 'How to Prepare Your Pipes for a Pacific Northwest Winter | H2O Plumbing',
   description: 'Learn essential tips to prevent frozen pipes and other common winter plumbing issues in the Pacific Northwest. Keep your home safe and avoid costly repairs.',
 };
 
@@ -94,7 +94,7 @@ export default function PreparePipesForWinterPage() {
                 <li><strong>Call a professional.</strong> If you can't locate the frozen pipe or if the pipe has burst, call a licensed plumber immediately.</li>
               </ol>
 
-              <p>By taking these precautions, you can significantly reduce the risk of frozen pipes and enjoy a worry-free winter. If you have any concerns about your plumbing system's readiness for winter, don't hesitate to <Link href="/contact" className="text-brand-red hover:text-brand-red-dark font-semibold">contact All County Plumbing</Link> for a professional inspection.</p>
+              <p>By taking these precautions, you can significantly reduce the risk of frozen pipes and enjoy a worry-free winter. If you have any concerns about your plumbing system's readiness for winter, don't hesitate to <Link href="/contact" className="text-brand-red hover:text-brand-red-dark font-semibold">contact H2O Plumbing</Link> for a professional inspection.</p>
             </div>
           </div>
         </div>
@@ -144,3 +144,5 @@ export default function PreparePipesForWinterPage() {
     </div>
   );
 }
+
+

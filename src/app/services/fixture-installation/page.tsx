@@ -12,7 +12,7 @@ import { fixturePricing } from '@/config/fixture-pricing'
 import { CheckCircle, Wrench, Home, Droplets, Clock, Phone, MapPin, Star, CheckCircle2 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Fixture Installation Vancouver WA | ADA Bathroom Contractors | All County Plumbing',
+  title: 'Fixture Installation Vancouver WA | ADA Bathroom Contractors | H2O Plumbing',
   description: 'Professional fixture installation in Vancouver, Battle Ground, Camas. ADA compliant bathroom contractors, toilet installation, faucet installation, accessible shower systems. Licensed plumber. Same-day service. Call (360) 883-2506.',
   keywords: 'fixture installation Vancouver WA, ada bathroom contractors near me, ada compliant bathroom, accessible bathroom installation, toilet installation Clark County, faucet installation Battle Ground, shower installation Southwest Washington, handicap accessible bathroom Vancouver',
 }
@@ -266,7 +266,7 @@ export default function FixtureInstallationPage() {
             <div>
               <h3 className="text-3xl font-heading font-bold text-slate-900 mb-6">Accessible Bathroom Specialists</h3>
               <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                All County Plumbing specializes in ADA compliant bathroom installations for homes, businesses, 
+                H2O Plumbing specializes in ADA compliant bathroom installations for homes, businesses, 
                 and assisted living facilities throughout Clark County. Our licensed contractors ensure your 
                 bathroom meets all accessibility requirements while maintaining comfort and style.
               </p>
@@ -470,7 +470,7 @@ export default function FixtureInstallationPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-8 uppercase">Why Choose All County Plumbing?</h2>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-8 uppercase">Why Choose H2O Plumbing?</h2>
               <p className="text-lg text-slate-600 mb-6">Your trusted fixture installation plumber serving Vancouver, Battle Ground, Camas, and all of Clark County WA.</p>
               <div className="space-y-4">
                 {whyChooseUs.map((benefit, index) => (
@@ -559,6 +559,8 @@ export default function FixtureInstallationPage() {
     </div>
   )
 }
+
+
 
 
 

@@ -142,7 +142,7 @@ export async function POST(request: NextRequest) {
     try {
       await sendSMSNotification({
         to: data.phone,
-        message: `Emergency request received! All County Plumbing will arrive in approximately ${estimatedMinutes} minutes. Emergency ID: ${emergency.id}. Call ${process.env.EMERGENCY_PHONE} for updates.`,
+        message: `Emergency request received! H2O Plumbing will arrive in approximately ${estimatedMinutes} minutes. Emergency ID: ${emergency.id}. Call ${process.env.EMERGENCY_PHONE} for updates.`,
       })
     } catch (customerSmsError) {
       console.error('Failed to send customer confirmation SMS:', customerSmsError)
@@ -211,3 +211,5 @@ export async function GET(request: NextRequest) {
     )
   }
 }
+
+
