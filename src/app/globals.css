@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import image fallback styles */
+@import './image-fallbacks.css';
+
+@layer base {
+  :root {
+    /* Brand Palette */
+    --brand-red: 350 74% 45%;
+    --brand-red-dark: 350 74% 35%;
+    --brand-red-light: 350 74% 55%;
+    --brand-gray: 240 5% 17%; /* Updated from 0 0% 17% */
+    --brand-gray-light: 240 5% 40%; /* Updated from 0 0% 40% */
+    --brand-silver: 0 0% 96%;
+    --brand-blue: 206 72% 44%;
+    --brand-white: 0 0% 100%;
+  /* Navy base for dark backgrounds (approx #0f172a) */
+  --brand-navy: 218 45% 11%;
+
+    /* Light Theme System Tokens */
+    --background: var(--brand-white);
+    --foreground: var(--brand-gray);
+    --card: var(--brand-white);
+    --card-foreground: var(--brand-gray);
+    --popover: var(--brand-white);
+    --popover-foreground: var(--brand-gray);
+    --primary: var(--brand-red);
+    --primary-foreground: var(--brand-white);
+    --secondary: var(--brand-blue);
+    --secondary-foreground: var(--brand-white);
+    --muted: var(--brand-silver);
+    --muted-foreground: var(--brand-gray-light);
+    --accent: var(--brand-blue);
+    --accent-foreground: var(--brand-white);
+    --destructive: var(--brand-red);
+    --destructive-foreground: var(--brand-white);
+    --border: var(--brand-silver);
+    --input: var(--brand-silver);
+    --ring: var(--brand-red);
+    --radius: 0.25rem;
+  }
+
+  .dark {
+    /* Dark Theme System Tokens */
+    --background: 240 5% 10%; /* Dark blue-gray */
+    --foreground: 0 0% 98%;
+    --card: 240 5% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 5% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 350 85% 55%; /* Brighter red for dark mode */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 206 80% 58%; /* Brighter blue for dark mode */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 5% 18%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 240 5% 18%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
+    --ring: 350 85% 55%;
+  }
+}
+
+@layer base {
+  body {
+    background-color: #ffffff;
+    color: #111827;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  /* Force light theme colors */
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 240 5% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 5% 17%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 240 5% 40%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+}
+
+/* Global hover/focus improvements */
+a, button { 
+  transition: color .25s, background-color .25s, border-color .25s, box-shadow .25s, transform .25s; 
+}
+a:focus-visible, button:focus-visible { 
+  outline: 2px solid hsl(var(--primary)); 
+  outline-offset: 2px; 
+}
+
+/* Typography Scale - use these classes everywhere */
+.heading-xl { 
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700; /* font-bold */
+  color: #111827; /* text-gray-900 */
+}
+@media (min-width: 768px) {
+  .heading-xl {
+    font-size: 3.75rem; /* md:text-6xl */
+  }
+}
+
+.heading-lg { 
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  color: #111827; /* text-gray-900 */
+}
+@media (min-width: 768px) {
+  .heading-lg {
+    font-size: 2.25rem; /* md:text-4xl */
+  }
+}
+
+.heading-md { 
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  color: #111827; /* text-gray-900 */
+}
+@media (min-width: 768px) {
+  .heading-md {
+    font-size: 1.875rem; /* md:text-3xl */
+  }
+}
+
+.heading-sm { 
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #111827; /* text-gray-900 */
+}
+@media (min-width: 768px) {
+  .heading-sm {
+    font-size: 1.5rem; /* md:text-2xl */
+  }
+}
+
+.body-lg { 
+  font-size: 1.125rem; /* text-lg */
+  color: #4B5563; /* text-gray-600 */
+}
+@media (min-width: 768px) {
+  .body-lg {
+    font-size: 1.25rem; /* md:text-xl */
+  }
+}
+
+.body-md { 
+  font-size: 1rem; /* text-base */
+  color: #374151; /* text-gray-700 */
+}
+
+.body-sm { 
+  font-size: 0.875rem; /* text-sm */
+  color: #4B5563; /* text-gray-600 */
+}
+
+/* Consistent Spacing */
+.section-padding { 
+  padding-top: 4rem; /* py-16 */
+  padding-bottom: 4rem; /* py-16 */
+}
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 5rem; /* md:py-20 */
+    padding-bottom: 5rem; /* md:py-20 */
+  }
+}
+
+.container-padding { 
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem; /* px-4 */
+}
+@media (min-width: 768px) {
+  .container-padding {
+    padding-left: 1.5rem; /* md:px-6 */
+    padding-right: 1.5rem; /* md:px-6 */
+  }
+}
+
+.content-spacing > * + * { 
+  margin-top: 1.5rem; /* space-y-6 */
+}
+button:disabled { 
+  opacity:.65; 
+  cursor:not-allowed; 
+}
+
+/* Development helper: apply class="debug-outline" to <body> or a wrapper to visualize layout boxes */
+.debug-outline *,
+.debug-outline *::before,
+.debug-outline *::after {
+  outline: 1px dashed rgba(220, 38, 38, 0.35);
+  outline-offset: -1px;
+}

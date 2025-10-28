@@ -1,0 +1,20 @@
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /offline/
+
+# Allow important directories
+Allow: /api/sitemap
+Allow: /_next/static/
+Allow: /_next/image
+
+# Sitemap location
+Sitemap: https://allcountyplumbers.com/sitemap.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 1

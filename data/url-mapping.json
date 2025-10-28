@@ -1,0 +1,116 @@
+{
+  "redirects": [
+    {
+      "old": "/residential/plumbing-remodel/ada-compliant-bathroom/",
+      "new": "/services/fixture-installation/",
+      "priority": "high",
+      "clicks": 14,
+      "impressions": 15052
+    },
+    {
+      "old": "/new-construction-plumbing/",
+      "new": "/new-construction/",
+      "priority": "medium",
+      "clicks": 2,
+      "impressions": 2762
+    },
+    {
+      "old": "/contact/about-us/",
+      "new": "/about/",
+      "priority": "medium",
+      "clicks": 2,
+      "impressions": 585
+    },
+    {
+      "old": "/commercial/drain-cleaning/snake-drain-cleaning/",
+      "new": "/services/drain-cleaning/",
+      "priority": "low",
+      "clicks": 1,
+      "impressions": 8243
+    },
+    {
+      "old": "/commercial/",
+      "new": "/commercial/",
+      "priority": "low",
+      "clicks": 1,
+      "impressions": 4357
+    },
+    {
+      "old": "/specials/",
+      "new": "/coupons/",
+      "priority": "medium",
+      "clicks": 1,
+      "impressions": 393
+    },
+    {
+      "old": "/residential/drain-cleaning/hydro-jetting/",
+      "new": "/services/drain-cleaning/",
+      "priority": "high",
+      "clicks": 1,
+      "impressions": 86
+    },
+    {
+      "old": "/residential/plumbing-repipes/pex-pipes/",
+      "new": "/services/repipe/",
+      "priority": "medium",
+      "clicks": 0,
+      "impressions": 12386
+    },
+    {
+      "old": "/residential/plumbing-repipes/copper-pipes/",
+      "new": "/services/repipe/",
+      "priority": "medium",
+      "clicks": 0,
+      "impressions": 3776
+    },
+    {
+      "old": "/commercial/drain-cleaning/hydro-jet/",
+      "new": "/services/drain-cleaning/",
+      "priority": "low",
+      "clicks": 0,
+      "impressions": 3548
+    },
+    {
+      "old": "/residential/plumbing-repipes/",
+      "new": "/services/repipe/",
+      "priority": "medium",
+      "clicks": 0,
+      "impressions": 3525
+    },
+    {
+      "old": "/all-county-plumbing-site-map/",
+      "new": "/sitemap.xml",
+      "priority": "low",
+      "clicks": 0,
+      "impressions": 688
+    },
+    {
+      "old": "/residential/drain-cleaning/drain-snake-cleaning/",
+      "new": "/services/drain-cleaning/",
+      "priority": "low",
+      "clicks": 0,
+      "impressions": 192
+    },
+    {
+      "old": "/plumbing-contractor-reviews/",
+      "new": "/reviews/",
+      "priority": "low",
+      "clicks": 0,
+      "impressions": 107
+    },
+    {
+      "old": "/commercial/drain-cleaning/",
+      "new": "/services/drain-cleaning/",
+      "priority": "low",
+      "clicks": 0,
+      "impressions": 31
+    },
+    {
+      "old": "/shop/",
+      "new": "/contact/",
+      "priority": "low",
+      "clicks": 0,
+      "impressions": 14
+    }
+  ]
+}
