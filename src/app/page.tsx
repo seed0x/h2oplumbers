@@ -12,6 +12,7 @@ import { FloatingElementsManager } from '../components/ui/floating-elements-mana
 import { StickyCtaBar } from '../components/ui/sticky-cta-bar';
 import { H2OHero, H2OCouponBanner } from '@/components/sections/h2o-hero';
 import { TrustBadgeSection } from '@/components/sections/trust-badge-section';
+import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { HomeServiceCards } from '../components/ui/animated-service-cards';
 import { MeetTheTeamSection } from '@/components/sections/meet-the-team';
 import { TestimonialsSection } from '@/components/sections/testimonials-section';
@@ -174,11 +175,11 @@ export default function HomePage() {
 
           {/* Tailwind: responsive grid renders one card per row on mobile, scaling to three across on desktop */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {serviceHighlights.map((service) => (
-              <article
-                key={service.title}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-xl"
-              >
+            {serviceHighlights.map((service, index) => (
+              <ScrollReveal key={service.title} animation="fade-up" delay={index * 100}>
+                <article
+                  className="group flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-xl"
+                >
                 {/* Tailwind: group + hover utilities create elevation and shadow transitions on each service card */}
                 {/* Tailwind: fixed height top panel centers the service icon inside a soft neutral background */}
                 <div className="relative flex h-40 items-center justify-center bg-gradient-to-br from-brand-cyan/5 to-brand-cyan/10 group-hover:from-brand-cyan/10 group-hover:to-brand-cyan/20 transition-colors">
@@ -204,6 +205,7 @@ export default function HomePage() {
                   </Link>
                 </div>
               </article>
+              </ScrollReveal>
             ))}
           </div>
         </div>
