@@ -4,15 +4,10 @@ import React from 'react'
 import { Button } from "@/components/ui/button";
 import { Phone, Droplet, Clock, Shield, CheckCircle2, Star, ArrowRight, Award, Users } from "lucide-react";
 import Link from 'next/link';
-import { WaterPipeAnimation } from '@/components/ui/water-pipe-animation';
 
 export function H2OHero() {
   return (
-    <section className="relative overflow-hidden bg-white pt-20 md:pt-24 pb-32 md:pb-40">
-      {/* Water pipe badge animations */}
-      <WaterPipeAnimation variant="hero" position="top-right" />
-      <WaterPipeAnimation variant="hero" position="bottom-left" />
-      
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 pt-20 md:pt-24 pb-32 md:pb-40">
       {/* Clean geometric pattern background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.03]" style={{
@@ -248,39 +243,12 @@ export function H2OHero() {
   );
 }
 
-// Integrated seamless transition banner with pipe water animation
+// Integrated seamless transition banner
 export function H2OCouponBanner() {
   return (
     <div className="relative -mt-24 md:-mt-32">
       {/* Diagonal slice transition */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-slate-50 to-white" style={{ clipPath: 'polygon(0 15%, 100% 0, 100% 85%, 0 100%)' }} />
-      
-      {/* Animated water flow through pipes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
-        {/* Top right pipe */}
-        <div className="absolute top-16 right-8 w-48 h-24 transform rotate-0">
-          <img src="/images/Untitled-10-e1744011491161 (1).png" alt="" className="w-full h-full object-contain" />
-          {/* Animated water droplets flowing through pipe */}
-          <div className="absolute top-4 right-24 animate-flow">
-            <div className="w-2.5 h-2.5 bg-gradient-to-br from-brand-cyan to-brand-turquoise rounded-full" />
-          </div>
-          <div className="absolute top-4 right-16 animate-flow" style={{ animationDelay: '0.8s' }}>
-            <div className="w-2 h-2 bg-gradient-to-br from-brand-cyan to-brand-turquoise rounded-full" />
-          </div>
-        </div>
-        
-        {/* Bottom left pipe */}
-        <div className="absolute bottom-16 left-8 w-48 h-24 transform">
-          <img src="/images/Untitled-9-e1744011097834 (1).png" alt="" className="w-full h-full object-contain" />
-          {/* Animated water droplets flowing through pipe */}
-          <div className="absolute top-12 left-12 animate-flow">
-            <div className="w-2.5 h-2.5 bg-gradient-to-br from-brand-cyan to-brand-turquoise rounded-full" />
-          </div>
-          <div className="absolute top-12 left-20 animate-flow" style={{ animationDelay: '1.2s' }}>
-            <div className="w-2 h-2 bg-gradient-to-br from-brand-cyan to-brand-turquoise rounded-full" />
-          </div>
-        </div>
-      </div>
       
       <div className="relative container mx-auto px-4 pt-32 pb-16">
         <div className="max-w-4xl mx-auto">

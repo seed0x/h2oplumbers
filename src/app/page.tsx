@@ -11,7 +11,6 @@ import { SkipNavigation } from '../components/ui/accessibility-utils';
 import { FloatingElementsManager } from '../components/ui/floating-elements-manager';
 import { StickyCtaBar } from '../components/ui/sticky-cta-bar';
 import { H2OHero, H2OCouponBanner } from '@/components/sections/h2o-hero';
-import { WaterPipeAnimation } from '@/components/ui/water-pipe-animation';
 import { TrustBadgeSection } from '@/components/sections/trust-badge-section';
 import { HomeServiceCards } from '../components/ui/animated-service-cards';
 import { MeetTheTeamSection } from '@/components/sections/meet-the-team';
@@ -145,10 +144,7 @@ export default function HomePage() {
       
       {/* Unified Services Section */}
       {/* Tailwind: section-padding helper applies consistent vertical rhythm; bg-white ensures clean separation from gradient banner */}
-      <section className="relative section-padding bg-white">
-        {/* Water pipe badge animations */}
-        <WaterPipeAnimation variant="services" position="top-left" />
-        <WaterPipeAnimation variant="services" position="bottom-right" />
+      <section className="relative section-padding bg-gradient-to-b from-slate-50 to-white">
         {/* Tailwind: container-padding matches horizontal spacing scale between sections */}
         <div className="container mx-auto container-padding">
           {/* Tailwind: responsive flex block keeps intro copy and link aligned while adding generous gap */}
@@ -217,9 +213,7 @@ export default function HomePage() {
       
       {/* Professional Coupon Showcase Section */}
       {/* Tailwind: section-padding with gradient background builds a soft spotlight zone for the offers */}
-      <section className="relative section-padding bg-gradient-to-br from-slate-50 via-white to-slate-100">
-        {/* Water pipe badge animation */}
-        <WaterPipeAnimation variant="testimonials" position="top-right" />
+      <section className="relative section-padding bg-gradient-to-b from-white via-slate-50 to-slate-100">
         {/* Tailwind: container-padding keeps layout aligned with global grid */}
         <div className="container mx-auto container-padding">
           {/* Tailwind: text-center + spacing utilities balance headline and intro copy */}

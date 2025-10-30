@@ -95,56 +95,8 @@ export default function RootLayout({
           {/* Roto-Rooter style drain divider with H2O branding */}
           <div className="relative bg-white py-8">
             <div className="container mx-auto px-4">
-              {/* Horizontal line with drain in center */}
-              <div className="relative flex items-center">
-                {/* Left line */}
-                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-slate-300 to-slate-400" />
-                
-                {/* Center drain graphic */}
-                <div className="relative mx-8">
-                  <div className="w-40 h-40 relative">
-                    {/* Metallic drain with realistic shadow */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-slate-400 via-slate-500 to-slate-600 shadow-2xl" />
-                    <div className="absolute inset-2 rounded-full bg-gradient-to-br from-slate-700 to-slate-900" />
-                    
-                    {/* Drain grate bars */}
-                    <div className="absolute inset-6 rounded-full bg-slate-950 border-4 border-slate-800 shadow-inner">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        {/* Grate pattern */}
-                        <div className="absolute w-full h-2 bg-slate-800 shadow-sm" />
-                        <div className="absolute h-full w-2 bg-slate-800 shadow-sm" />
-                        <div className="absolute w-3/4 h-2 bg-slate-800 shadow-sm rotate-45" />
-                        <div className="absolute w-3/4 h-2 bg-slate-800 shadow-sm -rotate-45" />
-                        <div className="absolute w-1/2 h-2 bg-slate-800 shadow-sm rotate-[60deg]" />
-                        <div className="absolute w-1/2 h-2 bg-slate-800 shadow-sm -rotate-[60deg]" />
-                      </div>
-                      
-                      {/* Dark center drain hole */}
-                      <div className="absolute inset-10 rounded-full bg-black shadow-[inset_0_4px_8px_rgba(0,0,0,0.8)]">
-                        {/* Swirling water animation */}
-                        <div className="absolute inset-0 animate-spin" style={{ animationDuration: '2.5s' }}>
-                          <div className="absolute inset-0 rounded-full">
-                            <div className="absolute top-1/4 left-1/2 w-1 h-4 bg-brand-cyan/60 rounded-full" />
-                            <div className="absolute top-1/2 left-1/4 w-1 h-3 bg-brand-cyan/50 rounded-full" />
-                            <div className="absolute bottom-1/4 right-1/2 w-1 h-4 bg-brand-cyan/60 rounded-full" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Water droplets falling in */}
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-brand-cyan rounded-full shadow-lg animate-[drip_2s_ease-in_infinite]" />
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-brand-turquoise rounded-full shadow-lg animate-[drip_2s_ease-in_infinite]" style={{ animationDelay: '0.7s' }} />
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-brand-cyan rounded-full shadow-lg animate-[drip_2s_ease-in_infinite]" style={{ animationDelay: '1.4s' }} />
-                  </div>
-                </div>
-                
-                {/* Right line */}
-                <div className="flex-1 h-px bg-gradient-to-l from-transparent via-slate-300 to-slate-400" />
-              </div>
-              
               {/* Jingle with musical notes */}
-              <div className="text-center mt-8 relative">
+              <div className="text-center relative mb-6">
                 <div className="relative inline-block">
                   {/* Left musical note */}
                   <span className="absolute -left-12 top-0 text-4xl text-red-600 animate-pulse">🎵</span>
@@ -157,26 +109,38 @@ export default function RootLayout({
                 </div>
               </div>
               
-              {/* Drain graphic below jingle */}
-              <div className="flex justify-center mt-6">
-                <div className="w-20 h-20 relative">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-slate-300 to-slate-400 shadow-lg" />
-                  <div className="absolute inset-1 rounded-full bg-slate-800" />
-                  <div className="absolute inset-3 rounded-full bg-slate-950 border-2 border-slate-700">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="absolute w-full h-0.5 bg-slate-700" />
-                      <div className="absolute h-full w-0.5 bg-slate-700" />
-                      <div className="absolute w-2/3 h-0.5 bg-slate-700 rotate-45" />
-                      <div className="absolute w-2/3 h-0.5 bg-slate-700 -rotate-45" />
-                    </div>
-                    <div className="absolute inset-4 rounded-full bg-black">
-                      <div className="absolute inset-0 animate-spin" style={{ animationDuration: '2.5s' }}>
-                        <div className="absolute top-1/4 left-1/2 w-0.5 h-2 bg-brand-cyan/60 rounded-full" />
-                        <div className="absolute top-1/2 left-1/4 w-0.5 h-1.5 bg-brand-cyan/50 rounded-full" />
+              {/* Center drain graphic with lines */}
+              <div className="relative flex items-center">
+                {/* Left line */}
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-slate-300 to-slate-400" />
+                
+                {/* Drain */}
+                <div className="relative mx-6">
+                  <div className="w-24 h-24 relative">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-slate-400 via-slate-500 to-slate-600 shadow-xl" />
+                    <div className="absolute inset-1 rounded-full bg-slate-800" />
+                    <div className="absolute inset-3 rounded-full bg-slate-950 border-2 border-slate-700">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="absolute w-full h-0.5 bg-slate-700" />
+                        <div className="absolute h-full w-0.5 bg-slate-700" />
+                        <div className="absolute w-2/3 h-0.5 bg-slate-700 rotate-45" />
+                        <div className="absolute w-2/3 h-0.5 bg-slate-700 -rotate-45" />
+                      </div>
+                      <div className="absolute inset-4 rounded-full bg-black">
+                        <div className="absolute inset-0 animate-spin" style={{ animationDuration: '2.5s' }}>
+                          <div className="absolute top-1/4 left-1/2 w-0.5 h-2 bg-brand-cyan/60 rounded-full" />
+                          <div className="absolute top-1/2 left-1/4 w-0.5 h-1.5 bg-brand-cyan/50 rounded-full" />
+                        </div>
                       </div>
                     </div>
+                    {/* Water droplets falling in */}
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-brand-cyan rounded-full shadow-lg animate-[drip_2s_ease-in_infinite]" />
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-brand-cyan rounded-full shadow-lg animate-[drip_2s_ease-in_infinite]" style={{ animationDelay: '1s' }} />
                   </div>
                 </div>
+                
+                {/* Right line */}
+                <div className="flex-1 h-px bg-gradient-to-l from-transparent via-slate-300 to-slate-400" />
               </div>
             </div>
           </div>
