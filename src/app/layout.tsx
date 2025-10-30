@@ -17,6 +17,7 @@ import { ErrorTracking } from '@/components/error/error-tracking';
 import { generateSocialMeta, socialMetaTemplates, socialProfileSchema } from '@/lib/social-meta';
 import { PromotionsProvider } from '@/context/PromotionsContext';
 import { BUSINESS_DATA } from '@/lib/business-data';
+// Smooth scroll now handled by SnapScroll component in pages
 
 export const metadata: Metadata = generateSocialMeta({
   title: `${BUSINESS_DATA.name} | Licensed Plumbers in Southwest Washington`,
