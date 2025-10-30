@@ -54,10 +54,6 @@ export const navItems: NavItem[] = [
         title: "Commercial",
         href: "/commercial",
       },
-      {
-        title: "New Construction",
-        href: "/new-construction",
-      },
     ],
   },
   {
@@ -178,44 +174,6 @@ export const services: Record<string, ServiceItem[]> = {
         title: "Commercial Water Heater Services | H2O Plumbing",
         description: "Professional commercial water heater installation, repair, and maintenance services in Battle Ground, WA.",
         keywords: "commercial water heater, water heater repair, water heater installation",
-      }
-    },
-  ],
-  newConstruction: [
-    {
-      id: "new-construction-plumbing",
-      title: "New Construction Plumbing",
-      description: "Complete plumbing solutions for new residential and commercial construction projects.",
-      icon: "construction",
-      slug: "new-construction-plumbing",
-      metaData: {
-        title: "New Construction Plumbing Services | H2O Plumbing",
-        description: "Professional plumbing services for new residential and commercial construction projects in Battle Ground, WA.",
-        keywords: "new construction plumbing, new build plumbing, construction projects",
-      }
-    },
-    {
-      id: "custom-home-plumbing",
-      title: "Custom Home Plumbing",
-      description: "Specialized plumbing solutions for custom home construction projects.",
-      icon: "home",
-      slug: "custom-home-plumbing",
-      metaData: {
-        title: "Custom Home Plumbing Services | H2O Plumbing",
-        description: "Professional plumbing solutions for custom home construction projects in Battle Ground, WA.",
-        keywords: "custom home plumbing, luxury home plumbing, custom build plumbing",
-      }
-    },
-    {
-      id: "commercial-construction",
-      title: "Commercial Construction",
-      description: "Complete plumbing systems for new commercial construction projects.",
-      icon: "building",
-      slug: "commercial-construction",
-      metaData: {
-        title: "Commercial Construction Plumbing | H2O Plumbing",
-        description: "Professional plumbing systems installation for new commercial construction projects in Battle Ground, WA.",
-        keywords: "commercial construction plumbing, new business plumbing, commercial build",
       }
     },
   ],

@@ -66,12 +66,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/new-construction`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/tenant-improvements`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
@@ -93,7 +87,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'sewer-line-repair',
     'fixture-installation',
     'camera-scope-inspections',
-    'new-construction',
     'commercial-plumbing'
   ].map(service => ({
     url: `${baseUrl}/services/${service}`,

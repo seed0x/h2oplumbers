@@ -23,20 +23,21 @@ const config = {
         heading: ['var(--font-montserrat)'],
       },
       colors: {
-        // Brand Colors from All County Plumbing
-        'brand-red': {
-          DEFAULT: "hsl(var(--brand-red))",
-          light: "hsl(var(--brand-red-light))",
-          dark: "hsl(var(--brand-red-dark))",
+        // H2O Plumbing Brand Colors
+        'brand-cyan': {
+          DEFAULT: "hsl(var(--brand-cyan))",
+          light: "hsl(var(--brand-cyan-light))",
+          dark: "hsl(var(--brand-cyan-dark))",
         },
-        'brand-navy': {
-          DEFAULT: 'hsl(var(--brand-navy))'
+        'brand-turquoise': {
+          DEFAULT: 'hsl(var(--brand-turquoise))'
         },
+        'brand-black': "hsl(var(--brand-black))",
         'brand-gray': {
           DEFAULT: "hsl(var(--brand-gray))",
           light: "hsl(var(--brand-gray-light))",
+          lighter: "hsl(var(--brand-gray-lighter))",
         },
-        'brand-silver': "hsl(var(--brand-silver))",
         'brand-white': "hsl(var(--brand-white))",
         
         // System Colors
@@ -93,6 +94,48 @@ const config = {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.7' },
         },
+        flow: {
+          '0%': { transform: 'translateX(0) scale(1)', opacity: '0' },
+          '20%': { opacity: '1' },
+          '80%': { opacity: '1' },
+          '100%': { transform: 'translateX(100px) scale(0.5)', opacity: '0' },
+        },
+        'flow-down': {
+          '0%': { transform: 'translateY(0) scale(1)', opacity: '0' },
+          '15%': { opacity: '1' },
+          '85%': { opacity: '1' },
+          '100%': { transform: 'translateY(120px) scale(0.8)', opacity: '0' },
+        },
+        'flow-right': {
+          '0%': { transform: 'translateX(0) scale(1)', opacity: '0' },
+          '15%': { opacity: '1' },
+          '85%': { opacity: '1' },
+          '100%': { transform: 'translateX(140px) scale(0.8)', opacity: '0' },
+        },
+        'flow-left': {
+          '0%': { transform: 'translateX(0) scale(1)', opacity: '0' },
+          '15%': { opacity: '1' },
+          '85%': { opacity: '1' },
+          '100%': { transform: 'translateX(-140px) scale(0.8)', opacity: '0' },
+        },
+        'drip': {
+          '0%': { transform: 'translateY(0) scale(1)', opacity: '0' },
+          '10%': { opacity: '1' },
+          '90%': { opacity: '0.8' },
+          '100%': { transform: 'translateY(200px) scale(0.6)', opacity: '0' },
+        },
+        'flow-out-right': {
+          '0%': { transform: 'translateX(0) scale(1)', opacity: '0' },
+          '10%': { opacity: '1' },
+          '90%': { opacity: '0.8' },
+          '100%': { transform: 'translateX(150px) scale(0.6)', opacity: '0' },
+        },
+        'flow-out-left': {
+          '0%': { transform: 'translateX(0) scale(1)', opacity: '0' },
+          '10%': { opacity: '1' },
+          '90%': { opacity: '0.8' },
+          '100%': { transform: 'translateX(-150px) scale(0.6)', opacity: '0' },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -106,6 +149,7 @@ const config = {
         'float': 'float 3s ease-in-out infinite',
         'pulse-brand': 'pulse-brand 2s ease-in-out infinite',
         'spinner-brand': 'spin 1s linear infinite',
+        'flow': 'flow 3s ease-in-out infinite',
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },

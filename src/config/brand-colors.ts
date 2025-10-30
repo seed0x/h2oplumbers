@@ -1,34 +1,34 @@
 // H2O Plumbing Color System
 export const brandColors = {
-  // Primary brand colors (blue tones)
+  // Primary brand colors (logo water drop blue)
   primary: {
-    50: '#eff6ff',   // Lightest blue
-    100: '#dbeafe',
-    200: '#bfdbfe',
-    300: '#93c5fd',
-    400: '#60a5fa',
-    500: '#0ea5e9',  // Main brand blue (sky-500)
-    600: '#0284c7',  // Darker blue
-    700: '#0369a1',  // Hover state
-    800: '#075985',
-    900: '#0c4a6e',  // Dark variant
+    50: '#e0f7ff',   // Lightest cyan
+    100: '#b3edff',
+    200: '#80ddff',
+    300: '#4dd3ff',
+    400: '#1ac5ff',
+    500: '#00A3D9',  // Main brand blue (logo water drop)
+    600: '#0092c4',  // Slightly darker
+    700: '#0082af',  // Hover state
+    800: '#00719a',
+    900: '#005a7a',  // Dark variant
   },
   
-  // Secondary brand colors (cyan/teal tones)
+  // Secondary accent colors (lighter blue highlights)
   secondary: {
-    50: '#ecfeff',   // Lightest cyan
-    100: '#cffafe',
-    200: '#a5f3fc',
-    300: '#67e8f9',
-    400: '#22d3ee',
-    500: '#06b6d4',  // Main brand cyan
-    600: '#0891b2',  // Same as hover
-    700: '#0e7490',  // Hover state
-    800: '#155e75',
-    900: '#164e63',  // Dark variant
+    50: '#e0f9ff',
+    100: '#c2f0ff',
+    200: '#99e6ff',
+    300: '#66dbff',
+    400: '#33d0ff',
+    500: '#00b8e6',  // Lighter blue accent
+    600: '#00a6cc',
+    700: '#0094b3',  // Hover state
+    800: '#008299',
+    900: '#006b7a',
   },
   
-  // Success/Phone actions (green tones)
+  // Success/Phone actions (keep green for calls to action)
   success: {
     50: '#f0fdf4',
     100: '#dcfce7',
@@ -36,25 +36,29 @@ export const brandColors = {
     300: '#86efac',
     400: '#4ade80',
     500: '#10b981',  // Main success green
-    600: '#10b981',  // Same as 500
-    700: '#059669',  // Hover state
-    800: '#047857',
-    900: '#065f46',
+    600: '#059669',
+    700: '#047857',  // Hover state
+    800: '#065f46',
+    900: '#064e3b',
   },
   
-  // Neutral grays
+  // Neutral grays (black to white from logo)
   gray: {
-    50: '#fffbeb',
-    100: '#fef3c7',
-    200: '#fed7aa',
-    300: '#fdba74',
-    400: '#fb923c',
-    500: '#f59e0b',
-    600: '#d97706',
-    700: '#b45309',
-    800: '#92400e',
-    900: '#78350f',
-  }
+    50: '#f8fafc',   // Nearly white
+    100: '#f1f5f9',
+    200: '#e2e8f0',
+    300: '#cbd5e1',
+    400: '#94a3b8',
+    500: '#64748b',  // Medium gray
+    600: '#475569',
+    700: '#334155',
+    800: '#1e293b',  // Dark gray (logo gray)
+    900: '#0f172a',  // Near black
+  },
+  
+  // Black and white from logo
+  black: '#000000',
+  white: '#ffffff',
 };
 
 // Logo color variants for different backgrounds

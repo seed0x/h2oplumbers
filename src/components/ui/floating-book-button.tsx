@@ -15,29 +15,26 @@ export function FloatingBookButton() {
     >
       <Link href="/booking">
         <motion.button
-          className="bg-brand-red text-white px-6 py-4 rounded-full shadow-2xl hover:bg-brand-red-dark transition-colors flex items-center space-x-3 font-bold text-base border-2 border-white"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+          className="bg-gradient-to-r from-brand-cyan to-brand-turquoise text-white px-5 py-3 rounded-xl shadow-xl hover:shadow-2xl transition-all flex items-center gap-2 font-bold text-sm"
+          whileHover={{ scale: 1.05, y: -2 }}
+          whileTap={{ scale: 0.98 }}
           animate={{
             boxShadow: [
-              '0 4px 20px 0 rgba(220, 38, 38, 0.5)',
-              '0 4px 30px 0 rgba(220, 38, 38, 0.7)',
-              '0 4px 20px 0 rgba(220, 38, 38, 0.5)'
+              '0 8px 24px rgba(6, 182, 212, 0.4)',
+              '0 12px 32px rgba(6, 182, 212, 0.6)',
+              '0 8px 24px rgba(6, 182, 212, 0.4)'
             ]
           }}
           transition={{
             boxShadow: {
-              duration: 2,
+              duration: 2.5,
               repeat: Infinity,
               ease: "easeInOut"
             }
           }}
-          style={{
-            filter: 'drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3))'
-          }}
         >
-          <Calendar className="w-6 h-6" />
-          <span className="hidden sm:inline uppercase tracking-wider">Book Now</span>
+          <Calendar className="w-5 h-5" />
+          <span className="hidden sm:inline">Book Now</span>
         </motion.button>
       </Link>
     </motion.div>

@@ -119,7 +119,7 @@ export function ServiceAreaChecker() {
       <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border-2 border-slate-200 mb-8">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center gap-3 bg-red-50 rounded-full px-6 py-3 mb-4">
-            <MapPin className="h-6 w-6 text-brand-red" />
+            <MapPin className="h-6 w-6 text-brand-cyan" />
             <span className="font-heading font-bold uppercase text-lg text-slate-900">Quick Service Check</span>
           </div>
           <p className="text-slate-600">Enter your ZIP code below to check availability and response times</p>
@@ -133,13 +133,13 @@ export function ServiceAreaChecker() {
               value={zipCode}
               onChange={(e) => setZipCode(e.target.value)}
               placeholder="Enter ZIP code (e.g., 98604)"
-              className="flex-1 text-lg p-6 border-2 border-slate-300 focus:border-brand-red focus:ring-brand-red text-black"
+              className="flex-1 text-lg p-6 border-2 border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan text-black"
               maxLength={10}
             />
             <button
               type="submit"
               disabled={isChecking || !zipCode.trim()}
-              className="bg-brand-red hover:bg-brand-red-dark text-white px-8 py-6 rounded-lg font-bold text-lg transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+              className="bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-6 rounded-lg font-bold text-lg transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
             >
               {isChecking ? (
                 <span className="flex items-center gap-2">
@@ -152,7 +152,7 @@ export function ServiceAreaChecker() {
             </button>
           </div>
           {error && (
-            <p className="text-brand-red text-sm mt-3 text-center font-semibold">{error}</p>
+            <p className="text-brand-cyan text-sm mt-3 text-center font-semibold">{error}</p>
           )}
         </form>
 
@@ -186,7 +186,7 @@ export function ServiceAreaChecker() {
               {result.inServiceArea && (
                 <div className="space-y-4">
                   <Badge className={`text-base px-4 py-2 ${
-                    result.areaType === 'primary' ? 'bg-brand-red text-white' : 
+                    result.areaType === 'primary' ? 'bg-brand-cyan text-white' : 
                     result.areaType === 'secondary' ? 'bg-blue-600 text-white' : 'bg-slate-600 text-white'
                   }`}>
                     {result.areaType === 'primary' ? '⭐ Primary Service Area' :
@@ -212,7 +212,7 @@ export function ServiceAreaChecker() {
                   <div className="flex flex-col sm:flex-row gap-3 pt-2">
                     <a
                       href="/contact"
-                      className="inline-flex items-center justify-center bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-lg font-bold transition-colors"
+                      className="inline-flex items-center justify-center bg-brand-cyan hover:bg-brand-cyan-dark text-white px-6 py-3 rounded-lg font-bold transition-colors"
                     >
                       Schedule Service
                     </a>
@@ -234,7 +234,7 @@ export function ServiceAreaChecker() {
                   <div className="flex flex-col sm:flex-row gap-3">
                     <a
                       href="tel:3608832506"
-                      className="inline-flex items-center justify-center bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-lg font-bold transition-colors"
+                      className="inline-flex items-center justify-center bg-brand-cyan hover:bg-brand-cyan-dark text-white px-6 py-3 rounded-lg font-bold transition-colors"
                     >
                       📞 Call (360) 883-2506
                     </a>
@@ -255,10 +255,10 @@ export function ServiceAreaChecker() {
       {/* Service Areas Info */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {Object.entries(serviceAreas).map(([key, area]) => (
-          <div key={key} className="bg-white rounded-xl p-6 shadow-lg border-2 border-slate-200 hover:border-brand-red transition-all hover:shadow-xl">
+          <div key={key} className="bg-white rounded-xl p-6 shadow-lg border-2 border-slate-200 hover:border-brand-cyan transition-all hover:shadow-xl">
             <div className="flex items-center justify-center mb-4">
               <Badge className={`text-sm px-4 py-2 font-bold ${
-                key === 'primary' ? 'bg-brand-red text-white' : 
+                key === 'primary' ? 'bg-brand-cyan text-white' : 
                 key === 'secondary' ? 'bg-blue-600 text-white' : 'bg-slate-600 text-white'
               }`}>
                 {area.name}

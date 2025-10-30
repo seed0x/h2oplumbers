@@ -28,7 +28,7 @@ const teamMembers = [
     name: 'Field Team',
     role: 'Licensed Plumbers & Apprentices',
     image: '/images/team/team-field-support.jpg',
-    bio: 'Our technicians bring decades of combined experience handling residential, commercial, and new construction plumbing.',
+    bio: 'Our technicians bring decades of combined experience handling residential and commercial plumbing.',
     experience: 'Combined 50+ Years'
   },
   {
@@ -74,23 +74,23 @@ const workGallery = [
   },
   {
     src: '/images/jobs/job-newconstruction-ridgefield-4-23.jpg',
-    alt: 'New construction plumbing rough-in work',
-    category: 'New Construction',
-    description: 'Rough-in plumbing completed for a new build project in Ridgefield, Washington.'
+    alt: 'Commercial plumbing installation work',
+    category: 'Commercial',
+    description: 'Commercial plumbing installation completed for a project in Ridgefield, Washington.'
   }
 ];
 
 // Sample fleet images - replace with actual vehicle photos
 const fleetImages = [
   {
-    src: '/images/Work Van Good Image.png',
+    src: '/images/vbg.jpg',
     alt: 'H2O Plumbing service van parked at a customer home',
     description: 'Fully stocked service van ready for residential and commercial calls across Clark County.',
     year: '2024',
     type: 'Ford Transit'
   },
   {
-    src: '/images/truck-1.jpg',
+    src: '/images/vbg.jpg',
     alt: 'H2O Plumbing service truck at a job site',
     description: 'Service truck equipped with essential parts to complete most jobs in a single visit.',
     year: '2023',
@@ -152,8 +152,8 @@ export default function TeamPage() {
               { icon: Award, value: '100%', label: 'Licensed & Insured' }
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="bg-brand-red/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-8 h-8 text-brand-red" />
+                <div className="bg-brand-cyan/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-8 h-8 text-brand-cyan" />
                 </div>
                 <div className="text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
                 <div className="text-gray-600">{stat.label}</div>
@@ -220,7 +220,7 @@ export default function TeamPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-brand-red">
+      <section className="py-16 bg-brand-cyan">
         <div className="container mx-auto px-4 text-center text-white">
           <div className="mb-8">
             <Logo size="md" variant="white" className="mx-auto mb-6" />
@@ -236,13 +236,13 @@ export default function TeamPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="tel:+13608832506"
-              className="bg-white text-brand-red px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
+              className="bg-white text-brand-cyan px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
             >
               Call Now: (360) 883-2506
             </a>
             <a 
               href="/booking"
-              className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-brand-red transition-colors"
+              className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-brand-cyan transition-colors"
             >
               Schedule Online
             </a>

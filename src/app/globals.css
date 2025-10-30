@@ -7,17 +7,16 @@
 
 @layer base {
   :root {
-    /* Brand Palette */
-    --brand-red: 350 74% 45%;
-    --brand-red-dark: 350 74% 35%;
-    --brand-red-light: 350 74% 55%;
-    --brand-gray: 240 5% 17%; /* Updated from 0 0% 17% */
-    --brand-gray-light: 240 5% 40%; /* Updated from 0 0% 40% */
-    --brand-silver: 0 0% 96%;
-    --brand-blue: 206 72% 44%;
+    /* H2O Plumbing Brand Palette */
+    --brand-cyan: 196 100% 43%; /* #00A3D9 - logo water drop blue */
+    --brand-cyan-dark: 196 100% 38%; /* Darker blue */
+    --brand-cyan-light: 196 100% 55%; /* Lighter blue */
+    --brand-turquoise: 194 100% 45%; /* #00b8e6 - lighter accent */
+    --brand-black: 0 0% 0%; /* Pure black from logo */
+    --brand-gray: 215 25% 27%; /* #334155 - dark gray */
+    --brand-gray-light: 215 16% 47%; /* #64748b - medium gray */
+    --brand-gray-lighter: 214 32% 91%; /* #e2e8f0 - light gray */
     --brand-white: 0 0% 100%;
-  /* Navy base for dark backgrounds (approx #0f172a) */
-  --brand-navy: 218 45% 11%;
 
     /* Light Theme System Tokens */
     --background: var(--brand-white);
@@ -26,43 +25,43 @@
     --card-foreground: var(--brand-gray);
     --popover: var(--brand-white);
     --popover-foreground: var(--brand-gray);
-    --primary: var(--brand-red);
+    --primary: var(--brand-cyan);
     --primary-foreground: var(--brand-white);
-    --secondary: var(--brand-blue);
-    --secondary-foreground: var(--brand-white);
-    --muted: var(--brand-silver);
+    --secondary: var(--brand-turquoise);
+    --secondary-foreground: var(--brand-black);
+    --muted: var(--brand-gray-lighter);
     --muted-foreground: var(--brand-gray-light);
-    --accent: var(--brand-blue);
+    --accent: var(--brand-cyan);
     --accent-foreground: var(--brand-white);
-    --destructive: var(--brand-red);
+    --destructive: 0 84% 60%; /* Red for errors */
     --destructive-foreground: var(--brand-white);
-    --border: var(--brand-silver);
-    --input: var(--brand-silver);
-    --ring: var(--brand-red);
+    --border: var(--brand-gray-lighter);
+    --input: var(--brand-gray-lighter);
+    --ring: var(--brand-cyan);
     --radius: 0.25rem;
   }
 
   .dark {
     /* Dark Theme System Tokens */
-    --background: 240 5% 10%; /* Dark blue-gray */
+    --background: 215 25% 10%; /* Dark gray/black */
     --foreground: 0 0% 98%;
-    --card: 240 5% 12%;
+    --card: 215 25% 12%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 5% 10%;
+    --popover: 215 25% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 350 85% 55%; /* Brighter red for dark mode */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 206 80% 58%; /* Brighter blue for dark mode */
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 5% 18%;
+    --primary: 195 100% 60%; /* Brighter cyan for dark mode */
+    --primary-foreground: 0 0% 0%;
+    --secondary: 180 100% 55%; /* Brighter turquoise for dark mode */
+    --secondary-foreground: 0 0% 0%;
+    --muted: 215 25% 18%;
     --muted-foreground: 0 0% 63.9%;
-    --accent: 240 5% 18%;
+    --accent: 215 25% 18%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 50.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5% 20%;
-    --input: 240 5% 20%;
-    --ring: 350 85% 55%;
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 195 100% 60%;
   }
 }
 

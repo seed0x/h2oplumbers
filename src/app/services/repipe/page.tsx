@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { BUSINESS_DATA } from '@/lib/business-data'
-import { CheckCircle2, Home, Wrench, Shield, Clock, Phone, Droplets, AlertTriangle, Award, TrendingUp } from 'lucide-react'
+import { CheckCircle2, Home, Wrench, Shield, Clock, Phone, Droplets, AlertTriangle, Award, TrendingUp, ChevronRight } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Whole House Repipe Services Vancouver WA | Copper & PEX Repiping',
@@ -157,14 +157,16 @@ export default function RepipePage() {
   return (
     <div className="min-h-screen">
       {/* Breadcrumbs */}
-      <nav className="bg-slate-50 py-4">
+      <nav className="bg-slate-50 py-4" aria-label="Breadcrumb">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-brand-red">Services</Link>
-            <span>/</span>
-            <span className="text-brand-red">Repipe Services</span>
+            <Link href="/" className="hover:text-brand-cyan flex items-center" aria-label="Home">
+              <Home className="w-4 h-4" />
+            </Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <Link href="/services" className="hover:text-brand-cyan">Services</Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <span className="text-brand-cyan font-medium">Repipe Services</span>
           </div>
         </div>
       </nav>
@@ -193,7 +195,7 @@ export default function RepipePage() {
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <a
                     href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                    className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                    className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                   >
                     <Phone className="w-5 h-5" />
                     Call {BUSINESS_DATA.phone}
@@ -203,50 +205,64 @@ export default function RepipePage() {
                 {/* Trust Badges */}
                 <div className="flex flex-wrap gap-4 text-sm text-slate-300">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Licensed & Insured
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Family-Owned Since 2004
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Copper & PEX Available
                   </div>
                 </div>
               </div>
               
               {/* Right Column - Contact Form */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-7">
-                <div className="text-center mb-5">
-                  <h2 className="text-xl font-semibold text-slate-900 mb-1">Request Repipe Estimate</h2>
-                  <p className="text-sm text-slate-500">Free home assessment. Transparent pricing.</p>
+                <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-8">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center gap-2 bg-cyan-50 rounded-full px-4 py-2 mb-3">
+                    <Award className="w-4 h-4 text-brand-cyan" />
+                    <span className="text-xs font-bold text-brand-cyan uppercase tracking-wider">Free Assessment</span>
+                  </div>
+                  <h2 className="text-2xl font-heading font-bold text-slate-900 mb-2">Get Your Custom Quote</h2>
+                  <p className="text-sm text-slate-600">Transparent pricing • No hidden fees • Expert consultation</p>
                 </div>
                 <form className="space-y-4">
                   <div>
-                    <Input placeholder="Your Name" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input placeholder="Your Name" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
-                    <Input type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
-                    <Input placeholder="Your Address" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input placeholder="Your Address" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
                     <Textarea 
                       placeholder="Describe your plumbing issues (e.g., frequent leaks, rusty water, low pressure)" 
-                      className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600 min-h-[80px]"
+                      className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan min-h-[80px]"
                     />
                   </div>
                   <Button
                     type="submit"
-                    className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold py-5 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    Get Free Estimate
+                    Get Free Estimate Today
                   </Button>
                 </form>
-                <p className="text-[10px] text-slate-500 mt-4 text-center leading-relaxed">
+                <div className="flex items-center justify-center gap-4 mt-5 text-xs text-slate-500">
+                  <div className="flex items-center gap-1">
+                    <CheckCircle2 className="w-3 h-3 text-green-600" />
+                    <span>Same-day response</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <CheckCircle2 className="w-3 h-3 text-green-600" />
+                    <span>Licensed experts</span>
+                  </div>
+                </div>
+                <p className="text-[10px] text-slate-500 mt-3 text-center leading-relaxed">
                   By submitting this form you agree to be contacted about your request.
                 </p>
               </div>
@@ -255,25 +271,25 @@ export default function RepipePage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-slate-900 text-white">
+      {/* Trust & Social Proof Bar */}
+      <section className="py-12 bg-gradient-to-r from-brand-cyan to-brand-cyan-dark text-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">50+</div>
-              <p className="text-lg">Homes Repiped</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">200+</div>
+              <p className="text-sm md:text-base opacity-90">Homes Repiped</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Licensed</div>
-              <p className="text-lg">& Insured</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">$8-15K</div>
+              <p className="text-sm md:text-base opacity-90">Average Investment</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Warranty</div>
-              <p className="text-lg">On All Work</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">3-5 Days</div>
+              <p className="text-sm md:text-base opacity-90">Typical Timeline</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">20+ Yrs</div>
-              <p className="text-lg">Experience</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">20+ Yrs</div>
+              <p className="text-sm md:text-base opacity-90">Experience</p>
             </div>
           </div>
         </div>
@@ -289,26 +305,27 @@ export default function RepipePage() {
           
           <div className="grid md:grid-cols-2 gap-6">
             {repipeServices.map((service, index) => (
-              <Card key={index} className="border-2 border-slate-200 hover:border-brand-red hover:shadow-xl transition-all duration-300 group">
-                <CardHeader>
+              <Card key={index} className="border-2 border-slate-200 hover:border-brand-cyan hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-cyan/5 to-transparent rounded-bl-full"></div>
+                <CardHeader className="relative z-10">
                   <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-brand-red transition-colors">{service.name}</CardTitle>
-                    <Badge className="bg-red-100 text-brand-red font-bold text-base px-3 py-1">
+                    <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-brand-cyan transition-colors">{service.name}</CardTitle>
+                    <Badge className="bg-cyan-50 text-brand-cyan border-2 border-brand-cyan/20 font-bold text-base px-3 py-1">
                       {service.price}
                     </Badge>
                   </div>
-                  <CardDescription className="text-slate-600">{service.description}</CardDescription>
+                  <CardDescription className="text-slate-600 leading-relaxed">{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center text-slate-700">
-                        <CheckCircle2 className="w-5 h-5 text-brand-red mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-2 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <MasterButton className="w-full bg-brand-red hover:bg-brand-red-dark text-white font-semibold">
+                  <MasterButton className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-semibold">
                     <Link href="/booking">Schedule Assessment</Link>
                   </MasterButton>
                 </CardContent>
@@ -318,49 +335,72 @@ export default function RepipePage() {
         </div>
       </section>
 
-      {/* Signs You Need a Repipe */}
+      {/* Signs You Need a Repipe - High Urgency Section */}
       <section className="py-20 px-4 bg-slate-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4 uppercase">Signs You Need a Repipe</h2>
-            <p className="text-xl text-slate-600">Is it time to replace your home's plumbing?</p>
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-orange-100 rounded-full px-4 py-2 mb-4">
+              <AlertTriangle className="w-5 h-5 text-orange-600" />
+              <span className="text-sm font-bold text-orange-600 uppercase tracking-wider">Warning Signs</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4 uppercase">Is Your Home at Risk?</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">These warning signs indicate your plumbing system may be failing. Don't wait for a major failure.</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {signsYouNeedRepipe.map((sign, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-md border-2 border-slate-200 hover:border-brand-red transition-all">
+              <div key={index} className="bg-white p-6 rounded-xl shadow-md border-l-4 border-orange-500 hover:shadow-xl transition-all group">
                 <div className="flex items-start gap-3">
-                  <AlertTriangle className="w-6 h-6 text-brand-red flex-shrink-0 mt-1" />
-                  <p className="text-slate-700 font-medium">{sign}</p>
+                  <AlertTriangle className="w-6 h-6 text-orange-600 flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
+                  <p className="text-slate-700 font-medium leading-snug">{sign}</p>
                 </div>
               </div>
             ))}
           </div>
           
-          <div className="mt-12 text-center">
-            <p className="text-lg text-slate-600 mb-6">
-              If you're experiencing two or more of these issues, it may be time to consider a whole house repipe.
-            </p>
-            <MasterButton className="bg-brand-red hover:bg-brand-red-dark text-white font-bold px-8 py-4 text-lg">
-              <Link href="/booking">Schedule Free Assessment</Link>
-            </MasterButton>
+          <div className="mt-12 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 border-2 border-orange-200">
+            <div className="text-center max-w-3xl mx-auto">
+              <h3 className="text-2xl font-heading font-bold text-slate-900 mb-3">Experiencing 2+ of These Signs?</h3>
+              <p className="text-lg text-slate-700 mb-6">
+                Your plumbing system may be reaching end-of-life. A whole house repipe can prevent costly water damage and provide peace of mind for decades.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href={`tel:${BUSINESS_DATA.phoneRaw}`}
+                  className="inline-flex items-center justify-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg flex-1 sm:flex-initial"
+                >
+                  <Phone className="w-5 h-5" />
+                  Emergency Call {BUSINESS_DATA.phone}
+                </a>
+                <MasterButton className="bg-white hover:bg-slate-50 text-brand-cyan border-2 border-brand-cyan font-bold px-8 py-4 text-lg flex-1 sm:flex-initial">
+                  <Link href="/booking">Schedule Free Assessment</Link>
+                </MasterButton>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Material Comparison */}
+      {/* Material Comparison - Decision Support */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
+            <Badge className="bg-cyan-50 text-brand-cyan border-2 border-brand-cyan/20 font-bold text-sm px-4 py-2 mb-4">
+              Material Selection Guide
+            </Badge>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4 uppercase">Copper vs PEX</h2>
-            <p className="text-xl text-slate-600">Which material is right for your home?</p>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">Both materials are excellent choices. Here's what you need to know to make the right decision for your home.</p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
             {materials.map((mat, index) => (
-              <Card key={index} className="border-2 border-slate-200">
-                <CardHeader>
-                  <CardTitle className="text-3xl font-heading font-bold text-brand-red uppercase text-center">{mat.material}</CardTitle>
+              <Card key={index} className="border-2 border-slate-200 hover:border-brand-cyan hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-brand-cyan to-brand-cyan-dark"></div>
+                <CardHeader className="pt-8">
+                  <CardTitle className="text-3xl font-heading font-bold text-brand-cyan uppercase text-center mb-2">{mat.material}</CardTitle>
+                  <div className="text-center text-sm text-slate-500 font-medium">
+                    {mat.material === 'Copper' ? 'Traditional • Premium' : 'Modern • Flexible'}
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <div className="mb-6">
@@ -396,16 +436,24 @@ export default function RepipePage() {
             ))}
           </div>
           
-          <div className="mt-12 bg-slate-100 rounded-xl p-8">
-            <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4 text-center">Not sure which to choose?</h3>
-            <p className="text-lg text-slate-600 text-center mb-6">
-              We'll help you select the best material based on your home's needs, water quality, budget, and long-term goals.
-            </p>
-            <div className="text-center">
-              <a href={`tel:${BUSINESS_DATA.phoneRaw}`} className="inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors">
-                <Phone className="w-5 h-5" />
-                Call for Expert Advice
-              </a>
+          <div className="mt-12 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-8 md:p-10 border-2 border-brand-cyan/20">
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="w-16 h-16 bg-brand-cyan rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-4">Need Expert Guidance?</h3>
+              <p className="text-lg text-slate-700 mb-6 leading-relaxed">
+                We'll evaluate your home's specific needs, water quality, budget, and goals to recommend the best material. No pressure—just honest, expert advice.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href={`tel:${BUSINESS_DATA.phoneRaw}`} className="inline-flex items-center justify-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg flex-1 sm:flex-initial sm:min-w-[240px]">
+                  <Phone className="w-5 h-5" />
+                  Call for Expert Advice
+                </a>
+                <MasterButton className="bg-white hover:bg-slate-50 text-brand-cyan border-2 border-brand-cyan font-bold px-8 py-4 text-lg flex-1 sm:flex-initial sm:min-w-[240px]">
+                  <Link href="/booking">Schedule Consultation</Link>
+                </MasterButton>
+              </div>
             </div>
           </div>
         </div>
@@ -422,7 +470,7 @@ export default function RepipePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-red">
+                <div className="w-16 h-16 bg-brand-cyan/10 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-cyan">
                   {benefit.icon}
                 </div>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mb-2">{benefit.title}</h3>
@@ -444,10 +492,10 @@ export default function RepipePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {repipeProcess.map((item, index) => (
               <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-brand-red rounded-full flex items-center justify-center mx-auto mb-4 text-white">
+                <div className="w-20 h-20 bg-brand-cyan rounded-full flex items-center justify-center mx-auto mb-4 text-white">
                   {item.icon}
                 </div>
-                <div className="text-3xl font-heading font-bold text-brand-red mb-2">{item.step}</div>
+                <div className="text-3xl font-heading font-bold text-brand-cyan mb-2">{item.step}</div>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mb-2">{item.title}</h3>
                 <p className="text-slate-600">{item.description}</p>
               </div>
@@ -456,12 +504,15 @@ export default function RepipePage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ Section - Address Objections */}
       <section className="py-20 px-4 bg-slate-50">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
+            <Badge className="bg-white text-brand-cyan border-2 border-brand-cyan/20 font-bold text-sm px-4 py-2 mb-4">
+              Your Questions Answered
+            </Badge>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4 uppercase">Repipe FAQs</h2>
-            <p className="text-xl text-slate-600">Common questions about whole house repiping</p>
+            <p className="text-xl text-slate-600">Everything you need to know about whole house repiping</p>
           </div>
           
           <div className="space-y-6">
@@ -487,33 +538,60 @@ export default function RepipePage() {
                 a: 'Both are excellent choices. Copper is traditional and proven. PEX is modern, flexible, and typically less expensive. We\'ll help you decide based on your specific situation.'
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-md border-2 border-slate-200">
-                <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">{faq.q}</h3>
-                <p className="text-slate-600 leading-relaxed">{faq.a}</p>
+              <div key={index} className="bg-white p-7 rounded-xl shadow-md border-l-4 border-brand-cyan hover:shadow-lg transition-all">
+                <h3 className="text-lg font-heading font-bold text-slate-900 mb-3 flex items-start gap-3">
+                  <span className="text-brand-cyan text-2xl font-bold flex-shrink-0">Q.</span>
+                  <span>{faq.q}</span>
+                </h3>
+                <p className="text-slate-600 leading-relaxed ml-9">{faq.a}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 uppercase">Ready to Upgrade Your Home's Plumbing?</h2>
-          <p className="text-xl mb-8 text-slate-200">
-            Stop dealing with leaks, low pressure, and rusty water. Let's discuss your repipe options.
+      {/* Final CTA - Strong Close */}
+      <section className="py-24 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `url('/images/hero-background-pattern.svg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <Badge className="bg-brand-cyan/20 text-brand-cyan border-2 border-brand-cyan font-bold text-sm px-4 py-2 mb-6">
+            Invest in Your Home's Future
+          </Badge>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 uppercase leading-tight">
+            Stop Band-Aiding <span className="text-brand-cyan">Failing Pipes</span>
+          </h2>
+          <p className="text-xl md:text-2xl mb-10 text-slate-200 leading-relaxed max-w-3xl mx-auto">
+            Get lasting peace of mind with a professional whole house repipe. Clean water, better pressure, no more leaks—for decades to come.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a
               href={`tel:${BUSINESS_DATA.phoneRaw}`}
-              className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+              className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-10 py-5 rounded-lg font-bold text-xl transition-all shadow-2xl hover:shadow-brand-cyan/20 hover:scale-105 flex-1 sm:flex-initial"
             >
-              <Phone className="w-5 h-5" />
+              <Phone className="w-6 h-6" />
               Call {BUSINESS_DATA.phone}
             </a>
-            <MasterButton className="bg-white text-brand-red hover:bg-slate-100 font-bold px-8 py-4 text-lg">
+            <MasterButton className="bg-white text-brand-cyan hover:bg-slate-100 font-bold px-10 py-5 text-xl shadow-xl hover:scale-105 transition-all flex-1 sm:flex-initial">
               <Link href="/booking">Schedule Free Assessment</Link>
             </MasterButton>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-300">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-brand-cyan" />
+              Free home assessment
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-brand-cyan" />
+              Transparent pricing
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-brand-cyan" />
+              Licensed & insured
+            </div>
           </div>
         </div>
       </section>

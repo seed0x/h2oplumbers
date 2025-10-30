@@ -127,7 +127,7 @@ export function AccessibilityEnhancements({ children }: AccessibilityEnhancement
       focusStyle.id = 'enhanced-focus-styles'
       focusStyle.textContent = `
         *:focus {
-          outline: 2px solid hsl(var(--brand-red)) !important;
+          outline: 2px solid hsl(var(--brand-cyan)) !important;
           outline-offset: 2px !important;
           box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.2) !important;
         }
@@ -137,7 +137,7 @@ export function AccessibilityEnhancements({ children }: AccessibilityEnhancement
         input:focus,
         select:focus,
         textarea:focus {
-          outline: 3px solid hsl(var(--brand-red)) !important;
+          outline: 3px solid hsl(var(--brand-cyan)) !important;
           outline-offset: 2px !important;
         }
       `

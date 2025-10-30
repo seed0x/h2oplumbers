@@ -21,7 +21,7 @@ const tiServices = [
   {
     title: 'Restaurant Conversions',
     description: 'Transform any space into a fully functional restaurant with proper plumbing infrastructure.',
-    icon: <Utensils className="w-10 h-10 text-brand-red" />,
+    icon: <Utensils className="w-10 h-10 text-brand-cyan" />,
     features: [
       'Kitchen equipment hookups',
       'Grease trap installation',
@@ -34,7 +34,7 @@ const tiServices = [
   {
     title: 'Office Build-Outs',
     description: 'Complete plumbing systems for office spaces, break rooms, and restroom facilities.',
-    icon: <Building className="w-10 h-10 text-brand-red" />,
+    icon: <Building className="w-10 h-10 text-brand-cyan" />,
     features: [
       'Restroom installations',
       'Break room plumbing',
@@ -47,7 +47,7 @@ const tiServices = [
   {
     title: 'Retail Modifications',
     description: 'Plumbing modifications for retail spaces, salons, and customer service areas.',
-    icon: <Store className="w-10 h-10 text-brand-red" />,
+    icon: <Store className="w-10 h-10 text-brand-cyan" />,
     features: [
       'Customer restrooms',
       'Employee facilities',
@@ -60,7 +60,7 @@ const tiServices = [
   {
     title: 'Medical/Dental Offices',
     description: 'Specialized plumbing for healthcare facilities with strict regulatory requirements.',
-    icon: <Stethoscope className="w-10 h-10 text-brand-red" />,
+    icon: <Stethoscope className="w-10 h-10 text-brand-cyan" />,
     features: [
       'Medical-grade fixtures',
       'Sterilization systems',
@@ -112,11 +112,11 @@ export default function TenantImprovementsPage() {
       <nav className="bg-slate-50 py-4">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
+            <Link href="/" className="hover:text-brand-cyan">Home</Link>
             <span>/</span>
-            <Link href="/commercial" className="hover:text-brand-red">Commercial</Link>
+            <Link href="/commercial" className="hover:text-brand-cyan">Commercial</Link>
             <span>/</span>
-            <span className="text-brand-red">Tenant Improvements</span>
+            <span className="text-brand-cyan">Tenant Improvements</span>
           </div>
         </div>
       </nav>
@@ -145,7 +145,7 @@ export default function TenantImprovementsPage() {
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <a
                     href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                    className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                    className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                   >
                     <Phone className="w-5 h-5" />
                     Call {BUSINESS_DATA.phone}
@@ -155,15 +155,15 @@ export default function TenantImprovementsPage() {
                 {/* Trust Badges */}
                 <div className="flex flex-wrap gap-4 text-sm text-slate-300">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Licensed & Insured
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Commercial Specialists
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Code Compliant
                   </div>
                 </div>
@@ -223,19 +223,19 @@ export default function TenantImprovementsPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">50+</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">50+</div>
               <p className="text-lg">TI Projects Completed</p>
             </div>
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">1-2 Week</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">1-2 Week</div>
               <p className="text-lg">Average Turnaround</p>
             </div>
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Licensed</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">Licensed</div>
               <p className="text-lg">Commercial Plumber</p>
             </div>
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Full</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">Full</div>
               <p className="text-lg">Service & Permits</p>
             </div>
           </div>
@@ -252,14 +252,14 @@ export default function TenantImprovementsPage() {
           
           <div className="grid md:grid-cols-2 gap-8">
             {tiServices.map((service, index) => (
-              <Card key={index} className="border-2 border-slate-200 hover:border-brand-red hover:shadow-xl transition-all duration-300 group">
+              <Card key={index} className="border-2 border-slate-200 hover:border-brand-cyan hover:shadow-xl transition-all duration-300 group">
                 <CardHeader>
                   <div className="flex items-start gap-4 mb-4">
                     <div className="bg-red-100 rounded-lg p-3 flex-shrink-0">
                       {service.icon}
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-2xl font-bold text-slate-900 group-hover:text-brand-red transition-colors mb-2">{service.title}</CardTitle>
+                      <CardTitle className="text-2xl font-bold text-slate-900 group-hover:text-brand-cyan transition-colors mb-2">{service.title}</CardTitle>
                       <CardDescription className="text-base text-slate-600">{service.description}</CardDescription>
                     </div>
                   </div>
@@ -268,7 +268,7 @@ export default function TenantImprovementsPage() {
                   <div className="grid md:grid-cols-2 gap-3">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-start">
-                        <CheckCircle2 className="w-4 h-4 text-brand-red mr-2 flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-brand-cyan mr-2 flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-slate-700">{feature}</span>
                       </div>
                     ))}
@@ -291,13 +291,13 @@ export default function TenantImprovementsPage() {
           <div className="max-w-4xl mx-auto space-y-6">
             {tiProcess.map((process, index) => (
               <div key={index} className="flex items-start bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow border-2 border-slate-200">
-                <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-brand-red to-red-700 text-white rounded-full flex items-center justify-center text-xl font-bold mr-6 shadow-lg">
+                <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-brand-cyan to-red-700 text-white rounded-full flex items-center justify-center text-xl font-bold mr-6 shadow-lg">
                   {process.step}
                 </div>
                 <div className="flex-grow">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
                     <h3 className="text-xl font-bold text-slate-900">{process.title}</h3>
-                    <Badge className="bg-red-100 text-brand-red border-0 w-fit">{process.timeline}</Badge>
+                    <Badge className="bg-red-100 text-brand-cyan border-0 w-fit">{process.timeline}</Badge>
                   </div>
                   <p className="text-slate-600">{process.description}</p>
                 </div>
@@ -321,7 +321,7 @@ export default function TenantImprovementsPage() {
               
               <div className="space-y-6">
                 <div className="flex items-start bg-slate-50 p-5 rounded-lg">
-                  <div className="bg-red-100 text-brand-red rounded-lg p-3 mr-4 flex-shrink-0">
+                  <div className="bg-red-100 text-brand-cyan rounded-lg p-3 mr-4 flex-shrink-0">
                     <Shield className="w-6 h-6" />
                   </div>
                   <div className="flex-1">
@@ -330,7 +330,7 @@ export default function TenantImprovementsPage() {
                   </div>
                 </div>
                 <div className="flex items-start bg-slate-50 p-5 rounded-lg">
-                  <div className="bg-red-100 text-brand-red rounded-lg p-3 mr-4 flex-shrink-0">
+                  <div className="bg-red-100 text-brand-cyan rounded-lg p-3 mr-4 flex-shrink-0">
                     <Target className="w-6 h-6" />
                   </div>
                   <div className="flex-1">
@@ -339,7 +339,7 @@ export default function TenantImprovementsPage() {
                   </div>
                 </div>
                 <div className="flex items-start bg-slate-50 p-5 rounded-lg">
-                  <div className="bg-red-100 text-brand-red rounded-lg p-3 mr-4 flex-shrink-0">
+                  <div className="bg-red-100 text-brand-cyan rounded-lg p-3 mr-4 flex-shrink-0">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
                   <div className="flex-1">
@@ -352,7 +352,7 @@ export default function TenantImprovementsPage() {
               <div className="mt-8">
                 <a
                   href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                  className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                  className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                 >
                   <Phone className="w-5 h-5" />
                   Discuss Your Project
@@ -361,7 +361,7 @@ export default function TenantImprovementsPage() {
             </div>
             
             <div className="bg-slate-50 p-8 rounded-xl border-2 border-slate-200">
-              <h3 className="text-2xl font-heading font-bold text-slate-900 mb-6 text-center uppercase border-b-4 border-brand-red pb-3">Service Areas</h3>
+              <h3 className="text-2xl font-heading font-bold text-slate-900 mb-6 text-center uppercase border-b-4 border-brand-cyan pb-3">Service Areas</h3>
               
               <div className="grid grid-cols-2 gap-3 mb-8">
                 {[
@@ -375,7 +375,7 @@ export default function TenantImprovementsPage() {
                   'Longview, WA'
                 ].map((area, index) => (
                   <div key={index} className="flex items-center bg-white p-3 rounded-lg shadow-sm">
-                    <MapPin className="w-4 h-4 text-brand-red mr-2 flex-shrink-0" />
+                    <MapPin className="w-4 h-4 text-brand-cyan mr-2 flex-shrink-0" />
                     <span className="text-slate-700 text-sm font-medium">{area}</span>
                   </div>
                 ))}
@@ -385,19 +385,19 @@ export default function TenantImprovementsPage() {
                 <h4 className="text-lg font-bold text-slate-900">Why Choose H2O?</h4>
                 <div className="space-y-3">
                   <div className="flex items-start">
-                    <CheckCircle2 className="w-5 h-5 text-brand-red mr-3 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-3 flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-700">20+ years commercial experience</span>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="w-5 h-5 text-brand-red mr-3 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-3 flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-700">Licensed & insured plumber</span>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="w-5 h-5 text-brand-red mr-3 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-3 flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-700">Permit assistance included</span>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="w-5 h-5 text-brand-red mr-3 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-3 flex-shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-700">Competitive pricing</span>
                   </div>
                 </div>
@@ -408,7 +408,7 @@ export default function TenantImprovementsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-brand-red to-red-700 text-white relative overflow-hidden">
+      <section className="py-20 px-4 bg-gradient-to-br from-brand-cyan to-red-700 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="flex items-center justify-center mb-6">
@@ -421,7 +421,7 @@ export default function TenantImprovementsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={`tel:${BUSINESS_DATA.phoneRaw}`}
-              className="inline-flex items-center justify-center gap-3 bg-white text-brand-red hover:bg-slate-100 px-8 py-5 rounded-lg font-bold text-lg transition-colors shadow-lg"
+              className="inline-flex items-center justify-center gap-3 bg-white text-brand-cyan hover:bg-slate-100 px-8 py-5 rounded-lg font-bold text-lg transition-colors shadow-lg"
             >
               <Phone className="w-6 h-6" />
               Call {BUSINESS_DATA.phone} Now

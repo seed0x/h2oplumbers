@@ -58,7 +58,7 @@ export function ImageGallery({
               className={cn(
                 'px-4 py-2 rounded-full text-sm font-medium transition-all duration-200',
                 selectedCategory === category
-                  ? 'bg-brand-red text-white'
+                  ? 'bg-brand-cyan text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               )}
             >
@@ -174,7 +174,7 @@ export function TeamGallery({ members, className = '' }: TeamGalleryProps) {
           {/* Member Info */}
           <div className="text-center">
             <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
-            <p className="text-brand-red font-medium">{member.role}</p>
+            <p className="text-brand-cyan font-medium">{member.role}</p>
             {member.bio && (
               <p className="text-gray-600 text-sm mt-2">{member.bio}</p>
             )}
@@ -262,7 +262,7 @@ export function FleetGallery({ vehicles, className = '' }: FleetGalleryProps) {
             className={cn(
               'flex-shrink-0 relative w-20 h-14 rounded overflow-hidden border-2 transition-all duration-200',
               index === currentIndex
-                ? 'border-brand-red'
+                ? 'border-brand-cyan'
                 : 'border-transparent hover:border-gray-300'
             )}
           >
@@ -287,7 +287,7 @@ export function FleetGallery({ vehicles, className = '' }: FleetGalleryProps) {
             className={cn(
               'w-2 h-2 rounded-full transition-all duration-200',
               index === currentIndex
-                ? 'bg-brand-red'
+                ? 'bg-brand-cyan'
                 : 'bg-gray-300 hover:bg-gray-400'
             )}
             aria-label={`Go to slide ${index + 1}`}

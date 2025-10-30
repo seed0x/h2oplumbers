@@ -1,21 +1,12 @@
 import { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
-import { MasterButton } from '@/components/ui/master-button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Breadcrumbs } from '@/components/ui/breadcrumbs'
-import { contactInfo } from '@/config/site'
-import { AlertTriangle, Flame, Waves, Search, ShowerHead, Home as HomeIcon, Phone, Shield, Activity } from 'lucide-react'
+import { AlertTriangle, Flame, Waves, Search, ShowerHead, Home as HomeIcon, Phone, Shield, Activity, Star, CheckCircle2, Clock, Award, Droplet, ChevronRight } from 'lucide-react'
 import { BUSINESS_DATA } from '@/lib/business-data'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export const metadata: Metadata = {
-  title: 'Residential Plumbing Services Vancouver, Longview WA | Clark & Cowlitz County | H2O',
-  description: 'Professional residential plumbing for homeowners in Vancouver, Longview, Camas, Washougal, Ridgefield. Same-day service, water heater repair, drain cleaning, repiping. Family-owned since 2004. Licensed & insured.',
-  keywords: 'residential plumbing, home plumber Vancouver WA, same-day plumbing Longview, water heater repair, drain cleaning Camas, repipe Ridgefield, plumber Clark County',
+  title: 'Residential Plumbing Services Vancouver WA | H2O Plumbing',
+  description: 'Expert residential plumbing services in Vancouver WA. Same-day repairs, water heaters, drain cleaning, repiping & more. 30+ years experience. Licensed & insured. Call (360) 433-9743',
+  keywords: 'residential plumbing Vancouver WA, home plumber, water heater repair, drain cleaning, emergency plumbing, H2O Plumbing',
 }
 
 const residentialServices = [
@@ -82,363 +73,451 @@ const maintenanceProgram = [
 ]
 
 export default function ResidentialPage() {
-  const breadcrumbItems = [
-    { label: 'Services', href: '/services' },
-    { label: 'Residential' }
-  ];
-
   return (
     <div className="min-h-screen">
       {/* Breadcrumbs */}
-      <nav className="bg-slate-50 py-4">
+      <nav className="bg-slate-50 py-3 border-b border-slate-200" aria-label="Breadcrumb">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
-            <span>/</span>
-            <span className="text-brand-red">Residential Services</span>
+            <Link href="/" className="hover:text-brand-cyan transition-colors flex items-center" aria-label="Home">
+              <HomeIcon className="w-4 h-4" />
+            </Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <Link href="/services" className="hover:text-brand-cyan transition-colors">Services</Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <span className="text-brand-cyan font-semibold">Residential</span>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section with Contact Form */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white pt-20 pb-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `url('/images/hero-background-pattern.svg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}></div>
+      {/* Hero Section - Clean White Design */}
+      <section className="relative overflow-hidden bg-white pt-12 pb-16 md:pb-20">
+        {/* Grid pattern background */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 opacity-[0.03]" style={{
+            backgroundImage: `
+              linear-gradient(to right, rgb(6 182 212) 1px, transparent 1px),
+              linear-gradient(to bottom, rgb(6 182 212) 1px, transparent 1px)
+            `,
+            backgroundSize: '60px 60px'
+          }} />
+        </div>
+
+        {/* Subtle accent gradients */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-brand-cyan/5 via-transparent to-transparent rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Column - Text Content */}
-              <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold uppercase tracking-tight mb-6">
-                  Residential Plumbing Services
-                </h1>
-                <p className="text-xl md:text-2xl mb-8 leading-relaxed text-slate-200">
-                  Professional plumbing services for homeowners throughout Clark County and Cowlitz County. From kitchen sinks to whole-home repiping, we treat your home like our own. Serving families in Vancouver, Longview, Castle Rock, Camas, Washougal, Ridgefield, and all surrounding communities.
-                </p>
-                
-                {/* Quick Contact Options */}
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <a
-                    href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                    className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
-                  >
-                    <Phone className="w-5 h-5" />
-                    Call {BUSINESS_DATA.phone}
-                  </a>
+            {/* Trust Bar */}
+            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-6 mb-10">
+              <div className="flex items-center gap-2 text-sm bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
+                <div className="flex -space-x-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
                 </div>
-                
-                {/* Trust Badges */}
-                <div className="flex flex-wrap gap-4 text-sm text-slate-300">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
-                    Licensed & Insured
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
-                    Family-Owned Since 2004
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
-                    Same-Day Service
-                  </div>
-                </div>
+                <span className="font-bold text-slate-900">4.9/5 Rating</span>
               </div>
-              
-              {/* Right Column - Contact Form */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-7">
-                <div className="text-center mb-5">
-                  <h2 className="text-xl font-semibold text-slate-900 mb-1">Request a Free Quote</h2>
-                  <p className="text-sm text-slate-500">Fast response during business hours. No obligation.</p>
+              <div className="h-4 w-px bg-slate-300 hidden sm:block" />
+              <div className="flex items-center gap-2 text-sm bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
+                <Shield className="w-4 h-4 text-brand-cyan" />
+                <span className="font-bold text-slate-900">Licensed & Insured</span>
+              </div>
+              <div className="h-4 w-px bg-slate-300 hidden sm:block" />
+              <div className="flex items-center gap-2 text-sm bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
+                <Clock className="w-4 h-4 text-brand-cyan" />
+                <span className="font-bold text-slate-900">30+ Years Experience</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+              {/* Left Column - Content */}
+              <div className="lg:pt-4">
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-cyan/10 to-brand-turquoise/10 border border-brand-cyan/20 rounded-full px-4 py-2 mb-6">
+                  <HomeIcon className="w-4 h-4 text-brand-cyan" />
+                  <span className="text-sm font-semibold text-slate-700">Residential Services</span>
                 </div>
-                <form className="space-y-4" aria-label="Request service quote form">
-                  <div>
-                    <label className="sr-only" htmlFor="hero-name">Name</label>
-                    <Input id="hero-name" placeholder="Your Name" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
-                  </div>
-                  <div>
-                    <label className="sr-only" htmlFor="hero-phone">Phone Number</label>
-                    <Input id="hero-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
-                  </div>
-                  <div>
-                    <Select>
-                      <SelectTrigger className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600">
-                        <SelectValue placeholder="Service Needed" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="emergency">Same-Day Service</SelectItem>
-                        <SelectItem value="water-heater">Water Heater Repair</SelectItem>
-                        <SelectItem value="drain-cleaning">Drain Cleaning</SelectItem>
-                        <SelectItem value="camera-inspection">Camera Inspection</SelectItem>
-                        <SelectItem value="fixture-installation">Fixture Installation</SelectItem>
-                        <SelectItem value="repipe">Repipe & Pipe Repair</SelectItem>
-                        <SelectItem value="bathroom-remodel">Bathroom Remodel</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+
+                <h1 className="text-4xl md:text-5xl font-bold font-heading mb-5 leading-[1.1] text-slate-900">
+                  Vancouver's Trusted
+                  <br />
+                  <span className="bg-gradient-to-r from-brand-cyan via-brand-turquoise to-brand-cyan bg-clip-text text-transparent">
+                    Home Plumbing Experts
+                  </span>
+                </h1>
+
+                <p className="text-base md:text-lg text-slate-600 mb-6 leading-relaxed">
+                  Family-owned plumbing services serving Vancouver homeowners for over 30 years. From emergency repairs to complete installations, we treat every home like our own.
+                </p>
+
+                {/* Primary CTAs */}
+                <div className="flex flex-col sm:flex-row gap-3 mb-8">
+                  <a
+                    href="tel:+13604339743"
+                    className="group relative inline-flex items-center justify-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold px-8 py-4 rounded-xl text-base shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                    <Phone className="w-5 h-5 relative z-10" />
+                    <span className="relative z-10">Call Now (360) 433-9743</span>
+                  </a>
+                  <a
+                    href="#quote-form"
+                    className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-brand-cyan border-2 border-brand-cyan font-bold px-8 py-4 rounded-xl text-base shadow-lg transition-all duration-300"
                   >
                     Get Free Quote
-                  </Button>
-                </form>
-                <p className="text-[10px] text-slate-500 mt-4 text-center leading-relaxed">
-                  By submitting this form you agree to be contacted about your request. We never share your information.
-                </p>
+                  </a>
+                </div>
+
+                {/* Urgency Bar */}
+                <div className="bg-gradient-to-r from-brand-cyan/10 to-brand-turquoise/10 border-l-4 border-brand-cyan rounded-lg p-4 mb-6">
+                  <p className="text-sm text-slate-700">
+                    <span className="font-bold text-brand-cyan">⚡ Same-Day Service Available</span> — Call before 2 PM for same-day appointments
+                  </p>
+                </div>
+
+                {/* Trust Indicators */}
+                <div className="flex flex-wrap items-start gap-4 mb-6">
+                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                    <CheckCircle2 className="w-5 h-5 text-green-500" />
+                    <span>Same-Day Service</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                    <CheckCircle2 className="w-5 h-5 text-green-500" />
+                    <span>Upfront Pricing</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                    <CheckCircle2 className="w-5 h-5 text-green-500" />
+                    <span>100% Satisfaction</span>
+                  </div>
+                </div>
+
+                {/* Stats */}
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { icon: Clock, value: '30+', label: 'Years Serving' },
+                    { icon: HomeIcon, value: '5,000+', label: 'Homes Served' },
+                  ].map((stat, index) => {
+                    const Icon = stat.icon;
+                    return (
+                      <div key={index} className="text-center p-3 rounded-xl bg-slate-50 border border-slate-200">
+                        <Icon className="w-6 h-6 text-brand-cyan mx-auto mb-1.5" />
+                        <div className="text-xl font-bold text-slate-900">{stat.value}</div>
+                        <div className="text-[11px] text-slate-600 font-medium">{stat.label}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Right Column - Contact Form */}
+              <div id="quote-form" className="lg:sticky lg:top-24">
+                <div className="relative rounded-2xl overflow-hidden shadow-xl bg-white border-2 border-brand-cyan/30">
+                  {/* Trust Banner */}
+                  <div className="bg-gradient-to-r from-brand-cyan to-brand-turquoise text-white py-3 px-4 text-center">
+                    <p className="text-sm font-bold">🏆 Trusted by 5,000+ Vancouver Homeowners</p>
+                  </div>
+                  
+                  <div className="p-6 md:p-7">
+                    <div className="text-center mb-5">
+                      <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-brand-cyan to-brand-turquoise rounded-xl mb-3 shadow-lg">
+                        <Droplet className="w-7 h-7 text-white" />
+                      </div>
+                      <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-1.5">
+                        Get Your Free Quote Today
+                      </h2>
+                      <p className="text-slate-600 text-sm">
+                        ✓ Fast Response ✓ No Obligation ✓ Honest Pricing
+                      </p>
+                    </div>
+
+                    <form className="space-y-3.5">
+                      <div>
+                        <label htmlFor="name" className="block text-xs font-semibold text-slate-700 mb-1.5">Full Name *</label>
+                        <input 
+                          type="text" 
+                          id="name" 
+                          required
+                          className="w-full px-4 py-2.5 bg-white border-2 border-slate-200 rounded-lg focus:border-brand-cyan focus:ring-2 focus:ring-brand-cyan/10 outline-none transition-all text-sm text-slate-900"
+                          placeholder="John Smith"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="phone" className="block text-xs font-semibold text-slate-700 mb-1.5">Phone Number *</label>
+                        <input 
+                          type="tel" 
+                          id="phone" 
+                          required
+                          className="w-full px-4 py-2.5 bg-white border-2 border-slate-200 rounded-lg focus:border-brand-cyan focus:ring-2 focus:ring-brand-cyan/10 outline-none transition-all text-sm text-slate-900"
+                          placeholder="(360) 555-0123"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="service" className="block text-xs font-semibold text-slate-700 mb-1.5">Service Needed *</label>
+                        <select 
+                          id="service" 
+                          required
+                          className="w-full px-4 py-2.5 bg-white border-2 border-slate-200 rounded-lg focus:border-brand-cyan focus:ring-2 focus:ring-brand-cyan/10 outline-none transition-all text-sm text-slate-900"
+                        >
+                          <option value="">Select a service...</option>
+                          <option>Emergency Repair</option>
+                          <option>Water Heater</option>
+                          <option>Drain Cleaning</option>
+                          <option>Leak Detection</option>
+                          <option>Fixture Installation</option>
+                          <option>Repipe/Pipe Repair</option>
+                          <option>Other</option>
+                        </select>
+                      </div>
+                      <button
+                        type="submit"
+                        className="w-full bg-gradient-to-r from-brand-cyan to-brand-turquoise hover:from-brand-cyan-dark hover:to-brand-cyan text-white font-bold py-4 rounded-xl text-base shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                      >
+                        Get My Free Quote →
+                      </button>
+                      <div className="text-center mt-4 space-y-2">
+                        <p className="text-xs text-slate-500">
+                          ⚡ Response within 1 hour during business hours
+                        </p>
+                        <p className="text-xs text-slate-500">
+                          🔒 Your info is safe — we never share or sell it
+                        </p>
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Service Stats */}
-      <section className="py-12 bg-slate-900 text-white">
+      {/* Service Stats - Compact Banner */}
+      <section className="py-8 bg-slate-50 border-y border-slate-200">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center max-w-4xl mx-auto">
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">20+ Years</div>
-              <p className="text-lg">Serving Families</p>
+              <div className="text-3xl font-heading font-bold text-brand-cyan mb-1">30+</div>
+              <p className="text-sm text-slate-600 font-medium">Years Experience</p>
             </div>
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Same Day</div>
-              <p className="text-lg">Service Available</p>
+              <div className="text-3xl font-heading font-bold text-brand-cyan mb-1">Same Day</div>
+              <p className="text-sm text-slate-600 font-medium">Service Available</p>
             </div>
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">100%</div>
-              <p className="text-lg">Satisfaction Guarantee</p>
+              <div className="text-3xl font-heading font-bold text-brand-cyan mb-1">100%</div>
+              <p className="text-sm text-slate-600 font-medium">Satisfaction</p>
             </div>
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Licensed</div>
-              <p className="text-lg">Insured & Bonded</p>
+              <div className="text-3xl font-heading font-bold text-brand-cyan mb-1">Licensed</div>
+              <p className="text-sm text-slate-600 font-medium">& Insured</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 px-4 bg-white">
+      <section id="services" className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-brand-cyan/10 px-4 py-2 rounded-full mb-4">
+              <HomeIcon className="w-4 h-4 text-brand-cyan" />
+              <span className="text-sm font-semibold text-brand-cyan">Our Services</span>
+            </div>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4">Complete Residential Plumbing Services</h2>
-            <p className="text-xl text-slate-600">Professional solutions for every plumbing need in your home</p>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">Professional solutions for every plumbing need in your home</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {residentialServices.map((service, index) => {
               const Icon = service.icon
               return (
-                <div key={index} className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                  <div className="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mb-6">
-                    <Icon className="w-8 h-8 text-brand-red" />
+                <div key={index} className="group bg-white border-2 border-slate-200 hover:border-brand-cyan/30 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="w-16 h-16 bg-gradient-to-br from-brand-cyan/10 to-brand-turquoise/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Icon className="w-8 h-8 text-brand-cyan" />
                   </div>
-                  <h3 className="text-2xl font-heading font-bold mb-4 text-slate-900">{service.title}</h3>
-                  <p className="text-slate-700 mb-6 leading-relaxed">
+                  <h3 className="text-2xl font-heading font-bold mb-3 text-slate-900">{service.title}</h3>
+                  <p className="text-slate-600 mb-6 leading-relaxed text-sm">
                     {service.description}
                   </p>
-                  <ul className="text-slate-700 text-sm space-y-2 mb-6">
+                  <ul className="text-slate-600 text-sm space-y-2 mb-6">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start">
-                        <span className="text-brand-red mr-2 text-lg">•</span>
+                        <CheckCircle2 className="w-4 h-4 text-brand-cyan mr-2 flex-shrink-0 mt-0.5" />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <div className="bg-brand-red/10 p-4 rounded-lg">
-                    <p className="text-brand-red font-bold text-sm">{service.price}</p>
+                  <div className="bg-slate-50 border border-brand-cyan/20 p-4 rounded-lg">
+                    <p className="text-brand-cyan font-bold text-sm">{service.price}</p>
                   </div>
                 </div>
               )
             })}
           </div>
-        </div>
-      </section>
 
-      {/* Maintenance Program */}
-      <section className="py-20 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6">
-                Home Maintenance Program
-              </h2>
-              <p className="text-xl text-slate-600 mb-8">
-                Protect your home and prevent costly repairs with our comprehensive plumbing maintenance program.
-              </p>
-              
-              <div className="space-y-4 mb-8">
-                {maintenanceProgram.map((item, index) => (
-                  <div key={index} className="flex items-center">
-                    <span className="text-brand-red mr-3 text-lg">✓</span>
-                    <span className="text-slate-700">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md border border-slate-200">
-                <h3 className="text-xl font-heading font-bold mb-4 text-brand-red">Program Benefits:</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <h4 className="font-heading font-bold mb-2 text-slate-900">Save Money</h4>
-                    <p className="text-sm text-slate-600">Prevent costly repairs and issues</p>
-                  </div>
-                  <div>
-                    <h4 className="font-heading font-bold mb-2 text-slate-900">Peace of Mind</h4>
-                    <p className="text-sm text-slate-600">Know your plumbing is in good condition</p>
-                  </div>
-                  <div>
-                    <h4 className="font-heading font-bold mb-2 text-slate-900">Priority Service</h4>
-                    <p className="text-sm text-slate-600">Get faster response times</p>
-                  </div>
-                  <div>
-                    <h4 className="font-heading font-bold mb-2 text-slate-900">Extend Lifespan</h4>
-                    <p className="text-sm text-slate-600">Keep fixtures and pipes working longer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white p-8 rounded-2xl shadow-lg border-2 border-brand-red/20">
-              <h3 className="text-2xl font-heading font-bold mb-6 text-center text-slate-900">Schedule Your Service</h3>
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium mb-2">Service Needed</label>
-                  <select className="w-full p-3 border rounded-lg">
-                    <option>Same-Day Service</option>
-                    <option>Water Heater Service</option>
-                    <option>Drain Cleaning</option>
-                    <option>Camera Inspection</option>
-                    <option>Fixture Installation</option>
-                    <option>Maintenance Inspection</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Your Name</label>
-                  <input type="text" className="w-full p-3 border rounded-lg" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Phone Number</label>
-                  <input type="tel" className="w-full p-3 border rounded-lg" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Address</label>
-                  <input type="text" className="w-full p-3 border rounded-lg" placeholder="Street Address, City, State" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Preferred Time</label>
-                  <select className="w-full p-3 border rounded-lg">
-                    <option>As soon as possible</option>
-                    <option>Morning (7AM-12PM)</option>
-                    <option>Afternoon (12PM-4PM)</option>
-                    <option>Flexible</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Describe the Issue</label>
-                  <textarea className="w-full p-3 border rounded-lg h-24" placeholder="Tell us about your plumbing issue"></textarea>
-                </div>
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-brand-red hover:bg-brand-red-dark text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  Schedule Service Call
-                </Button>
-              </form>
-              <p className="text-xs text-slate-500 mt-4 text-center">
-                Service calls start at $89. We provide upfront pricing before any work begins.
-              </p>
+          {/* CTA Below Services */}
+          <div className="mt-16 text-center">
+            <p className="text-lg text-slate-600 mb-6">Ready to get started? We're here to help with all your plumbing needs.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:+13604339743"
+                className="inline-flex items-center justify-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold px-8 py-4 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all"
+              >
+                <Phone className="w-5 h-5" />
+                Call (360) 433-9743
+              </a>
+              <a
+                href="#quote-form"
+                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-brand-cyan border-2 border-brand-cyan font-bold px-8 py-4 rounded-xl text-lg transition-all"
+              >
+                Get Free Quote
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us for Residential */}
-      <section className="py-20 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(220,38,38,0.15),transparent_60%)]" aria-hidden="true"></div>
-        <div className="container mx-auto px-4 relative z-10">
+      {/* Maintenance Program */}
+      <section className="py-20 px-4 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-brand-cyan/10 px-4 py-2 rounded-full mb-4">
+              <Shield className="w-4 h-4 text-brand-cyan" />
+              <span className="text-sm font-semibold text-brand-cyan">Maintenance Program</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4">
+              Preventive Maintenance Program
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Protect your home and prevent costly repairs with regular plumbing maintenance.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            {/* What's Included */}
+            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+              <h3 className="text-2xl font-heading font-bold mb-6 text-slate-900">What's Included</h3>
+              <div className="space-y-3">
+                {maintenanceProgram.map((item, index) => (
+                  <div key={index} className="flex items-start">
+                    <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-3 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Benefits */}
+            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+              <h3 className="text-2xl font-heading font-bold mb-6 text-slate-900">Program Benefits</h3>
+              <div className="space-y-4">
+                {[
+                  { icon: Award, title: 'Save Money', desc: 'Prevent costly repairs and emergency calls' },
+                  { icon: Shield, title: 'Peace of Mind', desc: 'Know your plumbing is in good condition' },
+                  { icon: Clock, title: 'Priority Service', desc: 'Get faster response times when you need us' },
+                  { icon: HomeIcon, title: 'Extend Lifespan', desc: 'Keep fixtures and pipes working longer' }
+                ].map((benefit, index) => {
+                  const Icon = benefit.icon;
+                  return (
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-brand-cyan/10 flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-5 h-5 text-brand-cyan" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 mb-1">{benefit.title}</h4>
+                        <p className="text-sm text-slate-600">{benefit.desc}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center">
+            <p className="text-lg text-slate-600 mb-6">Interested in our maintenance program?</p>
+            <a
+              href="tel:+13604339743"
+              className="inline-flex items-center justify-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold px-8 py-4 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all"
+            >
+              <Phone className="w-5 h-5" />
+              Call to Learn More
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-                Why Homeowners Choose <span className="text-brand-red">H2O Plumbing</span>
+              <div className="inline-flex items-center gap-2 bg-brand-cyan/10 px-4 py-2 rounded-full mb-4">
+                <Star className="w-4 h-4 text-brand-cyan" />
+                <span className="text-sm font-semibold text-brand-cyan">Why Choose Us</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-slate-900">
+                Why Vancouver Homeowners
+                <br />
+                <span className="bg-gradient-to-r from-brand-cyan via-brand-turquoise to-brand-cyan bg-clip-text text-transparent">Trust H2O Plumbing</span>
               </h2>
-              <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                Three generations of family plumbing experience serving families throughout Southwest Washington.
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                Over 30 years of family plumbing experience serving Southwest Washington homes.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <HomeIcon className="w-10 h-10 text-brand-red" />
-                </div>
-                <h3 className="text-xl font-heading font-bold text-white mb-3">Family-Owned</h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Three generations serving Southwest Washington families since 2004.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-20 h-20 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <AlertTriangle className="w-10 h-10 text-brand-red" />
-                </div>
-                <h3 className="text-xl font-heading font-bold text-white mb-3">Same-Day Service</h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Fast response for urgent plumbing issues during business hours.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-20 h-20 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Phone className="w-10 h-10 text-brand-red" />
-                </div>
-                <h3 className="text-xl font-heading font-bold text-white mb-3">Upfront Pricing</h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Transparent pricing with free estimates—no hidden fees or surprises.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-20 h-20 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-10 h-10 text-brand-red" />
-                </div>
-                <h3 className="text-xl font-heading font-bold text-white mb-3">Licensed & Insured</h3>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Fully licensed, bonded, and insured for your peace of mind.
-                </p>
-              </div>
+              {[
+                { icon: HomeIcon, title: 'Family-Owned', desc: 'Trusted local business serving families since 2009' },
+                { icon: Clock, title: 'Same-Day Service', desc: 'Fast response for urgent plumbing issues' },
+                { icon: Shield, title: 'Licensed & Insured', desc: 'Fully bonded and insured for your protection' },
+                { icon: Award, title: 'Quality Guarantee', desc: '100% satisfaction on every job we complete' }
+              ].map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div key={index} className="text-center">
+                    <div className="w-20 h-20 bg-gradient-to-br from-brand-cyan/10 to-brand-turquoise/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Icon className="w-10 h-10 text-brand-cyan" />
+                    </div>
+                    <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">{item.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(220,38,38,0.15),transparent_60%)]" aria-hidden="true"></div>
+      <section className="py-20 bg-gradient-to-br from-brand-cyan via-brand-turquoise to-brand-cyan text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '32px 32px'
+          }} />
+        </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Ready for Reliable <span className="text-brand-red">Home Plumbing Service?</span>
+            Ready for Expert Home Plumbing Service?
           </h2>
-          <p className="text-xl mb-10 max-w-3xl mx-auto text-slate-300 leading-relaxed">
-            From same-day repairs to complete installations, H2O Plumbing provides expert residential plumbing services throughout Vancouver, Longview, Castle Rock, Ridgefield, Camas, Washougal, and all surrounding communities in Clark and Cowlitz Counties.
+          <p className="text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
+            From emergency repairs to complete installations, H2O Plumbing provides trusted residential services throughout Vancouver and Southwest Washington.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
-              href={`tel:${BUSINESS_DATA.phoneRaw}`}
-              className="bg-gradient-to-r from-brand-red to-brand-red-dark text-white px-12 py-5 rounded-xl font-heading font-bold text-2xl hover:shadow-2xl hover:shadow-brand-red/50 transition-all duration-300 inline-flex items-center hover:-translate-y-1 transform"
+              href="tel:+13604339743"
+              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-brand-cyan px-10 py-5 rounded-xl font-heading font-bold text-xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
             >
-              <Phone className="w-8 h-8 mr-3" />
-              Call {BUSINESS_DATA.phone}
+              <Phone className="w-6 h-6" />
+              Call (360) 433-9743
             </a>
             <Link
               href="/booking"
-              className="bg-white text-brand-red px-12 py-5 rounded-xl font-heading font-bold text-2xl hover:bg-slate-100 transition-all duration-300 inline-flex items-center"
+              className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 text-white border-2 border-white px-10 py-5 rounded-xl font-heading font-bold text-xl transition-all duration-300"
             >
               Schedule Online
             </Link>
@@ -446,49 +525,34 @@ export default function ResidentialPage() {
         </div>
       </section>
 
-      {/* Service Areas Map */}
-      <section className="py-20 px-4 bg-white">
+      {/* Service Areas */}
+      <section className="py-20 px-4 bg-slate-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4">Service Areas</h2>
-            <p className="text-xl text-slate-600">We serve homeowners throughout Southwest Washington</p>
+            <p className="text-xl text-slate-600">Serving homeowners throughout Southwest Washington</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {[
-              { city: 'Vancouver', zip: '98661, 98662, 98663, 98664, 98665, 98682, 98683, 98684, 98685, 98686' },
-              { city: 'Battle Ground', zip: '98604' },
-              { city: 'Camas', zip: '98607' },
-              { city: 'Washougal', zip: '98671' },
-              { city: 'Ridgefield', zip: '98642' },
-              { city: 'La Center', zip: '98629' },
-              { city: 'Woodland', zip: '98674' },
-              { city: 'Longview', zip: '98632' }
-            ].map((area, index) => (
-              <div key={index} className="bg-white border-2 border-brand-red/20 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <h3 className="text-lg font-heading font-bold text-brand-red mb-2">{area.city}</h3>
-                <p className="text-sm text-slate-600">Zip codes: {area.zip}</p>
+              'Vancouver', 'Battle Ground', 'Camas', 'Washougal',
+              'Ridgefield', 'La Center', 'Woodland', 'Longview'
+            ].map((city, index) => (
+              <div key={index} className="bg-white border border-brand-cyan/20 rounded-xl p-4 text-center hover:border-brand-cyan hover:shadow-md transition-all">
+                <h3 className="font-heading font-bold text-brand-cyan">{city}</h3>
               </div>
             ))}
           </div>
 
-          <div className="text-center">
-            <p className="text-lg mb-6">Don't see your area? Call us - we may still be able to help!</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
-              >
-                <Phone className="w-5 h-5" />
-                Call {BUSINESS_DATA.phone}
-              </a>
-              <Link
-                href="/booking"
-                className="inline-flex items-center justify-center gap-3 bg-white text-brand-red border-2 border-brand-red hover:bg-brand-red hover:text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
-              >
-                Schedule Online
-              </Link>
-            </div>
+          <div className="text-center bg-white p-8 rounded-2xl border border-slate-200">
+            <p className="text-lg text-slate-600 mb-6">Don't see your area? We serve many communities in Clark County.</p>
+            <a
+              href="tel:+13604339743"
+              className="inline-flex items-center justify-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
+            >
+              <Phone className="w-5 h-5" />
+              Call (360) 433-9743
+            </a>
           </div>
         </div>
       </section>

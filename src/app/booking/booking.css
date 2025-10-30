@@ -1,4 +1,4 @@
-/* src/app/booking/booking.css */
+/* src/app/booking/booking.css - H2O Plumbing */
 
 .custom-calendar {
   @apply w-full border-0 p-2;
@@ -9,8 +9,13 @@
 }
 
 .custom-calendar .react-calendar__navigation button {
-  @apply text-foreground font-semibold text-lg bg-transparent border-0 cursor-pointer hover:text-primary;
+  @apply text-foreground font-semibold text-lg bg-transparent border-0 cursor-pointer;
   min-width: 44px;
+  color: #00A3D9; /* H2O primary blue */
+}
+
+.custom-calendar .react-calendar__navigation button:hover {
+  color: #0082af; /* H2O primary-700 */
 }
 
 .custom-calendar .react-calendar__navigation button:disabled {
@@ -30,20 +35,23 @@
 }
 
 .custom-calendar .react-calendar__tile:hover {
-  @apply bg-muted;
+  background-color: #e0f7ff; /* H2O primary-50 */
 }
 
 .custom-calendar .react-calendar__tile--now {
-  @apply bg-primary/10 text-primary font-bold;
+  background-color: #b3edff; /* H2O primary-100 */
+  color: #00A3D9; /* H2O primary */
+  @apply font-bold;
 }
 
 .custom-calendar .react-calendar__tile--active {
-  @apply bg-primary text-primary-foreground !important;
+  background-color: #00A3D9 !important; /* H2O primary */
+  color: white !important;
   transform: scale(1.05);
 }
 
 .custom-calendar .react-calendar__tile--active:hover {
-  @apply bg-primary;
+  background-color: #0082af; /* H2O primary-700 */
 }
 
 .custom-calendar .react-calendar__tile--neighboringMonth {

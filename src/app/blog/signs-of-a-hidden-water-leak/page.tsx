@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BUSINESS_DATA } from '@/lib/business-data';
-import { Calendar, Clock, Shield, Wrench, AlertTriangle, Droplet } from 'lucide-react';
+import { Calendar, Clock, Shield, Wrench, AlertTriangle, Droplet, Home, ChevronRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: '5 Signs of a Hidden Water Leak | H2O Plumbing',
@@ -12,14 +12,16 @@ export default function HiddenWaterLeakPage() {
   return (
     <div className="min-h-screen">
       {/* Breadcrumbs */}
-      <nav className="bg-slate-50 py-4">
+      <nav className="bg-slate-50 py-4" aria-label="Breadcrumb">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
-            <span>/</span>
-            <Link href="/blog" className="hover:text-brand-red">Blog</Link>
-            <span>/</span>
-            <span className="text-brand-red">Hidden Water Leak Signs</span>
+            <Link href="/" className="hover:text-brand-cyan flex items-center" aria-label="Home">
+              <Home className="w-4 h-4" />
+            </Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <Link href="/blog" className="hover:text-brand-cyan">Blog</Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <span className="text-brand-cyan font-medium">Hidden Water Leak Signs</span>
           </div>
         </div>
       </nav>
@@ -35,12 +37,12 @@ export default function HiddenWaterLeakPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-xs font-medium tracking-wide mb-6 ring-1 ring-white/10">
-              <Shield className="w-4 h-4 text-brand-red" />
+              <Shield className="w-4 h-4 text-brand-cyan" />
               <span>Repair Guide</span>
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-tight">
-              <span className="text-brand-red">5 Signs</span> You Might Have a Hidden Water Leak
+              <span className="text-brand-cyan">5 Signs</span> You Might Have a Hidden Water Leak
             </h1>
             
             <div className="flex items-center justify-center gap-6 text-slate-300 text-sm">
@@ -61,7 +63,16 @@ export default function HiddenWaterLeakPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
 
-            <div className="prose lg:prose-xl max-w-none">
+            <div className="prose prose-slate lg:prose-lg max-w-none
+              prose-headings:font-heading prose-headings:font-bold prose-headings:text-slate-900
+              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-brand-cyan
+              prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-slate-800
+              prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6
+              prose-li:text-slate-700 prose-li:leading-relaxed
+              prose-strong:text-slate-900 prose-strong:font-semibold
+              prose-a:text-brand-cyan prose-a:no-underline hover:prose-a:text-brand-cyan-dark
+              prose-ul:my-6 prose-li:my-2
+            ">
               <p>A hidden water leak can be one of a homeowner's worst nightmares. Unlike a dripping faucet, these leaks are often out of sight, silently causing damage to your home's structure and promoting mold growth. Knowing the signs of a hidden leak can help you catch it early and prevent a major disaster.</p>
 
               <h2>1. An Unexplained Increase in Your Water Bill</h2>
@@ -80,7 +91,7 @@ export default function HiddenWaterLeakPage() {
               <p>You can check for a leak by using your water meter. First, make sure all water is turned off in your home. Then, check your water meter. If the dial is spinning, it means water is flowing somewhere on your property, indicating a leak.</p>
 
               <h2>What to Do If You Suspect a Leak</h2>
-              <p>If you notice any of these signs, it's important to act quickly. A professional plumber can perform a leak detection service to pinpoint the exact location of the leak without causing unnecessary damage to your home. At <Link href="/contact" className="text-brand-red hover:text-brand-red-dark font-semibold">H2O Plumbing</Link>, we use advanced acoustic and thermal imaging technology to find and repair hidden leaks efficiently.</p>
+              <p>If you notice any of these signs, it's important to act quickly. A professional plumber can perform a leak detection service to pinpoint the exact location of the leak without causing unnecessary damage to your home. At <Link href="/contact" className="text-brand-cyan hover:text-brand-cyan-dark font-semibold">H2O Plumbing</Link>, we use advanced acoustic and thermal imaging technology to find and repair hidden leaks efficiently.</p>
             </div>
           </div>
         </div>
@@ -91,30 +102,30 @@ export default function HiddenWaterLeakPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-slate-800 rounded-2xl p-8 md:p-10 text-center relative overflow-hidden">
             <div className="absolute inset-0 opacity-5" style={{
-              backgroundImage: `url('/images/Work Van Good Image.png')`,
+              backgroundImage: `url('/images/vbg.jpg')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}></div>
             <div className="relative z-10">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-red/20 text-white mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-cyan/20 text-white mb-6">
                 <Droplet className="w-8 h-8" />
               </div>
               <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4 uppercase">
                 Suspect a Hidden Leak?
               </h3>
               <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-                Don't wait for a small leak to become a big problem. Our expert team uses <strong className="text-brand-red">advanced leak detection technology</strong> to find and fix leaks quickly.
+                Don't wait for a small leak to become a big problem. Our expert team uses <strong className="text-brand-cyan">advanced leak detection technology</strong> to find and fix leaks quickly.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
                 <Link
                   href="/booking"
-                  className="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                  className="inline-flex items-center justify-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                 >
                   Schedule Leak Detection
                 </Link>
                 <a
                   href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                  className="inline-flex items-center justify-center gap-2 border-2 border-white bg-transparent text-white hover:bg-white hover:text-brand-red px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-white bg-transparent text-white hover:bg-white hover:text-brand-cyan px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                 >
                   <Wrench className="w-5 h-5" />
                   Call {BUSINESS_DATA.phone}

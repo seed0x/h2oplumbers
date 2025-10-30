@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { BUSINESS_DATA } from '@/lib/business-data';
-import { Calendar, Clock, ThermometerSnowflake, AlertTriangle, Wrench, CheckCircle } from 'lucide-react';
+import { Calendar, Clock, ThermometerSnowflake, AlertTriangle, Wrench, CheckCircle, Home, ChevronRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'How to Prepare Your Pipes for a Pacific Northwest Winter | H2O Plumbing',
@@ -12,14 +12,16 @@ export default function PreparePipesForWinterPage() {
   return (
     <div className="min-h-screen">
       {/* Breadcrumbs */}
-      <nav className="bg-slate-50 py-4">
+      <nav className="bg-slate-50 py-4" aria-label="Breadcrumb">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
-            <span>/</span>
-            <Link href="/blog" className="hover:text-brand-red">Blog</Link>
-            <span>/</span>
-            <span className="text-brand-red">Winter Pipe Preparation</span>
+            <Link href="/" className="hover:text-brand-cyan flex items-center" aria-label="Home">
+              <Home className="w-4 h-4" />
+            </Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <Link href="/blog" className="hover:text-brand-cyan">Blog</Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <span className="text-brand-cyan font-medium">Winter Pipe Preparation</span>
           </div>
         </div>
       </nav>
@@ -35,12 +37,12 @@ export default function PreparePipesForWinterPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-xs font-medium tracking-wide mb-6 ring-1 ring-white/10">
-              <ThermometerSnowflake className="w-4 h-4 text-brand-red" />
+              <ThermometerSnowflake className="w-4 h-4 text-brand-cyan" />
               <span>Maintenance Guide</span>
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-tight">
-              How to Prepare Your Pipes for a <span className="text-brand-red">Pacific Northwest Winter</span>
+              How to Prepare Your Pipes for a <span className="text-brand-cyan">Pacific Northwest Winter</span>
             </h1>
             
             <div className="flex items-center justify-center gap-6 text-slate-300 text-sm">
@@ -61,7 +63,16 @@ export default function PreparePipesForWinterPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
 
-            <div className="prose lg:prose-xl max-w-none">
+            <div className="prose prose-slate lg:prose-lg max-w-none
+              prose-headings:font-heading prose-headings:font-bold prose-headings:text-slate-900
+              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-brand-cyan
+              prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-slate-800
+              prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6
+              prose-li:text-slate-700 prose-li:leading-relaxed
+              prose-strong:text-slate-900 prose-strong:font-semibold
+              prose-a:text-brand-cyan prose-a:no-underline hover:prose-a:text-brand-cyan-dark
+              prose-ul:my-6 prose-li:my-2 prose-ol:my-6
+            ">
               <p>Winter in the Pacific Northwest brings beautiful scenery, but it can also bring freezing temperatures that pose a significant threat to your home's plumbing. Frozen pipes can burst, leading to extensive water damage and costly repairs. By taking a few preventative steps, you can protect your pipes and ensure they function properly all winter long.</p>
 
               <h2>Why Are Frozen Pipes a Problem?</h2>
@@ -94,7 +105,7 @@ export default function PreparePipesForWinterPage() {
                 <li><strong>Call a professional.</strong> If you can't locate the frozen pipe or if the pipe has burst, call a licensed plumber immediately.</li>
               </ol>
 
-              <p>By taking these precautions, you can significantly reduce the risk of frozen pipes and enjoy a worry-free winter. If you have any concerns about your plumbing system's readiness for winter, don't hesitate to <Link href="/contact" className="text-brand-red hover:text-brand-red-dark font-semibold">contact H2O Plumbing</Link> for a professional inspection.</p>
+              <p>By taking these precautions, you can significantly reduce the risk of frozen pipes and enjoy a worry-free winter. If you have any concerns about your plumbing system's readiness for winter, don't hesitate to <Link href="/contact" className="text-brand-cyan hover:text-brand-cyan-dark font-semibold">contact H2O Plumbing</Link> for a professional inspection.</p>
             </div>
           </div>
         </div>
@@ -105,30 +116,30 @@ export default function PreparePipesForWinterPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-slate-800 rounded-2xl p-8 md:p-10 text-center relative overflow-hidden">
             <div className="absolute inset-0 opacity-5" style={{
-              backgroundImage: `url('/images/Work Van Good Image.png')`,
+              backgroundImage: `url('/images/vbg.jpg')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}></div>
             <div className="relative z-10">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-red/20 text-white mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-cyan/20 text-white mb-6">
                 <Wrench className="w-8 h-8" />
               </div>
               <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4 uppercase">
                 Need Help Winterizing Your Plumbing?
               </h3>
               <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-                Our experienced team can inspect your home and ensure your plumbing is ready for winter. <strong className="text-brand-red">Don't wait until it's too late</strong> — protect your home now.
+                Our experienced team can inspect your home and ensure your plumbing is ready for winter. <strong className="text-brand-cyan">Don't wait until it's too late</strong> — protect your home now.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
                 <Link
                   href="/booking"
-                  className="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                  className="inline-flex items-center justify-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                 >
                   Schedule Inspection
                 </Link>
                 <a
                   href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                  className="inline-flex items-center justify-center gap-2 border-2 border-white bg-transparent text-white hover:bg-white hover:text-brand-red px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-white bg-transparent text-white hover:bg-white hover:text-brand-cyan px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                 >
                   <Wrench className="w-5 h-5" />
                   Call {BUSINESS_DATA.phone}

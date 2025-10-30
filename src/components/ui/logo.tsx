@@ -36,14 +36,13 @@ export function Logo({
   const { width, height } = sizes[size];
 
   // Logo source based on variant
-  // Use existing SVG assets; fallback to PNG if custom uploads are later added.
   const logoPaths = {
-    default: '/images/logos/acp-logo.png',
-    white: '/images/logos/acp-logo-white.png',
-    monochrome: '/images/logos/acp-logo-monochrome.svg',
-    icon: '/images/logos/acp-icon.svg',
-    animated: '/images/logos/acp-animated-logo.gif',
-    acp: '/images/logos/acp-logo.png'
+    default: '/images/logos/h2o-logo.png',
+    white: '/images/logos/h2o-logo.png',
+    monochrome: '/images/logos/h2o-logo.png',
+    icon: '/images/logos/h2o-logo.png',
+    animated: '/images/logos/h2o-logo.png',
+    acp: '/images/logos/h2o-logo.png'
   };
 
   const logoSrc = logoPaths[variant] || logoPaths.default;
@@ -55,6 +54,7 @@ export function Logo({
       'logo-float': floating,
       'logo-glow': glow,
       'logo-pulse': variant === 'animated',
+      'brightness-0 invert': variant === 'white', // Make logo white on dark backgrounds
     },
     className
   );
@@ -101,7 +101,7 @@ export function Logo({
     >
       <LogoImage />
       {!hideText && (
-        <span className="ml-3 text-xs font-medium tracking-wide text-gray-600 group-hover:text-gray-900 transition-colors">Since 2004</span>
+        <span className="ml-3 text-xs font-medium tracking-wide text-gray-600 group-hover:text-gray-900 transition-colors">Since 2009</span>
       )}
     </Link>
   );

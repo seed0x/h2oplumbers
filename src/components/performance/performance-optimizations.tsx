@@ -148,7 +148,7 @@ export function CriticalCSS() {
           .hero-section { min-height: 70vh; }
           .logo { width: auto; height: 2rem; }
           .btn-primary { 
-            background-color: hsl(var(--brand-red)); 
+            background-color: hsl(var(--brand-cyan)); 
             color: hsl(var(--brand-white));
           }
           .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }

@@ -131,7 +131,7 @@ export function BuilderPortfolio() {
         {/* Header with Stats */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight text-slate-900 mb-6">
-            Trusted by Leading <span className="text-brand-red">Builders</span>
+            Trusted by Leading <span className="text-brand-cyan">Builders</span>
           </h2>
           <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
             H2O Plumbing works with residential and commercial builders throughout Southwest Washington,
@@ -141,19 +141,19 @@ export function BuilderPortfolio() {
           {/* Aggregate Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-2 border-slate-200">
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">{totalStats.builders}</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">{totalStats.builders}</div>
               <div className="text-sm font-medium text-slate-600">Builder Partners</div>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-2 border-slate-200">
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">{totalStats.projects}+</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">{totalStats.projects}+</div>
               <div className="text-sm font-medium text-slate-600">Projects Completed</div>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-2 border-slate-200">
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">{totalStats.units}+</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">{totalStats.units}+</div>
               <div className="text-sm font-medium text-slate-600">Units Built</div>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border-2 border-slate-200">
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">{totalStats.years}+</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">{totalStats.years}+</div>
               <div className="text-sm font-medium text-slate-600">Years Partnership</div>
             </div>
           </div>
@@ -165,7 +165,7 @@ export function BuilderPortfolio() {
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-center text-slate-900 mb-10">What Builders Say</h3>
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {featuredBuilders.filter(b => b.testimonial).map((builder, index) => (
-                <div key={index} className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                <div key={index} className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="flex items-center mb-4">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
@@ -191,27 +191,27 @@ export function BuilderPortfolio() {
             {displayBuilders.map((builder, index) => (
               <div 
                 key={index} 
-                className="bg-white rounded-xl p-6 border-2 border-slate-200 hover:border-brand-red transition-all duration-300 hover:shadow-lg cursor-pointer"
+                className="bg-white rounded-xl p-6 border-2 border-slate-200 hover:border-brand-cyan transition-all duration-300 hover:shadow-lg cursor-pointer"
                 onClick={() => setSelectedBuilder(builder)}
               >
                 <div className="flex items-start justify-between mb-4">
                   <h4 className="text-xl font-heading font-bold text-slate-900">{builder.name}</h4>
                   {builder.featured && (
-                    <Badge variant="secondary" className="bg-brand-red/10 text-brand-red border-brand-red/20">Featured</Badge>
+                    <Badge variant="secondary" className="bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20">Featured</Badge>
                   )}
                 </div>
                 
                 <div className="space-y-3 text-sm text-slate-600 mb-4">
                   <div className="flex items-center">
-                    <Calendar className="w-4 h-4 mr-2 text-brand-red" />
+                    <Calendar className="w-4 h-4 mr-2 text-brand-cyan" />
                     <span>{builder.yearsWorked}</span>
                   </div>
                   <div className="flex items-center">
-                    <Home className="w-4 h-4 mr-2 text-brand-red" />
+                    <Home className="w-4 h-4 mr-2 text-brand-cyan" />
                     <span>{builder.projectsCompleted} Projects • {builder.unitsBuilt} Units</span>
                   </div>
                   <div className="flex items-start">
-                    <MapPin className="w-4 h-4 mr-2 mt-0.5 text-brand-red flex-shrink-0" />
+                    <MapPin className="w-4 h-4 mr-2 mt-0.5 text-brand-cyan flex-shrink-0" />
                     <span>{builder.locations.join(', ')}</span>
                   </div>
                 </div>
@@ -231,7 +231,7 @@ export function BuilderPortfolio() {
           <div className="text-center">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="bg-brand-red hover:bg-brand-red-dark text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-md"
+              className="bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-md"
             >
               {showAll ? 'Show Less' : `View All ${builders.length} Builders`}
             </button>

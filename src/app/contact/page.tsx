@@ -6,7 +6,7 @@ import { generateSocialMeta, socialMetaTemplates } from '@/lib/social-meta';
 import { QuickShareButtons } from '@/components/social/social-share';
 import { SocialFollowButtons } from '@/components/social/social-share';
 import { BUSINESS_DATA } from '@/lib/business-data';
-import { Phone, Mail, MapPin, Clock, Shield, Award, Users, CheckCircle2, Heart, Sparkles } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Shield, Award, Users, CheckCircle2, Heart, Sparkles, Home, ChevronRight } from 'lucide-react';
 
 export const metadata: Metadata = generateSocialMeta({
   ...socialMetaTemplates.contact,
@@ -20,12 +20,14 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Breadcrumbs */}
-      <nav className="bg-slate-50 py-4">
+      <nav className="bg-slate-50 py-4" aria-label="Breadcrumb">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
-            <span>/</span>
-            <span className="text-brand-red">Contact</span>
+            <Link href="/" className="hover:text-brand-cyan flex items-center" aria-label="Home">
+              <Home className="w-4 h-4" />
+            </Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <span className="text-brand-cyan font-medium">Contact</span>
           </div>
         </div>
       </nav>
@@ -41,17 +43,17 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
-              Your Vancouver <span className="text-brand-red">Plumbing Problems</span> End Here
+              Your Vancouver <span className="text-brand-cyan">Plumbing Problems</span> End Here
             </h1>
             <p className="text-xl md:text-2xl text-slate-200 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Family-owned plumber serving <span className="text-brand-red font-bold">Vancouver, Battle Ground, Camas & Clark County</span> since 2004. No runaround, no surprises—just honest plumbing from neighbors you can trust. Licensed #ALLCOPL030RW.
+              Family-owned plumber serving <span className="text-brand-cyan font-bold">Vancouver, Battle Ground, Camas & Clark County</span> since 2004. No runaround, no surprises—just honest plumbing from neighbors you can trust. Licensed #ALLCOPL030RW.
             </p>
             
             {/* Quick Contact Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 w-full sm:w-auto"
               >
                 <Phone className="w-5 h-5" />
                 Call {BUSINESS_DATA.phone}
@@ -73,19 +75,19 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="group">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-brand-red mb-2 group-hover:scale-110 transition-transform">2-4 Hours</div>
+              <div className="text-3xl md:text-4xl font-heading font-bold text-brand-cyan mb-2 group-hover:scale-110 transition-transform">2-4 Hours</div>
               <p className="text-sm md:text-lg">Response Time</p>
             </div>
             <div className="group">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-brand-red mb-2 group-hover:scale-110 transition-transform">Same Day</div>
+              <div className="text-3xl md:text-4xl font-heading font-bold text-brand-cyan mb-2 group-hover:scale-110 transition-transform">Same Day</div>
               <p className="text-sm md:text-lg">Service Available</p>
             </div>
             <div className="group">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-brand-red mb-2 group-hover:scale-110 transition-transform">Licensed</div>
+              <div className="text-3xl md:text-4xl font-heading font-bold text-brand-cyan mb-2 group-hover:scale-110 transition-transform">Licensed</div>
               <p className="text-sm md:text-lg">& Insured</p>
             </div>
             <div className="group">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-brand-red mb-2 group-hover:scale-110 transition-transform">20+ Years</div>
+              <div className="text-3xl md:text-4xl font-heading font-bold text-brand-cyan mb-2 group-hover:scale-110 transition-transform">20+ Years</div>
               <p className="text-sm md:text-lg">Local Experience</p>
             </div>
           </div>
@@ -102,19 +104,19 @@ export default function ContactPage() {
                 We're Here to Help
               </h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                From repairs to new construction projects, our family treats your home like our own. No call centers, no runaround—just honest advice and reliable service from Vancouver's trusted family plumbers.
+                From repairs to remodels, our family treats your home like our own. No call centers, no runaround—just honest advice and reliable service from Vancouver's trusted family plumbers.
               </p>
               
               {/* Contact Cards */}
               <div className="space-y-4 mb-8">
-                <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-brand-red/20 hover:border-brand-red hover:shadow-xl transition-all duration-300 group">
+                <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-brand-cyan/20 hover:border-brand-cyan hover:shadow-xl transition-all duration-300 group">
                   <div className="flex items-start gap-4">
-                    <div className="bg-red-50 p-3 rounded-lg group-hover:bg-brand-red group-hover:text-white transition-colors">
-                      <Phone className="w-6 h-6 text-brand-red group-hover:text-white transition-colors" />
+                    <div className="bg-brand-cyan/10 p-3 rounded-lg group-hover:bg-brand-cyan group-hover:text-white transition-colors">
+                      <Phone className="w-6 h-6 text-brand-cyan group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <h3 className="font-heading font-bold text-lg mb-2 text-slate-900 group-hover:text-brand-red transition-colors">Call Us Directly</h3>
-                      <a href={`tel:${BUSINESS_DATA.phoneRaw}`} className="text-xl font-bold text-brand-red hover:text-brand-red-dark">
+                      <h3 className="font-heading font-bold text-lg mb-2 text-slate-900 group-hover:text-brand-cyan transition-colors">Call Us Directly</h3>
+                      <a href={`tel:${BUSINESS_DATA.phoneRaw}`} className="text-xl font-bold text-brand-cyan hover:text-brand-cyan-dark">
                         {BUSINESS_DATA.phone}
                       </a>
                       <p className="text-sm text-slate-600 mt-1">Available for all your plumbing needs</p>
@@ -122,14 +124,14 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-brand-red/20 hover:border-brand-red hover:shadow-xl transition-all duration-300 group">
+                <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-brand-cyan/20 hover:border-brand-cyan hover:shadow-xl transition-all duration-300 group">
                   <div className="flex items-start gap-4">
-                    <div className="bg-red-50 p-3 rounded-lg group-hover:bg-brand-red group-hover:text-white transition-colors">
-                      <Mail className="w-6 h-6 text-brand-red group-hover:text-white transition-colors" />
+                    <div className="bg-brand-cyan/10 p-3 rounded-lg group-hover:bg-brand-cyan group-hover:text-white transition-colors">
+                      <Mail className="w-6 h-6 text-brand-cyan group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <h3 className="font-heading font-bold text-lg mb-2 text-slate-900 group-hover:text-brand-red transition-colors">Email Us</h3>
-                      <a href={`mailto:${BUSINESS_DATA.email}`} className="text-lg text-brand-red hover:text-brand-red-dark break-all">
+                      <h3 className="font-heading font-bold text-lg mb-2 text-slate-900 group-hover:text-brand-cyan transition-colors">Email Us</h3>
+                      <a href={`mailto:${BUSINESS_DATA.email}`} className="text-lg text-brand-cyan hover:text-brand-cyan-dark break-all">
                         {BUSINESS_DATA.email}
                       </a>
                       <p className="text-sm text-slate-600 mt-1">We respond within 2-4 hours</p>
@@ -137,13 +139,13 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-brand-red/20 hover:border-brand-red hover:shadow-xl transition-all duration-300 group">
+                <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-brand-cyan/20 hover:border-brand-cyan hover:shadow-xl transition-all duration-300 group">
                   <div className="flex items-start gap-4">
-                    <div className="bg-red-50 p-3 rounded-lg group-hover:bg-brand-red group-hover:text-white transition-colors">
-                      <MapPin className="w-6 h-6 text-brand-red group-hover:text-white transition-colors" />
+                    <div className="bg-brand-cyan/10 p-3 rounded-lg group-hover:bg-brand-cyan group-hover:text-white transition-colors">
+                      <MapPin className="w-6 h-6 text-brand-cyan group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <h3 className="font-heading font-bold text-lg mb-2 text-slate-900 group-hover:text-brand-red transition-colors">Our Office</h3>
+                      <h3 className="font-heading font-bold text-lg mb-2 text-slate-900 group-hover:text-brand-cyan transition-colors">Our Office</h3>
                       <p className="text-slate-700">
                         {BUSINESS_DATA.address.street}<br />
                         {BUSINESS_DATA.address.city}, {BUSINESS_DATA.address.state} {BUSINESS_DATA.address.zip}
@@ -152,15 +154,15 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-brand-red/20 hover:border-brand-red hover:shadow-xl transition-all duration-300 group">
+                <div className="bg-white rounded-xl p-6 shadow-lg border-2 border-brand-cyan/20 hover:border-brand-cyan hover:shadow-xl transition-all duration-300 group">
                   <div className="flex items-start gap-4">
-                    <div className="bg-red-50 p-3 rounded-lg group-hover:bg-brand-red group-hover:text-white transition-colors">
-                      <Clock className="w-6 h-6 text-brand-red group-hover:text-white transition-colors" />
+                    <div className="bg-brand-cyan/10 p-3 rounded-lg group-hover:bg-brand-cyan group-hover:text-white transition-colors">
+                      <Clock className="w-6 h-6 text-brand-cyan group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <h3 className="font-heading font-bold text-lg mb-2 text-slate-900 group-hover:text-brand-red transition-colors">Business Hours</h3>
+                      <h3 className="font-heading font-bold text-lg mb-2 text-slate-900 group-hover:text-brand-cyan transition-colors">Business Hours</h3>
                       <p className="text-slate-700">{BUSINESS_DATA.hours.display}</p>
-                      <p className="text-sm text-brand-red font-semibold mt-1">Same-day service available</p>
+                      <p className="text-sm text-brand-cyan font-semibold mt-1">Same-day service available</p>
                     </div>
                   </div>
                 </div>
@@ -168,25 +170,25 @@ export default function ContactPage() {
 
               {/* Trust Badges */}
               <div className="grid grid-cols-3 gap-4">
-                <div className="text-center bg-white rounded-lg p-4 border-2 border-brand-red/20 hover:border-brand-red hover:shadow-lg transition-all duration-300">
-                  <Shield className="w-8 h-8 text-brand-red mx-auto mb-2" />
+                <div className="text-center bg-white rounded-lg p-4 border-2 border-brand-cyan/20 hover:border-brand-cyan hover:shadow-lg transition-all duration-300">
+                  <Shield className="w-8 h-8 text-brand-cyan mx-auto mb-2" />
                   <p className="text-xs font-bold text-slate-700">Licensed</p>
                 </div>
-                <div className="text-center bg-white rounded-lg p-4 border-2 border-brand-red/20 hover:border-brand-red hover:shadow-lg transition-all duration-300">
-                  <Award className="w-8 h-8 text-brand-red mx-auto mb-2" />
+                <div className="text-center bg-white rounded-lg p-4 border-2 border-brand-cyan/20 hover:border-brand-cyan hover:shadow-lg transition-all duration-300">
+                  <Award className="w-8 h-8 text-brand-cyan mx-auto mb-2" />
                   <p className="text-xs font-bold text-slate-700">Insured</p>
                 </div>
-                <div className="text-center bg-white rounded-lg p-4 border-2 border-brand-red/20 hover:border-brand-red hover:shadow-lg transition-all duration-300">
-                  <Heart className="w-8 h-8 text-brand-red mx-auto mb-2" />
+                <div className="text-center bg-white rounded-lg p-4 border-2 border-brand-cyan/20 hover:border-brand-cyan hover:shadow-lg transition-all duration-300">
+                  <Heart className="w-8 h-8 text-brand-cyan mx-auto mb-2" />
                   <p className="text-xs font-bold text-slate-700">Family-Owned</p>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white rounded-2xl p-8 shadow-2xl border-2 border-brand-red/20">
+            <div className="bg-white rounded-2xl p-8 shadow-2xl border-2 border-brand-cyan/20">
               <div className="text-center mb-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-red/10 text-brand-red mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-cyan/10 text-brand-cyan mb-4">
                   <Sparkles className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-heading font-bold mb-2">Send Us a Message</h3>
@@ -221,7 +223,7 @@ export default function ContactPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/service-areas"
-              className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+              className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
             >
               View All Service Areas
             </Link>

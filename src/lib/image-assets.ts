@@ -13,8 +13,8 @@ export const IMAGE_ASSETS = {
 
   // Fleet and vehicles - use available images
   fleet: {
-    mainVan: '/images/Work Van Good Image.png',
-    truck: '/images/truck-1.jpg',
+    mainVan: '/images/vbg.jpg',
+    truck: '/images/vbg.jpg',
     // Fallback options for easy swapping
     serviceTruck: '/images/fleet/jim-utton-journeyman-plumber.jpg' // if moved to fleet folder
   },

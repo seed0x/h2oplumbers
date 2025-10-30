@@ -62,9 +62,9 @@ export default function ServiceAreasPage() {
       <nav className="bg-slate-50 py-4">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
+            <Link href="/" className="hover:text-brand-cyan">Home</Link>
             <span>/</span>
-            <span className="text-brand-red">Service Areas</span>
+            <span className="text-brand-cyan">Service Areas</span>
           </div>
         </div>
       </nav>
@@ -80,7 +80,7 @@ export default function ServiceAreasPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg px-4 py-2 mb-6">
-              <MapPin className="w-4 h-4 text-brand-red" />
+              <MapPin className="w-4 h-4 text-brand-cyan" />
               <span className="font-semibold text-white">Serving Southwest Washington</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold uppercase tracking-tight mb-6">
@@ -92,7 +92,7 @@ export default function ServiceAreasPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
               >
                 <Phone className="w-5 h-5" />
                 Call {BUSINESS_DATA.phone}
@@ -113,19 +113,19 @@ export default function ServiceAreasPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">8</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">8</div>
               <p className="text-lg">Cities Served</p>
             </div>
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">4+</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">4+</div>
               <p className="text-lg">Counties</p>
             </div>
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">1-2 Hours</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">1-2 Hours</div>
               <p className="text-lg">Typical Response</p>
             </div>
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">20+ Years</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">20+ Years</div>
               <p className="text-lg">Local Experience</p>
             </div>
           </div>
@@ -167,14 +167,14 @@ export default function ServiceAreasPage() {
             )}
             
             {!loading && !error && transformedAreas.map((area, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-2 border-slate-200 hover:border-brand-red group">
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-2 border-slate-200 hover:border-brand-cyan group">
                 <CardHeader className="text-center">
                   <div className="flex items-center justify-center mb-4">
                     <div className="bg-red-50 p-3 rounded-full">
-                      <MapPin className="w-6 h-6 text-brand-red" />
+                      <MapPin className="w-6 h-6 text-brand-cyan" />
                     </div>
                   </div>
-                  <Badge className="bg-brand-red/10 text-brand-red border-brand-red/20 mb-3">
+                  <Badge className="bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20 mb-3">
                     {area.responseTime}
                   </Badge>
                   <CardTitle className="text-2xl font-heading uppercase text-slate-900">
@@ -192,7 +192,7 @@ export default function ServiceAreasPage() {
                     <ul className="space-y-2">
                       {area.highlights.map((highlight: string, idx: number) => (
                         <li key={idx} className="flex items-center text-sm text-slate-600">
-                          <CheckCircle className="w-4 h-4 text-brand-red mr-2 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-brand-cyan mr-2 flex-shrink-0" />
                           {highlight}
                         </li>
                       ))}
@@ -205,7 +205,7 @@ export default function ServiceAreasPage() {
                   
                   <Link
                     href={`/service-areas/${area.slug}`}
-                    className="w-full inline-flex items-center justify-center bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-lg font-bold transition-colors"
+                    className="w-full inline-flex items-center justify-center bg-brand-cyan hover:bg-brand-cyan-dark text-white px-6 py-3 rounded-lg font-bold transition-colors"
                   >
                     Learn More →
                   </Link>
@@ -235,7 +235,7 @@ export default function ServiceAreasPage() {
               )}
               
               {!loading && secondaryCities.map((city, index) => (
-                <div key={index} className="bg-slate-50 border-2 border-slate-200 rounded-lg p-3 text-center hover:border-brand-red hover:shadow-md transition-all">
+                <div key={index} className="bg-slate-50 border-2 border-slate-200 rounded-lg p-3 text-center hover:border-brand-cyan hover:shadow-md transition-all">
                   <span className="text-slate-700 font-semibold">{city}</span>
                 </div>
               ))}
@@ -249,7 +249,7 @@ export default function ServiceAreasPage() {
             
             <a
               href={`tel:${BUSINESS_DATA.phoneRaw}`}
-              className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg mt-8"
+              className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg mt-8"
             >
               <Phone className="w-5 h-5" />
               Call {BUSINESS_DATA.phone}
@@ -291,9 +291,9 @@ export default function ServiceAreasPage() {
                 icon: <Star className="w-8 h-8" />
               }
             ].map((benefit, index) => (
-              <div key={index} className="text-center bg-white rounded-xl p-6 border-2 border-slate-200 hover:border-brand-red transition-all hover:shadow-lg">
+              <div key={index} className="text-center bg-white rounded-xl p-6 border-2 border-slate-200 hover:border-brand-cyan transition-all hover:shadow-lg">
                 <div className="bg-red-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <div className="text-brand-red">{benefit.icon}</div>
+                  <div className="text-brand-cyan">{benefit.icon}</div>
                 </div>
                 <h3 className="text-xl font-heading font-bold uppercase text-slate-900 mb-3">{benefit.title}</h3>
                 <p className="text-slate-600">{benefit.description}</p>
@@ -309,15 +309,15 @@ export default function ServiceAreasPage() {
           <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-8">Our Service Commitment</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="text-5xl font-heading font-bold text-brand-red mb-3">20+</div>
+              <div className="text-5xl font-heading font-bold text-brand-cyan mb-3">20+</div>
               <p className="text-lg text-slate-200">Years Serving Southwest WA</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="text-5xl font-heading font-bold text-brand-red mb-3">Same Day</div>
+              <div className="text-5xl font-heading font-bold text-brand-cyan mb-3">Same Day</div>
               <p className="text-lg text-slate-200">Service Available</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="text-5xl font-heading font-bold text-brand-red mb-3">100%</div>
+              <div className="text-5xl font-heading font-bold text-brand-cyan mb-3">100%</div>
               <p className="text-lg text-slate-200">Satisfaction Guarantee</p>
             </div>
           </div>
@@ -331,7 +331,7 @@ export default function ServiceAreasPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-10 py-5 rounded-lg font-bold text-xl transition-colors shadow-xl"
+                className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-10 py-5 rounded-lg font-bold text-xl transition-colors shadow-xl"
               >
                 <Phone className="w-6 h-6" />
                 Call {BUSINESS_DATA.phone}

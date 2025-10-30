@@ -147,24 +147,21 @@ export function PlumbingChatbot() {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 rounded-full w-16 h-16 shadow-2xl z-50 bg-brand-red hover:bg-brand-red-dark text-white border-2 border-white transition-all duration-300 hover:scale-110 flex items-center justify-center"
+        className="fixed bottom-6 right-6 rounded-2xl w-14 h-14 shadow-xl z-50 bg-gradient-to-br from-brand-cyan to-brand-turquoise hover:shadow-2xl text-white transition-all duration-300 hover:scale-105 flex items-center justify-center group"
         aria-label="Open chat assistant"
-        style={{
-          filter: 'drop-shadow(0 8px 12px rgba(0, 0, 0, 0.25))'
-        }}
       >
-        <MessageCircle className="h-7 w-7" />
+        <MessageCircle className="h-6 w-6 group-hover:scale-110 transition-transform" />
       </button>
     )
   }
 
   return (
-    <Card className="fixed bottom-6 right-6 w-96 h-[500px] shadow-2xl z-50 flex flex-col border-2 border-brand-red/20 overflow-hidden">
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 bg-brand-red text-white">
-        <CardTitle className="text-lg font-heading font-bold">Plumbing Assistant</CardTitle>
+    <Card className="fixed bottom-6 right-6 w-96 h-[500px] shadow-2xl z-50 flex flex-col border-2 border-slate-200 overflow-hidden rounded-2xl">
+      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 bg-gradient-to-r from-brand-cyan to-brand-turquoise text-white">
+        <CardTitle className="text-lg font-bold">Chat with H2O Plumbing</CardTitle>
         <button
           onClick={() => setIsOpen(false)}
-          className="h-8 w-8 p-0 text-white hover:bg-brand-red-dark rounded transition-colors flex items-center justify-center"
+          className="h-8 w-8 p-0 text-white hover:bg-white/20 rounded-lg transition-colors flex items-center justify-center"
           aria-label="Close chat"
         >
           <X className="h-5 w-5" />
@@ -182,7 +179,7 @@ export function PlumbingChatbot() {
                 <div
                   className={`max-w-[85%] p-3 rounded-lg break-words ${
                     message.sender === 'user'
-                      ? 'bg-brand-red text-white'
+                      ? 'bg-brand-cyan text-white'
                       : 'bg-gray-100 text-gray-900 border border-gray-200'
                   }`}
                 >
@@ -214,7 +211,7 @@ export function PlumbingChatbot() {
             <MasterButton
               variant="outline"
               size="sm"
-              className="flex-1 text-gray-700 border-gray-300 hover:bg-brand-red/10 hover:text-brand-red hover:border-brand-red text-xs"
+              className="flex-1 text-gray-700 border-gray-300 hover:bg-brand-cyan/10 hover:text-brand-cyan hover:border-brand-cyan text-xs"
               onClick={() => {
                 setInputValue("I need to schedule an appointment")
                 setTimeout(() => handleSendMessage(), 100)
@@ -225,7 +222,7 @@ export function PlumbingChatbot() {
             <MasterButton
               variant="outline"
               size="sm"
-              className="flex-1 text-gray-700 border-gray-300 hover:bg-brand-red/10 hover:text-brand-red hover:border-brand-red text-xs"
+              className="flex-1 text-gray-700 border-gray-300 hover:bg-brand-cyan/10 hover:text-brand-cyan hover:border-brand-cyan text-xs"
               onClick={() => {
                 setInputValue("I need same day service")
                 setTimeout(() => handleSendMessage(), 100)
@@ -247,14 +244,14 @@ export function PlumbingChatbot() {
                   handleSendMessage()
                 }
               }}
-              className="flex-1 focus:border-brand-red focus:ring-brand-red"
+              className="flex-1 focus:border-brand-cyan focus:ring-brand-cyan"
               autoComplete="off"
             />
             <MasterButton 
               onClick={handleSendMessage} 
               variant="primary" 
               size="sm" 
-              className="w-10 h-10 p-0 bg-brand-red hover:bg-brand-red-dark"
+              className="w-10 h-10 p-0 bg-brand-cyan hover:bg-brand-cyan-dark"
               disabled={!inputValue.trim()}
               aria-label="Send message"
             >

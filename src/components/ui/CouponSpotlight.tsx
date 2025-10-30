@@ -149,7 +149,7 @@ export const CouponSpotlight: React.FC<CouponSpotlightProps> = ({
   }, [isExpired, offerId, code, category, variant]);
 
   const discountClasses = clsx('font-extrabold tracking-tight drop-shadow-sm', {
-    'text-red-600': !isExpired,
+    'text-brand-cyan': !isExpired,
     'text-gray-400': isExpired,
     'text-5xl md:text-6xl': variant === 'hero',
     'text-4xl': variant === 'inline',
@@ -212,14 +212,14 @@ export const CouponSpotlight: React.FC<CouponSpotlightProps> = ({
         <div className={clsx('flex items-start', { 'items-center': variant === 'compact' })}>
           <div className={clsx('shrink-0 rounded-full p-3 mr-4 ring-1', {
             'bg-white/15 backdrop-blur ring-white/25': variant !== 'light',
-            'bg-primary-50 ring-red-200': variant === 'light' && !isExpired,
+            'bg-brand-cyan/10 ring-brand-cyan/20': variant === 'light' && !isExpired,
             'bg-gray-200 ring-gray-300': variant === 'light' && isExpired,
             'p-4 mr-6': variant === 'hero',
             'p-2 mr-3': variant === 'compact'
           })}>
             <Tag className={clsx({
               'text-white': variant !== 'light',
-              'text-primary-500': variant === 'light' && !isExpired,
+              'text-brand-cyan': variant === 'light' && !isExpired,
               'text-gray-500': variant === 'light' && isExpired,
               'h-10 w-10': variant === 'hero',
               'h-8 w-8': variant === 'inline',
@@ -237,7 +237,7 @@ export const CouponSpotlight: React.FC<CouponSpotlightProps> = ({
                 'mt-3 inline-flex items-center gap-2 text-[10px] font-medium tracking-wide px-3 py-1 rounded-full ring-1 ring-inset',
                 isExpired && variant !== 'light' && 'bg-white/5 text-white/60 ring-white/10',
                 !isExpired && variant !== 'light' && 'text-white/90 bg-white/10 ring-white/20',
-                variant === 'light' && !isExpired && 'bg-primary-50 text-primary-600 ring-red-200',
+                variant === 'light' && !isExpired && 'bg-brand-cyan/10 text-brand-cyan ring-brand-cyan/20',
                 variant === 'light' && isExpired && 'bg-gray-200 text-gray-500 ring-gray-300'
               )}>
                 <Clock className="h-3 w-3" /> {expirationLabel}

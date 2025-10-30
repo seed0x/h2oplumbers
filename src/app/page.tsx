@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Star, MapPin, Clock, Shield, Users, Wrench, Home, Building2, Search, Phone, Tag, Droplets, Flame, Wrench as WrenchAlt } from 'lucide-react';
+import { Star, MapPin, Clock, Shield, Users, Wrench, Home, Building2, Search, Phone, Tag, Droplets, Flame, Wrench as WrenchAlt, Hammer } from 'lucide-react';
 import { FloatingBookButton } from '../components/ui/floating-book-button';
 import { SocialProofNotifications } from '../components/ui/social-proof-notifications';
 import { UrgencyIndicators } from '../components/ui/urgency-indicators';
@@ -8,7 +8,10 @@ import { RecentlyViewedServices } from '../components/ui/recently-viewed-service
 import { DiscountBanner } from '../components/ui/discount-banner';
 import { BackToTopButton } from '../components/ui/back-to-top';
 import { SkipNavigation } from '../components/ui/accessibility-utils';
-import { UnifiedHero, HeroCouponBanner } from '@/components/sections/unified-hero';
+import { FloatingElementsManager } from '../components/ui/floating-elements-manager';
+import { StickyCtaBar } from '../components/ui/sticky-cta-bar';
+import { H2OHero, H2OCouponBanner } from '@/components/sections/h2o-hero';
+import { WaterPipeAnimation } from '@/components/ui/water-pipe-animation';
 import { TrustBadgeSection } from '@/components/sections/trust-badge-section';
 import { HomeServiceCards } from '../components/ui/animated-service-cards';
 import { MeetTheTeamSection } from '@/components/sections/meet-the-team';
@@ -23,16 +26,18 @@ import { LocalBusinessStructuredData } from '@/components/seo/structured-data';
 import { BUSINESS_DATA } from '@/lib/business-data';
 import { getPromotion, PromotionDefinition } from '@/config/promotions';
 import { coupons } from '@/config/coupons';
+import { WaterAnimation } from '@/components/ui/water-animation';
+import { HeroesDiscountSection } from '@/components/sections/heroes-discount-section';
 
 export const metadata: Metadata = generateSocialMeta({
   ...socialMetaTemplates.homepage,
 });
 
 export default function HomePage() {
-  // Get active coupons from config
+  // Get active coupons from config - show only 2 featured
   const activeCoupons = coupons.filter(coupon => 
     new Date(coupon.expiryDate) > new Date() && coupon.active
-  ).slice(0, 3); // Show max 3 coupons
+  ).slice(0, 2); // Show max 2 featured coupons
   
   const heroPromotion = getPromotion('waterHeaterHero');
   const fallbackPromotion: PromotionDefinition = {
@@ -75,10 +80,10 @@ export default function HomePage() {
   const isTelLink = ctaLink.startsWith('tel:');
 
   // Map coupons to display format with icons and badges
-  const couponIcons = [Droplets, Flame, WrenchAlt]; // Lucide icons for each coupon
+  const couponIcons = [Droplets, Flame]; // Lucide icons for each coupon
   const couponDisplayData = activeCoupons.map((coupon, index) => ({
     ...coupon,
-    badge: index === 0 ? 'Most Popular' : index === 1 ? 'Winter Special' : 'Same-Day Special',
+    badge: index === 0 ? 'Most Popular' : 'Limited Time',
     IconComponent: couponIcons[index] || WrenchAlt,
   }));
   
@@ -86,26 +91,26 @@ export default function HomePage() {
     {
       title: 'Residential Services',
       description:
-        'Whole-home plumbing care for leaks, repipes, remodels, and everyday repairs with white-glove respect for your space.',
+        'Complete home plumbing solutions from emergency repairs to fixture upgrades, with professional service you can trust.',
       href: '/residential',
       IconComponent: Home,
       category: 'Homes & Condos',
     },
     {
-      title: 'Commercial Projects',
+      title: 'Commercial Plumbing',
       description:
-        'Reliable plumbing support for offices, tenant improvements, and facilities that cannot afford downtime.',
+        'Reliable plumbing support for offices, restaurants, retail spaces, and facilities that need minimal downtime.',
       href: '/commercial',
       IconComponent: Building2,
       category: 'Businesses & Facilities',
     },
     {
-      title: 'New Construction',
+      title: 'Remodels & Renovations',
       description:
-        'Partnering with builders across Clark County to design, install, and warranty plumbing systems built to last.',
-      href: '/new-construction',
-      IconComponent: Wrench,
-      category: 'Builders & Developers',
+        'Expert plumbing for kitchen and bath remodels, tenant improvements, and full property renovations.',
+      href: '/tenant-improvements',
+      IconComponent: Hammer,
+      category: 'Renovation Projects',
     },
   ];
 
@@ -113,58 +118,44 @@ export default function HomePage() {
     <>
       {/* <LocalBusinessStructuredData /> */}
       <SkipNavigation />
-      <DiscountBanner />
-      <SocialProofNotifications />
       <FloatingShareButton />
-      <FloatingBookButton />
-      <UrgencyIndicators />
-      <RecentlyViewedServices />
-      <BackToTopButton />
       
-      <UnifiedHero
-        promotion={{
-          badgeLabel,
-          headingLabel,
-          detailsLine,
-          couponCode,
-          ctaLink,
-          ctaText,
-          isTelLink,
+      {/* Optimized floating elements with scroll-based visibility */}
+      <FloatingElementsManager>
+        {{
+          discountBanner: <DiscountBanner />,
+          socialProof: <SocialProofNotifications />,
+          floatingBook: <FloatingBookButton />,
+          urgency: <UrgencyIndicators />,
+          recentlyViewed: <RecentlyViewedServices />,
+          backToTop: <BackToTopButton />,
         }}
-      />
+      </FloatingElementsManager>
       
-      {/* Coupon Banner - Compact Transition */}
-      <div className="relative">
-        {/* Top half - hero background color */}
-        <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
-        {/* Bottom half - white background */}
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-white" />
-        {/* Content */}
-        <div className="relative py-8 md:py-10">
-          <HeroCouponBanner
-            promotion={{
-              badgeLabel,
-              headingLabel,
-              detailsLine,
-              couponCode,
-              ctaLink,
-              ctaText,
-              isTelLink,
-            }}
-          />
-        </div>
-      </div>
+      {/* Sticky CTA bar appears after 50% scroll */}
+      <StickyCtaBar />
+      
+      {/* Animated Water Background */}
+      <WaterAnimation />
+      
+      <H2OHero />
+      
+      {/* H2O Coupon Banner */}
+      <H2OCouponBanner />
       
       {/* Unified Services Section */}
       {/* Tailwind: section-padding helper applies consistent vertical rhythm; bg-white ensures clean separation from gradient banner */}
-      <section className="section-padding bg-white">
+      <section className="relative section-padding bg-white">
+        {/* Water pipe badge animations */}
+        <WaterPipeAnimation variant="services" position="top-left" />
+        <WaterPipeAnimation variant="services" position="bottom-right" />
         {/* Tailwind: container-padding matches horizontal spacing scale between sections */}
         <div className="container mx-auto container-padding">
           {/* Tailwind: responsive flex block keeps intro copy and link aligned while adding generous gap */}
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-12">
             <div>
               {/* Tailwind: rounded-full badge with tracking emphasizes the service label */}
-              <div className="inline-flex items-center gap-2 rounded-full bg-brand-red/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-brand-red" aria-label="Service expertise">
+              <div className="inline-flex items-center gap-2 rounded-full bg-brand-cyan/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-brand-cyan" aria-label="Service expertise">
                 <Wrench className="h-4 w-4" />
                 Service Expertise
               </div>
@@ -172,13 +163,13 @@ export default function HomePage() {
                 Your Complete Plumbing Solution
               </h2>
               <p className="mt-4 max-w-2xl text-base md:text-lg text-slate-600">
-                Three generations of licensed plumbers delivering responsive service for homes, businesses, and new builds across Clark County.
+                Professional plumbing services and commercial solutions serving Vancouver and Clark County since 2009.
               </p>
             </div>
             {/* Tailwind: uppercase tracking and hover state style the "View All Services" link as a secondary CTA */}
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 self-start text-sm font-semibold uppercase tracking-[0.25em] text-brand-red hover:text-brand-red-dark transition-colors"
+              className="inline-flex items-center gap-2 self-start text-sm font-semibold uppercase tracking-[0.25em] text-brand-cyan hover:text-brand-cyan-dark transition-colors"
             >
               View All Services
               <span aria-hidden="true">→</span>
@@ -194,15 +185,15 @@ export default function HomePage() {
               >
                 {/* Tailwind: group + hover utilities create elevation and shadow transitions on each service card */}
                 {/* Tailwind: fixed height top panel centers the service icon inside a soft neutral background */}
-                <div className="relative flex h-40 items-center justify-center bg-gradient-to-br from-brand-red/5 to-brand-red/10 group-hover:from-brand-red/10 group-hover:to-brand-red/20 transition-colors">
-                  <service.IconComponent className="h-16 w-16 text-brand-red" />
+                <div className="relative flex h-40 items-center justify-center bg-gradient-to-br from-brand-cyan/5 to-brand-cyan/10 group-hover:from-brand-cyan/10 group-hover:to-brand-cyan/20 transition-colors">
+                  <service.IconComponent className="h-16 w-16 text-brand-cyan" />
                 </div>
                 {/* Tailwind: flex-1 column with generous padding maintains consistent spacing for text and CTA */}
                 <div className="flex flex-1 flex-col px-8 pb-8 pt-6">
-                  <span className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-red/80">
+                  <span className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-cyan/80">
                     {service.category}
                   </span>
-                  <h3 className="mt-3 text-2xl font-heading font-semibold text-brand-navy">
+                  <h3 className="mt-3 text-2xl font-heading font-semibold text-slate-900">
                     {service.title}
                   </h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
@@ -211,7 +202,7 @@ export default function HomePage() {
                   {/* Tailwind: rounded-full button stretches to full width with lift-on-hover motion */}
                   <Link
                     href={service.href}
-                    className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-brand-red px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-white shadow-md transition-transform duration-200 hover:-translate-y-0.5 hover:bg-brand-red-dark"
+                    className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-brand-cyan px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-white shadow-md transition-transform duration-200 hover:-translate-y-0.5 hover:bg-brand-cyan-dark"
                   >
                     Learn More
                   </Link>
@@ -226,43 +217,45 @@ export default function HomePage() {
       
       {/* Professional Coupon Showcase Section */}
       {/* Tailwind: section-padding with gradient background builds a soft spotlight zone for the offers */}
-      <section className="section-padding bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      <section className="relative section-padding bg-gradient-to-br from-slate-50 via-white to-slate-100">
+        {/* Water pipe badge animation */}
+        <WaterPipeAnimation variant="testimonials" position="top-right" />
         {/* Tailwind: container-padding keeps layout aligned with global grid */}
         <div className="container mx-auto container-padding">
           {/* Tailwind: text-center + spacing utilities balance headline and intro copy */}
           <div className="text-center mb-16">
             {/* Badge matching hero and services style */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-brand-red/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-brand-red mb-6" aria-label="Current offers">
+            <div className="inline-flex items-center gap-2 rounded-full bg-brand-cyan/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-brand-cyan mb-6" aria-label="Current offers">
               <Tag className="h-4 w-4" />
               Current Offers
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold uppercase tracking-tight text-slate-900 mb-4">Save on Professional Plumbing Services</h2>
             <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
-              <strong className="text-brand-red">Family business means family prices.</strong> We believe quality plumbing shouldn't break the bank. 
-              Take advantage of our current offers designed to help Clark County homeowners save money.
+              <strong className="text-brand-cyan">Service-focused value pricing.</strong> Professional plumbing services shouldn't break the bank. 
+              Take advantage of our current offers for Vancouver and Clark County businesses and homeowners.
             </p>
           </div>
           
           {/* Tailwind: responsive grid arranges coupon cards with hover lift effect */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             {couponDisplayData.map((coupon, index) => (
-              <div key={coupon.code} className="bg-white rounded-2xl shadow-xl border-2 border-dashed border-brand-red/30 p-8 relative transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl group">
-                <div className="absolute -top-4 left-6 bg-brand-red text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg">
+              <div key={coupon.code} className="bg-white rounded-2xl shadow-xl border-2 border-dashed border-brand-cyan/30 p-8 relative transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl group">
+                <div className="absolute -top-4 left-6 bg-brand-cyan text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg">
                   {coupon.badge}
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-brand-red/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-red/20 transition-colors">
-                    <coupon.IconComponent className="w-8 h-8 text-brand-red" />
+                  <div className="w-16 h-16 bg-brand-cyan/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-cyan/20 transition-colors">
+                    <coupon.IconComponent className="w-8 h-8 text-brand-cyan" />
                   </div>
-                  <div className="text-4xl font-heading font-bold text-brand-red mb-2">
+                  <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">
                     {coupon.title.match(/\$\d+|\d+%|FREE/)?.[0] || 'SAVE'}
                   </div>
                   <h3 className="text-xl font-heading font-bold text-slate-900 mb-4">{coupon.title}</h3>
                   <p className="text-slate-600 mb-6 text-sm leading-relaxed">
                     {coupon.description}
                   </p>
-                  <div className="bg-brand-red/10 border border-brand-red/30 rounded-lg p-4 mb-6">
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-red mb-1">Coupon Code: {coupon.code}</p>
+                  <div className="bg-brand-cyan/10 border border-brand-cyan/30 rounded-lg p-4 mb-6">
+                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-cyan mb-1">Coupon Code: {coupon.code}</p>
                     <p className="text-xs text-slate-600">Valid through {new Date(coupon.expiryDate).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
                   </div>
                   <div className="flex items-center justify-between text-xs text-slate-500 mb-6">
@@ -279,13 +272,24 @@ export default function HomePage() {
                     asChild
                     variant="primary"
                     size="lg"
-                    className="w-full bg-brand-red hover:bg-brand-red-dark border border-brand-red"
+                    className="w-full bg-brand-cyan hover:bg-brand-cyan-dark border border-brand-cyan"
                   >
-                    <a href="tel:+13608832506">Call to Schedule</a>
+                    <a href="tel:+13604339743">Call to Schedule</a>
                   </MasterButton>
                 </div>
               </div>
             ))}
+          </div>
+          
+          {/* View All Offers Link */}
+          <div className="text-center mb-12">
+            <Link
+              href="/coupons"
+              className="inline-flex items-center gap-2 text-brand-cyan hover:text-brand-cyan-dark font-bold text-lg transition-colors group"
+            >
+              View All Current Offers
+              <span className="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+            </Link>
           </div>
           
           {/* Trust Section */}
@@ -300,29 +304,29 @@ export default function HomePage() {
               <h3 className="text-2xl font-heading font-bold text-white mb-6">Why Our Customers Trust Our Coupons</h3>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-brand-red/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Shield className="w-6 h-6 text-brand-red" />
+                  <div className="w-12 h-12 bg-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Shield className="w-6 h-6 text-brand-cyan" />
                   </div>
                   <h4 className="font-heading font-semibold mb-2">No Hidden Fees</h4>
                   <p className="text-sm text-slate-300">Transparent pricing with no surprises</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-brand-red/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Phone className="w-6 h-6 text-brand-red" />
+                  <div className="w-12 h-12 bg-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Phone className="w-6 h-6 text-brand-cyan" />
                   </div>
                   <h4 className="font-heading font-semibold mb-2">Easy to Redeem</h4>
                   <p className="text-sm text-slate-300">Simply mention the code when you call</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-brand-red/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Star className="w-6 h-6 text-brand-red" />
+                  <div className="w-12 h-12 bg-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Star className="w-6 h-6 text-brand-cyan" />
                   </div>
                   <h4 className="font-heading font-semibold mb-2">Same Great Service</h4>
                   <p className="text-sm text-slate-300">No compromise on quality or service</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-brand-red/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Users className="w-6 h-6 text-brand-red" />
+                  <div className="w-12 h-12 bg-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Users className="w-6 h-6 text-brand-cyan" />
                   </div>
                   <h4 className="font-heading font-semibold mb-2">Family Business</h4>
                   <p className="text-sm text-slate-300">Personal service from local owners</p>
@@ -338,6 +342,7 @@ export default function HomePage() {
       </section>
       
       <TestimonialsSection />
+      <HeroesDiscountSection />
       <CouponSection />
       <WhyChooseUsSection />
 
@@ -357,18 +362,18 @@ export default function HomePage() {
             {/* Family Leadership Section */}
             <div className="text-center mb-16">
               {/* Badge matching hero and services style */}
-              <div className="inline-flex items-center gap-2 rounded-full bg-brand-red/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-white mb-6" aria-label="Family legacy">
+              <div className="inline-flex items-center gap-2 rounded-full bg-brand-cyan/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-white mb-6" aria-label="Family legacy">
                 <Users className="h-4 w-4" />
                 Family Legacy
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold uppercase tracking-tight text-white mb-6">Three Generations of Plumbing Excellence</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold uppercase tracking-tight text-white mb-6">Three Decades of Plumbing Excellence</h2>
               <p className="text-base md:text-lg text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-                <strong className="text-brand-red">From father to son:</strong> A family business built on trust, quality workmanship, 
+                <strong className="text-brand-cyan">The Veach family tradition:</strong> A family business built on trust, quality workmanship,
                 and treating every customer like family. Meet the team that's been serving Southwest Washington since 2004.
               </p>
               
-              {/* Tailwind: grid toggles from single column storytelling to two-column bios on desktop */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+              {/* Tailwind: grid toggles from single column storytelling to three-column bios on desktop */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
                 {/* Ron - Founder */}
                 <div className="text-center">
                   <div className="relative inline-block mb-6">
@@ -377,12 +382,12 @@ export default function HomePage() {
                       alt="Ron Veach - Founder of H2O Plumbing"
                       className="w-48 h-48 rounded-full object-cover shadow-2xl border-4 border-white/20"
                     />
-                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-brand-red text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                      Founder/Owner
+                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-brand-cyan text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                      Founder
                     </div>
                   </div>
                   <h3 className="text-2xl font-heading font-bold text-white mb-3">Ron Veach</h3>
-                  <p className="text-brand-red font-semibold mb-4">Founder/Owner</p>
+                  <p className="text-brand-cyan font-semibold mb-4">Founder</p>
                   <p className="text-slate-300 leading-relaxed">
                     With decades of experience, Ron built H2O Plumbing on the foundation of honest work, 
                     fair pricing, and treating every customer with respect. His commitment to quality established 
@@ -398,16 +403,37 @@ export default function HomePage() {
                       alt="Josh Veach - Owner of H2O Plumbing"
                       className="w-48 h-48 rounded-full object-cover object-center shadow-2xl border-4 border-white/20"
                     />
-                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-brand-red text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                      Owner
+                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-brand-cyan text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                      Operations
                     </div>
                   </div>
                   <h3 className="text-2xl font-heading font-bold text-white mb-3">Josh Veach</h3>
-                  <p className="text-brand-red font-semibold mb-4">Owner</p>
+                  <p className="text-brand-cyan font-semibold mb-4">Operations</p>
                   <p className="text-slate-300 leading-relaxed">
                     Learning the trade from his father, Josh brings fresh energy while maintaining the same 
                     family values. Under his leadership, we've expanded our services while keeping our 
                     personal, family-focused approach.
+                  </p>
+                </div>
+                
+                {/* Skylee - Operations & Accounting */}
+                <div className="text-center">
+                  <div className="relative inline-block mb-6">
+                    <img 
+                      src="/images/skylee-hewitt.jpg" 
+                      alt="Skylee Hewitt - Operations & Accounting at H2O Plumbing"
+                      className="w-48 h-48 rounded-full object-cover shadow-2xl border-4 border-white/20"
+                    />
+                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-brand-cyan text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                      Operations
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-heading font-bold text-white mb-3">Skylee Hewitt</h3>
+                  <p className="text-brand-cyan font-semibold mb-4">Operations & Accounting</p>
+                  <p className="text-slate-300 leading-relaxed">
+                    Growing up in the family business, Skylee brings dedication to managing operations, 
+                    billing, and accounting. Her attention to detail ensures smooth service delivery 
+                    and customer satisfaction.
                   </p>
                 </div>
               </div>
@@ -424,8 +450,8 @@ export default function HomePage() {
               {/* Tailwind: evenly spaced grid highlights the three differentiators */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:bg-white/15 transition-colors">
-                  <div className="w-16 h-16 bg-brand-red/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Wrench className="w-8 h-8 text-brand-red" />
+                  <div className="w-16 h-16 bg-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Wrench className="w-8 h-8 text-brand-cyan" />
                   </div>
                   <h4 className="text-xl font-heading font-bold text-white mb-3">20+ Years of Construction Experience</h4>
                   <p className="text-slate-300 leading-relaxed">
@@ -435,8 +461,8 @@ export default function HomePage() {
                 </div>
                 
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:bg-white/15 transition-colors">
-                  <div className="w-16 h-16 bg-brand-red/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="w-8 h-8 text-brand-red" />
+                  <div className="w-16 h-16 bg-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Shield className="w-8 h-8 text-brand-cyan" />
                   </div>
                   <h4 className="text-xl font-heading font-bold text-white mb-3">Uncompromising Quality</h4>
                   <p className="text-slate-300 leading-relaxed">
@@ -446,8 +472,8 @@ export default function HomePage() {
                 </div>
                 
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/10 hover:bg-white/15 transition-colors">
-                  <div className="w-16 h-16 bg-brand-red/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-8 h-8 text-brand-red" />
+                  <div className="w-16 h-16 bg-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-brand-cyan" />
                   </div>
                   <h4 className="text-xl font-heading font-bold text-white mb-3">Family Values</h4>
                   <p className="text-slate-300 leading-relaxed">
@@ -469,14 +495,14 @@ export default function HomePage() {
                   asChild
                   variant="secondary"
                   size="lg"
-                  className="bg-brand-red text-white hover:bg-brand-red-dark font-bold"
+                  className="bg-brand-cyan text-white hover:bg-brand-cyan-dark font-bold"
                 >
                   <Link href="/about">Read Our Full Story</Link>
                 </MasterButton>
                 <CTAButton 
                   variant="booking"
                   size="lg" 
-                  className="border-2 border-brand-red bg-transparent text-white hover:bg-brand-red hover:text-white font-bold"
+                  className="border-2 border-brand-cyan bg-transparent text-white hover:bg-brand-cyan hover:text-white font-bold"
                 >
                   Schedule Your Service Call
                 </CTAButton>
@@ -493,13 +519,13 @@ export default function HomePage() {
           {/* Tailwind: text-center block mirrors previous section rhythm for consistency */}
           <div className="text-center mb-16">
             {/* Badge matching hero and services style */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-brand-red/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-brand-red mb-6" aria-label="Service areas">
+            <div className="inline-flex items-center gap-2 rounded-full bg-brand-cyan/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-brand-cyan mb-6" aria-label="Service areas">
               <MapPin className="h-4 w-4" />
               Service Areas
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold uppercase tracking-tight text-slate-900 mb-6">Serving Families Throughout Southwest Washington</h2>
             <p className="text-base md:text-lg text-slate-600 max-w-4xl mx-auto mb-8 leading-relaxed">
-              <strong className="text-brand-red">Locally owned, locally trusted.</strong> Our professional team serves Clark and Cowlitz Counties 
+              <strong className="text-brand-cyan">Locally owned, locally trusted.</strong> Our professional team serves Clark and Cowlitz Counties 
               with reliable, honest plumbing services. When you see our van in your neighborhood, you know quality work is being done.
             </p>
           </div>
@@ -511,8 +537,8 @@ export default function HomePage() {
               <h3 className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-tight text-slate-900 mb-6">Your Local Plumbing Professionals</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-brand-red/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-brand-red" />
+                  <div className="w-12 h-12 bg-brand-cyan/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-brand-cyan" />
                   </div>
                   <div>
                     <h4 className="text-xl font-heading font-bold text-slate-900 mb-2">Based in Battle Ground</h4>
@@ -524,8 +550,8 @@ export default function HomePage() {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-brand-red/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-brand-red" />
+                  <div className="w-12 h-12 bg-brand-cyan/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-brand-cyan" />
                   </div>
                   <div>
                     <h4 className="text-xl font-heading font-bold text-slate-900 mb-2">Fast Response Times</h4>
@@ -537,8 +563,8 @@ export default function HomePage() {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-brand-red/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-6 h-6 text-brand-red" />
+                  <div className="w-12 h-12 bg-brand-cyan/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-6 h-6 text-brand-cyan" />
                   </div>
                   <div>
                     <h4 className="text-xl font-heading font-bold text-slate-900 mb-2">Fully Licensed & Insured</h4>
@@ -554,7 +580,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/images/truck-1.jpg" 
+                  src="/images/vbg.jpg"
                   alt="H2O Plumbing service van - professional plumbers serving Clark County WA"
                   className="w-full h-auto object-cover"
                 />
@@ -585,16 +611,16 @@ export default function HomePage() {
                 { city: 'Longview', href: '/service-areas/longview-plumber', response: '35-45 min' },
                 { city: 'Battle Ground', href: '/service-areas/battle-ground-plumber', response: '5-15 min' }
               ].map((location) => (
-                <div key={location.city} className="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 border border-brand-red/20 transform hover:-translate-y-1 group">
-                  <div className="w-12 h-12 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-red/20 transition-colors">
-                    <MapPin className="w-6 h-6 text-brand-red" />
+                <div key={location.city} className="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 border border-brand-cyan/20 transform hover:-translate-y-1 group">
+                  <div className="w-12 h-12 bg-brand-cyan/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-cyan/20 transition-colors">
+                    <MapPin className="w-6 h-6 text-brand-cyan" />
                   </div>
                   <h4 className="text-lg font-heading font-bold text-slate-900 mb-2">{location.city}</h4>
                   <p className="text-sm text-slate-500 mb-3">Response Time: {location.response}</p>
                   <p className="text-sm text-slate-600 mb-4">Professional plumbing services throughout {location.city} and surrounding areas.</p>
                   <Link 
                     href={location.href}
-                    className="inline-flex items-center text-brand-red font-semibold hover:text-brand-red-dark transition-colors group"
+                    className="inline-flex items-center text-brand-cyan font-semibold hover:text-brand-cyan-dark transition-colors group"
                   >
                     View Services
                     <span className="ml-1 group-hover:ml-2 transition-all">→</span>
@@ -608,7 +634,7 @@ export default function HomePage() {
           {/* Tailwind: callout card reuses dark slate styling with translucent background image */}
           <div className="bg-slate-800 rounded-2xl p-8 text-center relative overflow-hidden">
             <div className="absolute inset-0 opacity-5" style={{
-              backgroundImage: `url('/images/Work Van Good Image.png')`,
+                backgroundImage: `url('/images/vbg.jpg')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}></div>
@@ -616,14 +642,14 @@ export default function HomePage() {
               <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-4">Don't See Your Area Listed?</h3>
               <p className="text-base md:text-lg text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
                 We serve many communities throughout Southwest Washington. 
-                <strong className="text-brand-red">Call us</strong> to confirm service availability and response times for your specific location.
+                <strong className="text-brand-cyan">Call us</strong> to confirm service availability and response times for your specific location.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
                 <MasterButton 
                   asChild
                   variant="phone"
                   size="xl"
-                  className="bg-brand-red text-white hover:bg-brand-red-dark font-bold shadow-lg"
+                  className="bg-brand-cyan text-white hover:bg-brand-cyan-dark font-bold shadow-lg"
                 >
                   <a href="tel:+13608832506" className="inline-flex items-center">
                     <Phone className="w-5 h-5 mr-2" />
@@ -648,7 +674,7 @@ export default function HomePage() {
 
       {/* Final CTA Section - Optimized for Vancouver WA conversions */}
       {/* Tailwind: bold red background with centered layout drives conversions before footer */}
-      <section className="py-16 md:py-20 bg-brand-red text-white">
+      <section className="py-16 md:py-20 bg-brand-cyan text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold uppercase tracking-tight text-white mb-6">
             Ready for Vancouver's Most Trusted Plumbing Service?
@@ -661,7 +687,7 @@ export default function HomePage() {
             <CTAButton 
               variant="quote"
               size="xl" 
-              className="bg-white text-brand-red hover:bg-slate-100 font-bold shadow-lg"
+              className="bg-white text-brand-cyan hover:bg-slate-100 font-bold shadow-lg"
             >
               Get FREE Estimate
             </CTAButton>
@@ -669,7 +695,7 @@ export default function HomePage() {
               asChild
               variant="phone"
               size="xl"
-              className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-brand-red font-bold"
+              className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-brand-cyan font-bold"
             >
               <a href="tel:+13608832506" className="inline-flex items-center">
                 <Phone className="w-5 h-5 mr-2" />

@@ -143,7 +143,6 @@ export function StickyHeader() {
         { href: '/services/sewer-line-repair', label: 'Sewer Line Repair' },
         { href: '/residential', label: 'Residential Services' },
         { href: '/commercial', label: 'Commercial Plumbing' },
-        { href: '/new-construction', label: 'New Construction' },
         { href: '/tenant-improvements', label: 'Tenant Improvements' },
       ],
     },
@@ -242,18 +241,18 @@ export function StickyHeader() {
                 <a 
                   href={`tel:${BUSINESS_DATA.phoneRaw}`}
                   className={cn(
-                    "hidden md:flex items-center gap-1.5 lg:gap-2 text-slate-700 hover:text-brand-red transition-colors font-semibold rounded-lg px-2 lg:px-3 py-1.5 lg:py-2 whitespace-nowrap",
+                    "hidden md:flex items-center gap-1.5 lg:gap-2 text-slate-700 hover:text-brand-cyan transition-colors font-semibold rounded-lg px-2 lg:px-3 py-1.5 lg:py-2 whitespace-nowrap",
                     scrolled ? "text-xs lg:text-sm" : "text-sm"
                   )}
                 >
-                  <Phone className="h-3.5 w-3.5 lg:h-4 lg:w-4 text-brand-red flex-shrink-0" />
+                  <Phone className="h-3.5 w-3.5 lg:h-4 lg:w-4 text-brand-cyan flex-shrink-0" />
                   <span className="hidden xl:inline">{BUSINESS_DATA.phone}</span>
                   <span className="xl:hidden">Call</span>
                 </a>
                 <Link 
                   href="/booking" 
                   className={cn(
-                    "inline-flex items-center justify-center bg-brand-red text-white rounded-lg font-semibold hover:bg-brand-red-dark transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap",
+                    "inline-flex items-center justify-center bg-brand-cyan text-white rounded-lg font-semibold hover:bg-brand-cyan-dark transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap",
                     scrolled ? "px-3 lg:px-4 py-1.5 lg:py-2 text-xs lg:text-sm" : "px-3 sm:px-4 lg:px-5 py-2 lg:py-2.5 text-xs sm:text-sm"
                   )}
                 >

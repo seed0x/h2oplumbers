@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button'
 import { contactInfo } from '@/config/site'
 import { BUSINESS_DATA } from '@/lib/business-data'
 import { fixturePricing } from '@/config/fixture-pricing'
-import { CheckCircle, Wrench, Home, Droplets, Clock, Phone, MapPin, Star, CheckCircle2 } from 'lucide-react'
+import { CheckCircle, Wrench, Home, Droplets, Clock, Phone, MapPin, Star, CheckCircle2, ChevronRight } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Fixture Installation Vancouver WA | ADA Bathroom Contractors | H2O Plumbing',
@@ -62,14 +62,16 @@ export default function FixtureInstallationPage() {
   return (
     <div className="min-h-screen">
       {/* Breadcrumbs */}
-      <nav className="bg-slate-50 py-4">
+      <nav className="bg-slate-50 py-4" aria-label="Breadcrumb">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-brand-red">Services</Link>
-            <span>/</span>
-            <span className="text-brand-red">Fixture Installation</span>
+            <Link href="/" className="hover:text-brand-cyan flex items-center" aria-label="Home">
+              <Home className="w-4 h-4" />
+            </Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <Link href="/services" className="hover:text-brand-cyan">Services</Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <span className="text-brand-cyan font-medium">Fixture Installation</span>
           </div>
         </div>
       </nav>
@@ -98,7 +100,7 @@ export default function FixtureInstallationPage() {
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <a
                     href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                    className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                    className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                   >
                     <Phone className="w-5 h-5" />
                     Call {BUSINESS_DATA.phone}
@@ -108,36 +110,40 @@ export default function FixtureInstallationPage() {
                 {/* Trust Badges */}
                 <div className="flex flex-wrap gap-4 text-sm text-slate-300">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Licensed & Insured
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Family-Owned Since 2004
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Same-Day Service
                   </div>
                 </div>
               </div>
               
               {/* Right Column - Contact Form */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-7">
-                <div className="text-center mb-5">
-                  <h2 className="text-xl font-semibold text-slate-900 mb-1">Request Installation Quote</h2>
-                  <p className="text-sm text-slate-500">Fast response. No obligation.</p>
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-8">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center gap-2 bg-cyan-50 rounded-full px-4 py-2 mb-3">
+                    <Wrench className="w-4 h-4 text-brand-cyan" />
+                    <span className="text-xs font-bold text-brand-cyan uppercase tracking-wider">Professional Install</span>
+                  </div>
+                  <h2 className="text-2xl font-heading font-bold text-slate-900 mb-2">Get Your Fixtures Installed Right</h2>
+                  <p className="text-sm text-slate-600">Quality brands • Expert installation • Warranty included</p>
                 </div>
                 <form className="space-y-4">
                   <div>
-                    <Input placeholder="Your Name" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input placeholder="Your Name" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
-                    <Input type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
                     <Select>
-                      <SelectTrigger className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600">
+                      <SelectTrigger className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan">
                         <SelectValue placeholder="Fixture Type" />
                       </SelectTrigger>
                       <SelectContent>
@@ -152,12 +158,22 @@ export default function FixtureInstallationPage() {
                   </div>
                   <Button
                     type="submit"
-                    className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold py-5 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    Get Free Quote
+                    Get Free Quote Now
                   </Button>
                 </form>
-                <p className="text-[10px] text-slate-500 mt-4 text-center leading-relaxed">
+                <div className="flex items-center justify-center gap-4 mt-5 text-xs text-slate-500">
+                  <div className="flex items-center gap-1">
+                    <CheckCircle2 className="w-3 h-3 text-green-600" />
+                    <span>Warranty included</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Clock className="w-3 h-3 text-green-600" />
+                    <span>Same-day available</span>
+                  </div>
+                </div>
+                <p className="text-[10px] text-slate-500 mt-3 text-center leading-relaxed">
                   By submitting this form you agree to be contacted about your request.
                 </p>
               </div>
@@ -166,25 +182,25 @@ export default function FixtureInstallationPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-slate-900 text-white">
+      {/* Trust & Social Proof Bar */}
+      <section className="py-12 bg-gradient-to-r from-brand-cyan to-brand-cyan-dark text-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">500+</div>
-              <p className="text-lg">Fixtures Installed</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">500+</div>
+              <p className="text-sm md:text-base opacity-90">Fixtures Installed</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Same Day</div>
-              <p className="text-lg">Service Available</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">Same Day</div>
+              <p className="text-sm md:text-base opacity-90">Service Available</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Licensed</div>
-              <p className="text-lg">& Insured</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">Licensed</div>
+              <p className="text-sm md:text-base opacity-90">& Insured</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Warranty</div>
-              <p className="text-lg">On All Work</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">Warranty</div>
+              <p className="text-sm md:text-base opacity-90">Included</p>
             </div>
           </div>
         </div>
@@ -199,23 +215,58 @@ export default function FixtureInstallationPage() {
           </div>
           
           {fixtures.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="mb-16">
-              <h3 className="text-3xl font-heading font-bold text-slate-900 mb-8 text-center uppercase">{category.category}</h3>
-              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+            <div key={categoryIndex} className="mb-20">
+              <div className="text-center mb-12">
+                <div className="inline-block bg-gradient-to-r from-brand-cyan/10 to-brand-cyan/5 rounded-full px-6 py-2 mb-4">
+                  <h3 className="text-2xl font-heading font-bold text-brand-cyan uppercase tracking-wide">{category.category}</h3>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
                 {category.items.map((item, itemIndex) => (
-                  <Card key={itemIndex} className="border-2 border-slate-200 hover:border-brand-red hover:shadow-xl transition-all duration-300 group">
-                    <CardHeader>
-                      <div className="flex justify-between items-start mb-2">
-                        <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-brand-red transition-colors">{item.name}</CardTitle>
-                        <Badge className="bg-red-100 text-brand-red font-bold text-base px-3 py-1">
-                          {item.price}
-                        </Badge>
+                  <Card key={itemIndex} className="border-2 border-slate-200 hover:border-brand-cyan hover:shadow-2xl transition-all duration-300 group overflow-hidden relative">
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-brand-cyan/5 to-transparent rounded-bl-full"></div>
+                    
+                    <CardHeader className="pb-4 relative z-10">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-brand-cyan to-brand-cyan-dark rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                          <Wrench className="w-7 h-7 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-start justify-between gap-3">
+                            <CardTitle className="text-2xl font-heading font-bold text-slate-900 group-hover:text-brand-cyan transition-colors leading-tight">
+                              {item.name}
+                            </CardTitle>
+                            <Badge className="bg-gradient-to-r from-brand-cyan/10 to-brand-cyan/20 text-brand-cyan font-bold text-sm px-4 py-1.5 whitespace-nowrap border-2 border-brand-cyan/30">
+                              {item.price}
+                            </Badge>
+                          </div>
+                        </div>
                       </div>
                     </CardHeader>
-                    <CardContent>
-                      <p className="text-slate-600 mb-5">{item.description}</p>
-                      <MasterButton className="mt-4 w-full bg-brand-red hover:bg-brand-red-dark text-white font-semibold" variant="primary">
-                        <Link href="/booking">Schedule Installation</Link>
+                    
+                    <CardContent className="pt-0 relative z-10">
+                      <p className="text-slate-600 leading-relaxed mb-6 text-base">{item.description}</p>
+                      
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        <span className="inline-flex items-center gap-1.5 bg-cyan-50 text-brand-cyan px-3 py-1 rounded-full text-xs font-medium border border-brand-cyan/20">
+                          <CheckCircle2 className="w-3.5 h-3.5" />
+                          Licensed Install
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 bg-cyan-50 text-brand-cyan px-3 py-1 rounded-full text-xs font-medium border border-brand-cyan/20">
+                          <Clock className="w-3.5 h-3.5" />
+                          Same-Day Available
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 bg-cyan-50 text-brand-cyan px-3 py-1 rounded-full text-xs font-medium border border-brand-cyan/20">
+                          <Star className="w-3.5 h-3.5" />
+                          Warranty Included
+                        </span>
+                      </div>
+                      
+                      <MasterButton className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold py-3.5 text-base shadow-lg hover:shadow-xl transition-all" variant="primary">
+                        <Link href="/booking" className="flex items-center justify-center gap-2">
+                          <Phone className="w-4 h-4" />
+                          Schedule Installation
+                        </Link>
                       </MasterButton>
                     </CardContent>
                   </Card>
@@ -237,10 +288,10 @@ export default function FixtureInstallationPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {installationProcess.map((step, index) => (
               <div key={index} className="text-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="bg-gradient-to-br from-brand-red to-red-700 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div className="bg-brand-cyan text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
                   {step.icon}
                 </div>
-                <div className="bg-red-100 text-brand-red rounded-full w-10 h-10 flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                <div className="bg-cyan-50 text-brand-cyan rounded-full w-10 h-10 flex items-center justify-center mx-auto mb-4 font-bold text-lg">
                   {step.step}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
@@ -255,7 +306,7 @@ export default function FixtureInstallationPage() {
       <section className="py-20 px-4 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 rounded-full bg-brand-red/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-brand-red mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-brand-cyan/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-brand-cyan mb-6">
               Accessibility Solutions
             </div>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-4 uppercase">ADA Compliant Bathroom Installation</h2>
@@ -276,39 +327,39 @@ export default function FixtureInstallationPage() {
                 with attention to detail and code compliance.
               </p>
               
-              <div className="bg-white border-2 border-brand-red/20 rounded-xl p-6 shadow-lg">
+              <div className="bg-white border-2 border-brand-cyan/20 rounded-xl p-6 shadow-lg">
                 <h4 className="text-xl font-heading font-bold text-slate-900 mb-4 uppercase">We Install:</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div className="flex items-center">
-                    <CheckCircle2 className="w-5 h-5 text-brand-red mr-3 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-3 flex-shrink-0" />
                     <span className="text-slate-700">Comfort height toilets</span>
                   </div>
                   <div className="flex items-center">
-                    <CheckCircle2 className="w-5 h-5 text-brand-red mr-3 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-3 flex-shrink-0" />
                     <span className="text-slate-700">Roll-in shower systems</span>
                   </div>
                   <div className="flex items-center">
-                    <CheckCircle2 className="w-5 h-5 text-brand-red mr-3 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-3 flex-shrink-0" />
                     <span className="text-slate-700">Grab bar installation</span>
                   </div>
                   <div className="flex items-center">
-                    <CheckCircle2 className="w-5 h-5 text-brand-red mr-3 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-3 flex-shrink-0" />
                     <span className="text-slate-700">Accessible sink heights</span>
                   </div>
                   <div className="flex items-center">
-                    <CheckCircle2 className="w-5 h-5 text-brand-red mr-3 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-3 flex-shrink-0" />
                     <span className="text-slate-700">Wheelchair accessible vanities</span>
                   </div>
                   <div className="flex items-center">
-                    <CheckCircle2 className="w-5 h-5 text-brand-red mr-3 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-3 flex-shrink-0" />
                     <span className="text-slate-700">ADA compliant faucets</span>
                   </div>
                   <div className="flex items-center">
-                    <CheckCircle2 className="w-5 h-5 text-brand-red mr-3 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-3 flex-shrink-0" />
                     <span className="text-slate-700">Walk-in bathtubs</span>
                   </div>
                   <div className="flex items-center">
-                    <CheckCircle2 className="w-5 h-5 text-brand-red mr-3 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-3 flex-shrink-0" />
                     <span className="text-slate-700">Barrier-free shower entries</span>
                   </div>
                 </div>
@@ -316,7 +367,7 @@ export default function FixtureInstallationPage() {
             </div>
             
             <div className="space-y-6">
-              <Card className="border-2 border-brand-red/20 hover:border-brand-red hover:shadow-xl transition-all duration-300">
+              <Card className="border-2 border-brand-cyan/20 hover:border-brand-cyan hover:shadow-xl transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-slate-900">Residential ADA Bathrooms</CardTitle>
                   <CardDescription className="text-slate-600">
@@ -326,29 +377,29 @@ export default function FixtureInstallationPage() {
                 <CardContent>
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-start text-slate-700">
-                      <CheckCircle2 className="w-5 h-5 text-brand-red mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-2 flex-shrink-0 mt-0.5" />
                       Complete bathroom accessibility assessments
                     </li>
                     <li className="flex items-start text-slate-700">
-                      <CheckCircle2 className="w-5 h-5 text-brand-red mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-2 flex-shrink-0 mt-0.5" />
                       Custom fixture selection and planning
                     </li>
                     <li className="flex items-start text-slate-700">
-                      <CheckCircle2 className="w-5 h-5 text-brand-red mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-2 flex-shrink-0 mt-0.5" />
                       Code-compliant installation throughout Clark County
                     </li>
                     <li className="flex items-start text-slate-700">
-                      <CheckCircle2 className="w-5 h-5 text-brand-red mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-2 flex-shrink-0 mt-0.5" />
                       Licensed and insured contractors
                     </li>
                   </ul>
-                  <MasterButton className="w-full bg-brand-red hover:bg-brand-red-dark text-white font-semibold">
+                  <MasterButton className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-semibold">
                     <Link href="/booking">Request ADA Consultation</Link>
                   </MasterButton>
                 </CardContent>
               </Card>
               
-              <Card className="border-2 border-brand-red/20 hover:border-brand-red hover:shadow-xl transition-all duration-300">
+              <Card className="border-2 border-brand-cyan/20 hover:border-brand-cyan hover:shadow-xl transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-slate-900">Commercial ADA Compliance</CardTitle>
                   <CardDescription className="text-slate-600">
@@ -358,23 +409,23 @@ export default function FixtureInstallationPage() {
                 <CardContent>
                   <ul className="space-y-3 mb-6">
                     <li className="flex items-start text-slate-700">
-                      <CheckCircle2 className="w-5 h-5 text-brand-red mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-2 flex-shrink-0 mt-0.5" />
                       ADA compliance for offices, restaurants, retail
                     </li>
                     <li className="flex items-start text-slate-700">
-                      <CheckCircle2 className="w-5 h-5 text-brand-red mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-2 flex-shrink-0 mt-0.5" />
                       Multi-stall accessible bathroom solutions
                     </li>
                     <li className="flex items-start text-slate-700">
-                      <CheckCircle2 className="w-5 h-5 text-brand-red mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-2 flex-shrink-0 mt-0.5" />
                       Commercial-grade fixtures and installation
                     </li>
                     <li className="flex items-start text-slate-700">
-                      <CheckCircle2 className="w-5 h-5 text-brand-red mr-2 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-2 flex-shrink-0 mt-0.5" />
                       Fast turnaround to minimize business disruption
                     </li>
                   </ul>
-                  <MasterButton className="w-full bg-brand-red hover:bg-brand-red-dark text-white font-semibold">
+                  <MasterButton className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-semibold">
                     <Link href="/commercial">Commercial Services</Link>
                   </MasterButton>
                 </CardContent>
@@ -382,7 +433,7 @@ export default function FixtureInstallationPage() {
             </div>
           </div>
           
-          <div className="bg-gradient-to-r from-brand-red to-brand-red-dark rounded-2xl p-8 md:p-12 text-white text-center shadow-xl">
+          <div className="bg-gradient-to-r from-brand-cyan to-brand-cyan-dark rounded-2xl p-8 md:p-12 text-white text-center shadow-xl">
             <h3 className="text-3xl font-heading font-bold mb-4 uppercase">Expert ADA Bathroom Contractors in Clark County</h3>
             <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
               Serving Vancouver, Battle Ground, Camas, Washougal, Ridgefield, and all of Clark County with 
@@ -391,7 +442,7 @@ export default function FixtureInstallationPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                className="inline-flex items-center justify-center gap-3 bg-white text-brand-red hover:bg-slate-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                className="inline-flex items-center justify-center gap-3 bg-white text-brand-cyan hover:bg-slate-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
               >
                 <Phone className="w-5 h-5" />
                 Call {BUSINESS_DATA.phone}
@@ -436,11 +487,11 @@ export default function FixtureInstallationPage() {
                 startingPrice: '$600'
               }
             ].map((service, index) => (
-              <Card key={index} className="border-2 border-slate-200 hover:border-brand-red hover:shadow-xl transition-all duration-300 group">
+              <Card key={index} className="border-2 border-slate-200 hover:border-brand-cyan hover:shadow-xl transition-all duration-300 group">
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-brand-red transition-colors">{service.title}</CardTitle>
-                    <Badge className="bg-red-100 text-brand-red font-bold text-base px-3 py-1">
+                    <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-brand-cyan transition-colors">{service.title}</CardTitle>
+                    <Badge className="bg-cyan-50 text-brand-cyan font-bold text-base px-3 py-1">
                       From {service.startingPrice}
                     </Badge>
                   </div>
@@ -450,12 +501,12 @@ export default function FixtureInstallationPage() {
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center text-slate-700">
-                        <CheckCircle2 className="w-5 h-5 text-brand-red mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-2 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <MasterButton className="w-full bg-brand-red hover:bg-brand-red-dark text-white font-semibold">
+                  <MasterButton className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-semibold">
                     <Link href="/booking">Schedule Installation</Link>
                   </MasterButton>
                 </CardContent>
@@ -475,31 +526,31 @@ export default function FixtureInstallationPage() {
               <div className="space-y-4">
                 {whyChooseUs.map((benefit, index) => (
                   <div key={index} className="flex items-start bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                    <CheckCircle2 className="w-6 h-6 text-brand-red mr-4 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-6 h-6 text-brand-cyan mr-4 flex-shrink-0 mt-0.5" />
                     <span className="text-lg text-slate-700">{benefit}</span>
                   </div>
                 ))}
               </div>
               <div className="mt-8">
-                <MasterButton size="lg" className="bg-brand-red hover:bg-brand-red-dark text-white font-semibold text-lg px-8 py-4">
+                <MasterButton size="lg" className="bg-brand-cyan hover:bg-brand-cyan-dark text-white font-semibold text-lg px-8 py-4">
                   <Link href="/booking">Schedule Your Installation</Link>
                 </MasterButton>
               </div>
             </div>
             <div className="bg-white border-2 border-slate-200 p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-heading font-bold text-slate-900 mb-6 uppercase border-b-4 border-brand-red pb-3">Installation Warranty</h3>
+              <h3 className="text-2xl font-heading font-bold text-slate-900 mb-6 uppercase border-b-4 border-brand-cyan pb-3">Installation Warranty</h3>
               
               <div className="space-y-4 mb-8">
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-brand-red mr-3 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 text-brand-cyan mr-3 flex-shrink-0 mt-0.5" />
                   <span className="text-slate-700">Warranty on installation work (varies by fixture)</span>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-brand-red mr-3 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 text-brand-cyan mr-3 flex-shrink-0 mt-0.5" />
                   <span className="text-slate-700">Manufacturer warranty on all fixtures</span>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle2 className="w-6 h-6 text-brand-red mr-3 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 text-brand-cyan mr-3 flex-shrink-0 mt-0.5" />
                   <span className="text-slate-700">Free follow-up adjustments within 30 days</span>
                 </div>
               </div>
@@ -517,7 +568,7 @@ export default function FixtureInstallationPage() {
                   'Longview, WA'
                 ].map((area, index) => (
                   <div key={index} className="flex items-center py-2">
-                    <MapPin className="w-4 h-4 text-brand-red mr-2 flex-shrink-0" />
+                    <MapPin className="w-4 h-4 text-brand-cyan mr-2 flex-shrink-0" />
                     <span className="text-slate-700 text-sm">{area}</span>
                   </div>
                 ))}
@@ -528,7 +579,7 @@ export default function FixtureInstallationPage() {
       </section>
 
       {/* Emergency CTA */}
-      <section className="py-20 px-4 bg-gradient-to-br from-brand-red to-red-700 text-white relative overflow-hidden">
+      <section className="py-20 px-4 bg-gradient-to-r from-brand-cyan to-brand-cyan-dark text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="flex items-center justify-center mb-6">
@@ -542,7 +593,7 @@ export default function FixtureInstallationPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={`tel:${BUSINESS_DATA.phoneRaw}`}
-              className="inline-flex items-center justify-center gap-3 bg-white text-brand-red hover:bg-slate-100 px-8 py-5 rounded-lg font-bold text-lg transition-colors shadow-lg"
+              className="inline-flex items-center justify-center gap-3 bg-white text-brand-cyan hover:bg-slate-100 px-8 py-5 rounded-lg font-bold text-lg transition-colors shadow-lg"
             >
               <Phone className="w-6 h-6" />
               Call {BUSINESS_DATA.phone} Now

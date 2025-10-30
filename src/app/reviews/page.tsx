@@ -53,9 +53,9 @@ export default function ReviewsPage() {
       <nav className="bg-slate-50 py-4">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
+            <Link href="/" className="hover:text-brand-cyan">Home</Link>
             <span>/</span>
-            <span className="text-brand-red">Reviews</span>
+            <span className="text-brand-cyan">Reviews</span>
           </div>
         </div>
       </nav>
@@ -71,36 +71,36 @@ export default function ReviewsPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-xs font-medium tracking-wide mb-6 ring-1 ring-white/10 shadow-lg shadow-black/10">
-              <span className="inline-block w-2 h-2 rounded-full bg-brand-red animate-pulse" />
+              <span className="inline-block w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
               <span>Trusted by Your Community</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight uppercase">
-              Customer <span className="text-brand-red">Reviews</span>
+              Customer <span className="text-brand-cyan">Reviews</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-slate-200 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Real feedback from <span className="text-brand-red font-bold">real families and businesses</span> across Southwest Washington. See why your neighbors trust us.
+              Real feedback from <span className="text-brand-cyan font-bold">real families and businesses</span> across Southwest Washington. See why your neighbors trust us.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
                 <div className="flex items-center justify-center gap-2 mb-1">
-                  <Award className="w-5 h-5 text-brand-red" />
+                  <Award className="w-5 h-5 text-brand-cyan" />
                   <span className="text-2xl font-heading font-bold">450+</span>
                 </div>
                 <p className="text-sm text-slate-300">5-Star Reviews</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
                 <div className="flex items-center justify-center gap-2 mb-1">
-                  <Users className="w-5 h-5 text-brand-red" />
+                  <Users className="w-5 h-5 text-brand-cyan" />
                   <span className="text-2xl font-heading font-bold">{BUSINESS_DATA.yearsInBusiness}</span>
                 </div>
                 <p className="text-sm text-slate-300">Years Family-Owned</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
                 <div className="flex items-center justify-center gap-2 mb-1">
-                  <ThumbsUp className="w-5 h-5 text-brand-red" />
+                  <ThumbsUp className="w-5 h-5 text-brand-cyan" />
                   <span className="text-2xl font-heading font-bold">98%</span>
                 </div>
                 <p className="text-sm text-slate-300">Satisfaction Rate</p>
@@ -116,8 +116,8 @@ export default function ReviewsPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 bg-red-100 rounded-full px-4 py-2 mb-4">
-                <Star className="w-5 h-5 text-brand-red" />
-                <span className="text-sm font-semibold text-brand-red uppercase tracking-wider">Review Platforms</span>
+                <Star className="w-5 h-5 text-brand-cyan" />
+                <span className="text-sm font-semibold text-brand-cyan uppercase tracking-wider">Review Platforms</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 uppercase">Where You Can Find Us</h2>
             </div>
@@ -128,12 +128,12 @@ export default function ReviewsPage() {
                   href={p.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white rounded-2xl border-2 border-brand-red/20 p-8 text-center hover:border-brand-red hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                  className="bg-white rounded-2xl border-2 border-brand-cyan/20 p-8 text-center hover:border-brand-cyan hover:shadow-xl transition-all duration-300 group cursor-pointer"
                 >
-                  <div className="flex items-center justify-center text-brand-red mb-4 group-hover:scale-110 transition-transform">{p.icon}</div>
+                  <div className="flex items-center justify-center text-brand-cyan mb-4 group-hover:scale-110 transition-transform">{p.icon}</div>
                   <h3 className="text-xl font-heading font-bold mb-3 uppercase text-slate-900">{p.platform}</h3>
                   <div className="flex items-center justify-center gap-2 mb-2">
-                    <span className="text-3xl font-heading font-bold text-brand-red">{p.rating}</span>
+                    <span className="text-3xl font-heading font-bold text-brand-cyan">{p.rating}</span>
                     <div className="flex text-yellow-500">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-4 h-4 fill-current" />
@@ -141,7 +141,7 @@ export default function ReviewsPage() {
                     </div>
                   </div>
                   <p className="text-sm text-slate-600 font-medium">{p.count}</p>
-                  <div className="flex items-center justify-center gap-2 text-brand-red text-sm font-semibold mt-3 group-hover:gap-3 transition-all">
+                  <div className="flex items-center justify-center gap-2 text-brand-cyan text-sm font-semibold mt-3 group-hover:gap-3 transition-all">
                     <span>View Reviews</span>
                     <ExternalLink className="w-4 h-4" />
                   </div>
@@ -158,11 +158,11 @@ export default function ReviewsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 bg-red-100 rounded-full px-4 py-2 mb-4">
-                <Heart className="w-5 h-5 text-brand-red" />
-                <span className="text-sm font-semibold text-brand-red uppercase tracking-wider">Testimonials</span>
+                <Heart className="w-5 h-5 text-brand-cyan" />
+                <span className="text-sm font-semibold text-brand-cyan uppercase tracking-wider">Testimonials</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 uppercase">
-                Hear From Your <span className="text-brand-red">Neighbors</span>
+                Hear From Your <span className="text-brand-cyan">Neighbors</span>
               </h2>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
                 From Vancouver to Woodland, families and businesses trust us to treat their homes and projects like our own.
@@ -171,7 +171,7 @@ export default function ReviewsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {unifiedReviews.map(r => (
-              <div key={r.id} className="bg-white border-2 border-brand-red/20 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:border-brand-red hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+              <div key={r.id} className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-6 shadow-lg hover:shadow-xl hover:border-brand-cyan hover:-translate-y-1 transition-all duration-300 flex flex-col group">
                 <div className="flex items-start justify-between mb-4">
                   <span className={`text-xs font-semibold tracking-wide px-3 py-1.5 rounded-full border ${platformColors[r.platform]}`}>
                     {r.platform}
@@ -188,15 +188,15 @@ export default function ReviewsPage() {
                     <span className="font-bold text-slate-900">{r.author}</span>
                     <span className="text-slate-500">{r.time}</span>
                   </div>
-                  <p className="text-xs text-brand-red font-medium mt-1">{r.location}</p>
+                  <p className="text-xs text-brand-cyan font-medium mt-1">{r.location}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Trust Message */}
-          <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg border-2 border-brand-red/20 p-8 md:p-10 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-red/10 text-brand-red mb-6">
+          <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg border-2 border-brand-cyan/20 p-8 md:p-10 text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-cyan/10 text-brand-cyan mb-6">
               <MessageCircle className="w-8 h-8" />
             </div>
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-4 uppercase">
@@ -208,7 +208,7 @@ export default function ReviewsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                className="inline-flex items-center justify-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
               >
                 <MessageCircle className="w-5 h-5" />
                 Contact Us

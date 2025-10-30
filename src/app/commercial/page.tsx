@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Breadcrumbs } from '@/components/ui/breadcrumbs'
 import { contactInfo } from '@/config/site'
-import { Building2, UtensilsCrossed, ShoppingBag, Factory, Stethoscope, Building, CheckCircle2, Clock, Shield, Award, Users, MapPin, Wrench, TrendingUp, HeartHandshake, Star, Phone } from 'lucide-react'
+import { Building2, UtensilsCrossed, ShoppingBag, Factory, Stethoscope, Building, CheckCircle2, Clock, Shield, Award, Users, MapPin, Wrench, TrendingUp, HeartHandshake, Star, Phone, Home, ChevronRight } from 'lucide-react'
 import { BUSINESS_DATA } from '@/lib/business-data'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -101,12 +101,14 @@ export default function CommercialPage() {
       <FloatingShareButton />
       
       {/* Breadcrumbs */}
-      <nav className="bg-slate-50 py-4">
+      <nav className="bg-slate-50 py-4" aria-label="Breadcrumb">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
-            <span>/</span>
-            <span className="text-brand-red">Commercial Services</span>
+            <Link href="/" className="hover:text-brand-cyan flex items-center" aria-label="Home">
+              <Home className="w-4 h-4" />
+            </Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <span className="text-brand-cyan font-medium">Commercial Services</span>
           </div>
         </div>
       </nav>
@@ -133,7 +135,7 @@ export default function CommercialPage() {
                 
                 {/* Trust Badge */}
                 <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg px-4 py-3 mb-8">
-                  <Building2 className="w-5 h-5 text-brand-red" />
+                  <Building2 className="w-5 h-5 text-brand-cyan" />
                   <span className="font-semibold text-white">Trusted by 50+ Local Businesses</span>
                 </div>
                 
@@ -141,7 +143,7 @@ export default function CommercialPage() {
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <a
                     href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                    className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                    className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                   >
                     <Phone className="w-5 h-5" />
                     Call {BUSINESS_DATA.phone}
@@ -151,38 +153,42 @@ export default function CommercialPage() {
                 {/* Trust Badges */}
                 <div className="flex flex-wrap gap-4 text-sm text-slate-300">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Licensed & Insured
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Family-Owned Since 2004
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     24/7 Priority Response
                   </div>
                 </div>
               </div>
               
               {/* Right Column - Contact Form */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-7">
-                <div className="text-center mb-5">
-                  <h2 className="text-xl font-semibold text-slate-900 mb-1">Request a Commercial Quote</h2>
-                  <p className="text-sm text-slate-500">Priority scheduling for business clients. No obligation.</p>
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-8">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center gap-2 bg-cyan-50 rounded-full px-4 py-2 mb-3">
+                    <Clock className="w-4 h-4 text-brand-cyan" />
+                    <span className="text-xs font-bold text-brand-cyan uppercase tracking-wider">2-Hour Response Time</span>
+                  </div>
+                  <h2 className="text-2xl font-heading font-bold text-slate-900 mb-2">Request Commercial Quote</h2>
+                  <p className="text-sm text-slate-600">Priority scheduling • Same-day service • Fast response</p>
                 </div>
                 <form className="space-y-4" aria-label="Request commercial quote form">
                   <div>
                     <label className="sr-only" htmlFor="hero-name">Business Name</label>
-                    <Input id="hero-name" placeholder="Business Name" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input id="hero-name" placeholder="Business Name" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
                     <label className="sr-only" htmlFor="hero-phone">Phone Number</label>
-                    <Input id="hero-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input id="hero-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
                     <Select>
-                      <SelectTrigger className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600">
+                      <SelectTrigger className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan">
                         <SelectValue placeholder="Business Type" />
                       </SelectTrigger>
                       <SelectContent>
@@ -199,13 +205,23 @@ export default function CommercialPage() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold py-5 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    Get Free Quote
+                    Get Free Quote Now
                   </Button>
                 </form>
-                <p className="text-[10px] text-slate-500 mt-4 text-center leading-relaxed">
-                  By submitting this form you agree to be contacted about your request. We never share your information.
+                <div className="flex items-center justify-center gap-4 mt-5 text-xs text-slate-500">
+                  <div className="flex items-center gap-1">
+                    <CheckCircle2 className="w-3 h-3 text-green-600" />
+                    <span>No obligation</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <CheckCircle2 className="w-3 h-3 text-green-600" />
+                    <span>Fast response</span>
+                  </div>
+                </div>
+                <p className="text-[10px] text-slate-500 mt-3 text-center leading-relaxed">
+                  By submitting this form you agree to be contacted about your request.
                 </p>
               </div>
             </div>
@@ -213,25 +229,25 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Trust & Social Proof Bar */}
       <section className="py-12 bg-slate-900 text-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">50+</div>
-              <p className="text-lg">Business Clients</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">100+</div>
+              <p className="text-sm md:text-base opacity-90">Business Clients</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">24/7</div>
-              <p className="text-lg">Emergency Response</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">2hr</div>
+              <p className="text-sm md:text-base opacity-90">Avg Response Time</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Same Day</div>
-              <p className="text-lg">Service Available</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">Same Day</div>
+              <p className="text-sm md:text-base opacity-90">Service Available</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">20+ Years</div>
-              <p className="text-lg">Commercial Experience</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">20+ Yrs</div>
+              <p className="text-sm md:text-base opacity-90">Experience</p>
             </div>
           </div>
         </div>
@@ -244,7 +260,7 @@ export default function CommercialPage() {
       <section className="py-20 px-4 bg-slate-900 text-white">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-6">
-            Ready to <span className="text-brand-red">Partner</span> With Us?
+            Ready to <span className="text-brand-cyan">Partner</span> With Us?
           </h2>
           <p className="text-xl md:text-2xl text-slate-200 mb-12 leading-relaxed">
             Join the 50+ businesses who trust H2O Plumbing for reliable, code-compliant commercial plumbing. 
@@ -253,15 +269,15 @@ export default function CommercialPage() {
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="text-5xl font-heading font-bold text-brand-red mb-3">2hr</div>
+              <div className="text-5xl font-heading font-bold text-brand-cyan mb-3">2hr</div>
               <p className="text-lg text-slate-200">Average Response Time</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="text-5xl font-heading font-bold text-brand-red mb-3">100%</div>
+              <div className="text-5xl font-heading font-bold text-brand-cyan mb-3">100%</div>
               <p className="text-lg text-slate-200">Code Compliance</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="text-5xl font-heading font-bold text-brand-red mb-3">24/7</div>
+              <div className="text-5xl font-heading font-bold text-brand-cyan mb-3">24/7</div>
               <p className="text-lg text-slate-200">Emergency Service</p>
             </div>
           </div>
@@ -269,14 +285,14 @@ export default function CommercialPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={`tel:${BUSINESS_DATA.phoneRaw}`}
-              className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-10 py-5 rounded-lg font-bold text-xl transition-colors shadow-xl"
+              className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-10 py-5 rounded-lg font-bold text-xl transition-all shadow-xl hover:scale-105 flex-1 sm:flex-initial"
             >
               <Phone className="w-6 h-6" />
               Call {BUSINESS_DATA.phone}
             </a>
             <a
               href="#quote-form"
-              className="inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-100 text-slate-900 px-10 py-5 rounded-lg font-bold text-xl transition-colors shadow-xl"
+              className="inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-100 text-slate-900 px-10 py-5 rounded-lg font-bold text-xl transition-all shadow-xl hover:scale-105 flex-1 sm:flex-initial"
             >
               Request Commercial Quote
             </a>
@@ -302,11 +318,12 @@ export default function CommercialPage() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {commercialServices.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow border border-slate-200">
-                <CardHeader>
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-2 border-slate-200 hover:border-brand-cyan relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-cyan/5 to-transparent rounded-bl-full"></div>
+                <CardHeader className="relative z-10">
                   <div className="flex items-center justify-between">
-                    <div className="w-14 h-14 rounded-full bg-red-50 flex items-center justify-center">
-                      <service.icon className="w-7 h-7 text-brand-red" />
+                    <div className="w-14 h-14 rounded-full bg-cyan-50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <service.icon className="w-7 h-7 text-brand-cyan" />
                     </div>
                     <div className="flex items-center">
                       {Array.from({ length: Math.floor(service.rating) }).map((_, i) => (
@@ -318,8 +335,8 @@ export default function CommercialPage() {
                       <span className="text-sm text-slate-500 ml-1">{service.rating}</span>
                     </div>
                   </div>
-                  <CardTitle className="text-xl text-slate-900 mt-2 font-heading uppercase">{service.title}</CardTitle>
-                  <CardDescription className="text-slate-600">
+                  <CardTitle className="text-xl text-slate-900 mt-2 font-heading uppercase group-hover:text-brand-cyan transition-colors">{service.title}</CardTitle>
+                  <CardDescription className="text-slate-600 leading-relaxed">
                     {service.description}
                   </CardDescription>
                 </CardHeader>
@@ -327,7 +344,7 @@ export default function CommercialPage() {
                   <ul className="space-y-2">
                     {service.services.map((item, idx) => (
                       <li key={idx} className="flex items-center text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-brand-red mr-2" />
+                        <CheckCircle2 className="w-4 h-4 text-brand-cyan mr-2" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -353,12 +370,12 @@ export default function CommercialPage() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {maintenanceServices.map((service, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow border border-slate-200">
+              <Card key={index} className="text-center hover:shadow-xl transition-all duration-300 border-2 border-slate-200 hover:border-brand-cyan group">
                 <CardHeader>
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-50 flex items-center justify-center">
-                    <service.icon className="w-8 h-8 text-brand-red" />
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-cyan-50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <service.icon className="w-8 h-8 text-brand-cyan" />
                   </div>
-                  <CardTitle className="text-xl font-heading uppercase">{service.title}</CardTitle>
+                  <CardTitle className="text-xl font-heading uppercase group-hover:text-brand-cyan transition-colors">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-slate-600">
@@ -369,41 +386,46 @@ export default function CommercialPage() {
             ))}
           </div>
 
-          <div className="bg-slate-900 text-white p-8 md:p-12 rounded-2xl shadow-lg">
+          <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white p-8 md:p-12 rounded-2xl shadow-xl border border-slate-700">
             <div className="max-w-4xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-heading font-bold uppercase mb-4 text-center">Protect Your Business Investment</h3>
-              <p className="text-lg mb-8 text-slate-200 text-center">
-                Regular maintenance prevents costly emergencies, extends equipment life, and keeps your operations running smoothly. We work around your business hours to minimize disruption across Vancouver, Battle Ground, and Camas.
-              </p>
+              <div className="text-center mb-6">
+                <Badge className="bg-brand-cyan/20 text-brand-cyan border-2 border-brand-cyan font-bold text-sm px-4 py-2 mb-4">
+                  Prevent Costly Downtime
+                </Badge>
+                <h3 className="text-2xl md:text-3xl font-heading font-bold uppercase mb-4">Protect Your Business Investment</h3>
+                <p className="text-lg mb-8 text-slate-200 leading-relaxed">
+                  Regular maintenance prevents costly emergencies, extends equipment life, and keeps your operations running smoothly. We work around your business hours to minimize disruption.
+                </p>
+              </div>
               <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-3">
-                    <Clock className="w-8 h-8 text-brand-red" />
+                <div className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10">
+                  <div className="w-16 h-16 rounded-full bg-brand-cyan/20 flex items-center justify-center mx-auto mb-3">
+                    <Clock className="w-8 h-8 text-brand-cyan" />
                   </div>
-                  <div className="font-semibold mb-1">Flexible Scheduling</div>
+                  <div className="font-bold mb-1 text-lg">Flexible Scheduling</div>
                   <div className="text-sm text-slate-300">Work around your hours</div>
                 </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-3">
-                    <Shield className="w-8 h-8 text-brand-red" />
+                <div className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10">
+                  <div className="w-16 h-16 rounded-full bg-brand-cyan/20 flex items-center justify-center mx-auto mb-3">
+                    <Shield className="w-8 h-8 text-brand-cyan" />
                   </div>
-                  <div className="font-semibold mb-1">Prevent Emergencies</div>
+                  <div className="font-bold mb-1 text-lg">Prevent Emergencies</div>
                   <div className="text-sm text-slate-300">Catch issues early</div>
                 </div>
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-3">
-                    <Wrench className="w-8 h-8 text-brand-red" />
+                <div className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10">
+                  <div className="w-16 h-16 rounded-full bg-brand-cyan/20 flex items-center justify-center mx-auto mb-3">
+                    <Wrench className="w-8 h-8 text-brand-cyan" />
                   </div>
-                  <div className="font-semibold mb-1">Extend Equipment Life</div>
+                  <div className="font-bold mb-1 text-lg">Extend Equipment Life</div>
                   <div className="text-sm text-slate-300">Maximize your investment</div>
                 </div>
               </div>
               <div className="text-center">
                 <a
                   href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                  className="inline-flex items-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                  className="inline-flex items-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-10 py-5 rounded-lg font-bold text-xl transition-all shadow-2xl hover:scale-105"
                 >
-                  <Phone className="w-5 h-5" />
+                  <Phone className="w-6 h-6" />
                   Schedule Maintenance Consultation
                 </a>
               </div>
@@ -413,10 +435,7 @@ export default function CommercialPage() {
       </section>
 
       {/* Quote Form Section - Updated with more conversion elements */}
-      <section className="py-20 px-4 bg-white relative overflow-hidden">
-        {/* Background accent */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-slate-50 to-white opacity-60 pointer-events-none"></div>
-
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -429,28 +448,28 @@ export default function CommercialPage() {
             </p>
             <ul className="space-y-3 mb-8">
               <li className="flex items-center">
-                <div className="bg-red-50 p-2 rounded-full mr-3">
-                  <CheckCircle2 className="h-5 w-5 text-brand-red" />
+                <div className="bg-cyan-50 p-2 rounded-full mr-3">
+                  <CheckCircle2 className="h-5 w-5 text-brand-cyan" />
                 </div>
-                <span className="text-slate-700">Detailed service options</span>
+                <span className="text-slate-700 font-medium">Detailed service options</span>
               </li>
               <li className="flex items-center">
-                <div className="bg-red-50 p-2 rounded-full mr-3">
-                  <CheckCircle2 className="h-5 w-5 text-brand-red" />
+                <div className="bg-cyan-50 p-2 rounded-full mr-3">
+                  <CheckCircle2 className="h-5 w-5 text-brand-cyan" />
                 </div>
-                <span className="text-slate-700">Upfront pricing</span>
+                <span className="text-slate-700 font-medium">Upfront pricing</span>
               </li>
               <li className="flex items-center">
-                <div className="bg-red-50 p-2 rounded-full mr-3">
-                  <CheckCircle2 className="h-5 w-5 text-brand-red" />
+                <div className="bg-cyan-50 p-2 rounded-full mr-3">
+                  <CheckCircle2 className="h-5 w-5 text-brand-cyan" />
                 </div>
-                <span className="text-slate-700">Response time guarantee</span>
+                <span className="text-slate-700 font-medium">2-hour response time guarantee</span>
               </li>
               <li className="flex items-center">
-                <div className="bg-red-50 p-2 rounded-full mr-3">
-                  <CheckCircle2 className="h-5 w-5 text-brand-red" />
+                <div className="bg-cyan-50 p-2 rounded-full mr-3">
+                  <CheckCircle2 className="h-5 w-5 text-brand-cyan" />
                 </div>
-                <span className="text-slate-700">Flexible scheduling options</span>
+                <span className="text-slate-700 font-medium">After-hours scheduling available</span>
               </li>
             </ul>
             
@@ -474,7 +493,7 @@ export default function CommercialPage() {
             <div className="hidden md:block">
               <a
                 href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg w-full"
+                className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg w-full"
               >
                 Request a Service Consultation
               </a>
@@ -489,29 +508,29 @@ export default function CommercialPage() {
           
           {/* Trust badges */}
           <div className="flex flex-wrap justify-center items-center gap-8 mt-16">
-            <div className="text-center">
-              <div className="bg-red-50 p-4 rounded-full mb-3 inline-block">
-                <Shield className="h-6 w-6 text-brand-red" />
+            <div className="text-center group">
+              <div className="bg-cyan-50 p-4 rounded-full mb-3 inline-block group-hover:scale-110 transition-transform">
+                <Shield className="h-6 w-6 text-brand-cyan" />
               </div>
-              <p className="text-sm text-slate-600">Licensed & Insured</p>
+              <p className="text-sm text-slate-600 font-medium">Licensed & Insured</p>
             </div>
-            <div className="text-center">
-              <div className="bg-red-50 p-4 rounded-full mb-3 inline-block">
-                <Clock className="h-6 w-6 text-brand-red" />
+            <div className="text-center group">
+              <div className="bg-cyan-50 p-4 rounded-full mb-3 inline-block group-hover:scale-110 transition-transform">
+                <Clock className="h-6 w-6 text-brand-cyan" />
               </div>
-              <p className="text-sm text-slate-600">24/7 Same-Day Service</p>
+              <p className="text-sm text-slate-600 font-medium">24/7 Same-Day Service</p>
             </div>
-            <div className="text-center">
-              <div className="bg-red-50 p-4 rounded-full mb-3 inline-block">
-                <Award className="h-6 w-6 text-brand-red" />
+            <div className="text-center group">
+              <div className="bg-cyan-50 p-4 rounded-full mb-3 inline-block group-hover:scale-110 transition-transform">
+                <Award className="h-6 w-6 text-brand-cyan" />
               </div>
-              <p className="text-sm text-slate-600">Top-Rated Commercial Service</p>
+              <p className="text-sm text-slate-600 font-medium">Top-Rated Service</p>
             </div>
-            <div className="text-center">
-              <div className="bg-red-50 p-4 rounded-full mb-3 inline-block">
-                <Users className="h-6 w-6 text-brand-red" />
+            <div className="text-center group">
+              <div className="bg-cyan-50 p-4 rounded-full mb-3 inline-block group-hover:scale-110 transition-transform">
+                <Users className="h-6 w-6 text-brand-cyan" />
               </div>
-              <p className="text-sm text-slate-600">Industry-Specific Expertise</p>
+              <p className="text-sm text-slate-600 font-medium">Industry Expertise</p>
             </div>
           </div>
         </div>
@@ -524,35 +543,39 @@ export default function CommercialPage() {
             Commercial Plumbing FAQ
           </h2>
           <div className="space-y-6">
-            <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
-              <h3 className="text-xl font-heading font-bold uppercase text-slate-900 mb-3">
-                Do you provide 24/7 commercial plumbing services in Vancouver?
+            <div className="bg-white p-7 rounded-xl shadow-md border-l-4 border-brand-cyan hover:shadow-lg transition-all">
+              <h3 className="text-lg font-heading font-bold text-slate-900 mb-3 flex items-start gap-3">
+                <span className="text-brand-cyan text-2xl font-bold flex-shrink-0">Q.</span>
+                <span>Do you provide 24/7 commercial plumbing services in Vancouver?</span>
               </h3>
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed ml-9">
                 Yes, H2O Plumbing offers 24/7 emergency commercial plumbing services throughout Vancouver, Battle Ground, Camas, and all of Clark County. We understand that plumbing emergencies don't follow business hours, and we prioritize urgent commercial calls to get you back in business fast.
               </p>
             </div>
-            <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
-              <h3 className="text-xl font-heading font-bold uppercase text-slate-900 mb-3">
-                What commercial plumbing services do you offer for restaurants?
+            <div className="bg-white p-7 rounded-xl shadow-md border-l-4 border-brand-cyan hover:shadow-lg transition-all">
+              <h3 className="text-lg font-heading font-bold text-slate-900 mb-3 flex items-start gap-3">
+                <span className="text-brand-cyan text-2xl font-bold flex-shrink-0">Q.</span>
+                <span>What commercial plumbing services do you offer for restaurants?</span>
               </h3>
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed ml-9">
                 We specialize in restaurant plumbing including grease trap installation and maintenance, commercial kitchen equipment hookups, floor drain cleaning, hot water system repairs, backflow prevention testing, and health department compliance. We work around your business hours to minimize disruption.
               </p>
             </div>
-            <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
-              <h3 className="text-xl font-heading font-bold uppercase text-slate-900 mb-3">
-                How much does commercial plumbing maintenance cost?
+            <div className="bg-white p-7 rounded-xl shadow-md border-l-4 border-brand-cyan hover:shadow-lg transition-all">
+              <h3 className="text-lg font-heading font-bold text-slate-900 mb-3 flex items-start gap-3">
+                <span className="text-brand-cyan text-2xl font-bold flex-shrink-0">Q.</span>
+                <span>How much does commercial plumbing maintenance cost?</span>
               </h3>
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed ml-9">
                 Commercial maintenance plans are customized based on your facility size, industry, and specific needs. Regular maintenance helps prevent unexpected breakdowns and extends the life of your plumbing systems. Contact us for a free consultation and customized quote for your Vancouver or Clark County business.
               </p>
             </div>
-            <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
-              <h3 className="text-xl font-heading font-bold uppercase text-slate-900 mb-3">
-                Are you licensed for commercial plumbing in Washington State?
+            <div className="bg-white p-7 rounded-xl shadow-md border-l-4 border-brand-cyan hover:shadow-lg transition-all">
+              <h3 className="text-lg font-heading font-bold text-slate-900 mb-3 flex items-start gap-3">
+                <span className="text-brand-cyan text-2xl font-bold flex-shrink-0">Q.</span>
+                <span>Are you licensed for commercial plumbing in Washington State?</span>
               </h3>
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed ml-9">
                 Yes, H2O Plumbing is fully licensed, bonded, and insured for commercial plumbing work in Washington State. We maintain all required certifications for backflow testing, grease trap installation, and comply with all local building codes in Clark County and Cowlitz County.
               </p>
             </div>
@@ -586,19 +609,24 @@ export default function CommercialPage() {
               </div>
             ))}
           </div>
-          <div className="bg-slate-900 text-white p-8 md:p-12 rounded-2xl shadow-lg">
-            <h3 className="text-2xl md:text-3xl font-heading font-bold uppercase mb-4">24/7 Commercial Plumbing Service</h3>
-            <p className="text-lg mb-6 text-slate-200">
-              Emergency commercial plumbing available now in Vancouver, Battle Ground, Camas, and throughout Clark County. Fast, reliable response when you need it most.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
-              >
-                <Phone className="w-5 h-5" />
-                Call Now: {BUSINESS_DATA.phone}
-              </a>
+          <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white p-10 md:p-14 rounded-2xl shadow-2xl border border-slate-700">
+            <div className="text-center">
+              <Badge className="bg-brand-cyan/20 text-brand-cyan border-2 border-brand-cyan font-bold text-sm px-4 py-2 mb-4">
+                Same-Day Service Available
+              </Badge>
+              <h3 className="text-3xl md:text-4xl font-heading font-bold uppercase mb-4 leading-tight">Need <span className="text-brand-cyan">Fast</span> Commercial Plumbing?</h3>
+              <p className="text-xl mb-8 text-slate-200 leading-relaxed max-w-2xl mx-auto">
+                Same-day response available in Vancouver, Battle Ground, Camas, and throughout Clark County. Fast, reliable service when your business needs it.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href={`tel:${BUSINESS_DATA.phoneRaw}`}
+                  className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-10 py-5 rounded-lg font-bold text-xl transition-all shadow-2xl hover:scale-105"
+                >
+                  <Phone className="w-6 h-6" />
+                  Call Now: {BUSINESS_DATA.phone}
+                </a>
+              </div>
             </div>
           </div>
         </div>

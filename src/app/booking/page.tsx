@@ -190,7 +190,7 @@ export default function BookingPage() {
     <div className="py-16 sm:py-24 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-brand-red/10 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider text-brand-red mb-4">
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider mb-4" style={{backgroundColor: '#e0f7ff', color: '#00A3D9'}}>
             <Clock className="w-4 h-4" />
             Online Booking
           </div>
@@ -204,7 +204,7 @@ export default function BookingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Calendar and Time */}
             <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-2xl border-2 border-slate-200 p-6 shadow-lg hover:border-brand-red transition-colors">
+              <div className="bg-white rounded-2xl border-2 border-slate-200 p-6 shadow-lg transition-colors hover:border-[#00A3D9]">
                 <h3 className="font-heading font-bold text-slate-900 text-xl mb-4 uppercase">1. Select Date</h3>
                 <Calendar
                   onChange={handleDateChange}
@@ -218,7 +218,7 @@ export default function BookingPage() {
                   className="custom-calendar"
                 />
               </div>
-              <div className="bg-white rounded-2xl border-2 border-slate-200 p-6 shadow-lg hover:border-brand-red transition-colors">
+              <div className="bg-white rounded-2xl border-2 border-slate-200 p-6 shadow-lg transition-colors hover:border-[#00A3D9]">
                 <h3 className="font-heading font-bold text-slate-900 text-xl mb-4 uppercase">2. Select Time</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {availableSlots.map(t => (
@@ -228,9 +228,10 @@ export default function BookingPage() {
                       onClick={() => setTime(t)}
                       className={`time-slot text-sm font-semibold px-3 py-3 rounded-lg border-2 transition-all duration-200 flex items-center justify-center gap-2 ${
                         time === t
-                          ? 'bg-brand-red text-white border-brand-red shadow-lg scale-105'
-                          : 'bg-white hover:border-brand-red hover:text-brand-red border-slate-300'
+                          ? 'text-white shadow-lg scale-105'
+                          : 'bg-white border-slate-300'
                       }`}
+                      style={time === t ? {backgroundColor: '#00A3D9', borderColor: '#00A3D9'} : {}}
                     >
                       <Clock size={14} />
                       {t}
@@ -246,7 +247,7 @@ export default function BookingPage() {
             </div>
 
             {/* Form */}
-            <div className="bg-white rounded-2xl border-2 border-slate-200 p-6 shadow-lg hover:border-brand-red transition-colors">
+            <div className="bg-white rounded-2xl border-2 border-slate-200 p-6 shadow-lg transition-colors hover:border-[#00A3D9]">
               <h3 className="font-heading font-bold text-slate-900 text-xl mb-4 uppercase">3. Your Details</h3>
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
@@ -275,7 +276,7 @@ export default function BookingPage() {
                   </div>
                 )}
 
-                <button type="submit" disabled={isSubmitting || !time || !form.firstName || !form.phone} className="w-full bg-brand-red hover:bg-brand-red-dark disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 rounded-lg transition-all text-lg flex items-center justify-center shadow-lg hover:shadow-xl">
+                <button type="submit" disabled={isSubmitting || !time || !form.firstName || !form.phone} className="w-full disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 rounded-lg transition-all text-lg flex items-center justify-center shadow-lg hover:shadow-xl" style={{backgroundColor: '#00A3D9'}} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0082af'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#00A3D9'}>
                   {isSubmitting ? <><Loader2 className="animate-spin mr-2" /> Submitting...</> : 'Confirm Booking'}
                 </button>
                 <p className="text-xs text-muted-foreground text-center">We will call you to confirm your appointment.</p>

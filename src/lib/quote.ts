@@ -9,10 +9,12 @@ export async function submitQuickQuote({ name, phone, service }: QuickQuotePaylo
     name,
     email: 'lead@placeholder.local',
     phone,
-    services: [service || 'unspecified'],
-    description: `Quick lead from hero for ${service}`,
+    formType: 'general',
+    subject: `Quick Quote Request - ${service}`,
+    message: `Quick lead from hero form for ${service}`,
+    website: '', // Honeypot field
   };
-  const res = await fetch('/api/quote', {
+  const res = await fetch('/api/contact', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)

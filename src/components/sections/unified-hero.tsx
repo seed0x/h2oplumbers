@@ -157,7 +157,7 @@ export function HeroCouponBanner({ promotion }: UnifiedHeroProps) {
   return (
     <div className="relative z-30 px-4">
       <div className="container mx-auto max-w-5xl">
-        <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-brand-red to-red-600 shadow-lg">
+        <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-brand-cyan to-red-600 shadow-lg">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10" style={{
             backgroundImage: `url('/images/hero-background-pattern.svg')`,
@@ -181,13 +181,13 @@ export function HeroCouponBanner({ promotion }: UnifiedHeroProps) {
             <div className="flex items-center gap-3 flex-shrink-0">
               {/* Coupon Code */}
               <div className="bg-white px-5 py-3 rounded-lg text-center">
-                <div className="text-lg font-heading font-bold text-brand-red tracking-wider">{couponCode}</div>
+                <div className="text-lg font-heading font-bold text-brand-cyan tracking-wider">{couponCode}</div>
               </div>
               
               {/* CTA Button */}
               <a
                 href={ctaLink}
-                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-brand-red px-6 py-3 rounded-lg font-bold transition-all whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-brand-cyan px-6 py-3 rounded-lg font-bold transition-all whitespace-nowrap"
               >
                 {ctaText}
               </a>

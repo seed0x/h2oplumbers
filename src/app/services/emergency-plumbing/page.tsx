@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Clock, Phone, AlertTriangle, Wrench, Shield, Star } from 'lucide-react';
+import { Clock, Phone, AlertTriangle, Wrench, Shield, Star, Home, ChevronRight } from 'lucide-react';
 import { BUSINESS_DATA } from '@/lib/business-data';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -17,14 +17,16 @@ export default function SameDayPlumbingPage() {
   return (
     <div className="min-h-screen">
       {/* Breadcrumbs */}
-      <nav className="bg-slate-50 py-4">
+      <nav className="bg-slate-50 py-4" aria-label="Breadcrumb">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-brand-red">Services</Link>
-            <span>/</span>
-            <span className="text-brand-red">Same-Day Service</span>
+            <Link href="/" className="hover:text-brand-cyan flex items-center" aria-label="Home">
+              <Home className="w-4 h-4" />
+            </Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <Link href="/services" className="hover:text-brand-cyan">Services</Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <span className="text-brand-cyan font-medium">Same-Day Service</span>
           </div>
         </div>
       </nav>
@@ -53,7 +55,7 @@ export default function SameDayPlumbingPage() {
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <a
                     href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                    className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                    className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                   >
                     <Phone className="w-5 h-5" />
                     Call {BUSINESS_DATA.phone}
@@ -63,38 +65,42 @@ export default function SameDayPlumbingPage() {
                 {/* Trust Badges */}
                 <div className="flex flex-wrap gap-4 text-sm text-slate-300">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Licensed & Insured
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Family-Owned Since 2004
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Same-Day Service
                   </div>
                 </div>
               </div>
               
               {/* Right Column - Contact Form */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-7">
-                <div className="text-center mb-5">
-                  <h2 className="text-xl font-semibold text-slate-900 mb-1">Request a Free Quote</h2>
-                  <p className="text-sm text-slate-500">Fast response during business hours. No obligation.</p>
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-8">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center gap-2 bg-cyan-50 rounded-full px-4 py-2 mb-3">
+                    <AlertTriangle className="w-4 h-4 text-brand-cyan" />
+                    <span className="text-xs font-bold text-brand-cyan uppercase tracking-wider">Fast Response</span>
+                  </div>
+                  <h2 className="text-2xl font-heading font-bold text-slate-900 mb-2">Get Help Right Now</h2>
+                  <p className="text-sm text-slate-600">Same-day service • Licensed experts • Fast response</p>
                 </div>
                 <form className="space-y-4" aria-label="Request service quote form">
                   <div>
                     <label className="sr-only" htmlFor="hero-name">Name</label>
-                    <Input id="hero-name" placeholder="Your Name" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input id="hero-name" placeholder="Your Name" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
                     <label className="sr-only" htmlFor="hero-phone">Phone Number</label>
-                    <Input id="hero-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input id="hero-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
                     <Select>
-                      <SelectTrigger className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600">
+                      <SelectTrigger className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan">
                         <SelectValue placeholder="Service Needed" />
                       </SelectTrigger>
                       <SelectContent>
@@ -104,7 +110,6 @@ export default function SameDayPlumbingPage() {
                         <SelectItem value="camera-inspection">Camera Inspection</SelectItem>
                         <SelectItem value="repipe">Repipe & Pipe Repair</SelectItem>
                         <SelectItem value="bathroom-remodel">Bathroom Remodel</SelectItem>
-                        <SelectItem value="new-construction">New Construction</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
@@ -112,13 +117,23 @@ export default function SameDayPlumbingPage() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold py-5 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    Get Free Quote
+                    Get Help Now
                   </Button>
                 </form>
-                <p className="text-[10px] text-slate-500 mt-4 text-center leading-relaxed">
-                  By submitting this form you agree to be contacted about your request. We never share your information.
+                <div className="flex items-center justify-center gap-4 mt-5 text-xs text-slate-500">
+                  <div className="flex items-center gap-1">
+                    <Clock className="w-3 h-3 text-green-600" />
+                    <span>1-2 hour response</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Shield className="w-3 h-3 text-green-600" />
+                    <span>Licensed pros</span>
+                  </div>
+                </div>
+                <p className="text-[10px] text-slate-500 mt-3 text-center leading-relaxed">
+                  By submitting this form you agree to be contacted about your request.
                 </p>
               </div>
             </div>
@@ -126,21 +141,21 @@ export default function SameDayPlumbingPage() {
         </div>
       </section>
 
-      {/* Quick Response Stats */}
-      <section className="py-12 bg-slate-900 text-white">
-        <div className="container mx-auto container-padding">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-heading font-heading font-bold text-brand-red mb-2">1-2 Hours</div>
-              <p className="text-lg text-white">Average Response Time</p>
+      {/* Trust & Social Proof Bar */}
+      <section className="py-12 bg-gradient-to-r from-brand-cyan to-brand-cyan-dark text-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">1-2 Hours</div>
+              <p className="text-sm md:text-base opacity-90">Response Time</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-heading font-bold text-brand-red mb-2">Same Day</div>
-              <p className="text-lg text-white">Service Available</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">Same Day</div>
+              <p className="text-sm md:text-base opacity-90">Service Available</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-heading font-bold text-brand-red mb-2">20+ Years</div>
-              <p className="text-lg text-white">Service Experience</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">20+ Yrs</div>
+              <p className="text-sm md:text-base opacity-90">Experience</p>
             </div>
           </div>
         </div>
@@ -151,7 +166,7 @@ export default function SameDayPlumbingPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 text-center">
-              What Requires <span className="text-brand-red">Same-Day Service?</span>
+              What Requires <span className="text-brand-cyan">Same-Day Service?</span>
             </h2>
             <p className="text-xl text-slate-600 mb-16 text-center leading-relaxed max-w-3xl mx-auto">
               Not all plumbing problems require immediate service, but some situations can't wait. Here are the 
@@ -159,10 +174,10 @@ export default function SameDayPlumbingPage() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-brand-red/10 rounded-lg flex items-center justify-center mr-4">
-                    <AlertTriangle className="w-7 h-7 text-brand-red" />
+                  <div className="w-12 h-12 bg-brand-cyan/10 rounded-lg flex items-center justify-center mr-4">
+                    <AlertTriangle className="w-7 h-7 text-brand-cyan" />
                   </div>
                   <h3 className="text-2xl font-heading font-bold text-slate-900">
                     Burst Pipes
@@ -174,28 +189,28 @@ export default function SameDayPlumbingPage() {
                 </p>
                 <ul className="text-slate-600 space-y-3">
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Shut off main water supply immediately</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Remove standing water if safe to do so</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Call us for same-day pipe repair</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Document damage for insurance claims</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-brand-red/10 rounded-lg flex items-center justify-center mr-4">
-                    <AlertTriangle className="w-7 h-7 text-brand-red" />
+                  <div className="w-12 h-12 bg-brand-cyan/10 rounded-lg flex items-center justify-center mr-4">
+                    <AlertTriangle className="w-7 h-7 text-brand-cyan" />
                   </div>
                   <h3 className="text-2xl font-heading font-bold text-slate-900">
                     Severe Water Leaks
@@ -207,28 +222,28 @@ export default function SameDayPlumbingPage() {
                 </p>
                 <ul className="text-slate-600 space-y-3">
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Locate and turn off water source</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Move valuables away from water</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Contact us for immediate leak repair</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Begin drying affected areas</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-brand-red/10 rounded-lg flex items-center justify-center mr-4">
-                    <AlertTriangle className="w-7 h-7 text-brand-red" />
+                  <div className="w-12 h-12 bg-brand-cyan/10 rounded-lg flex items-center justify-center mr-4">
+                    <AlertTriangle className="w-7 h-7 text-brand-cyan" />
                   </div>
                   <h3 className="text-2xl font-heading font-bold text-slate-900">
                     Sewer Line Backups
@@ -240,28 +255,28 @@ export default function SameDayPlumbingPage() {
                 </p>
                 <ul className="text-slate-600 space-y-3">
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Avoid contact with sewage water</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Don't use affected drains or toilets</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Ventilate the area if possible</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Call for Same-Day sewer repair</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-brand-red/10 rounded-lg flex items-center justify-center mr-4">
-                    <AlertTriangle className="w-7 h-7 text-brand-red" />
+                  <div className="w-12 h-12 bg-brand-cyan/10 rounded-lg flex items-center justify-center mr-4">
+                    <AlertTriangle className="w-7 h-7 text-brand-cyan" />
                   </div>
                   <h3 className="text-2xl font-heading font-bold text-slate-900">
                     Water Heater Failures
@@ -273,19 +288,19 @@ export default function SameDayPlumbingPage() {
                 </p>
                 <ul className="text-slate-600 space-y-3">
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Turn off power/gas to unit</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Shut off water supply to heater</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Clear area around water heater</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-brand-red mr-3 text-xl font-bold">•</span>
+                    <span className="text-brand-cyan mr-3 text-xl font-bold">•</span>
                     <span>Schedule Same-Day repair/replacement</span>
                   </li>
                 </ul>
@@ -300,7 +315,7 @@ export default function SameDayPlumbingPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 text-center">
-              Our <span className="text-brand-red">Same-Day Response</span> Process
+              Our <span className="text-brand-cyan">Same-Day Response</span> Process
             </h2>
             <p className="text-xl text-slate-600 mb-16 text-center max-w-3xl mx-auto">
               When you call H2O Plumbing for same-day service, here's what you can expect:
@@ -308,7 +323,7 @@ export default function SameDayPlumbingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-brand-cyan to-brand-cyan-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <span className="text-3xl font-heading font-bold text-white">1</span>
                 </div>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">Same-Day Call</h3>
@@ -319,7 +334,7 @@ export default function SameDayPlumbingPage() {
               </div>
 
               <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-brand-cyan to-brand-cyan-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <span className="text-3xl font-heading font-bold text-white">2</span>
                 </div>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">Rapid Dispatch</h3>
@@ -330,7 +345,7 @@ export default function SameDayPlumbingPage() {
               </div>
 
               <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-brand-cyan to-brand-cyan-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <span className="text-3xl font-heading font-bold text-white">3</span>
                 </div>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">Damage Control</h3>
@@ -341,7 +356,7 @@ export default function SameDayPlumbingPage() {
               </div>
 
               <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-brand-cyan to-brand-cyan-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <span className="text-3xl font-heading font-bold text-white">4</span>
                 </div>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">Complete Repair</h3>
@@ -360,7 +375,7 @@ export default function SameDayPlumbingPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 text-center">
-              Preventing <span className="text-brand-red">Urgent Plumbing Issues</span>
+              Preventing <span className="text-brand-cyan">Urgent Plumbing Issues</span>
             </h2>
             <p className="text-xl text-slate-600 mb-16 text-center max-w-3xl mx-auto">
               While not all urgent plumbing issues can be prevented, regular maintenance and attention to warning 
@@ -370,38 +385,38 @@ export default function SameDayPlumbingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
                 <h3 className="text-3xl font-heading font-bold text-slate-900 mb-8 flex items-center">
-                  <div className="w-10 h-10 bg-brand-red/10 rounded-lg flex items-center justify-center mr-3">
-                    <span className="text-brand-red text-xl">✓</span>
+                  <div className="w-10 h-10 bg-brand-cyan/10 rounded-lg flex items-center justify-center mr-3">
+                    <span className="text-brand-cyan text-xl">✓</span>
                   </div>
                   Regular Maintenance Tips
                 </h3>
                 <ul className="space-y-5 text-slate-700">
                   <li className="flex items-start">
-                    <div className="w-6 h-6 bg-brand-red rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                    <div className="w-6 h-6 bg-brand-cyan rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                       <span className="text-white text-xs">✓</span>
                     </div>
                     <span>Schedule annual plumbing inspections to catch problems early</span>
                   </li>
                   <li className="flex items-start">
-                    <div className="w-6 h-6 bg-brand-red rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                    <div className="w-6 h-6 bg-brand-cyan rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                       <span className="text-white text-xs">✓</span>
                     </div>
                     <span>Insulate pipes in unheated areas to prevent freezing</span>
                   </li>
                   <li className="flex items-start">
-                    <div className="w-6 h-6 bg-brand-red rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                    <div className="w-6 h-6 bg-brand-cyan rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                       <span className="text-white text-xs">✓</span>
                     </div>
                     <span>Replace old supply lines and hoses every 5-10 years</span>
                   </li>
                   <li className="flex items-start">
-                    <div className="w-6 h-6 bg-brand-red rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                    <div className="w-6 h-6 bg-brand-cyan rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                       <span className="text-white text-xs">✓</span>
                     </div>
                     <span>Keep drains clear with regular cleaning and maintenance</span>
                   </li>
                   <li className="flex items-start">
-                    <div className="w-6 h-6 bg-brand-red rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                    <div className="w-6 h-6 bg-brand-cyan rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                       <span className="text-white text-xs">✓</span>
                     </div>
                     <span>Monitor water pressure and address high pressure issues</span>
@@ -455,7 +470,7 @@ export default function SameDayPlumbingPage() {
       </section>
 
       {/* Why Choose Us for Emergencies */}
-      <section className="py-20 bg-gradient-to-br from-brand-red via-brand-red to-brand-red-dark text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-brand-cyan via-brand-cyan to-brand-cyan-dark text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]" aria-hidden="true"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto text-center">
@@ -510,7 +525,7 @@ export default function SameDayPlumbingPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(220,38,38,0.15),transparent_60%)]" aria-hidden="true"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Don't Let a Plumbing <span className="text-brand-red">Emergency</span> Ruin Your Day
+            Don't Let a Plumbing <span className="text-brand-cyan">Emergency</span> Ruin Your Day
           </h2>
           <p className="text-xl mb-10 max-w-3xl mx-auto text-slate-300 leading-relaxed">
             When plumbing disasters strike, H2O Plumbing is here to help. Call now for fast, 
@@ -518,7 +533,7 @@ export default function SameDayPlumbingPage() {
           </p>
           <a 
             href="tel:3608832506" 
-            className="bg-gradient-to-r from-brand-red to-brand-red-dark text-white px-12 py-5 rounded-xl font-heading font-bold text-2xl hover:shadow-2xl hover:shadow-brand-red/50 transition-all duration-300 inline-flex items-center hover:-translate-y-1 transform"
+            className="bg-gradient-to-r from-brand-cyan to-brand-cyan-dark text-white px-12 py-5 rounded-xl font-heading font-bold text-2xl hover:shadow-2xl hover:shadow-brand-cyan/50 transition-all duration-300 inline-flex items-center hover:-translate-y-1 transform"
           >
             <Phone className="w-8 h-8 mr-3" />
             Call (360) 883-2506 Now

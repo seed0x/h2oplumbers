@@ -78,9 +78,9 @@ export default function NewConstructionPage() {
       <nav className="bg-slate-50 py-4">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
+            <Link href="/" className="hover:text-brand-cyan">Home</Link>
             <span>/</span>
-            <span className="text-brand-red">New Construction</span>
+            <span className="text-brand-cyan">New Construction</span>
           </div>
         </div>
       </nav>
@@ -107,7 +107,7 @@ export default function NewConstructionPage() {
                 
                 {/* Trust Badge */}
                 <div className="inline-flex items-center gap-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg px-4 py-3 mb-8">
-                  <Building2 className="w-5 h-5 text-brand-red" />
+                  <Building2 className="w-5 h-5 text-brand-cyan" />
                   <span className="font-semibold text-white">Trusted by 9+ Major Builders</span>
                 </div>
                 
@@ -115,7 +115,7 @@ export default function NewConstructionPage() {
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <a
                     href="tel:3608832506"
-                    className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                    className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                   >
                     <Phone className="w-5 h-5" />
                     Call (360) 883-2506
@@ -125,15 +125,15 @@ export default function NewConstructionPage() {
                 {/* Trust Badges */}
                 <div className="flex flex-wrap gap-4 text-sm text-slate-300">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Licensed & Insured
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Family-Owned Since 2004
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     On-Time Delivery
                   </div>
                 </div>
@@ -148,15 +148,15 @@ export default function NewConstructionPage() {
                 <form className="space-y-4">
                   <div>
                     <label className="sr-only" htmlFor="hero-name">Name or Company</label>
-                    <input id="hero-name" placeholder="Name or Company" className="w-full p-3 border border-slate-300 rounded-lg focus:border-brand-red focus:ring-brand-red text-black" />
+                    <input id="hero-name" placeholder="Name or Company" className="w-full p-3 border border-slate-300 rounded-lg focus:border-brand-cyan focus:ring-brand-cyan text-black" />
                   </div>
                   <div>
                     <label className="sr-only" htmlFor="hero-phone">Phone Number</label>
-                    <input id="hero-phone" type="tel" placeholder="Phone Number" className="w-full p-3 border border-slate-300 rounded-lg focus:border-brand-red focus:ring-brand-red text-black" />
+                    <input id="hero-phone" type="tel" placeholder="Phone Number" className="w-full p-3 border border-slate-300 rounded-lg focus:border-brand-cyan focus:ring-brand-cyan text-black" />
                   </div>
                   <div>
                     <label className="sr-only" htmlFor="hero-project">Project Type</label>
-                    <select id="hero-project" className="w-full p-3 border border-slate-300 rounded-lg focus:border-brand-red focus:ring-brand-red text-black">
+                    <select id="hero-project" className="w-full p-3 border border-slate-300 rounded-lg focus:border-brand-cyan focus:ring-brand-cyan text-black">
                       <option>Project Type</option>
                       <option>Residential New Build</option>
                       <option>Commercial Construction</option>
@@ -185,19 +185,19 @@ export default function NewConstructionPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">1000+</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">1000+</div>
               <p className="text-lg">Projects Completed</p>
             </div>
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">20+</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">20+</div>
               <p className="text-lg">Builder Partners</p>
             </div>
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">2000+</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">2000+</div>
               <p className="text-lg">Units Built</p>
             </div>
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">20+ Years</div>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">20+ Years</div>
               <p className="text-lg">Construction Experience</p>
             </div>
           </div>
@@ -211,7 +211,7 @@ export default function NewConstructionPage() {
       <section className="py-20 px-4 bg-slate-900 text-white">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-6">
-            Ready to <span className="text-brand-red">Partner</span> With Us?
+            Ready to <span className="text-brand-cyan">Partner</span> With Us?
           </h2>
           <p className="text-xl md:text-2xl text-slate-200 mb-12 leading-relaxed">
             Join the 20+ builders who trust H2O Plumbing for reliable, code-compliant plumbing systems. 
@@ -220,15 +220,15 @@ export default function NewConstructionPage() {
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="text-5xl font-heading font-bold text-brand-red mb-3">98%</div>
+              <div className="text-5xl font-heading font-bold text-brand-cyan mb-3">98%</div>
               <p className="text-lg text-slate-200">On-Time Completion Rate</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="text-5xl font-heading font-bold text-brand-red mb-3">100%</div>
+              <div className="text-5xl font-heading font-bold text-brand-cyan mb-3">100%</div>
               <p className="text-lg text-slate-200">Code Compliance</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="text-5xl font-heading font-bold text-brand-red mb-3">24/7</div>
+              <div className="text-5xl font-heading font-bold text-brand-cyan mb-3">24/7</div>
               <p className="text-lg text-slate-200">Builder Support</p>
             </div>
           </div>
@@ -236,7 +236,7 @@ export default function NewConstructionPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:3608832506"
-              className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-10 py-5 rounded-lg font-bold text-xl transition-colors shadow-xl"
+              className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-10 py-5 rounded-lg font-bold text-xl transition-colors shadow-xl"
             >
               <Phone className="w-6 h-6" />
               Call (360) 883-2506
@@ -271,31 +271,31 @@ export default function NewConstructionPage() {
             <ul className="space-y-3 mb-8">
               <li className="flex items-center">
                 <div className="bg-red-50 p-2 rounded-full mr-3">
-                  <CheckCircle2 className="h-5 w-5 text-brand-red" />
+                  <CheckCircle2 className="h-5 w-5 text-brand-cyan" />
                 </div>
                 <span className="text-slate-700">Detailed cost breakdown</span>
               </li>
               <li className="flex items-center">
                 <div className="bg-red-50 p-2 rounded-full mr-3">
-                  <CheckCircle2 className="h-5 w-5 text-brand-red" />
+                  <CheckCircle2 className="h-5 w-5 text-brand-cyan" />
                 </div>
                 <span className="text-slate-700">Materials & labor estimates</span>
               </li>
               <li className="flex items-center">
                 <div className="bg-red-50 p-2 rounded-full mr-3">
-                  <CheckCircle2 className="h-5 w-5 text-brand-red" />
+                  <CheckCircle2 className="h-5 w-5 text-brand-cyan" />
                 </div>
                 <span className="text-slate-700">Timeline projection</span>
               </li>
               <li className="flex items-center">
                 <div className="bg-red-50 p-2 rounded-full mr-3">
-                  <CheckCircle2 className="h-5 w-5 text-brand-red" />
+                  <CheckCircle2 className="h-5 w-5 text-brand-cyan" />
                 </div>
                 <span className="text-slate-700">Code compliance assurance</span>
               </li>
               <li className="flex items-center">
                 <div className="bg-red-50 p-2 rounded-full mr-3">
-                  <CheckCircle2 className="h-5 w-5 text-brand-red" />
+                  <CheckCircle2 className="h-5 w-5 text-brand-cyan" />
                 </div>
                 <span className="text-slate-700">Fixture spec sheets</span>
               </li>
@@ -324,7 +324,7 @@ export default function NewConstructionPage() {
             <form className="space-y-4">
               <div>
                 <label className="block text-sm font-medium mb-2 text-slate-700">Project Type</label>
-                <select className="w-full p-3 border border-slate-300 rounded-lg focus:border-brand-red focus:ring-brand-red">
+                <select className="w-full p-3 border border-slate-300 rounded-lg focus:border-brand-cyan focus:ring-brand-cyan">
                   <option>Residential New Build</option>
                   <option>Commercial Construction</option>
                   <option>Multi-Family Development</option>
@@ -333,22 +333,22 @@ export default function NewConstructionPage() {
               </div>
               <div>
                 <label className="block text-sm font-medium mb-2 text-slate-700">Project Location</label>
-                <input type="text" className="w-full p-3 border border-slate-300 rounded-lg focus:border-brand-red focus:ring-brand-red" placeholder="City, State" />
+                <input type="text" className="w-full p-3 border border-slate-300 rounded-lg focus:border-brand-cyan focus:ring-brand-cyan" placeholder="City, State" />
               </div>
               <div>
                 <label className="block text-sm font-medium mb-2 text-slate-700">Square Footage (approx.)</label>
-                <input type="text" className="w-full p-3 border border-slate-300 rounded-lg focus:border-brand-red focus:ring-brand-red" placeholder="e.g. 2,500 sq ft" />
+                <input type="text" className="w-full p-3 border border-slate-300 rounded-lg focus:border-brand-cyan focus:ring-brand-cyan" placeholder="e.g. 2,500 sq ft" />
               </div>
               <div>
                 <label className="block text-sm font-medium mb-2 text-slate-700">Timeline</label>
-                <select className="w-full p-3 border border-slate-300 rounded-lg focus:border-brand-red focus:ring-brand-red">
+                <select className="w-full p-3 border border-slate-300 rounded-lg focus:border-brand-cyan focus:ring-brand-cyan">
                   <option>Within 30 days</option>
                   <option>1-3 months</option>
                   <option>3-6 months</option>
                   <option>6+ months</option>
                 </select>
               </div>
-              <button type="submit" className="w-full bg-brand-red hover:bg-brand-red-dark text-white px-6 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg">
+              <button type="submit" className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white px-6 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg">
                 Request Quote
               </button>
             </form>
@@ -359,19 +359,19 @@ export default function NewConstructionPage() {
           <div className="flex flex-wrap justify-center items-center gap-8 mt-16">
             <div className="text-center">
               <div className="bg-red-50 p-4 rounded-full mb-3 inline-block">
-                <Shield className="h-6 w-6 text-brand-red" />
+                <Shield className="h-6 w-6 text-brand-cyan" />
               </div>
               <p className="text-sm text-slate-600">Licensed & Insured</p>
             </div>
             <div className="text-center">
               <div className="bg-red-50 p-4 rounded-full mb-3 inline-block">
-                <Clock className="h-6 w-6 text-brand-red" />
+                <Clock className="h-6 w-6 text-brand-cyan" />
               </div>
               <p className="text-sm text-slate-600">On-Time Completion</p>
             </div>
             <div className="text-center">
               <div className="bg-red-50 p-4 rounded-full mb-3 inline-block">
-                <Users className="h-6 w-6 text-brand-red" />
+                <Users className="h-6 w-6 text-brand-cyan" />
               </div>
               <p className="text-sm text-slate-600">Experienced Teams</p>
             </div>
@@ -392,9 +392,9 @@ export default function NewConstructionPage() {
               <Card key={index} className="text-center hover:shadow-lg transition-shadow border border-slate-200">
                 <CardHeader>
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-50 flex items-center justify-center">
-                    <process.icon className="w-8 h-8 text-brand-red" />
+                    <process.icon className="w-8 h-8 text-brand-cyan" />
                   </div>
-                  <div className="w-12 h-12 bg-brand-red text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                  <div className="w-12 h-12 bg-brand-cyan text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
                     {process.step}
                   </div>
                   <CardTitle className="text-xl font-heading uppercase">{process.title}</CardTitle>
@@ -431,7 +431,7 @@ export default function NewConstructionPage() {
                   <ul className="space-y-2">
                     {project.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-slate-700">
-                        <CheckCircle2 className="w-4 h-4 text-brand-red mr-2" />
+                        <CheckCircle2 className="w-4 h-4 text-brand-cyan mr-2" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -454,33 +454,33 @@ export default function NewConstructionPage() {
           </p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-slate-50 rounded-xl p-8 hover:shadow-lg transition-all border-2 border-slate-200 hover:border-brand-red group">
-              <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mb-6 group-hover:bg-brand-red transition-colors">
-                <Building2 className="text-brand-red w-8 h-8 group-hover:text-white transition-colors" />
+            <div className="bg-slate-50 rounded-xl p-8 hover:shadow-lg transition-all border-2 border-slate-200 hover:border-brand-cyan group">
+              <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors">
+                <Building2 className="text-brand-cyan w-8 h-8 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xl font-heading font-bold uppercase mb-3 text-slate-900">Licensed & Insured</h3>
               <p className="text-slate-600 leading-relaxed">WA Contractor License #ALLCOPL030RW and OR CCB# 147151</p>
             </div>
             
-            <div className="bg-slate-50 rounded-xl p-8 hover:shadow-lg transition-all border-2 border-slate-200 hover:border-brand-red group">
-              <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mb-6 group-hover:bg-brand-red transition-colors">
-                <Clock className="text-brand-red w-8 h-8 group-hover:text-white transition-colors" />
+            <div className="bg-slate-50 rounded-xl p-8 hover:shadow-lg transition-all border-2 border-slate-200 hover:border-brand-cyan group">
+              <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors">
+                <Clock className="text-brand-cyan w-8 h-8 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xl font-heading font-bold uppercase mb-3 text-slate-900">On-Time Performance</h3>
               <p className="text-slate-600 leading-relaxed">We meet construction schedules and deadlines consistently</p>
             </div>
             
-            <div className="bg-slate-50 rounded-xl p-8 hover:shadow-lg transition-all border-2 border-slate-200 hover:border-brand-red group">
-              <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mb-6 group-hover:bg-brand-red transition-colors">
-                <Target className="text-brand-red w-8 h-8 group-hover:text-white transition-colors" />
+            <div className="bg-slate-50 rounded-xl p-8 hover:shadow-lg transition-all border-2 border-slate-200 hover:border-brand-cyan group">
+              <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors">
+                <Target className="text-brand-cyan w-8 h-8 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xl font-heading font-bold uppercase mb-3 text-slate-900">Code Compliance</h3>
               <p className="text-slate-600 leading-relaxed">Deep knowledge of local building codes and permit requirements</p>
             </div>
             
-            <div className="bg-slate-50 rounded-xl p-8 hover:shadow-lg transition-all border-2 border-slate-200 hover:border-brand-red group">
-              <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mb-6 group-hover:bg-brand-red transition-colors">
-                <Handshake className="text-brand-red w-8 h-8 group-hover:text-white transition-colors" />
+            <div className="bg-slate-50 rounded-xl p-8 hover:shadow-lg transition-all border-2 border-slate-200 hover:border-brand-cyan group">
+              <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mb-6 group-hover:bg-brand-cyan transition-colors">
+                <Handshake className="text-brand-cyan w-8 h-8 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xl font-heading font-bold uppercase mb-3 text-slate-900">Local Partnership</h3>
               <p className="text-slate-600 leading-relaxed">Trusted by builders throughout Southwest Washington</p>
@@ -518,7 +518,7 @@ export default function NewConstructionPage() {
             </p>
             <a
               href="tel:3608832506"
-              className="inline-flex items-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+              className="inline-flex items-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
             >
               Call for Quote
             </a>

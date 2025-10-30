@@ -231,7 +231,7 @@ export function GalleryImage({
         {...props}
       />
       {category && (
-        <div className="absolute top-2 right-2 bg-brand-red text-white px-2 py-1 rounded text-xs font-medium">
+        <div className="absolute top-2 right-2 bg-brand-cyan text-white px-2 py-1 rounded text-xs font-medium">
           {category}
         </div>
       )}

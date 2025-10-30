@@ -88,11 +88,11 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
               {/* Left Content */}
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-xs font-medium tracking-wide mb-6 ring-1 ring-white/10 shadow-lg shadow-black/10">
-                  <span className="inline-block w-2 h-2 rounded-full bg-brand-red animate-pulse" />
+                  <span className="inline-block w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
                   <span>Serving {data.name} Since 2004</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
-                  <span className="text-brand-red">{data.name}</span> Plumber
+                  <span className="text-brand-cyan">{data.name}</span> Plumber
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-slate-200 mb-10 leading-relaxed">
@@ -102,15 +102,15 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
                 {/* Trust Indicators */}
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mb-8">
                   <div className="flex items-center text-white/80">
-                    <Shield className="w-5 h-5 mr-2 text-brand-red" />
+                    <Shield className="w-5 h-5 mr-2 text-brand-cyan" />
                     <span className="text-sm font-medium">Licensed & Insured</span>
                   </div>
                   <div className="flex items-center text-white/80">
-                    <Users className="w-5 h-5 mr-2 text-brand-red" />
+                    <Users className="w-5 h-5 mr-2 text-brand-cyan" />
                     <span className="text-sm font-medium">Family Owned</span>
                   </div>
                   <div className="flex items-center text-white/80">
-                    <Clock className="w-5 h-5 mr-2 text-brand-red" />
+                    <Clock className="w-5 h-5 mr-2 text-brand-cyan" />
                     <span className="text-sm font-medium">Since 2004</span>
                   </div>
                 </div>
@@ -127,13 +127,13 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
                 <div className="flex flex-row flex-wrap gap-4 justify-center lg:justify-start">
                   <Link
                     href="/booking"
-                    className="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg whitespace-nowrap"
+                    className="inline-flex items-center justify-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg whitespace-nowrap"
                   >
                     Schedule Service
                   </Link>
                   <a
                     href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                    className="inline-flex items-center justify-center gap-2 border-2 border-white bg-transparent text-white hover:bg-white hover:text-brand-red px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg whitespace-nowrap"
+                    className="inline-flex items-center justify-center gap-2 border-2 border-white bg-transparent text-white hover:bg-white hover:text-brand-cyan px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg whitespace-nowrap"
                   >
                     <Phone className="w-5 h-5" />
                     Call Now
@@ -151,19 +151,19 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
                   <form className="space-y-4" aria-label="Request service quote form">
                     <div>
                       <label className="sr-only" htmlFor="service-area-name">Name</label>
-                      <Input id="service-area-name" placeholder="Your Name" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                      <Input id="service-area-name" placeholder="Your Name" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                     </div>
                     <div>
                       <label className="sr-only" htmlFor="service-area-phone">Phone Number</label>
-                      <Input id="service-area-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                      <Input id="service-area-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                     </div>
                     <div>
                       <label className="sr-only" htmlFor="service-area-address">Address in {data.name}</label>
-                      <Input id="service-area-address" placeholder={`Address in ${data.name}`} className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                      <Input id="service-area-address" placeholder={`Address in ${data.name}`} className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                     </div>
                     <div>
                       <Select>
-                        <SelectTrigger className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600">
+                        <SelectTrigger className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan">
                           <SelectValue placeholder="Service Needed" />
                         </SelectTrigger>
                         <SelectContent>
@@ -180,7 +180,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                      className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                     >
                       Get Free Quote
                     </Button>
@@ -215,12 +215,12 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
         <div className="container mx-auto container-padding">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 bg-red-100 rounded-full px-4 py-2 mb-4">
-                <Wrench className="w-5 h-5 text-brand-red" />
-                <span className="text-sm font-semibold text-brand-red uppercase tracking-wider">Our Services</span>
+              <div className="inline-flex items-center gap-2 bg-cyan-50 rounded-full px-4 py-2 mb-4">
+                <Wrench className="w-5 h-5 text-brand-cyan" />
+                <span className="text-sm font-semibold text-brand-cyan uppercase tracking-wider">Our Services</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 uppercase">
-                Professional Plumbing Throughout <span className="text-brand-red">{data.name}, WA</span>
+                Professional Plumbing Throughout <span className="text-brand-cyan">{data.name}, WA</span>
               </h2>
               <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8">
                 {data.hero.headline} Our experienced team provides comprehensive plumbing solutions 
@@ -232,17 +232,17 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
               {data.services.map((service, index) => {
                 const ServiceIcon = getServiceIcon(service.title);
                 return (
-                <div key={service.title} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-brand-red/20 hover:border-brand-red transform hover:-translate-y-2 group">
+                <div key={service.title} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-brand-cyan/20 hover:border-brand-cyan transform hover:-translate-y-2 group">
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center group-hover:bg-brand-red transition-colors flex-shrink-0">
-                      <ServiceIcon className="w-8 h-8 text-brand-red group-hover:text-white transition-colors" />
+                    <div className="w-16 h-16 bg-cyan-50 rounded-2xl flex items-center justify-center group-hover:bg-brand-cyan transition-colors flex-shrink-0">
+                      <ServiceIcon className="w-8 h-8 text-brand-cyan group-hover:text-white transition-colors" />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-2xl font-heading font-bold text-slate-900 mb-3">{service.title}</h3>
                       <p className="text-slate-600 leading-relaxed mb-4">{service.description}</p>
                       <Link 
                         href={service.href}
-                        className="inline-flex items-center text-brand-red font-semibold hover:text-brand-red-dark transition-colors group"
+                        className="inline-flex items-center text-brand-cyan font-semibold hover:text-brand-cyan-dark transition-colors group"
                       >
                         Learn More About This Service
                         <ArrowRight className="w-4 h-4 ml-1 group-hover:ml-2 transition-all" />
@@ -256,15 +256,15 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
             {/* Why Choose Us for Local Service */}
             <div className="bg-slate-800 rounded-2xl p-8 md:p-12 text-white relative overflow-hidden mb-16">
               <div className="absolute inset-0 opacity-5" style={{
-                backgroundImage: `url('/images/Work Van Good Image.png')`,
+                backgroundImage: `url('/images/vbg.jpg')`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
               }}></div>
               <div className="relative z-10">
-                <h3 className="text-3xl font-heading font-bold text-center mb-8 uppercase">Why {data.name} Families Choose <span className="text-brand-red">H2O Plumbing</span></h3>
+                <h3 className="text-3xl font-heading font-bold text-center mb-8 uppercase">Why {data.name} Families Choose <span className="text-brand-cyan">H2O Plumbing</span></h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-brand-red/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Clock className="w-8 h-8 text-white" />
                     </div>
                     <h4 className="text-xl font-heading font-bold mb-3">Fast Local Response</h4>
@@ -273,16 +273,16 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
                     </p>
                   </div>
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-brand-red/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Users className="w-8 h-8 text-white" />
                     </div>
                     <h4 className="text-xl font-heading font-bold mb-3">Family Business Values</h4>
                     <p className="text-slate-300 leading-relaxed">
-                      From Ron to Josh, we treat every customer like family. Personal service, honest pricing, quality work.
+                      Ron, Josh, and Skylee treat every customer like family. Personal service, honest pricing, quality work.
                     </p>
                   </div>
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-brand-red/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Shield className="w-8 h-8 text-white" />
                     </div>
                     <h4 className="text-xl font-heading font-bold mb-3">Licensed & Experienced</h4>
@@ -306,13 +306,13 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
               <div className="order-2 lg:order-1">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <img 
-                    src="/images/truck-1.jpg" 
+                    src="/images/vbg.jpg"
                     alt={`H2O Plumbing service van serving ${data.name}, WA`}
                     className="w-full h-auto object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute bottom-6 left-6 right-6">
-                    <div className="bg-brand-red/95 backdrop-blur-sm rounded-lg p-4">
+                    <div className="bg-brand-cyan/95 backdrop-blur-sm rounded-lg p-4">
                       <p className="text-white font-bold text-center">
                         <MapPin className="w-5 h-5 inline-block mr-2" />
                         Proudly Serving {data.name} Since 2004
@@ -324,12 +324,12 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
               
               {/* Content */}
               <div className="order-1 lg:order-2">
-                <div className="inline-flex items-center gap-2 bg-red-100 rounded-full px-4 py-2 mb-6">
-                  <MapPin className="w-5 h-5 text-brand-red" />
-                  <span className="text-sm font-semibold text-brand-red uppercase tracking-wider">Local Experts</span>
+                <div className="inline-flex items-center gap-2 bg-cyan-50 rounded-full px-4 py-2 mb-6 border border-brand-cyan/20">
+                  <MapPin className="w-5 h-5 text-brand-cyan" />
+                  <span className="text-sm font-semibold text-brand-cyan uppercase tracking-wider">Local Experts</span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-6 uppercase">
-                  Your Trusted <span className="text-brand-red">{data.name} Plumbing Team</span>
+                  Your Trusted <span className="text-brand-cyan">{data.name} Plumbing Team</span>
                 </h2>
                 <p className="text-lg text-slate-600 leading-relaxed mb-6">
                   Our team has been proudly serving {data.name} families and businesses since 2004. 
@@ -338,21 +338,21 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
                 </p>
                 <div className="space-y-4 mb-8">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-brand-red flex-shrink-0 mt-1" />
+                    <CheckCircle className="w-6 h-6 text-brand-cyan flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-bold text-slate-900 mb-1">Fast Local Response</h4>
                       <p className="text-slate-600">Based nearby, we arrive quickly to handle emergencies and routine service.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-brand-red flex-shrink-0 mt-1" />
+                    <CheckCircle className="w-6 h-6 text-brand-cyan flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-bold text-slate-900 mb-1">Three Generations Strong</h4>
-                      <p className="text-slate-600">Family-owned expertise passed down through generations of master plumbers.</p>
+                      <p className="text-slate-600">Ron, Josh, and Skylee—three generations of family-owned expertise and dedication to quality service.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-brand-red flex-shrink-0 mt-1" />
+                    <CheckCircle className="w-6 h-6 text-brand-cyan flex-shrink-0 mt-1" />
                     <div>
                       <h4 className="font-bold text-slate-900 mb-1">Licensed & Insured</h4>
                       <p className="text-slate-600">Fully licensed in WA & OR with comprehensive insurance for your peace of mind.</p>
@@ -362,14 +362,14 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                    className="inline-flex items-center justify-center gap-2 bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-lg font-bold transition-colors"
+                    className="inline-flex items-center justify-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-6 py-3 rounded-lg font-bold transition-colors"
                   >
                     <Phone className="w-5 h-5" />
                     Call {BUSINESS_DATA.phone}
                   </a>
                   <Link
                     href="/booking"
-                    className="inline-flex items-center justify-center gap-2 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white px-6 py-3 rounded-lg font-bold transition-colors"
+                    className="inline-flex items-center justify-center gap-2 border-2 border-brand-cyan text-brand-cyan hover:bg-brand-cyan hover:text-white px-6 py-3 rounded-lg font-bold transition-colors"
                   >
                     Schedule Online
                   </Link>
@@ -384,7 +384,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
       <section className="section-padding bg-slate-50">
         <div className="container mx-auto container-padding">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <h3 className="text-3xl font-heading font-bold text-slate-900 mb-6 uppercase">{data.name} Neighborhoods <span className="text-brand-red">We Proudly Serve</span></h3>
+            <h3 className="text-3xl font-heading font-bold text-slate-900 mb-6 uppercase">{data.name} Neighborhoods <span className="text-brand-cyan">We Proudly Serve</span></h3>
             <p className="text-lg text-slate-600 leading-relaxed">
               Our local expertise means we know {data.name} inside and out. From established neighborhoods 
               to new developments, we've been serving families throughout the area.
@@ -394,9 +394,9 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
           <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200/50">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {data.neighborhoods.map((area, index) => (
-                  <div key={area} className="text-center py-3 px-2 rounded-lg hover:bg-red-50 transition-colors">
+                  <div key={area} className="text-center py-3 px-2 rounded-lg hover:bg-cyan-50 transition-colors">
                     <div className="flex items-center justify-center mb-2">
-                      <MapPin className="w-4 h-4 text-brand-red mr-1" />
+                      <MapPin className="w-4 h-4 text-brand-cyan mr-1" />
                       <p className="font-semibold text-slate-900">{area}</p>
                     </div>
                   </div>
@@ -405,7 +405,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
             <div className="text-center mt-8 pt-6 border-t border-slate-200">
               <p className="text-slate-600 text-sm">
                 Don't see your specific neighborhood? We likely serve your area too! 
-                <a href="tel:+13608832506" className="text-primary-600 hover:text-primary-700 font-medium">Call us</a> to confirm.
+                <a href="tel:+13608832506" className="text-brand-cyan hover:text-brand-cyan-dark font-medium">Call us</a> to confirm.
               </p>
             </div>
           </div>
@@ -417,7 +417,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
         <div className="container mx-auto container-padding">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-heading font-bold text-slate-900 mb-6 uppercase">Our {data.name} <span className="text-brand-red">Service Area</span></h3>
+              <h3 className="text-3xl font-heading font-bold text-slate-900 mb-6 uppercase">Our {data.name} <span className="text-brand-cyan">Service Area</span></h3>
               <p className="text-lg text-slate-600 leading-relaxed">
                 See exactly where we provide service in {data.name} and surrounding areas. 
                 We're proud to serve this community with professional, reliable plumbing services.
@@ -445,7 +445,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
         <div className="container mx-auto container-padding">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h3 className="text-3xl font-heading font-bold text-slate-900 mb-6 uppercase">What Your {data.name} <span className="text-brand-red">Neighbors Are Saying</span></h3>
+              <h3 className="text-3xl font-heading font-bold text-slate-900 mb-6 uppercase">What Your {data.name} <span className="text-brand-cyan">Neighbors Are Saying</span></h3>
               <p className="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
                 Don't just take our word for it. Here's what families throughout {data.name} 
                 are saying about their experience with H2O Plumbing.
@@ -454,7 +454,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {data.testimonials.map((testimonial, index) => (
-                <div key={testimonial.author} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-brand-red/20 hover:border-brand-red transform hover:-translate-y-2">
+                <div key={testimonial.author} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-brand-cyan/20 hover:border-brand-cyan transform hover:-translate-y-2">
                   <div className="flex items-center mb-6">
                     <div className="flex text-yellow-500 mr-3">
                       {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
@@ -464,8 +464,8 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
                     "{testimonial.quote}"
                   </blockquote>
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
-                      <Users className="w-6 h-6 text-brand-red" />
+                    <div className="w-12 h-12 bg-cyan-50 rounded-full flex items-center justify-center mr-4 border border-brand-cyan/20">
+                      <Users className="w-6 h-6 text-brand-cyan" />
                     </div>
                     <div>
                       <p className="font-bold text-slate-800">{testimonial.author}</p>
@@ -480,7 +480,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="section-padding bg-brand-red text-white relative overflow-hidden">
+      <section className="section-padding bg-brand-cyan text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `url('/images/hero-background-pattern.svg')`,
           backgroundSize: 'cover',
@@ -495,14 +495,14 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a
               href={`tel:${BUSINESS_DATA.phoneRaw}`}
-              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-brand-red px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-100 text-brand-cyan px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
             >
               <Phone className="w-5 h-5" />
               Call {BUSINESS_DATA.phone}
             </a>
             <Link
               href="/booking"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white bg-transparent text-white hover:bg-white hover:text-brand-red px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white bg-transparent text-white hover:bg-white hover:text-brand-cyan px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
             >
               Schedule Service Online
             </Link>

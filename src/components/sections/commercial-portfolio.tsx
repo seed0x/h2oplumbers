@@ -123,25 +123,25 @@ export function CommercialPortfolio() {
           {/* Business Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-brand-red mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-brand-cyan mb-2">
                 {totalStats.industries}
               </div>
               <div className="text-sm text-slate-600">Industries Served</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-brand-red mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-brand-cyan mb-2">
                 {totalStats.projects}+
               </div>
               <div className="text-sm text-slate-600">Commercial Projects</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-brand-red mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-brand-cyan mb-2">
                 {totalStats.clients}+
               </div>
               <div className="text-sm text-slate-600">Business Clients</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-brand-red mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-brand-cyan mb-2">
                 {totalStats.experience}+
               </div>
               <div className="text-sm text-slate-600">Years Experience</div>
@@ -158,7 +158,7 @@ export function CommercialPortfolio() {
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               {featuredClients.map((client, index) => (
                 client.testimonial && (
-                  <Card key={index} className="border-l-4 border-l-brand-red bg-white shadow-lg">
+                  <Card key={index} className="border-l-4 border-l-brand-cyan bg-white shadow-lg">
                     <CardContent className="pt-6">
                       <blockquote className="text-lg text-slate-700 mb-4 italic">
                         "{client.testimonial.quote}"
@@ -176,7 +176,7 @@ export function CommercialPortfolio() {
                           </div>
                         </div>
                         <div className="text-right">
-                          <Badge variant="outline" className="text-brand-red border-brand-red mb-1">
+                          <Badge variant="outline" className="text-brand-cyan border-brand-cyan mb-1">
                             {client.projectsCompleted} Projects
                           </Badge>
                           <div className="text-xs text-slate-500">
@@ -203,11 +203,11 @@ export function CommercialPortfolio() {
               <CardHeader className="pb-4">
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-lg text-slate-900 flex items-center font-heading uppercase">
-                    <client.icon className="w-5 h-5 mr-2 text-brand-red" />
+                    <client.icon className="w-5 h-5 mr-2 text-brand-cyan" />
                     {client.industry}
                   </CardTitle>
                   {client.featured && (
-                    <Badge className="bg-red-50 text-brand-red border-brand-red">
+                    <Badge className="bg-red-50 text-brand-cyan border-brand-cyan">
                       Featured
                     </Badge>
                   )}
@@ -217,15 +217,15 @@ export function CommercialPortfolio() {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-brand-red">{client.projectsCompleted}</div>
+                      <div className="text-2xl font-bold text-brand-cyan">{client.projectsCompleted}</div>
                       <div className="text-xs text-slate-600">Projects</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-brand-red">{client.clientCount}</div>
+                      <div className="text-2xl font-bold text-brand-cyan">{client.clientCount}</div>
                       <div className="text-xs text-slate-600">Clients</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-brand-red">{client.specialties.length}</div>
+                      <div className="text-2xl font-bold text-brand-cyan">{client.specialties.length}</div>
                       <div className="text-xs text-slate-600">Specialties</div>
                     </div>
                   </div>
@@ -235,7 +235,7 @@ export function CommercialPortfolio() {
                     <div className="space-y-1">
                       {client.specialties.map((specialty, idx) => (
                         <div key={idx} className="flex items-center text-sm text-slate-600">
-                          <CheckCircle2 className="w-3 h-3 text-brand-red mr-2 flex-shrink-0" />
+                          <CheckCircle2 className="w-3 h-3 text-brand-cyan mr-2 flex-shrink-0" />
                           <span>{specialty}</span>
                         </div>
                       ))}
@@ -252,7 +252,7 @@ export function CommercialPortfolio() {
           <div className="text-center mb-12">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="px-6 py-3 border-2 border-brand-red text-brand-red hover:bg-red-50 font-semibold rounded-lg transition-colors"
+              className="px-6 py-3 border-2 border-brand-cyan text-brand-cyan hover:bg-red-50 font-semibold rounded-lg transition-colors"
             >
               {showAll ? 'Show Less' : `View All ${commercialClients.length} Industries`}
             </button>
@@ -274,21 +274,21 @@ export function CommercialPortfolio() {
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <div className="text-center">
               <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-brand-red" />
+                <Clock className="w-8 h-8 text-brand-cyan" />
               </div>
               <h4 className="text-lg font-heading font-semibold uppercase mb-2">Fast Response</h4>
               <p className="text-slate-600">Same-day service within 2 hours. Scheduled maintenance at your convenience.</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-brand-red" />
+                <Shield className="w-8 h-8 text-brand-cyan" />
               </div>
               <h4 className="text-lg font-heading font-semibold uppercase mb-2">Minimal Disruption</h4>
               <p className="text-slate-600">We work around your business hours and minimize impact on operations.</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-8 h-8 text-brand-red" />
+                <TrendingUp className="w-8 h-8 text-brand-cyan" />
               </div>
               <h4 className="text-lg font-heading font-semibold uppercase mb-2">Preventive Focus</h4>
               <p className="text-slate-600">Proactive maintenance programs to prevent costly repairs.</p>
@@ -308,7 +308,7 @@ export function CommercialPortfolio() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:3608832506"
-              className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+              className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
             >
               Get Commercial Quote
             </a>

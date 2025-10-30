@@ -291,7 +291,7 @@ export function CommercialQuoteForm({
     return (
       <Card className={`max-w-2xl mx-auto ${className} border-slate-200`}>
         <CardContent className="text-center py-12">
-          <CheckCircle2 className="w-16 h-16 text-brand-red mx-auto mb-6" />
+          <CheckCircle2 className="w-16 h-16 text-brand-cyan mx-auto mb-6" />
           <h3 className="text-2xl font-heading font-bold uppercase text-slate-900 mb-4">
             Request Received!
           </h3>
@@ -320,7 +320,7 @@ export function CommercialQuoteForm({
           <div className="space-y-6">
             <div className="text-center mb-6">
               <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-3">
-                <User className="w-8 h-8 text-brand-red" />
+                <User className="w-8 h-8 text-brand-cyan" />
               </div>
               <h3 className="text-xl font-heading font-bold uppercase">Contact Information</h3>
               <p className="text-slate-600">Tell us about yourself and your business</p>
@@ -332,10 +332,10 @@ export function CommercialQuoteForm({
                   value={formData.firstName}
                   onChange={(e) => handleInputChange('firstName', e.target.value)}
                   placeholder="John"
-                  className={errors.firstName ? 'border-brand-red' : ''}
+                  className={errors.firstName ? 'border-brand-cyan' : ''}
                 />
                 {errors.firstName && (
-                  <p className="text-brand-red text-sm mt-1">{errors.firstName}</p>
+                  <p className="text-brand-cyan text-sm mt-1">{errors.firstName}</p>
                 )}
               </div>
               <div>
@@ -344,10 +344,10 @@ export function CommercialQuoteForm({
                   value={formData.lastName}
                   onChange={(e) => handleInputChange('lastName', e.target.value)}
                   placeholder="Smith"
-                  className={errors.lastName ? 'border-brand-red' : ''}
+                  className={errors.lastName ? 'border-brand-cyan' : ''}
                 />
                 {errors.lastName && (
-                  <p className="text-brand-red text-sm mt-1">{errors.lastName}</p>
+                  <p className="text-brand-cyan text-sm mt-1">{errors.lastName}</p>
                 )}
               </div>
             </div>
@@ -359,10 +359,10 @@ export function CommercialQuoteForm({
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
                   placeholder="john@company.com"
-                  className={errors.email ? 'border-brand-red' : ''}
+                  className={errors.email ? 'border-brand-cyan' : ''}
                 />
                 {errors.email && (
-                  <p className="text-brand-red text-sm mt-1">{errors.email}</p>
+                  <p className="text-brand-cyan text-sm mt-1">{errors.email}</p>
                 )}
               </div>
               <div>
@@ -372,10 +372,10 @@ export function CommercialQuoteForm({
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
                   placeholder="(360) 555-0123"
-                  className={errors.phone ? 'border-brand-red' : ''}
+                  className={errors.phone ? 'border-brand-cyan' : ''}
                 />
                 {errors.phone && (
-                  <p className="text-brand-red text-sm mt-1">{errors.phone}</p>
+                  <p className="text-brand-cyan text-sm mt-1">{errors.phone}</p>
                 )}
               </div>
             </div>
@@ -385,10 +385,10 @@ export function CommercialQuoteForm({
                 value={formData.company}
                 onChange={(e) => handleInputChange('company', e.target.value)}
                 placeholder="ABC Restaurant"
-                className={errors.company ? 'border-brand-red' : ''}
+                className={errors.company ? 'border-brand-cyan' : ''}
               />
               {errors.company && (
-                <p className="text-brand-red text-sm mt-1">{errors.company}</p>
+                <p className="text-brand-cyan text-sm mt-1">{errors.company}</p>
               )}
             </div>
             <div>
@@ -407,7 +407,7 @@ export function CommercialQuoteForm({
           <div className="space-y-6">
             <div className="text-center mb-6">
               <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-3">
-                <Building2 className="w-8 h-8 text-brand-red" />
+                <Building2 className="w-8 h-8 text-brand-cyan" />
               </div>
               <h3 className="text-xl font-heading font-bold uppercase">Business Information</h3>
               <p className="text-slate-600">Help us understand your business needs</p>
@@ -416,7 +416,7 @@ export function CommercialQuoteForm({
               <div>
                 <label className="block text-sm font-medium mb-2">Business Type *</label>
                 <Select value={formData.businessType} onValueChange={(value) => handleInputChange('businessType', value)}>
-                  <SelectTrigger className={errors.businessType ? 'border-brand-red' : ''}>
+                  <SelectTrigger className={errors.businessType ? 'border-brand-cyan' : ''}>
                     <SelectValue placeholder="Select business type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -426,7 +426,7 @@ export function CommercialQuoteForm({
                   </SelectContent>
                 </Select>
                 {errors.businessType && (
-                  <p className="text-brand-red text-sm mt-1">{errors.businessType}</p>
+                  <p className="text-brand-cyan text-sm mt-1">{errors.businessType}</p>
                 )}
               </div>
               <div>
@@ -449,10 +449,10 @@ export function CommercialQuoteForm({
                 value={formData.location}
                 onChange={(e) => handleInputChange('location', e.target.value)}
                 placeholder="Vancouver, WA or specific address"
-                className={errors.location ? 'border-brand-red' : ''}
+                className={errors.location ? 'border-brand-cyan' : ''}
               />
               {errors.location && (
-                <p className="text-brand-red text-sm mt-1">{errors.location}</p>
+                <p className="text-brand-cyan text-sm mt-1">{errors.location}</p>
               )}
             </div>
             <div>
@@ -471,7 +471,7 @@ export function CommercialQuoteForm({
           <div className="space-y-6">
             <div className="text-center mb-6">
               <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-3">
-                <FileText className="w-8 h-8 text-brand-red" />
+                <FileText className="w-8 h-8 text-brand-cyan" />
               </div>
               <h3 className="text-xl font-heading font-bold uppercase">Service Requirements</h3>
               <p className="text-slate-600">What plumbing services do you need?</p>
@@ -479,7 +479,7 @@ export function CommercialQuoteForm({
             <div>
               <label className="block text-sm font-medium mb-2">Type of Service *</label>
               <Select value={formData.serviceType} onValueChange={(value) => handleInputChange('serviceType', value)}>
-                <SelectTrigger className={errors.serviceType ? 'border-brand-red' : ''}>
+                <SelectTrigger className={errors.serviceType ? 'border-brand-cyan' : ''}>
                   <SelectValue placeholder="Select service type" />
                 </SelectTrigger>
                 <SelectContent>
@@ -489,7 +489,7 @@ export function CommercialQuoteForm({
                 </SelectContent>
               </Select>
               {errors.serviceType && (
-                <p className="text-brand-red text-sm mt-1">{errors.serviceType}</p>
+                <p className="text-brand-cyan text-sm mt-1">{errors.serviceType}</p>
               )}
             </div>
             <div>
@@ -546,7 +546,7 @@ export function CommercialQuoteForm({
           <div className="space-y-6">
             <div className="text-center mb-6">
               <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-3">
-                <Clock className="w-8 h-8 text-brand-red" />
+                <Clock className="w-8 h-8 text-brand-cyan" />
               </div>
               <h3 className="text-xl font-heading font-bold uppercase">Additional Details</h3>
               <p className="text-slate-600">Help us better serve your business</p>
@@ -610,7 +610,7 @@ export function CommercialQuoteForm({
           <div>
             <CardTitle className="text-2xl text-slate-900 flex items-center font-heading uppercase">
               <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center mr-3">
-                <Building2 className="w-5 h-5 text-brand-red" />
+                <Building2 className="w-5 h-5 text-brand-cyan" />
               </div>
               Commercial Service Request
             </CardTitle>
@@ -618,7 +618,7 @@ export function CommercialQuoteForm({
               Get professional commercial plumbing service for your business
             </p>
           </div>
-          <Badge variant="outline" className="text-brand-red border-brand-red">
+          <Badge variant="outline" className="text-brand-cyan border-brand-cyan">
             Step {currentStep} of {totalSteps}
           </Badge>
         </div>
@@ -626,7 +626,7 @@ export function CommercialQuoteForm({
         {/* Progress Bar */}
         <div className="w-full bg-slate-200 rounded-full h-2 mt-6">
           <div 
-            className="bg-brand-red h-2 rounded-full transition-all duration-300"
+            className="bg-brand-cyan h-2 rounded-full transition-all duration-300"
             style={{ width: `${(currentStep / totalSteps) * 100}%` }}
           />
         </div>
@@ -651,7 +651,7 @@ export function CommercialQuoteForm({
               <button
                 type="button"
                 onClick={nextStep}
-                className="bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-lg font-bold transition-colors flex items-center gap-2"
+                className="bg-brand-cyan hover:bg-brand-cyan-dark text-white px-6 py-3 rounded-lg font-bold transition-colors flex items-center gap-2"
               >
                 Next →
               </button>
@@ -659,7 +659,7 @@ export function CommercialQuoteForm({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-brand-red hover:bg-brand-red-dark text-white px-6 py-3 rounded-lg font-bold transition-colors flex items-center gap-2 disabled:opacity-50"
+                className="bg-brand-cyan hover:bg-brand-cyan-dark text-white px-6 py-3 rounded-lg font-bold transition-colors flex items-center gap-2 disabled:opacity-50"
               >
                 {isSubmitting ? 'Submitting...' : 'Submit Request'}
                 {!isSubmitting && <CheckCircle2 className="w-4 h-4" />}

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Droplets, Zap, Shield, Star, Clock, CheckCircle, Phone } from 'lucide-react';
+import { Droplets, Zap, Shield, Star, Clock, CheckCircle, Phone, Home, ChevronRight } from 'lucide-react';
 import { BUSINESS_DATA } from '@/lib/business-data';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -36,14 +36,16 @@ export default function DrainCleaningPage() {
   return (
     <div className="min-h-screen">
       {/* Breadcrumbs */}
-      <nav className="bg-gray-50 py-4">
+      <nav className="bg-slate-50 py-4" aria-label="Breadcrumb">
         <div className="container mx-auto px-4">
-          <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Link href="/" className="hover:text-primary-500">Home</Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-primary-500">Services</Link>
-            <span>/</span>
-            <span className="text-primary-500">Drain Cleaning</span>
+          <div className="flex items-center space-x-2 text-sm text-slate-600">
+            <Link href="/" className="hover:text-brand-cyan flex items-center" aria-label="Home">
+              <Home className="w-4 h-4" />
+            </Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <Link href="/services" className="hover:text-brand-cyan">Services</Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <span className="text-brand-cyan font-medium">Drain Cleaning</span>
           </div>
         </div>
       </nav>
@@ -72,7 +74,7 @@ export default function DrainCleaningPage() {
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <a
                     href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                    className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                    className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                   >
                     <Phone className="w-5 h-5" />
                     Call {BUSINESS_DATA.phone}
@@ -82,38 +84,42 @@ export default function DrainCleaningPage() {
                 {/* Trust Badges */}
                 <div className="flex flex-wrap gap-4 text-sm text-slate-300">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Licensed & Insured
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Family-Owned Since 2004
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Same-Day Service
                   </div>
                 </div>
               </div>
               
               {/* Right Column - Contact Form */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-7">
-                <div className="text-center mb-5">
-                  <h2 className="text-xl font-semibold text-slate-900 mb-1">Request a Free Quote</h2>
-                  <p className="text-sm text-slate-500">Fast response during business hours. No obligation.</p>
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-8">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center gap-2 bg-cyan-50 rounded-full px-4 py-2 mb-3">
+                    <Clock className="w-4 h-4 text-brand-cyan" />
+                    <span className="text-xs font-bold text-brand-cyan uppercase tracking-wider">Same-Day Service</span>
+                  </div>
+                  <h2 className="text-2xl font-heading font-bold text-slate-900 mb-2">Get Your Drain Unclogged Today</h2>
+                  <p className="text-sm text-slate-600">Fast response • No hidden fees • Satisfaction guaranteed</p>
                 </div>
                 <form className="space-y-4" aria-label="Request service quote form">
                   <div>
                     <label className="sr-only" htmlFor="hero-name">Name</label>
-                    <Input id="hero-name" placeholder="Your Name" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input id="hero-name" placeholder="Your Name" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
                     <label className="sr-only" htmlFor="hero-phone">Phone Number</label>
-                    <Input id="hero-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input id="hero-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
                     <Select>
-                      <SelectTrigger className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600">
+                      <SelectTrigger className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan">
                         <SelectValue placeholder="Service Needed" />
                       </SelectTrigger>
                       <SelectContent>
@@ -123,7 +129,6 @@ export default function DrainCleaningPage() {
                         <SelectItem value="camera-inspection">Camera Inspection</SelectItem>
                         <SelectItem value="repipe">Repipe & Pipe Repair</SelectItem>
                         <SelectItem value="bathroom-remodel">Bathroom Remodel</SelectItem>
-                        <SelectItem value="new-construction">New Construction</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
@@ -131,13 +136,23 @@ export default function DrainCleaningPage() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold py-5 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    Get Free Quote
+                    Get Free Quote Now
                   </Button>
                 </form>
-                <p className="text-[10px] text-slate-500 mt-4 text-center leading-relaxed">
-                  By submitting this form you agree to be contacted about your request. We never share your information.
+                <div className="flex items-center justify-center gap-4 mt-5 text-xs text-slate-500">
+                  <div className="flex items-center gap-1">
+                    <CheckCircle className="w-3 h-3 text-green-600" />
+                    <span>No obligation</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <CheckCircle className="w-3 h-3 text-green-600" />
+                    <span>Fast response</span>
+                  </div>
+                </div>
+                <p className="text-[10px] text-slate-500 mt-3 text-center leading-relaxed">
+                  By submitting this form you agree to be contacted about your request.
                 </p>
               </div>
             </div>
@@ -145,25 +160,25 @@ export default function DrainCleaningPage() {
         </div>
       </section>
 
-      {/* Service Stats */}
-      <section className="py-12 bg-slate-900 text-white">
+      {/* Trust & Social Proof Bar */}
+      <section className="py-12 bg-gradient-to-r from-brand-cyan to-brand-cyan-dark text-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">1000+</div>
-              <p className="text-lg">Drains Cleaned Annually</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">1000+</div>
+              <p className="text-sm md:text-base opacity-90">Drains Cleared</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Same Day</div>
-              <p className="text-lg">Service Available</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">Same Day</div>
+              <p className="text-sm md:text-base opacity-90">Service Available</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">100%</div>
-              <p className="text-lg">Satisfaction Guarantee</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">100%</div>
+              <p className="text-sm md:text-base opacity-90">Satisfaction Guarantee</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">20+ Years</div>
-              <p className="text-lg">Drain Cleaning Experience</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">20+ Yrs</div>
+              <p className="text-sm md:text-base opacity-90">Experience</p>
             </div>
           </div>
         </div>
@@ -173,7 +188,7 @@ export default function DrainCleaningPage() {
       <section className="py-8 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="bg-gradient-to-r from-brand-red to-red-600 rounded-2xl shadow-lg overflow-hidden">
+            <div className="bg-brand-cyan rounded-2xl shadow-lg overflow-hidden">
               <div className="flex flex-col md:flex-row items-center justify-between p-6 md:p-8 gap-6">
                 {/* Left - Offer Text */}
                 <div className="flex items-center gap-4 md:gap-6 text-white">
@@ -189,11 +204,11 @@ export default function DrainCleaningPage() {
                 {/* Right - Code & CTA */}
                 <div className="flex items-center gap-4 flex-shrink-0">
                   <div className="bg-white px-6 py-3.5 rounded-lg flex items-center justify-center min-w-[140px] h-[52px]">
-                    <div className="text-lg font-heading font-bold text-brand-red">{couponCode}</div>
+                    <div className="text-lg font-heading font-bold text-brand-cyan">{couponCode}</div>
                   </div>
                   <a
                     href={ctaLink}
-                    className="bg-white text-brand-red hover:bg-slate-100 px-8 py-3.5 rounded-lg font-bold transition-colors shadow-lg whitespace-nowrap inline-flex items-center justify-center h-[52px]"
+                    className="bg-white text-brand-cyan hover:bg-slate-100 px-8 py-3.5 rounded-lg font-bold transition-colors shadow-lg whitespace-nowrap inline-flex items-center justify-center h-[52px]"
                   >
                     Claim Savings
                   </a>
@@ -210,7 +225,7 @@ export default function DrainCleaningPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6">
-                Complete <span className="text-brand-red">Drain Cleaning</span> Solutions
+                Complete <span className="text-brand-cyan">Drain Cleaning</span> Solutions
               </h2>
               <p className="text-xl text-slate-600 max-w-3xl mx-auto">
                 H2O Plumbing provides comprehensive drain cleaning services for every type of blockage 
@@ -222,8 +237,8 @@ export default function DrainCleaningPage() {
               <div>
                 <h3 className="text-3xl font-heading font-bold text-slate-900 mb-8">Residential Drain Cleaning</h3>
                 <div className="space-y-6">
-                  <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h4 className="text-xl font-heading font-bold text-brand-red mb-3">Kitchen Drain Cleaning</h4>
+                  <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h4 className="text-xl font-heading font-bold text-brand-cyan mb-3">Kitchen Drain Cleaning</h4>
                     <p className="text-gray-700 mb-3">
                       Kitchen sinks face unique challenges from grease, food particles, and soap buildup. 
                       Our specialized techniques effectively clear these stubborn blockages.
@@ -236,8 +251,8 @@ export default function DrainCleaningPage() {
                     </ul>
                   </div>
 
-                  <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h4 className="text-xl font-heading font-bold text-brand-red mb-3">Bathroom Drain Cleaning</h4>
+                  <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h4 className="text-xl font-heading font-bold text-brand-cyan mb-3">Bathroom Drain Cleaning</h4>
                     <p className="text-gray-700 mb-3">
                       Hair, soap scum, and personal care products create unique drainage challenges in bathrooms. 
                       We have the tools and expertise to handle all bathroom drain issues.
@@ -250,8 +265,8 @@ export default function DrainCleaningPage() {
                     </ul>
                   </div>
 
-                  <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h4 className="text-xl font-heading font-bold text-brand-red mb-3">Toilet and Floor Drains</h4>
+                  <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h4 className="text-xl font-heading font-bold text-brand-cyan mb-3">Toilet and Floor Drains</h4>
                     <p className="text-gray-700 mb-3">
                       Specialized equipment and techniques for clearing toilet clogs and maintaining floor drains 
                       in basements, garages, and utility areas.
@@ -269,8 +284,8 @@ export default function DrainCleaningPage() {
               <div>
                 <h3 className="text-3xl font-heading font-bold text-slate-900 mb-8">Advanced Drain Services</h3>
                 <div className="space-y-6">
-                  <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h4 className="text-xl font-heading font-bold text-brand-red mb-3">Hydro Jetting Services</h4>
+                  <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h4 className="text-xl font-heading font-bold text-brand-cyan mb-3">Hydro Jetting Services</h4>
                     <p className="text-gray-700 mb-3">
                       High-pressure water jetting effectively removes even the toughest blockages, including 
                       tree roots, mineral buildup, and years of accumulated debris.
@@ -283,8 +298,8 @@ export default function DrainCleaningPage() {
                     </ul>
                   </div>
 
-                  <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h4 className="text-xl font-heading font-bold text-brand-red mb-3">Camera Drain Inspections</h4>
+                  <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h4 className="text-xl font-heading font-bold text-brand-cyan mb-3">Camera Drain Inspections</h4>
                     <p className="text-gray-700 mb-3">
                       Advanced video inspection technology allows us to accurately diagnose drain problems 
                       and provide targeted solutions without guesswork.
@@ -297,8 +312,8 @@ export default function DrainCleaningPage() {
                     </ul>
                   </div>
 
-                  <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h4 className="text-xl font-heading font-bold text-brand-red mb-3">Sewer Line Cleaning</h4>
+                  <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h4 className="text-xl font-heading font-bold text-brand-cyan mb-3">Sewer Line Cleaning</h4>
                     <p className="text-gray-700 mb-3">
                       Main sewer line cleaning requires specialized equipment and expertise. We handle everything 
                       from minor blockages to major sewer line restoration.
@@ -315,15 +330,15 @@ export default function DrainCleaningPage() {
             </div>
 
             {/* Commercial Drain Services */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-brand-red/20">
+            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-brand-cyan/20">
               <h3 className="text-3xl font-heading font-bold text-slate-900 mb-4 text-center">Commercial Drain Cleaning</h3>
               <p className="text-center text-slate-600 mb-8">
                 We provide specialized drain cleaning services for businesses throughout Southwest Washington, serving Longview, Vancouver, Battle Ground, Camas, Washougal, Ridgefield, Woodland, and all surrounding areas.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Droplets className="w-8 h-8 text-brand-red" />
+                  <div className="w-16 h-16 bg-brand-cyan/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Droplets className="w-8 h-8 text-brand-cyan" />
                   </div>
                   <h4 className="text-xl font-heading font-bold text-slate-900 mb-3">Restaurant Drains</h4>
                   <p className="text-gray-700 text-sm">
@@ -333,8 +348,8 @@ export default function DrainCleaningPage() {
                 </div>
 
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Zap className="w-8 h-8 text-brand-red" />
+                  <div className="w-16 h-16 bg-brand-cyan/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Zap className="w-8 h-8 text-brand-cyan" />
                   </div>
                   <h4 className="text-xl font-heading font-bold text-slate-900 mb-3">Office Buildings</h4>
                   <p className="text-gray-700 text-sm">
@@ -344,8 +359,8 @@ export default function DrainCleaningPage() {
                 </div>
 
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="w-8 h-8 text-brand-red" />
+                  <div className="w-16 h-16 bg-brand-cyan/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Shield className="w-8 h-8 text-brand-cyan" />
                   </div>
                   <h4 className="text-xl font-heading font-bold text-slate-900 mb-3">Industrial Facilities</h4>
                   <p className="text-gray-700 text-sm">
@@ -357,7 +372,7 @@ export default function DrainCleaningPage() {
               <div className="text-center">
                 <Link 
                   href="/commercial" 
-                  className="inline-flex items-center text-brand-red font-bold hover:text-brand-red-dark transition-colors text-lg group"
+                  className="inline-flex items-center text-brand-cyan font-bold hover:text-brand-cyan-dark transition-colors text-lg group"
                 >
                   Learn More About Our Commercial Services 
                   <span className="ml-2 group-hover:ml-3 transition-all">→</span>
@@ -373,7 +388,7 @@ export default function DrainCleaningPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 text-center">
-              Our Professional <span className="text-brand-red">Drain Cleaning</span> Process
+              Our Professional <span className="text-brand-cyan">Drain Cleaning</span> Process
             </h2>
             <p className="text-xl text-slate-600 mb-16 text-center max-w-3xl mx-auto">
               Every drain cleaning job begins with a thorough assessment to determine the best approach 
@@ -382,7 +397,7 @@ export default function DrainCleaningPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-brand-cyan to-brand-cyan-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <span className="text-3xl font-heading font-bold text-white">1</span>
                 </div>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">Initial Assessment</h3>
@@ -393,7 +408,7 @@ export default function DrainCleaningPage() {
               </div>
 
               <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-brand-cyan to-brand-cyan-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <span className="text-3xl font-heading font-bold text-white">2</span>
                 </div>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">Equipment Selection</h3>
@@ -404,7 +419,7 @@ export default function DrainCleaningPage() {
               </div>
 
               <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-brand-cyan to-brand-cyan-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <span className="text-3xl font-heading font-bold text-white">3</span>
                 </div>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">Professional Cleaning</h3>
@@ -415,7 +430,7 @@ export default function DrainCleaningPage() {
               </div>
 
               <div className="text-center group">
-                <div className="w-20 h-20 bg-gradient-to-br from-brand-red to-brand-red-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-brand-cyan to-brand-cyan-dark rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <span className="text-3xl font-heading font-bold text-white">4</span>
                 </div>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">Testing & Prevention</h3>
@@ -434,7 +449,7 @@ export default function DrainCleaningPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 text-center">
-              Common Drain Problems in <span className="text-brand-red">Southwest Washington</span>
+              Common Drain Problems in <span className="text-brand-cyan">Southwest Washington</span>
             </h2>
             <p className="text-xl text-slate-600 mb-16 text-center max-w-3xl mx-auto">
               Understanding common drainage issues can help you identify problems early and prevent costly repairs. 
@@ -443,71 +458,71 @@ export default function DrainCleaningPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-6">
-                <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4">Slow Draining Sinks</h3>
                   <p className="text-slate-700 mb-4 leading-relaxed">
                     Gradual accumulation of hair, soap, grease, and debris creates partial blockages that 
                     slow drainage over time.
                   </p>
                   <div className="text-sm text-slate-600 font-semibold">
-                    <span className="text-brand-red">Signs:</span> Water backs up, gurgling sounds, unpleasant odors
+                    <span className="text-brand-cyan">Signs:</span> Water backs up, gurgling sounds, unpleasant odors
                   </div>
                 </div>
 
-                <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4">Completely Blocked Drains</h3>
                   <p className="text-slate-700 mb-4 leading-relaxed">
                     Complete blockages prevent any water flow and require immediate professional attention 
                     to prevent overflow and water damage.
                   </p>
                   <div className="text-sm text-slate-600 font-semibold">
-                    <span className="text-brand-red">Signs:</span> No drainage, water backing up, potential flooding
+                    <span className="text-brand-cyan">Signs:</span> No drainage, water backing up, potential flooding
                   </div>
                 </div>
 
-                <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4">Recurring Clogs</h3>
                   <p className="text-slate-700 mb-4 leading-relaxed">
                     Frequent blockages often indicate deeper issues like tree root intrusion, pipe damage, 
                     or improper drain slope.
                   </p>
                   <div className="text-sm text-slate-600 font-semibold">
-                    <span className="text-brand-red">Signs:</span> Same drain clogs repeatedly, multiple drain issues
+                    <span className="text-brand-cyan">Signs:</span> Same drain clogs repeatedly, multiple drain issues
                   </div>
                 </div>
               </div>
 
               <div className="space-y-6">
-                <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4">Tree Root Intrusion</h3>
                   <p className="text-slate-700 mb-4 leading-relaxed">
                     Tree roots naturally seek water sources and can infiltrate sewer lines through small 
                     cracks, eventually causing major blockages.
                   </p>
                   <div className="text-sm text-slate-600 font-semibold">
-                    <span className="text-brand-red">Signs:</span> Gurgling toilets, slow drains, sewage backups
+                    <span className="text-brand-cyan">Signs:</span> Gurgling toilets, slow drains, sewage backups
                   </div>
                 </div>
 
-                <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4">Grease Buildup</h3>
                   <p className="text-slate-700 mb-4 leading-relaxed">
                     Cooking grease and fats solidify in pipes, creating stubborn blockages that worsen 
                     over time and attract other debris.
                   </p>
                   <div className="text-sm text-slate-600 font-semibold">
-                    <span className="text-brand-red">Signs:</span> Kitchen sink backing up, foul odors, slow drainage
+                    <span className="text-brand-cyan">Signs:</span> Kitchen sink backing up, foul odors, slow drainage
                   </div>
                 </div>
 
-                <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4">Mineral Buildup</h3>
                   <p className="text-slate-700 mb-4 leading-relaxed">
                     Hard water minerals accumulate inside pipes over time, reducing flow capacity and 
                     creating rough surfaces that catch debris.
                   </p>
                   <div className="text-sm text-slate-600 font-semibold">
-                    <span className="text-brand-red">Signs:</span> Reduced water flow, white deposits, recurring clogs
+                    <span className="text-brand-cyan">Signs:</span> Reduced water flow, white deposits, recurring clogs
                   </div>
                 </div>
               </div>
@@ -521,7 +536,7 @@ export default function DrainCleaningPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 text-center">
-              Drain Maintenance Tips from <span className="text-brand-red">Southwest Washington's Experts</span>
+              Drain Maintenance Tips from <span className="text-brand-cyan">Southwest Washington's Experts</span>
             </h2>
             <p className="text-xl text-slate-600 mb-16 text-center max-w-3xl mx-auto">
               Preventive maintenance is the key to avoiding costly drain problems. Follow these expert tips 
@@ -568,16 +583,16 @@ export default function DrainCleaningPage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-red-50 to-white rounded-2xl p-8 shadow-lg border-2 border-red-200">
+              <div className="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 shadow-lg border-2 border-orange-200">
                 <h3 className="text-3xl font-heading font-bold text-slate-900 mb-8 flex items-center">
-                  <div className="w-10 h-10 bg-brand-red/10 rounded-lg flex items-center justify-center mr-3">
-                    <span className="text-brand-red text-xl">×</span>
+                  <div className="w-10 h-10 bg-brand-cyan/10 rounded-lg flex items-center justify-center mr-3">
+                    <span className="text-brand-cyan text-xl">×</span>
                   </div>
                   Don'ts That Damage Drains
                 </h3>
                 <div className="space-y-5">
                   <div className="flex items-start">
-                    <div className="w-6 h-6 bg-brand-red rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                    <div className="w-6 h-6 bg-brand-cyan rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                       <span className="text-white text-xs font-bold">✕</span>
                     </div>
                     <div>
@@ -586,7 +601,7 @@ export default function DrainCleaningPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-6 h-6 bg-brand-red rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                    <div className="w-6 h-6 bg-brand-cyan rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                       <span className="text-white text-xs font-bold">✕</span>
                     </div>
                     <div>
@@ -595,7 +610,7 @@ export default function DrainCleaningPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-6 h-6 bg-brand-red rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                    <div className="w-6 h-6 bg-brand-cyan rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                       <span className="text-white text-xs font-bold">✕</span>
                     </div>
                     <div>
@@ -604,7 +619,7 @@ export default function DrainCleaningPage() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-6 h-6 bg-brand-red rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                    <div className="w-6 h-6 bg-brand-cyan rounded-full flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                       <span className="text-white text-xs font-bold">✕</span>
                     </div>
                     <div>
@@ -624,7 +639,7 @@ export default function DrainCleaningPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(220,38,38,0.15),transparent_60%)]" aria-hidden="true"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Professional <span className="text-brand-red">Drain Cleaning</span> You Can Trust
+            Professional <span className="text-brand-cyan">Drain Cleaning</span> You Can Trust
           </h2>
           <p className="text-xl mb-10 max-w-3xl mx-auto text-slate-300 leading-relaxed">
             Don't let clogged drains disrupt your daily routine. Contact H2O Plumbing today for 
@@ -632,7 +647,7 @@ export default function DrainCleaningPage() {
           </p>
           <a 
             href={`tel:${BUSINESS_DATA.phoneRaw}`}
-            className="bg-gradient-to-r from-brand-red to-brand-red-dark text-white px-12 py-5 rounded-xl font-heading font-bold text-2xl hover:shadow-2xl hover:shadow-brand-red/50 transition-all duration-300 inline-flex items-center hover:-translate-y-1 transform"
+            className="bg-gradient-to-r from-brand-cyan to-brand-cyan-dark text-white px-12 py-5 rounded-xl font-heading font-bold text-2xl hover:shadow-2xl hover:shadow-brand-cyan/50 transition-all duration-300 inline-flex items-center hover:-translate-y-1 transform"
           >
             <Phone className="w-8 h-8 mr-3" />
             Call {BUSINESS_DATA.phone} Now

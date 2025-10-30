@@ -14,7 +14,7 @@ export function DynamicCouponSection() {
     return (
       <>
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-brand-red via-brand-red-dark to-red-900 text-white py-20 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-brand-cyan via-brand-cyan-dark to-red-900 text-white py-20 overflow-hidden">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
@@ -36,7 +36,7 @@ export function DynamicCouponSection() {
         <section className="py-20 bg-slate-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="max-w-2xl mx-auto">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand-red/10 text-brand-red mb-6">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand-cyan/10 text-brand-cyan mb-6">
                 <Tag className="w-10 h-10" />
               </div>
               <h2 className="text-3xl font-heading font-bold text-slate-900 mb-4">
@@ -60,7 +60,7 @@ export function DynamicCouponSection() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-brand-red via-brand-red-dark to-red-900 text-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-brand-cyan via-brand-cyan-dark to-red-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -106,11 +106,11 @@ export function DynamicCouponSection() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {activeCoupons.map((coupon, idx) => (
-              <Card key={coupon.code} className="flex flex-col justify-between shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-2 border-brand-red/20 hover:border-brand-red overflow-hidden group">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-brand-red/10 rounded-bl-full -mr-12 -mt-12 group-hover:scale-110 transition-transform duration-300" />
+              <Card key={coupon.code} className="flex flex-col justify-between shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-2 border-brand-cyan/20 hover:border-brand-cyan overflow-hidden group">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-brand-cyan/10 rounded-bl-full -mr-12 -mt-12 group-hover:scale-110 transition-transform duration-300" />
                 <CardHeader className="relative">
                   <div className="flex items-start justify-between mb-3">
-                    <div className="w-12 h-12 rounded-xl bg-brand-red/10 text-brand-red flex items-center justify-center group-hover:bg-brand-red group-hover:text-white transition-colors duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-brand-cyan/10 text-brand-cyan flex items-center justify-center group-hover:bg-brand-cyan group-hover:text-white transition-colors duration-300">
                       <Tag className="w-6 h-6" />
                     </div>
                     {idx === 0 && (
@@ -119,7 +119,7 @@ export function DynamicCouponSection() {
                       </span>
                     )}
                   </div>
-                  <CardTitle className="text-2xl font-heading font-bold text-slate-900 group-hover:text-brand-red transition-colors">
+                  <CardTitle className="text-2xl font-heading font-bold text-slate-900 group-hover:text-brand-cyan transition-colors">
                     {coupon.title}
                   </CardTitle>
                   <CardDescription className="text-base text-slate-600">
@@ -127,9 +127,9 @@ export function DynamicCouponSection() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-gradient-to-br from-brand-red/5 to-brand-red/10 border-2 border-dashed border-brand-red/50 p-6 rounded-xl text-center group-hover:from-brand-red/10 group-hover:to-brand-red/20 transition-colors duration-300">
+                  <div className="bg-gradient-to-br from-brand-cyan/5 to-brand-cyan/10 border-2 border-dashed border-brand-cyan/50 p-6 rounded-xl text-center group-hover:from-brand-cyan/10 group-hover:to-brand-cyan/20 transition-colors duration-300">
                     <p className="text-sm font-medium text-slate-600 mb-2">Use Code:</p>
-                    <p className="text-3xl font-heading font-bold text-brand-red tracking-wider">{coupon.code}</p>
+                    <p className="text-3xl font-heading font-bold text-brand-cyan tracking-wider">{coupon.code}</p>
                   </div>
                 </CardContent>
                 <CardFooter className="flex flex-col gap-4 pt-6">
@@ -149,9 +149,9 @@ export function DynamicCouponSection() {
           </div>
 
           {/* Trust Section */}
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg border-2 border-brand-red/20 p-8 md:p-12">
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg border-2 border-brand-cyan/20 p-8 md:p-12">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-red/10 text-brand-red mb-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-cyan/10 text-brand-cyan mb-6">
                 <Heart className="w-8 h-8" />
               </div>
               <h3 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-4">
@@ -162,15 +162,15 @@ export function DynamicCouponSection() {
               </p>
               <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
                 <div className="flex items-center gap-2 text-slate-600">
-                  <Shield className="w-5 h-5 text-brand-red" />
+                  <Shield className="w-5 h-5 text-brand-cyan" />
                   <span className="font-medium">Licensed & Insured</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-600">
-                  <Sparkles className="w-5 h-5 text-brand-red" />
+                  <Sparkles className="w-5 h-5 text-brand-cyan" />
                   <span className="font-medium">Upfront Estimates</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-600">
-                  <Heart className="w-5 h-5 text-brand-red" />
+                  <Heart className="w-5 h-5 text-brand-cyan" />
                   <span className="font-medium">Family Owned Since {BUSINESS_DATA.established}</span>
                 </div>
               </div>

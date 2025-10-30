@@ -1,17 +1,17 @@
-/* Image Fallback Styles for All County Plumbing */
+/* Image Fallback Styles for H2O Plumbing */
 
 .image-fallback-hero {
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #006a99 0%, #00BFFF 100%);
   background-size: 100px 100px;
 }
 
 .image-fallback-gallery {
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #006a99 0%, #00BFFF 100%);
   position: relative;
 }
 
 .image-fallback-gallery::before {
-  content: '🔧';
+  content: '💧';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -21,7 +21,7 @@
 }
 
 .image-fallback-gallery::after {
-  content: 'All County Plumbing';
+  content: 'H2O Plumbing';
   position: absolute;
   bottom: 1rem;
   left: 50%;
@@ -33,7 +33,7 @@
 }
 
 .image-fallback-team {
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #006a99 0%, #00BFFF 100%);
   border-radius: 50%;
   position: relative;
 }
@@ -49,13 +49,13 @@
 }
 
 .image-fallback-service {
-  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #006a99 0%, #00BFFF 100%);
   border-radius: 8px;
   position: relative;
 }
 
 .image-fallback-service::before {
-  content: '🔧';
+  content: '💧';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -66,18 +66,18 @@
 
 /* Professional gradient patterns for missing images */
 .gradient-pattern-diagonal {
-  background: linear-gradient(135deg, #1e3a8a 25%, transparent 25%), 
-              linear-gradient(225deg, #1e3a8a 25%, transparent 25%), 
-              linear-gradient(45deg, #2563eb 25%, transparent 25%), 
-              linear-gradient(315deg, #2563eb 25%, #1e3a8a 25%);
+  background: linear-gradient(135deg, #006a99 25%, transparent 25%), 
+              linear-gradient(225deg, #006a99 25%, transparent 25%), 
+              linear-gradient(45deg, #00BFFF 25%, transparent 25%), 
+              linear-gradient(315deg, #00BFFF 25%, #006a99 25%);
   background-size: 20px 20px;
   background-position: 10px 0, 10px 0, 0 0, 0 0;
 }
 
 .gradient-pattern-dots {
-  background: radial-gradient(circle, #2563eb 2px, transparent 2px);
+  background: radial-gradient(circle, #00BFFF 2px, transparent 2px);
   background-size: 20px 20px;
-  background-color: #1e3a8a;
+  background-color: #006a99;
 }
 
 /* Hover effects for image containers */
@@ -87,7 +87,7 @@
 }
 
 .image-container:hover .image-fallback-service {
-  box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 191, 255, 0.3);
   transition: box-shadow 0.3s ease;
 }
 

@@ -111,14 +111,6 @@ export default function ServicesPage() {
       features: ['Whole Home Repipe', 'Copper & PEX', 'Minimal Disruption', 'Warranty Included']
     },
     {
-      title: 'New Construction Plumbing',
-      description: 'Complete plumbing systems for new construction projects with proper design, installation, and code compliance.',
-      href: '/new-construction',
-      icon: Home,
-      color: 'purple',
-      features: ['System Design', 'Code Compliance', 'Quality Installation', 'Project Coordination']
-    },
-    {
       title: 'Commercial Plumbing',
       description: 'Specialized commercial plumbing services for businesses with minimal disruption and efficient solutions.',
       href: '/commercial',
@@ -152,14 +144,14 @@ export default function ServicesPage() {
                 </h1>
                 <p className="text-xl md:text-2xl mb-8 leading-relaxed text-slate-200">
                   Serving families throughout Clark County and Cowlitz County since 2004. From Vancouver to Longview, Battle Ground to Woodland, Camas to Ridgefield - 
-                  we're here for your family! From your kitchen sink to new home construction.
+                  we're here for your family! From your kitchen sink to whole house repipes.
                 </p>
                 
                 {/* Quick Contact Options */}
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <a
                     href="tel:+13608832506"
-                    className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                    className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                   >
                     <Phone className="w-5 h-5" />
                     Call (360) 883-2506
@@ -169,15 +161,15 @@ export default function ServicesPage() {
                 {/* Trust Badges */}
                 <div className="flex flex-wrap gap-4 text-sm text-slate-300">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Licensed & Insured
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Family-Owned Since 2004
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Same-Day Service
                   </div>
                 </div>
@@ -192,15 +184,15 @@ export default function ServicesPage() {
                 <form className="space-y-4" aria-label="Request service quote form">
                   <div>
                     <label className="sr-only" htmlFor="hero-name">Name</label>
-                    <Input id="hero-name" placeholder="Your Name" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input id="hero-name" placeholder="Your Name" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
                     <label className="sr-only" htmlFor="hero-phone">Phone Number</label>
-                    <Input id="hero-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input id="hero-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
                     <Select>
-                      <SelectTrigger className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600">
+                      <SelectTrigger className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan">
                         <SelectValue placeholder="Service Needed" />
                       </SelectTrigger>
                       <SelectContent>
@@ -210,7 +202,6 @@ export default function ServicesPage() {
                         <SelectItem value="camera-inspection">Camera Inspection</SelectItem>
                         <SelectItem value="repipe">Repipe & Pipe Repair</SelectItem>
                         <SelectItem value="bathroom-remodel">Bathroom Remodel</SelectItem>
-                        <SelectItem value="new-construction">New Construction</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
@@ -218,7 +209,7 @@ export default function ServicesPage() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     Get Free Quote
                   </Button>
@@ -236,7 +227,7 @@ export default function ServicesPage() {
       <section className="py-8 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="bg-gradient-to-r from-brand-red to-red-600 rounded-2xl shadow-lg overflow-hidden">
+            <div className="bg-brand-cyan rounded-2xl shadow-lg overflow-hidden">
               <div className="flex flex-col md:flex-row items-center justify-between p-6 md:p-8 gap-6">
                 {/* Left - Offer Text */}
                 <div className="flex items-center gap-4 md:gap-6 text-white">
@@ -254,12 +245,12 @@ export default function ServicesPage() {
                   <div className="flex flex-col justify-center text-center">
                     <div className="text-xs font-semibold uppercase tracking-wider text-white/70 mb-1">Code</div>
                     <div className="bg-white px-6 py-3 rounded-lg">
-                      <div className="text-xl font-heading font-bold text-brand-red">{couponCode}</div>
+                      <div className="text-xl font-heading font-bold text-brand-cyan">{couponCode}</div>
                     </div>
                   </div>
                   <a
                     href={ctaLink}
-                    className="bg-white text-brand-red hover:bg-slate-100 px-6 py-3 rounded-lg font-bold transition-colors shadow-lg whitespace-nowrap flex items-center"
+                    className="bg-white text-brand-cyan hover:bg-slate-100 px-6 py-3 rounded-lg font-bold transition-colors shadow-lg whitespace-nowrap flex items-center"
                   >
                     Claim Savings
                   </a>
@@ -276,7 +267,7 @@ export default function ServicesPage() {
           <div className="max-w-6xl mx-auto">
             {/* Section Header with Badge */}
             <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 rounded-full bg-brand-red/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-brand-red mb-6">
+              <div className="inline-flex items-center gap-2 rounded-full bg-brand-cyan/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-brand-cyan mb-6">
                 <Wrench className="h-4 w-4" />
                 Our Services
               </div>
@@ -291,20 +282,20 @@ export default function ServicesPage() {
               {services.map((service, index) => {
                 const Icon = service.icon;
                 const colorClasses = {
-                  red: 'bg-brand-red/10 text-brand-red border-brand-red/20',
-                  blue: 'bg-brand-red/10 text-brand-red border-brand-red/20',
-                  orange: 'bg-brand-red/10 text-brand-red border-brand-red/20',
-                  green: 'bg-brand-red/10 text-brand-red border-brand-red/20',
-                  teal: 'bg-brand-red/10 text-brand-red border-brand-red/20',
-                  amber: 'bg-brand-red/10 text-brand-red border-brand-red/20',
-                  slate: 'bg-brand-red/10 text-brand-red border-brand-red/20',
-                  purple: 'bg-brand-red/10 text-brand-red border-brand-red/20',
-                  indigo: 'bg-brand-red/10 text-brand-red border-brand-red/20'
+                  red: 'bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20',
+                  blue: 'bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20',
+                  orange: 'bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20',
+                  green: 'bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20',
+                  teal: 'bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20',
+                  amber: 'bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20',
+                  slate: 'bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20',
+                  purple: 'bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20',
+                  indigo: 'bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20'
                 };
 
                 return (
-                  <div key={index} className="bg-white shadow-lg rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border-2 border-slate-100 hover:border-brand-red/20 group">
-                    <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 border-2 ${colorClasses[service.color as keyof typeof colorClasses]} group-hover:bg-brand-red/20 transition-colors`}>
+                  <div key={index} className="bg-white shadow-lg rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border-2 border-slate-100 hover:border-brand-cyan/20 group">
+                    <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 border-2 ${colorClasses[service.color as keyof typeof colorClasses]} group-hover:bg-brand-cyan/20 transition-colors`}>
                       <Icon className="w-8 h-8" />
                     </div>
                     <h3 className="text-2xl font-heading font-bold mb-4 text-slate-900">{service.title}</h3>
@@ -314,14 +305,14 @@ export default function ServicesPage() {
                     <ul className="text-slate-600 mb-6 space-y-2">
                       {service.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center">
-                          <div className="w-2 h-2 bg-brand-red rounded-full mr-3 flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-brand-cyan rounded-full mr-3 flex-shrink-0"></div>
                           {feature}
                         </li>
                       ))}
                     </ul>
                     <Link 
                       href={service.href} 
-                      className="text-brand-red font-bold hover:text-brand-red-dark transition-colors inline-flex items-center gap-2 group-hover:gap-3 transition-all"
+                      className="text-brand-cyan font-bold hover:text-brand-cyan-dark transition-colors inline-flex items-center gap-2 group-hover:gap-3 transition-all"
                     >
                       Learn More About {service.title} <span>→</span>
                     </Link>
@@ -343,7 +334,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-white mb-6">
-              <span className="inline-block w-2 h-2 rounded-full bg-brand-red animate-pulse" />
+              <span className="inline-block w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
               Service Areas
             </div>
             <h2 className="text-4xl font-heading font-bold uppercase tracking-tight text-white mb-4">Serving Families Throughout Southwest Washington</h2>
@@ -366,9 +357,9 @@ export default function ServicesPage() {
                 <Link 
                   key={area.name} 
                   href={area.href}
-                  className="bg-white/10 backdrop-blur-sm p-4 rounded-lg shadow hover:shadow-xl transition-all text-center border border-white/20 hover:border-brand-red hover:bg-white/20 group"
+                  className="bg-white/10 backdrop-blur-sm p-4 rounded-lg shadow hover:shadow-xl transition-all text-center border border-white/20 hover:border-brand-cyan hover:bg-white/20 group"
                 >
-                  <p className="font-heading font-semibold text-white group-hover:text-brand-red transition-colors">{area.name}</p>
+                  <p className="font-heading font-semibold text-white group-hover:text-brand-cyan transition-colors">{area.name}</p>
                   <p className="text-sm text-slate-300">Plumber</p>
                 </Link>
               ))}
@@ -376,7 +367,7 @@ export default function ServicesPage() {
 
             <Link 
               href="/service-areas"
-              className="inline-flex items-center gap-2 bg-brand-red text-white px-8 py-4 rounded-lg font-bold hover:bg-brand-red-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="inline-flex items-center gap-2 bg-brand-cyan text-white px-8 py-4 rounded-lg font-bold hover:bg-brand-cyan-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               View All Service Areas
               <span>→</span>
@@ -393,7 +384,7 @@ export default function ServicesPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div>
-                <h3 className="text-2xl font-heading font-bold text-brand-red mb-6">Our Commitment to Excellence</h3>
+                <h3 className="text-2xl font-heading font-bold text-brand-cyan mb-6">Our Commitment to Excellence</h3>
                 <div className="space-y-4">
                   <div>
                     <h4 className="text-lg font-heading font-bold text-slate-900 mb-2">Licensed & Insured</h4>
@@ -417,7 +408,7 @@ export default function ServicesPage() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-heading font-bold text-brand-red mb-6">Service You Can Trust</h3>
+                <h3 className="text-2xl font-heading font-bold text-brand-cyan mb-6">Service You Can Trust</h3>
                 <div className="space-y-4">
                   <div>
                     <h4 className="text-lg font-heading font-bold text-slate-900 mb-2">Transparent Pricing</h4>
@@ -445,7 +436,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-brand-red text-white">
+      <section className="py-16 bg-brand-cyan text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold uppercase tracking-tight mb-4">Ready for Professional Plumbing Service?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
@@ -455,13 +446,13 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/booking" 
-              className="bg-white text-brand-red px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-100 transition-colors shadow-lg"
+              className="bg-white text-brand-cyan px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-100 transition-colors shadow-lg"
             >
               Schedule Service Now
             </Link>
             <a 
               href="tel:+13608832506" 
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-brand-red transition-colors"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-brand-cyan transition-colors"
             >
               Call (360) 883-2506
             </a>

@@ -8,7 +8,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { contactInfo } from '@/config/site'
 import { BUSINESS_DATA } from '@/lib/business-data'
-import { CheckCircle2, Camera, AlertTriangle, Wrench, TreePine, Phone, MapPin, Shield, Clock } from 'lucide-react'
+import { CheckCircle2, Camera, AlertTriangle, Wrench, TreePine, Phone, MapPin, Shield, Clock, Home, ChevronRight } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Sewer Line Repair & Replacement Vancouver WA | Clark County Plumber',
@@ -132,14 +132,16 @@ export default function SewerLineRepairPage() {
   return (
     <div className="min-h-screen">
       {/* Breadcrumbs */}
-      <nav className="bg-slate-50 py-4">
+      <nav className="bg-slate-50 py-4" aria-label="Breadcrumb">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-brand-red">Services</Link>
-            <span>/</span>
-            <span className="text-brand-red">Sewer Line Repair</span>
+            <Link href="/" className="hover:text-brand-cyan flex items-center" aria-label="Home">
+              <Home className="w-4 h-4" />
+            </Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <Link href="/services" className="hover:text-brand-cyan">Services</Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <span className="text-brand-cyan font-medium">Sewer Line Repair</span>
           </div>
         </div>
       </nav>
@@ -168,7 +170,7 @@ export default function SewerLineRepairPage() {
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <a
                     href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                    className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                    className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                   >
                     <Phone className="w-5 h-5" />
                     Call {BUSINESS_DATA.phone}
@@ -178,47 +180,61 @@ export default function SewerLineRepairPage() {
                 {/* Trust Badges */}
                 <div className="flex flex-wrap gap-4 text-sm text-slate-300">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Licensed & Insured
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Family-Owned Since 2004
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Camera Inspection Available
                   </div>
                 </div>
               </div>
               
               {/* Right Column - Contact Form */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-7">
-                <div className="text-center mb-5">
-                  <h2 className="text-xl font-semibold text-slate-900 mb-1">Request Sewer Inspection</h2>
-                  <p className="text-sm text-slate-500">Fast diagnosis. Honest pricing.</p>
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-8">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center gap-2 bg-cyan-50 rounded-full px-4 py-2 mb-3">
+                    <Camera className="w-4 h-4 text-brand-cyan" />
+                    <span className="text-xs font-bold text-brand-cyan uppercase tracking-wider">Camera Inspection</span>
+                  </div>
+                  <h2 className="text-2xl font-heading font-bold text-slate-900 mb-2">Diagnose Your Sewer Problem</h2>
+                  <p className="text-sm text-slate-600">HD camera • Expert diagnosis • Honest solutions</p>
                 </div>
                 <form className="space-y-4">
                   <div>
-                    <Input placeholder="Your Name" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input placeholder="Your Name" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
-                    <Input type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
                     <Textarea 
                       placeholder="Describe the issue (e.g., backup, slow drains, soggy yard)" 
-                      className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600 min-h-[80px]"
+                      className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan min-h-[80px]"
                     />
                   </div>
                   <Button
                     type="submit"
-                    className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold py-5 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     Get Free Estimate
                   </Button>
                 </form>
-                <p className="text-[10px] text-slate-500 mt-4 text-center leading-relaxed">
+                <div className="flex items-center justify-center gap-4 mt-5 text-xs text-slate-500">
+                  <div className="flex items-center gap-1">
+                    <Camera className="w-3 h-3 text-green-600" />
+                    <span>HD camera inspection</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Shield className="w-3 h-3 text-green-600" />
+                    <span>Warranty included</span>
+                  </div>
+                </div>
+                <p className="text-[10px] text-slate-500 mt-3 text-center leading-relaxed">
                   By submitting this form you agree to be contacted about your request.
                 </p>
               </div>
@@ -227,25 +243,25 @@ export default function SewerLineRepairPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-slate-900 text-white">
+      {/* Trust & Social Proof Bar */}
+      <section className="py-12 bg-gradient-to-r from-brand-cyan to-brand-cyan-dark text-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">100+</div>
-              <p className="text-lg">Sewer Lines Repaired</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">100+</div>
+              <p className="text-sm md:text-base opacity-90">Sewer Lines Fixed</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Camera</div>
-              <p className="text-lg">Inspection Available</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">HD Camera</div>
+              <p className="text-sm md:text-base opacity-90">Inspection Available</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Licensed</div>
-              <p className="text-lg">& Insured</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">Licensed</div>
+              <p className="text-sm md:text-base opacity-90">& Insured</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Warranty</div>
-              <p className="text-lg">On All Work</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">Warranty</div>
+              <p className="text-sm md:text-base opacity-90">Included</p>
             </div>
           </div>
         </div>
@@ -261,11 +277,11 @@ export default function SewerLineRepairPage() {
           
           <div className="grid md:grid-cols-2 gap-6">
             {sewerServices.map((service, index) => (
-              <Card key={index} className="border-2 border-slate-200 hover:border-brand-red hover:shadow-xl transition-all duration-300 group">
+              <Card key={index} className="border-2 border-slate-200 hover:border-brand-cyan hover:shadow-xl transition-all duration-300 group">
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-brand-red transition-colors">{service.name}</CardTitle>
-                    <Badge className="bg-red-100 text-brand-red font-bold text-base px-3 py-1">
+                    <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-brand-cyan transition-colors">{service.name}</CardTitle>
+                    <Badge className="bg-cyan-50 text-brand-cyan border-2 border-brand-cyan/20 font-bold text-base px-3 py-1">
                       {service.price}
                     </Badge>
                   </div>
@@ -275,12 +291,12 @@ export default function SewerLineRepairPage() {
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center text-slate-700">
-                        <CheckCircle2 className="w-5 h-5 text-brand-red mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-brand-cyan mr-2 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <MasterButton className="w-full bg-brand-red hover:bg-brand-red-dark text-white font-semibold">
+                  <MasterButton className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-semibold">
                     <Link href="/booking">Schedule Service</Link>
                   </MasterButton>
                 </CardContent>
@@ -302,13 +318,13 @@ export default function SewerLineRepairPage() {
             {commonIssues.map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow border-2 border-slate-200">
                 <div className="flex items-start gap-4">
-                  <div className="bg-red-100 text-brand-red rounded-lg p-3 flex-shrink-0">
+                  <div className="bg-cyan-50 text-brand-cyan rounded-lg p-3 flex-shrink-0">
                     {item.icon}
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-slate-900 mb-2">{item.issue}</h3>
                     <p className="text-slate-600 mb-3">{item.description}</p>
-                    <div className="border-l-4 border-brand-red pl-4">
+                    <div className="border-l-4 border-brand-cyan pl-4">
                       <p className="text-sm font-semibold text-slate-900 mb-1">Our Solution:</p>
                       <p className="text-sm text-slate-700">{item.solution}</p>
                     </div>
@@ -330,7 +346,7 @@ export default function SewerLineRepairPage() {
               <div className="grid gap-3">
                 {warningSign.map((sign, index) => (
                   <div key={index} className="flex items-start bg-slate-50 p-4 rounded-lg">
-                    <AlertTriangle className="w-6 h-6 text-brand-red mr-4 flex-shrink-0 mt-0.5" />
+                    <AlertTriangle className="w-6 h-6 text-brand-cyan mr-4 flex-shrink-0 mt-0.5" />
                     <span className="text-lg text-slate-700">{sign}</span>
                   </div>
                 ))}
@@ -338,7 +354,7 @@ export default function SewerLineRepairPage() {
               <div className="mt-8">
                 <a
                   href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                  className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                  className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                 >
                   <Phone className="w-5 h-5" />
                   Call {BUSINESS_DATA.phone} Now
@@ -347,11 +363,11 @@ export default function SewerLineRepairPage() {
             </div>
             
             <div className="bg-slate-50 p-8 rounded-xl">
-              <h3 className="text-2xl font-heading font-bold text-slate-900 mb-6 uppercase border-b-4 border-brand-red pb-3">Our Service Process</h3>
+              <h3 className="text-2xl font-heading font-bold text-slate-900 mb-6 uppercase border-b-4 border-brand-cyan pb-3">Our Service Process</h3>
               <div className="space-y-6">
                 {processSteps.map((step, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="bg-gradient-to-br from-brand-red to-red-700 text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">
+                    <div className="bg-brand-cyan text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 font-bold">
                       {step.step}
                     </div>
                     <div className="flex-1">
@@ -386,7 +402,7 @@ export default function SewerLineRepairPage() {
               'Longview, WA'
             ].map((area, index) => (
               <div key={index} className="flex items-center bg-white p-4 rounded-lg shadow-sm">
-                <MapPin className="w-5 h-5 text-brand-red mr-3 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-brand-cyan mr-3 flex-shrink-0" />
                 <span className="text-slate-700 font-medium">{area}</span>
               </div>
             ))}
@@ -395,7 +411,7 @@ export default function SewerLineRepairPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-brand-red to-red-700 text-white relative overflow-hidden">
+      <section className="py-20 px-4 bg-gradient-to-r from-brand-cyan to-brand-cyan-dark text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="flex items-center justify-center mb-6">
@@ -408,7 +424,7 @@ export default function SewerLineRepairPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={`tel:${BUSINESS_DATA.phoneRaw}`}
-              className="inline-flex items-center justify-center gap-3 bg-white text-brand-red hover:bg-slate-100 px-8 py-5 rounded-lg font-bold text-lg transition-colors shadow-lg"
+              className="inline-flex items-center justify-center gap-3 bg-white text-brand-cyan hover:bg-slate-100 px-8 py-5 rounded-lg font-bold text-lg transition-colors shadow-lg"
             >
               <Phone className="w-6 h-6" />
               Call {BUSINESS_DATA.phone} Now

@@ -47,10 +47,10 @@ export const BUSINESS_DATA = {
   specialties: [
     "Residential Plumbing Repair",
     "Commercial Plumbing Services", 
-    "New Construction Plumbing",
     "Emergency Plumbing",
     "Drain Cleaning",
-    "Water Heater Services"
+    "Water Heater Services",
+    "Repipe Services"
   ],
   // Local SEO keywords for Vancouver WA market
   localKeywords: [

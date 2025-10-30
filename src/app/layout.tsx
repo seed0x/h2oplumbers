@@ -9,7 +9,7 @@ import { PerformanceMonitor, GoogleAnalytics, FacebookPixel } from "../component
 import { LocalBusinessStructuredData, PlumbingServiceStructuredData, FAQStructuredData } from "../components/seo/structured-data";
 import { StickyHeader } from "../components/layout/sticky-header";
 import { ErrorBoundary } from "../components/ui/error-boundary";
-import { EmailCapturePopup } from '@/components/ui/email-capture-popup';
+// import { EmailCapturePopup } from '@/components/ui/email-capture-popup'; // Disabled for better UX
 import { TopInfoBar } from '@/components/layout/TopInfoBar';
 import { PerformanceOptimizations, CriticalCSS } from '@/components/performance/performance-optimizations';
 import { AccessibilityEnhancements } from '@/components/accessibility/accessibility-enhancements';
@@ -90,7 +90,97 @@ export default function RootLayout({
           <ErrorBoundary>
             <main id="main-content" role="main" className="flex-grow">{children}</main>
           </ErrorBoundary>
-          <EmailCapturePopup />
+          {/* <EmailCapturePopup /> */} {/* Disabled - too intrusive */}
+          
+          {/* Roto-Rooter style drain divider with H2O branding */}
+          <div className="relative bg-white py-8">
+            <div className="container mx-auto px-4">
+              {/* Horizontal line with drain in center */}
+              <div className="relative flex items-center">
+                {/* Left line */}
+                <div className="flex-1 h-px bg-gradient-to-r from-transparent via-slate-300 to-slate-400" />
+                
+                {/* Center drain graphic */}
+                <div className="relative mx-8">
+                  <div className="w-40 h-40 relative">
+                    {/* Metallic drain with realistic shadow */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-slate-400 via-slate-500 to-slate-600 shadow-2xl" />
+                    <div className="absolute inset-2 rounded-full bg-gradient-to-br from-slate-700 to-slate-900" />
+                    
+                    {/* Drain grate bars */}
+                    <div className="absolute inset-6 rounded-full bg-slate-950 border-4 border-slate-800 shadow-inner">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        {/* Grate pattern */}
+                        <div className="absolute w-full h-2 bg-slate-800 shadow-sm" />
+                        <div className="absolute h-full w-2 bg-slate-800 shadow-sm" />
+                        <div className="absolute w-3/4 h-2 bg-slate-800 shadow-sm rotate-45" />
+                        <div className="absolute w-3/4 h-2 bg-slate-800 shadow-sm -rotate-45" />
+                        <div className="absolute w-1/2 h-2 bg-slate-800 shadow-sm rotate-[60deg]" />
+                        <div className="absolute w-1/2 h-2 bg-slate-800 shadow-sm -rotate-[60deg]" />
+                      </div>
+                      
+                      {/* Dark center drain hole */}
+                      <div className="absolute inset-10 rounded-full bg-black shadow-[inset_0_4px_8px_rgba(0,0,0,0.8)]">
+                        {/* Swirling water animation */}
+                        <div className="absolute inset-0 animate-spin" style={{ animationDuration: '2.5s' }}>
+                          <div className="absolute inset-0 rounded-full">
+                            <div className="absolute top-1/4 left-1/2 w-1 h-4 bg-brand-cyan/60 rounded-full" />
+                            <div className="absolute top-1/2 left-1/4 w-1 h-3 bg-brand-cyan/50 rounded-full" />
+                            <div className="absolute bottom-1/4 right-1/2 w-1 h-4 bg-brand-cyan/60 rounded-full" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Water droplets falling in */}
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-brand-cyan rounded-full shadow-lg animate-[drip_2s_ease-in_infinite]" />
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-brand-turquoise rounded-full shadow-lg animate-[drip_2s_ease-in_infinite]" style={{ animationDelay: '0.7s' }} />
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2.5 h-2.5 bg-brand-cyan rounded-full shadow-lg animate-[drip_2s_ease-in_infinite]" style={{ animationDelay: '1.4s' }} />
+                  </div>
+                </div>
+                
+                {/* Right line */}
+                <div className="flex-1 h-px bg-gradient-to-l from-transparent via-slate-300 to-slate-400" />
+              </div>
+              
+              {/* Jingle with musical notes */}
+              <div className="text-center mt-8 relative">
+                <div className="relative inline-block">
+                  {/* Left musical note */}
+                  <span className="absolute -left-12 top-0 text-4xl text-red-600 animate-pulse">🎵</span>
+                  {/* Right musical note */}
+                  <span className="absolute -right-12 top-0 text-4xl text-red-600 animate-pulse" style={{ animationDelay: '0.5s' }}>🎵</span>
+                  
+                  <p className="text-xl md:text-2xl font-bold" style={{ color: '#1e3a8a' }}>
+                    And Away Go Troubles<br />Down the Drain
+                  </p>
+                </div>
+              </div>
+              
+              {/* Drain graphic below jingle */}
+              <div className="flex justify-center mt-6">
+                <div className="w-20 h-20 relative">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-slate-300 to-slate-400 shadow-lg" />
+                  <div className="absolute inset-1 rounded-full bg-slate-800" />
+                  <div className="absolute inset-3 rounded-full bg-slate-950 border-2 border-slate-700">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="absolute w-full h-0.5 bg-slate-700" />
+                      <div className="absolute h-full w-0.5 bg-slate-700" />
+                      <div className="absolute w-2/3 h-0.5 bg-slate-700 rotate-45" />
+                      <div className="absolute w-2/3 h-0.5 bg-slate-700 -rotate-45" />
+                    </div>
+                    <div className="absolute inset-4 rounded-full bg-black">
+                      <div className="absolute inset-0 animate-spin" style={{ animationDuration: '2.5s' }}>
+                        <div className="absolute top-1/4 left-1/2 w-0.5 h-2 bg-brand-cyan/60 rounded-full" />
+                        <div className="absolute top-1/2 left-1/4 w-0.5 h-1.5 bg-brand-cyan/50 rounded-full" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           <footer role="contentinfo" className="bg-slate-900 text-white pt-16 pb-10">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -116,12 +206,15 @@ export default function RootLayout({
                       { label: 'Same-Day Service', href: '/services/emergency-plumbing' },
                       { label: 'Drain Cleaning', href: '/services/drain-cleaning' },
                       { label: 'Water Heaters', href: '/services/water-heater-repair' },
-                      { label: 'Leak Detection', href: '/services/leak-detection' },
+                      { label: 'Camera Inspection', href: '/services/camera-scope-inspections' },
+                      { label: 'Repipe Services', href: '/services/repipe' },
+                      { label: 'Sewer Line Repair', href: '/services/sewer-line-repair' },
+                      { label: 'Fixture Installation', href: '/services/fixture-installation' },
                       { label: 'New Construction', href: '/new-construction' },
                       { label: 'Commercial Services', href: '/commercial' }
                     ].map(link => (
                       <li key={link.href}>
-                        <a href={link.href} className="text-slate-300 hover:text-brand-red transition-colors">{link.label}</a>
+                        <a href={link.href} className="text-slate-300 hover:text-brand-cyan transition-colors">{link.label}</a>
                       </li>
                     ))}
                   </ul>
@@ -145,7 +238,7 @@ export default function RootLayout({
                       { city: 'Yacolt, WA', href: '/service-areas' }
                     ].map(area => (
                       <li key={area.city}>
-                        <a href={area.href} className="hover:text-brand-red transition-colors">{area.city}</a>
+                        <a href={area.href} className="hover:text-brand-cyan transition-colors">{area.city}</a>
                       </li>
                     ))}
                   </ul>
@@ -154,8 +247,8 @@ export default function RootLayout({
                 <div>
                   <h3 className="text-sm font-heading font-bold tracking-wide uppercase mb-5 text-white">Contact</h3>
                   <ul className="space-y-3 text-sm text-slate-300">
-                    <li><span className="font-heading font-semibold text-white">Phone:</span> <a href="tel:+13608832506" className="hover:text-brand-red transition-colors">{BUSINESS_DATA.phone}</a></li>
-                    <li><span className="font-heading font-semibold text-white">Email:</span> <a href="mailto:office@h2oplumbers.com" className="hover:text-brand-red transition-colors">{BUSINESS_DATA.email}</a></li>
+                    <li><span className="font-heading font-semibold text-white">Phone:</span> <a href="tel:+13608832506" className="hover:text-brand-cyan transition-colors">{BUSINESS_DATA.phone}</a></li>
+                    <li><span className="font-heading font-semibold text-white">Email:</span> <a href="mailto:office@h2oplumbers.com" className="hover:text-brand-cyan transition-colors">{BUSINESS_DATA.email}</a></li>
                     <li><span className="font-heading font-semibold text-white">Address:</span> {BUSINESS_DATA.address.full}</li>
                     <li><span className="font-heading font-semibold text-white">Hours:</span> {BUSINESS_DATA.hours.display}</li>
                   </ul>
@@ -163,7 +256,7 @@ export default function RootLayout({
                     <a
                       href="https://facebook.com/AllCountyPlumbers"
                       aria-label="Facebook"
-                      className="w-9 h-9 bg-[hsl(var(--brand-red))] hover:bg-[hsl(var(--brand-red-dark))] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5 shadow-sm"
+                      className="w-9 h-9 bg-[hsl(var(--brand-cyan))] hover:bg-[hsl(var(--brand-cyan-dark))] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5 shadow-sm"
                       rel="noopener noreferrer" target="_blank"
                     >
                       <span className="sr-only">Facebook</span>
@@ -172,7 +265,7 @@ export default function RootLayout({
                     <a
                       href="https://instagram.com/PlumberVancouverWA"
                       aria-label="Instagram"
-                      className="w-9 h-9 bg-[hsl(var(--brand-red))] hover:bg-[hsl(var(--brand-red-dark))] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5 shadow-sm"
+                      className="w-9 h-9 bg-[hsl(var(--brand-cyan))] hover:bg-[hsl(var(--brand-cyan-dark))] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5 shadow-sm"
                       rel="noopener noreferrer" target="_blank"
                     >
                       <span className="sr-only">Instagram</span>
@@ -182,7 +275,7 @@ export default function RootLayout({
                 </div>
               </div>
               <div className="border-t border-slate-700 pt-6 text-center text-xs text-slate-400">
-                <p className="mb-2">© 2024 H2O Plumbing | <a href="/privacy" className="hover:text-brand-red transition-colors">Privacy Policy</a> | <a href="/terms" className="hover:text-brand-red transition-colors">Terms</a> | <a href="/sitemap.xml" className="hover:text-brand-red transition-colors">Sitemap</a></p>
+                <p className="mb-2">© 2024 H2O Plumbing | <a href="/privacy" className="hover:text-brand-cyan transition-colors">Privacy Policy</a> | <a href="/terms" className="hover:text-brand-cyan transition-colors">Terms</a> | <a href="/sitemap.xml" className="hover:text-brand-cyan transition-colors">Sitemap</a></p>
                 <p>All content © H2O Plumbing. All rights reserved.</p>
               </div>
             </div>
@@ -205,6 +298,14 @@ export default function RootLayout({
         />
         
         <PerformanceMonitor />
+        {/* Google Analytics - Add your GA4 Measurement ID */}
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        )}
+        {/* Facebook Pixel - Add your Pixel ID */}
+        {process.env.NEXT_PUBLIC_FB_PIXEL_ID && (
+          <FacebookPixel pixelId={process.env.NEXT_PUBLIC_FB_PIXEL_ID} />
+        )}
         <ServiceWorkerProvider />
       </body>
     </html>

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Video, Search, CheckCircle, Phone, Clock, Shield, Wrench, Camera, Eye, FileText } from 'lucide-react';
+import { Video, Search, CheckCircle, Phone, Clock, Shield, Wrench, Camera, Eye, FileText, Home, ChevronRight } from 'lucide-react';
 import { BUSINESS_DATA } from '@/lib/business-data';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -36,14 +36,16 @@ export default function CameraScopeInspectionsPage() {
   return (
     <div className="min-h-screen">
       {/* Breadcrumbs */}
-      <nav className="bg-slate-50 py-4">
+      <nav className="bg-slate-50 py-4" aria-label="Breadcrumb">
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-2 text-sm text-slate-600">
-            <Link href="/" className="hover:text-brand-red">Home</Link>
-            <span>/</span>
-            <Link href="/services" className="hover:text-brand-red">Services</Link>
-            <span>/</span>
-            <span className="text-brand-red">Camera & Scope Inspections</span>
+            <Link href="/" className="hover:text-brand-cyan flex items-center" aria-label="Home">
+              <Home className="w-4 h-4" />
+            </Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <Link href="/services" className="hover:text-brand-cyan">Services</Link>
+            <ChevronRight className="w-4 h-4 text-slate-400" />
+            <span className="text-brand-cyan font-medium">Camera & Scope Inspections</span>
           </div>
         </div>
       </nav>
@@ -72,7 +74,7 @@ export default function CameraScopeInspectionsPage() {
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <a
                     href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                    className="inline-flex items-center justify-center gap-3 bg-brand-red hover:bg-brand-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
+                    className="inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-lg"
                   >
                     <Phone className="w-5 h-5" />
                     Call {BUSINESS_DATA.phone}
@@ -82,38 +84,42 @@ export default function CameraScopeInspectionsPage() {
                 {/* Trust Badges */}
                 <div className="flex flex-wrap gap-4 text-sm text-slate-300">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Licensed & Insured
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Family-Owned Since 2004
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-brand-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
                     Same-Day Service
                   </div>
                 </div>
               </div>
               
               {/* Right Column - Contact Form */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-7">
-                <div className="text-center mb-5">
-                  <h2 className="text-xl font-semibold text-slate-900 mb-1">Request a Free Quote</h2>
-                  <p className="text-sm text-slate-500">Fast response during business hours. No obligation.</p>
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl ring-1 ring-black/5 p-6 md:p-8">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center gap-2 bg-cyan-50 rounded-full px-4 py-2 mb-3">
+                    <Camera className="w-4 h-4 text-brand-cyan" />
+                    <span className="text-xs font-bold text-brand-cyan uppercase tracking-wider">HD Video Inspection</span>
+                  </div>
+                  <h2 className="text-2xl font-heading font-bold text-slate-900 mb-2">See What's Blocking Your Pipes</h2>
+                  <p className="text-sm text-slate-600">HD camera • Video recording • Expert analysis</p>
                 </div>
                 <form className="space-y-4" aria-label="Request service quote form">
                   <div>
                     <label className="sr-only" htmlFor="hero-name">Name</label>
-                    <Input id="hero-name" placeholder="Your Name" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input id="hero-name" placeholder="Your Name" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
                     <label className="sr-only" htmlFor="hero-phone">Phone Number</label>
-                    <Input id="hero-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                    <Input id="hero-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
                   </div>
                   <div>
                     <Select>
-                      <SelectTrigger className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600">
+                      <SelectTrigger className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan">
                         <SelectValue placeholder="Service Needed" />
                       </SelectTrigger>
                       <SelectContent>
@@ -129,13 +135,23 @@ export default function CameraScopeInspectionsPage() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold py-5 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    Get Free Quote
+                    Get Free Quote Now
                   </Button>
                 </form>
-                <p className="text-[10px] text-slate-500 mt-4 text-center leading-relaxed">
-                  By submitting this form you agree to be contacted about your request. We never share your information.
+                <div className="flex items-center justify-center gap-4 mt-5 text-xs text-slate-500">
+                  <div className="flex items-center gap-1">
+                    <Video className="w-3 h-3 text-green-600" />
+                    <span>HD recording</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Eye className="w-3 h-3 text-green-600" />
+                    <span>Expert analysis</span>
+                  </div>
+                </div>
+                <p className="text-[10px] text-slate-500 mt-3 text-center leading-relaxed">
+                  By submitting this form you agree to be contacted about your request.
                 </p>
               </div>
             </div>
@@ -143,25 +159,25 @@ export default function CameraScopeInspectionsPage() {
         </div>
       </section>
 
-      {/* Service Stats */}
-      <section className="py-12 bg-slate-900 text-white">
+      {/* Trust & Social Proof Bar */}
+      <section className="py-12 bg-gradient-to-r from-brand-cyan to-brand-cyan-dark text-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">HD Video</div>
-              <p className="text-lg">Clear Camera Inspections</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">HD Video</div>
+              <p className="text-sm md:text-base opacity-90">Crystal Clear</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Same Day</div>
-              <p className="text-lg">Inspection Available</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">Same Day</div>
+              <p className="text-sm md:text-base opacity-90">Service Available</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">All Types</div>
-              <p className="text-lg">Drains, Sewers & Pipes</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">All Types</div>
+              <p className="text-sm md:text-base opacity-90">Drains & Sewers</p>
             </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-brand-red mb-2">Licensed</div>
-              <p className="text-lg">Professional Service</p>
+            <div className="flex flex-col items-center">
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">Licensed</div>
+              <p className="text-sm md:text-base opacity-90">Professionals</p>
             </div>
           </div>
         </div>
@@ -171,7 +187,7 @@ export default function CameraScopeInspectionsPage() {
       <section className="py-8 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="bg-gradient-to-r from-brand-red to-red-600 rounded-2xl shadow-lg overflow-hidden">
+            <div className="bg-brand-cyan rounded-2xl shadow-lg overflow-hidden">
               <div className="flex flex-col md:flex-row items-center justify-between p-6 md:p-8 gap-6">
                 {/* Left - Offer Text */}
                 <div className="flex items-center gap-4 md:gap-6 text-white">
@@ -187,11 +203,11 @@ export default function CameraScopeInspectionsPage() {
                 {/* Right - Code & CTA */}
                 <div className="flex items-center gap-4 flex-shrink-0">
                   <div className="bg-white px-6 py-3.5 rounded-lg flex items-center justify-center min-w-[140px] h-[52px]">
-                    <div className="text-lg font-heading font-bold text-brand-red">{couponCode}</div>
+                    <div className="text-lg font-heading font-bold text-brand-cyan">{couponCode}</div>
                   </div>
                   <a
                     href={ctaLink}
-                    className="bg-white text-brand-red hover:bg-slate-100 px-8 py-3.5 rounded-lg font-bold transition-colors shadow-lg whitespace-nowrap inline-flex items-center justify-center h-[52px]"
+                    className="bg-white text-brand-cyan hover:bg-slate-100 px-8 py-3.5 rounded-lg font-bold transition-colors shadow-lg whitespace-nowrap inline-flex items-center justify-center h-[52px]"
                   >
                     Claim Savings
                   </a>
@@ -207,16 +223,16 @@ export default function CameraScopeInspectionsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6">What Can We <span className="text-brand-red">Inspect?</span></h2>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6">What Can We <span className="text-brand-cyan">Inspect?</span></h2>
               <p className="text-xl text-slate-600 max-w-3xl mx-auto">
                 Our professional camera and scope equipment lets us see inside your plumbing system to diagnose issues accurately.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mb-6">
-                  <Camera className="w-8 h-8 text-brand-red" />
+              <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="w-16 h-16 bg-brand-cyan/10 rounded-full flex items-center justify-center mb-6">
+                  <Camera className="w-8 h-8 text-brand-cyan" />
                 </div>
                 <h3 className="text-2xl font-heading font-bold mb-4 text-slate-900">Drain Lines</h3>
                 <p className="text-slate-700 mb-6 leading-relaxed">
@@ -230,9 +246,9 @@ export default function CameraScopeInspectionsPage() {
                 </ul>
               </div>
 
-              <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mb-6">
-                  <Video className="w-8 h-8 text-brand-red" />
+              <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="w-16 h-16 bg-brand-cyan/10 rounded-full flex items-center justify-center mb-6">
+                  <Video className="w-8 h-8 text-brand-cyan" />
                 </div>
                 <h3 className="text-2xl font-heading font-bold mb-4 text-slate-900">Sewer Lines</h3>
                 <p className="text-slate-700 mb-6 leading-relaxed">
@@ -246,9 +262,9 @@ export default function CameraScopeInspectionsPage() {
                 </ul>
               </div>
 
-              <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mb-6">
-                  <Eye className="w-8 h-8 text-brand-red" />
+              <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="w-16 h-16 bg-brand-cyan/10 rounded-full flex items-center justify-center mb-6">
+                  <Eye className="w-8 h-8 text-brand-cyan" />
                 </div>
                 <h3 className="text-2xl font-heading font-bold mb-4 text-slate-900">Visible Leaks</h3>
                 <p className="text-slate-700 mb-6 leading-relaxed">
@@ -270,28 +286,28 @@ export default function CameraScopeInspectionsPage() {
       <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 text-center">Common Issues <span className="text-brand-red">We Discover</span></h2>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 text-center">Common Issues <span className="text-brand-cyan">We Discover</span></h2>
             <p className="text-xl text-slate-600 mb-12 text-center">
               Camera inspections reveal the real problems so we can provide accurate solutions.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-6">
-                <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4">Drain Blockages</h3>
                   <p className="text-slate-700 mb-4 leading-relaxed">
                     Hair, grease, soap buildup, and foreign objects causing slow drains or complete blockages.
                   </p>
                 </div>
 
-                <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4">Root Intrusion</h3>
                   <p className="text-slate-700 mb-4 leading-relaxed">
                     Tree roots growing into sewer lines through joints and cracks, causing recurring backups.
                   </p>
                 </div>
 
-                <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4">Pipe Damage</h3>
                   <p className="text-slate-700 mb-4 leading-relaxed">
                     Cracks, breaks, or deteriorating pipes that need repair or replacement before they fail.
@@ -300,21 +316,21 @@ export default function CameraScopeInspectionsPage() {
               </div>
 
               <div className="space-y-6">
-                <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4">Collapsed Sections</h3>
                   <p className="text-slate-700 mb-4 leading-relaxed">
                     Sections of pipe that have collapsed or bellied, creating low spots where debris collects.
                   </p>
                 </div>
 
-                <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4">Incorrect Slope</h3>
                   <p className="text-slate-700 mb-4 leading-relaxed">
                     Pipes installed without proper slope, preventing proper drainage and causing recurring issues.
                   </p>
                 </div>
 
-                <div className="bg-white border-2 border-brand-red/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-white border-2 border-brand-cyan/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4">Scale Buildup</h3>
                   <p className="text-slate-700 mb-4 leading-relaxed">
                     Mineral deposits and corrosion inside pipes reducing flow and causing slow drainage.
@@ -332,7 +348,7 @@ export default function CameraScopeInspectionsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6">
-                Why Choose <span className="text-brand-red">Camera Inspections?</span>
+                Why Choose <span className="text-brand-cyan">Camera Inspections?</span>
               </h2>
               <p className="text-xl text-slate-600 max-w-3xl mx-auto">
                 See exactly what's wrong before we start work—no guessing, no surprises.
@@ -341,8 +357,8 @@ export default function CameraScopeInspectionsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="w-20 h-20 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Eye className="w-10 h-10 text-brand-red" />
+                <div className="w-20 h-20 bg-brand-cyan/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Eye className="w-10 h-10 text-brand-cyan" />
                 </div>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">Visual Proof</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
@@ -351,8 +367,8 @@ export default function CameraScopeInspectionsPage() {
               </div>
 
               <div className="text-center">
-                <div className="w-20 h-20 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-10 h-10 text-brand-red" />
+                <div className="w-20 h-20 bg-brand-cyan/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-10 h-10 text-brand-cyan" />
                 </div>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">Accurate Diagnosis</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
@@ -361,8 +377,8 @@ export default function CameraScopeInspectionsPage() {
               </div>
 
               <div className="text-center">
-                <div className="w-20 h-20 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <FileText className="w-10 h-10 text-brand-red" />
+                <div className="w-20 h-20 bg-brand-cyan/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <FileText className="w-10 h-10 text-brand-cyan" />
                 </div>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">Upfront Pricing</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
@@ -371,8 +387,8 @@ export default function CameraScopeInspectionsPage() {
               </div>
 
               <div className="text-center">
-                <div className="w-20 h-20 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Wrench className="w-10 h-10 text-brand-red" />
+                <div className="w-20 h-20 bg-brand-cyan/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Wrench className="w-10 h-10 text-brand-cyan" />
                 </div>
                 <h3 className="text-xl font-heading font-bold text-slate-900 mb-3">Right Solution</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
@@ -389,7 +405,7 @@ export default function CameraScopeInspectionsPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(220,38,38,0.15),transparent_60%)]" aria-hidden="true"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Ready to See What's <span className="text-brand-red">Inside Your Pipes?</span>
+            Ready to See What's <span className="text-brand-cyan">Inside Your Pipes?</span>
           </h2>
           <p className="text-xl mb-10 max-w-3xl mx-auto text-slate-300 leading-relaxed">
             Professional camera and scope inspection services throughout Vancouver, Longview, Castle Rock, Ridgefield, Camas, Washougal, and all surrounding communities in Clark and Cowlitz Counties.
@@ -397,14 +413,14 @@ export default function CameraScopeInspectionsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a 
               href={`tel:${BUSINESS_DATA.phoneRaw}`}
-              className="bg-gradient-to-r from-brand-red to-brand-red-dark text-white px-12 py-5 rounded-xl font-heading font-bold text-2xl hover:shadow-2xl hover:shadow-brand-red/50 transition-all duration-300 inline-flex items-center hover:-translate-y-1 transform"
+              className="bg-gradient-to-r from-brand-cyan to-brand-cyan-dark text-white px-12 py-5 rounded-xl font-heading font-bold text-2xl hover:shadow-2xl hover:shadow-brand-cyan/50 transition-all duration-300 inline-flex items-center hover:-translate-y-1 transform"
             >
               <Phone className="w-8 h-8 mr-3" />
               Call {BUSINESS_DATA.phone}
             </a>
             <Link
               href="/booking"
-              className="bg-white text-brand-red px-12 py-5 rounded-xl font-heading font-bold text-2xl hover:bg-slate-100 transition-all duration-300 inline-flex items-center"
+              className="bg-white text-brand-cyan px-12 py-5 rounded-xl font-heading font-bold text-2xl hover:bg-slate-100 transition-all duration-300 inline-flex items-center"
             >
               Schedule Online
             </Link>

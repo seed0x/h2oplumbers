@@ -83,22 +83,22 @@ export function EmergencyBanner() {
   }
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-red-600 text-white shadow-lg">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-brand-cyan text-white shadow-lg">
       <Alert className="border-0 bg-transparent text-white rounded-none">
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center space-x-4 flex-1">
-            <Clock className="h-5 w-5 text-primary-200 animate-pulse" />
+            <Clock className="h-5 w-5 text-white/80 animate-pulse" />
             
             <AlertDescription className="flex items-center space-x-6 text-sm">
               <span className="font-medium">
                 Outside Business Hours - Emergency Service Available 24/7
               </span>
               
-              <span className="text-primary-200">
+              <span className="text-white/80">
                 Current time: {formatTime(currentTime)}
               </span>
               
-              <span className="text-primary-200">
+              <span className="text-white/80">
                 Regular hours resume: {getNextBusinessDay()} at 8:00 AM
               </span>
             </AlertDescription>
@@ -108,7 +108,7 @@ export function EmergencyBanner() {
             <MasterButton
               variant="secondary"
               size="sm"
-              className="bg-red-700 hover:bg-red-800 text-white border-primary-500"
+              className="bg-white text-brand-cyan hover:bg-slate-50"
               asChild
             >
               <a href="tel:+13608832506" className="flex items-center space-x-2">
@@ -121,7 +121,7 @@ export function EmergencyBanner() {
             <MasterButton
               variant="ghost"
               size="sm"
-              className="text-primary-200 hover:text-white hover:bg-primary-600 h-8 w-8 p-0"
+              className="text-white/80 hover:text-white hover:bg-brand-cyan-dark h-8 w-8 p-0"
               onClick={() => setIsVisible(false)}
             >
               <X className="h-4 w-4" />
