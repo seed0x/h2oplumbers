@@ -25,7 +25,7 @@ import { LocalBusinessStructuredData } from '@/components/seo/structured-data';
 import { BUSINESS_DATA } from '@/lib/business-data';
 import { getPromotion, PromotionDefinition } from '@/config/promotions';
 import { coupons } from '@/config/coupons';
-import { WaterAnimation } from '@/components/ui/water-animation';
+import { WaterAnimation, WaterGradientFlowMedium } from '@/components/ui/water-animation';
 import { HeroesDiscountSection } from '@/components/sections/heroes-discount-section';
 
 export const metadata: Metadata = generateSocialMeta({
@@ -135,7 +135,7 @@ export default function HomePage() {
       <StickyCtaBar />
       
       {/* Animated Water Background */}
-      <WaterAnimation />
+      <WaterGradientFlowMedium />
       
       <H2OHero />
       
