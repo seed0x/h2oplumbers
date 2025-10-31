@@ -7,9 +7,9 @@ import { StatsCounter } from '../ui/animated-counter'
 export function HomePageStats() {
   const stats = [
     {
-      label: "Years of Experience",
-      value: 20,
-      suffix: "+",
+      label: "Founded",
+      value: 2020,
+      suffix: "",
       icon: Award
     },
     {

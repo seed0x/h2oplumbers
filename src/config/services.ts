@@ -42,9 +42,9 @@ export type ServiceCategory =
  */
 export const services: ServiceConfig[] = [
   {
-    name: 'Emergency Plumbing',
+    name: 'Same-Day Plumbing',
     slug: 'emergency-plumbing',
-    description: '24/7 emergency plumbing services for burst pipes, major leaks, and other urgent issues. Same-day service available.',
+    description: 'Priority same-day plumbing for burst pipes, major leaks, and other urgent issues. On-call support available.',
     category: 'Emergency',
     basePrice: 200,
     hourlyRate: 175,
@@ -52,10 +52,10 @@ export const services: ServiceConfig[] = [
     isActive: true,
     estimatedDuration: 60,
     features: [
-      '24/7 availability',
+      'Priority response',
       'Same-day service',
       'Rapid response time',
-      'Emergency leak repair',
+      'Same-day leak repair',
       'Burst pipe repair'
     ],
     icon: 'service-emergency-icon.svg'
@@ -218,8 +218,8 @@ export const services: ServiceConfig[] = [
  */
 export const serviceCategories: Record<ServiceCategory, { name: string; description: string }> = {
   'Emergency': {
-    name: 'Emergency Services',
-    description: '24/7 emergency response for urgent plumbing issues'
+    name: 'Same-Day Service',
+    description: 'Priority same-day response for urgent plumbing issues'
   },
   'Water Heater': {
     name: 'Water Heater Services',

@@ -64,7 +64,7 @@ export function HomeContent({
                     Your Complete Plumbing Solution
                   </h2>
                   <p className="mt-4 max-w-2xl text-base md:text-lg text-slate-600">
-                    Professional plumbing services and commercial solutions serving Vancouver and Clark County since 2009.
+                    Professional plumbing services and commercial solutions serving Vancouver and Clark County.
                   </p>
                 </div>
               <Link

@@ -86,7 +86,7 @@ export function HeroQuoteForm() {
         />
         <select name="service" aria-label="Service Needed" required defaultValue="">
           <option value="" disabled>Service Needed</option>
-          <option value="Emergency Repair">🚨 Emergency Repair</option>
+          <option value="Same-Day Repair">⚡ Same-Day Repair</option>
           <option value="Drain Cleaning">🚰 Drain Cleaning</option>
           <option value="Water Heater">🔥 Water Heater Service</option>
           <option value="Leak Repair">💧 Leak Repair</option>

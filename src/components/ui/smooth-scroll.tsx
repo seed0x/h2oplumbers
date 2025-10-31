@@ -11,10 +11,21 @@ if (typeof window !== 'undefined') {
 
 export function SmoothScroll() {
   useEffect(() => {
+    // Respect reduced motion preferences
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      return;
+    }
+
     const lenis = new Lenis({
       duration: 1.0,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      // Wheel smoothing only on desktop; mobile uses native scroll
+      smoothWheel: true,
     });
+
+    // Expose globally so other components (e.g., SnapScroll) can use it
+    (window as any).__lenis = lenis;
 
     // Sync GSAP ScrollTrigger with Lenis
     lenis.on('scroll', ScrollTrigger.update);
@@ -27,12 +38,12 @@ export function SmoothScroll() {
 
     requestAnimationFrame(raf);
 
-    // Initialize animations after DOM is ready
+    // Initialize basic reveal/parallax hooks (progressive enhancement)
     const initAnimations = () => {
       // Fade in elements on scroll
       const fadeElements = document.querySelectorAll('[data-fade]');
       fadeElements.forEach((el) => {
-        gsap.fromTo(el, 
+        gsap.fromTo(el,
           {
             opacity: 0,
             y: 40,
@@ -75,7 +86,10 @@ export function SmoothScroll() {
 
     return () => {
       lenis.destroy();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      if ((window as any).__lenis === lenis) {
+        (window as any).__lenis = undefined;
+      }
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 

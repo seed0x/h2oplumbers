@@ -15,20 +15,18 @@ export function SnapScroll() {
   const isAnimatingRef = useRef(false);
 
   useEffect(() => {
+    // Respect reduced motion
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
     // Get all snap sections
     const sections = gsap.utils.toArray<HTMLElement>('.snap-section');
     sectionsRef.current = sections;
 
     if (sections.length === 0) return;
 
-    // Detect if mobile
-    const isMobile = () => window.innerWidth < 768;
-    
-    // Desktop: Wheel-based snap scrolling
-    const setupDesktopScroll = () => {
-      let animationInProgress = false;
-
-      // Create ScrollTrigger snap points
+    // Helper: create ScrollTriggers for section state + snap
+    const createSectionTriggers = () => {
       sections.forEach((section, index) => {
         ScrollTrigger.create({
           trigger: section,
@@ -50,37 +48,59 @@ export function SnapScroll() {
           },
         });
       });
+    };
 
-      // Enhanced wheel control with momentum - LESS SENSITIVE
+    // Detect env
+    const isMobile = () => window.innerWidth < 768;
+    const lenis: any | undefined = (window as any).__lenis;
+
+    let cleanupWheel: (() => void) | undefined;
+
+    if (isMobile()) {
+      // Mobile: Native CSS snap
+      document.body.style.scrollSnapType = 'y mandatory';
+      sections.forEach((section) => {
+        section.style.scrollSnapAlign = 'start';
+        section.style.scrollSnapStop = 'always';
+      });
+      createSectionTriggers();
+
+      cleanupWheel = () => {
+        document.body.style.scrollSnapType = '';
+        sections.forEach((section) => {
+          section.style.scrollSnapAlign = '';
+          section.style.scrollSnapStop = '';
+        });
+      };
+    } else {
+      // Desktop: Create section triggers and attach wheel-driven snapping (Lenis-aware)
+      createSectionTriggers();
+
+      let animationInProgress = false;
       let lastWheelTime = Date.now();
       let wheelDelta = 0;
-      const wheelThreshold = 150; // Higher threshold = less sensitive
+      const wheelThreshold = 90;
       let wheelTimeout: NodeJS.Timeout;
 
       const handleWheel = (e: WheelEvent) => {
         e.preventDefault();
-        
+
         if (animationInProgress) return;
 
         const now = Date.now();
         const timeDiff = now - lastWheelTime;
-        
-        // Accumulate wheel delta
+
         wheelDelta += Math.abs(e.deltaY);
 
-        // Reset if too much time passed
         if (timeDiff > 300) {
           wheelDelta = Math.abs(e.deltaY);
         }
 
         lastWheelTime = now;
 
-        // Clear existing timeout
         if (wheelTimeout) clearTimeout(wheelTimeout);
 
-        // Debounce - wait for scrolling to stop
         wheelTimeout = setTimeout(() => {
-          // Only trigger if we've accumulated enough delta
           if (wheelDelta < wheelThreshold) {
             wheelDelta = 0;
             return;
@@ -93,70 +113,33 @@ export function SnapScroll() {
           if (targetSection >= 0 && targetSection < sections.length) {
             animationInProgress = true;
             currentSectionRef.current = targetSection;
-            
-            gsap.to(window, {
-              scrollTo: { y: sections[targetSection], autoKill: true },
-              duration: 1.2,
-              ease: 'power2.inOut',
-              onComplete: () => {
-                animationInProgress = false;
-              },
-            });
+
+            if (lenis) {
+              // Use Lenis for smooth snap
+              (lenis as any).scrollTo(sections[targetSection], { duration: 1.1, lock: true });
+              gsap.delayedCall(1.2, () => { animationInProgress = false; });
+            } else {
+              gsap.to(window, {
+                scrollTo: { y: sections[targetSection], autoKill: true },
+                duration: 1.2,
+                ease: 'power2.inOut',
+                onComplete: () => {
+                  animationInProgress = false;
+                },
+              });
+            }
 
             updateNavigationDots(targetSection);
           }
-        }, 50); // Small delay to prevent rapid firing
+        }, 50);
       };
 
-      // Add wheel listener with passive false for preventDefault
       window.addEventListener('wheel', handleWheel, { passive: false });
+      cleanupWheel = () => window.removeEventListener('wheel', handleWheel);
+    }
 
-      return () => {
-        window.removeEventListener('wheel', handleWheel);
-      };
-    };
-
-    // Mobile: Touch-based snap scrolling with native behavior
-    const setupMobileScroll = () => {
-      // Use CSS snap for mobile (smoother native behavior)
-      document.body.style.scrollSnapType = 'y mandatory';
-      sections.forEach((section) => {
-        section.style.scrollSnapAlign = 'start';
-        section.style.scrollSnapStop = 'always';
-      });
-
-      // Track section visibility for navigation dots
-      sections.forEach((section, index) => {
-        ScrollTrigger.create({
-          trigger: section,
-          start: 'top center',
-          end: 'bottom center',
-          onEnter: () => {
-            currentSectionRef.current = index;
-            updateNavigationDots(index);
-          },
-          onEnterBack: () => {
-            currentSectionRef.current = index;
-            updateNavigationDots(index);
-          },
-        });
-      });
-
-      return () => {
-        document.body.style.scrollSnapType = '';
-        sections.forEach((section) => {
-          section.style.scrollSnapAlign = '';
-          section.style.scrollSnapStop = '';
-        });
-      };
-    };
-
-    // Setup appropriate scroll behavior
-    const cleanup = isMobile() ? setupMobileScroll() : setupDesktopScroll();
-
-    // Cleanup on unmount
     return () => {
-      if (cleanup) cleanup();
+      if (cleanupWheel) cleanupWheel();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
@@ -169,9 +152,9 @@ function updateNavigationDots(index: number) {
   const dots = document.querySelectorAll('.scroll-nav-dot');
   dots.forEach((dot, i) => {
     if (i === index) {
-      dot.classList.add('active');
+      (dot as HTMLElement).classList.add('active');
     } else {
-      dot.classList.remove('active');
+      (dot as HTMLElement).classList.remove('active');
     }
   });
 
@@ -183,8 +166,13 @@ function updateNavigationDots(index: number) {
 export function ScrollNavigation({ totalSections }: { totalSections: number }) {
   const scrollToSection = (index: number) => {
     const sections = document.querySelectorAll('.snap-section');
-    const target = sections[index];
-    if (target) {
+    const target = sections[index] as HTMLElement | undefined;
+    if (!target) return;
+
+    const lenis: any | undefined = (typeof window !== 'undefined' ? (window as any).__lenis : undefined);
+    if (lenis) {
+      lenis.scrollTo(target, { duration: 1, lock: true });
+    } else {
       gsap.to(window, {
         scrollTo: { y: target, autoKill: true },
         duration: 1,
@@ -225,7 +213,7 @@ export function ScrollProgressBar() {
       end: 'bottom bottom',
       onUpdate: (self) => {
         const progress = self.progress * 100;
-        progressBar.style.width = `${progress}%`;
+        (progressBar as HTMLElement).style.width = `${progress}%`;
       },
     });
   }, []);

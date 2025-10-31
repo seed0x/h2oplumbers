@@ -38,13 +38,13 @@ export function H2OHero() {
           </div>
           <div className="h-4 w-px bg-slate-300 hidden sm:block" />
           <div className="flex items-center gap-2 text-sm bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
-            <Award className="w-4 h-4 text-brand-cyan" />
+            <Shield className="w-4 h-4 text-brand-cyan" />
             <span className="font-bold text-slate-900">Licensed & Insured</span>
           </div>
           <div className="h-4 w-px bg-slate-300 hidden sm:block" />
           <div className="flex items-center gap-2 text-sm bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
-            <Users className="w-4 h-4 text-brand-cyan" />
-            <span className="font-bold text-slate-900">30+ Years Experience</span>
+            <Clock className="w-4 h-4 text-brand-cyan" />
+            <span className="font-bold text-slate-900">Same‑Day Service</span>
           </div>
         </div>
 
@@ -72,7 +72,7 @@ export function H2OHero() {
 
             {/* Value Proposition */}
             <p className="text-base md:text-lg text-slate-600 mb-6 leading-relaxed">
-              Vancouver's trusted plumbing experts with <strong className="text-brand-cyan">30+ years</strong> of family-owned service.
+              H2O Plumbing launched in 2020 as the service division of All County Plumbing.
               Fast, reliable solutions for your home or business.
             </p>
 
@@ -88,48 +88,26 @@ export function H2OHero() {
                 <span className="relative z-10">Call (360) 433-9743</span>
               </a>
               <a
-                href="#quote-form"
+                href="/booking"
                 className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-brand-cyan border-2 border-brand-cyan font-bold px-7 py-3.5 rounded-xl text-base shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                Get Free Quote
+                Schedule Online
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
 
-            {/* Trust Indicators */}
+            {/* Trust bullets */}
             <div className="flex flex-wrap items-start gap-4 mb-6">
-              <div className="flex items-center gap-2 text-sm text-slate-600">
-                <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span>No Hidden Fees</span>
-              </div>
               <div className="flex items-center gap-2 text-sm text-slate-600">
                 <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span>Upfront Pricing</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-slate-600">
                 <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span>100% Satisfaction Guaranteed</span>
+                <span>100% Satisfaction</span>
               </div>
             </div>
 
-            {/* Social Proof Stats - 2x2 Grid */}
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { icon: Clock, value: '30+', label: 'Years Serving', color: 'text-brand-cyan' },
-                { icon: Users, value: '5,000+', label: 'Happy Customers', color: 'text-brand-turquoise' },
-                { icon: Star, value: '4.9', label: 'Average Rating', color: 'text-yellow-500' },
-                { icon: Shield, value: '24/7', label: 'Emergency Service', color: 'text-brand-cyan' }
-              ].map((stat, index) => {
-                const Icon = stat.icon;
-                return (
-                  <div key={index} className="text-center p-3 rounded-xl bg-gradient-to-br from-slate-50 to-white border border-slate-200 hover:border-brand-cyan/30 transition-all hover:shadow-md">
-                    <Icon className={`w-6 h-6 ${stat.color} mx-auto mb-1.5`} />
-                    <div className="text-xl font-bold text-slate-900 mb-0.5">{stat.value}</div>
-                    <div className="text-[11px] text-slate-600 font-medium">{stat.label}</div>
-                  </div>
-                );
-              })}
-            </div>
           </div>
 
           {/* Right Column - Quote Form */}

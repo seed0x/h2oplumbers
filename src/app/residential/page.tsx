@@ -126,7 +126,7 @@ export default function ResidentialPage() {
               <div className="h-4 w-px bg-slate-300 hidden sm:block" />
               <div className="flex items-center gap-2 text-sm bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
                 <Clock className="w-4 h-4 text-brand-cyan" />
-                <span className="font-bold text-slate-900">30+ Years Experience</span>
+                <span className="font-bold text-slate-900">Backed by All County Plumbing</span>
               </div>
             </div>
 
@@ -147,7 +147,7 @@ export default function ResidentialPage() {
                 </h1>
 
                 <p className="text-base md:text-lg text-slate-600 mb-6 leading-relaxed">
-                  Family-owned plumbing services serving Vancouver homeowners for over 30 years. From emergency repairs to complete installations, we treat every home like our own.
+                  Family-backed by All County Plumbing. From same-day repairs to complete installations, we treat every home like our own.
                 </p>
 
                 {/* Primary CTAs */}
@@ -194,7 +194,7 @@ export default function ResidentialPage() {
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    { icon: Clock, value: '30+', label: 'Years Serving' },
+                    { icon: Clock, value: '2020', label: 'Founded' },
                     { icon: HomeIcon, value: '5,000+', label: 'Homes Served' },
                   ].map((stat, index) => {
                     const Icon = stat.icon;

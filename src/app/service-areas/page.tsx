@@ -32,11 +32,11 @@ export default function ServiceAreasPage() {
 
   // Get highlights based on city
   function getServiceHighlights(city: string, county: string | null): string[] {
-    const baseHighlights = ['Professional service', '24/7 emergency', 'Licensed & insured'];
+    const baseHighlights = ['Professional service', 'Same-day support', 'Licensed & insured'];
     
     switch (city.toLowerCase()) {
       case 'vancouver':
-        return ['Largest city we serve', '24/7 emergency service', 'Commercial & residential'];
+        return ['Largest city we serve', 'Same-day service', 'Commercial & residential'];
       case 'battle ground':
         return ['Our home base', 'Fastest response times', 'Local family business'];
       case 'camas':
@@ -87,7 +87,7 @@ export default function ServiceAreasPage() {
               Our Service Areas
             </h1>
             <p className="text-xl md:text-2xl mb-8 leading-relaxed text-slate-200">
-              Expert plumbing contractor serving 8+ cities across Clark County, Cowlitz County, and Southwest Washington. Residential and commercial plumbing services in Vancouver, Battle Ground, Camas, Washougal, Ridgefield, La Center, Woodland, and Longview. Licensed, insured, and locally owned since 2004.
+              Expert plumbing contractor serving 8+ cities across Clark County, Cowlitz County, and Southwest Washington. Residential and commercial plumbing services in Vancouver, Battle Ground, Camas, Washougal, Ridgefield, La Center, Woodland, and Longview. Licensed, insured, and founded in 2020 as the service division of All County Plumbing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -125,8 +125,8 @@ export default function ServiceAreasPage() {
               <p className="text-lg">Typical Response</p>
             </div>
             <div>
-              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">20+ Years</div>
-              <p className="text-lg">Local Experience</p>
+              <div className="text-4xl font-heading font-bold text-brand-cyan mb-2">2020</div>
+              <p className="text-lg">Founded</p>
             </div>
           </div>
         </div>

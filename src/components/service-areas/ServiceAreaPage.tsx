@@ -89,7 +89,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-xs font-medium tracking-wide mb-6 ring-1 ring-white/10 shadow-lg shadow-black/10">
                   <span className="inline-block w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
-                  <span>Serving {data.name} Since 2004</span>
+                  <span>Serving {data.name} • Backed by All County Plumbing</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
                   <span className="text-brand-cyan">{data.name}</span> Plumber
@@ -111,7 +111,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
                   </div>
                   <div className="flex items-center text-white/80">
                     <Clock className="w-5 h-5 mr-2 text-brand-cyan" />
-                    <span className="text-sm font-medium">Since 2004</span>
+                    <span className="text-sm font-medium">Backed by All County Plumbing</span>
                   </div>
                 </div>
                 
@@ -315,7 +315,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
                     <div className="bg-brand-cyan/95 backdrop-blur-sm rounded-lg p-4">
                       <p className="text-white font-bold text-center">
                         <MapPin className="w-5 h-5 inline-block mr-2" />
-                        Proudly Serving {data.name} Since 2004
+                        Proudly Serving {data.name}
                       </p>
                     </div>
                   </div>
@@ -490,7 +490,7 @@ export const ServiceAreaPage: React.FC<Props> = ({ data }) => {
           <h3 className="text-4xl font-heading font-bold mb-6 uppercase">{data.cta.headline}</h3>
           <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed text-white/90">
             {data.cta.blurb} Contact us today for professional, reliable plumbing service 
-            that {data.name} families have trusted since 2004.
+            trusted by {data.name} families.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a
