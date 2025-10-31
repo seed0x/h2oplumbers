@@ -9,9 +9,9 @@ import { BUSINESS_DATA } from '@/lib/business-data'
 import { Heart, Users, Award, Shield, CheckCircle2, Phone, MapPin, Clock, Wrench, TrendingUp, Building2, Trophy, Sparkles, Droplets, Home as HomeIcon, ChevronRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: `About ${BUSINESS_DATA.name} | Family-Owned Since ${BUSINESS_DATA.established} | ${BUSINESS_DATA.address.city}, ${BUSINESS_DATA.address.state}`,
-  description: `Learn about ${BUSINESS_DATA.name} - family-owned and operated plumbing company serving Southwest Washington since ${BUSINESS_DATA.established}. Licensed, insured, and community-focused.`,
-  keywords: `${BUSINESS_DATA.name} history, family owned plumbing, ${BUSINESS_DATA.address.city} plumber, Southwest Washington plumbers, licensed contractor`,
+  title: `About ${BUSINESS_DATA.name} | Family-Backed by All County Plumbing | ${BUSINESS_DATA.address.city}, ${BUSINESS_DATA.address.state}`,
+  description: `Learn about ${BUSINESS_DATA.name} — launched in 2020 as the service division of All County Plumbing. Licensed, insured, and community-focused in Southwest Washington.`,
+  keywords: `${BUSINESS_DATA.name} history, family backed plumbing, ${BUSINESS_DATA.address.city} plumber, Southwest Washington plumbers, licensed contractor`,
 }
 
 const teamMembers = [
@@ -82,45 +82,15 @@ const certifications = [
 
 const journey = [
   { 
-    year: BUSINESS_DATA.established, 
-    title: 'A Father\'s Dream Begins', 
-    desc: `Ron Veach starts H2O Plumbing with one truck, a toolbox, and an unwavering commitment to treat every customer like family. The journey begins in ${BUSINESS_DATA.address.city}.`,
-    icon: <Wrench className="w-6 h-6" />
-  },
-  { 
-    year: '2008', 
-    title: 'Growing Roots', 
-    desc: 'Survived the recession by staying true to our values. While others cut corners, we doubled down on quality and earned lifelong customers who still call us today.',
-    icon: <Heart className="w-6 h-6" />
-  },
-  { 
-    year: '2012', 
-    title: 'Next Generation Joins', 
-    desc: 'Josh Veach officially joins the business, bringing fresh energy while honoring the family legacy. Father and son working side-by-side becomes our signature.',
-    icon: <Users className="w-6 h-6" />
-  },
-  { 
-    year: '2015', 
-    title: '1,000 Families Served', 
-    desc: 'Hit a major milestone - over 1,000 Clark County families trust us with their homes. Each customer represents a relationship, not just a transaction.',
-    icon: <Trophy className="w-6 h-6" />
-  },
-  { 
-    year: '2018', 
-    title: 'Commercial Division Launch', 
-    desc: 'Expanded to serve commercial clients and tenant improvement projects. Now helping build the community we call home, one building at a time.',
-    icon: <Building2 className="w-6 h-6" />
-  },
-  { 
     year: '2020', 
     title: 'H2O Service Division Born', 
-    desc: 'Launched our specialized H2O plumbing service division, bringing cutting-edge water solutions and 24/7 emergency support to residential and commercial clients.',
+    desc: 'Launched our specialized H2O plumbing service division as part of All County Plumbing, bringing reliable same-day support to residential and commercial clients.',
     icon: <Droplets className="w-6 h-6" />
   },
   { 
     year: '2024', 
-    title: '20 Years Strong', 
-    desc: `Two decades of service, thousands of satisfied customers, and still family-owned. We\'re just getting started - Vancouver\'s trusted plumber for the next generation.`,
+    title: 'Growing to Serve More Families', 
+    desc: 'Expanded scheduling and service capabilities while staying true to our family-backed values and quality workmanship.',
     icon: <Sparkles className="w-6 h-6" />
   }
 ];
@@ -157,7 +127,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-xs font-medium tracking-wide mb-6 ring-1 ring-white/10 shadow-lg shadow-black/10">
               <span className="inline-block w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
-              <span>Celebrating {BUSINESS_DATA.yearsInBusiness} Years of Excellence</span>
+<span>Family-Backed by All County Plumbing</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
@@ -201,10 +171,10 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  <span className="font-bold text-brand-cyan">It started with a father and son.</span> Ron Veach founded {BUSINESS_DATA.name} in {BUSINESS_DATA.established} with a simple mission: treat every customer like family. What began as a small family operation has grown into one of Southwest Washington's most trusted plumbing companies.
+<span className="font-bold text-brand-cyan">Our service roots run deep.</span> H2O Plumbing launched in 2020 as the service division of All County Plumbing with a simple mission: treat every customer like family. What began as a focused service arm has grown into one of Southwest Washington's trusted plumbing teams.
                 </p>
                 <p className="text-base text-gray-700 leading-relaxed">
-                  Today, with Josh Veach running operations alongside his father Ron, we carry forward that same family-first philosophy. For over {BUSINESS_DATA.yearsInBusiness} years, we have been honored to serve families throughout Clark County. We are not just fixing pipes - we are building lasting relationships with our neighbors.
+Today, with Josh Veach running operations alongside his father Ron, we carry forward that same family-first philosophy. We are honored to serve families throughout Clark County. We are not just fixing pipes — we are building lasting relationships with our neighbors.
                 </p>
                 <p className="text-base text-gray-700 leading-relaxed">
                   Being family-owned means something special to us. We answer our own phones, show up when we say we will, and treat your home with respect. That is the H2O Plumbing difference.
@@ -216,7 +186,7 @@ export default function AboutPage() {
               <div className="space-y-6">
                 {[
                   { label: 'True Family Business', desc: 'Father and son team serving your family like our own' },
-                  { label: `${BUSINESS_DATA.yearsInBusiness} Years in Your Community`, desc: `Your neighbors since ${BUSINESS_DATA.established}` },
+{ label: 'Family-Backed by All County Plumbing', desc: `Launched in ${BUSINESS_DATA.established} as the service division of All County Plumbing` },
                   { label: 'Licensed & Insured', desc: BUSINESS_DATA.licenses.display },
                   { label: 'Clark County Choice', desc: '1000+ local families served with 4.9 star ratings' }
                 ].map(item => (

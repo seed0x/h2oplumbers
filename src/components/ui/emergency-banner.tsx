@@ -91,7 +91,7 @@ export function EmergencyBanner() {
             
             <AlertDescription className="flex items-center space-x-6 text-sm">
               <span className="font-medium">
-                Outside Business Hours - Emergency Service Available 24/7
+                Outside Business Hours — Same-Day On-Call Support
               </span>
               
               <span className="text-white/80">
@@ -113,7 +113,7 @@ export function EmergencyBanner() {
             >
               <a href="tel:+13608832506" className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span className="hidden sm:inline">Emergency:</span>
+                <span className="hidden sm:inline">Call Now:</span>
                 <span className="font-bold">(360) 883-2506</span>
               </a>
             </MasterButton>

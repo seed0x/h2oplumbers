@@ -70,7 +70,7 @@ export default function SameDayPlumbingPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
-                    Family-Owned Since 2004
+                    Family-Backed by All County Plumbing
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
@@ -154,8 +154,8 @@ export default function SameDayPlumbingPage() {
               <p className="text-sm md:text-base opacity-90">Service Available</p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">20+ Yrs</div>
-              <p className="text-sm md:text-base opacity-90">Experience</p>
+              <div className="text-3xl md:text-4xl font-heading font-bold mb-1">2020</div>
+              <p className="text-sm md:text-base opacity-90">Founded</p>
             </div>
           </div>
         </div>
@@ -469,13 +469,13 @@ export default function SameDayPlumbingPage() {
         </div>
       </section>
 
-      {/* Why Choose Us for Emergencies */}
+      {/* Why Choose Us for Same-Day Service */}
       <section className="py-20 bg-gradient-to-br from-brand-cyan via-brand-cyan to-brand-cyan-dark text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]" aria-hidden="true"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-              Why Southwest Washington Trusts Us for <span className="text-yellow-400">Emergencies</span>
+              Why Southwest Washington Trusts Us for <span className="text-yellow-400">Same-Day Service</span>
             </h2>
             <p className="text-xl mb-16 text-white/90 max-w-3xl mx-auto">
               When urgent plumbing issues strike, you need a team you can trust to respond quickly and fix 
@@ -489,7 +489,7 @@ export default function SameDayPlumbingPage() {
                 </div>
                 <h3 className="text-2xl font-heading font-bold mb-4">Fast Response Times</h3>
                 <p className="text-white/90 leading-relaxed">
-                  We understand that every minute counts in a plumbing Same-Day. Our average response 
+                  We understand that every minute counts when plumbing problems strike. Our average response 
                   time is 1-2 hours, with priority given to the most urgent situations.
                 </p>
               </div>
@@ -501,7 +501,7 @@ export default function SameDayPlumbingPage() {
                 <h3 className="text-2xl font-heading font-bold mb-4">Fully Equipped Trucks</h3>
                 <p className="text-white/90 leading-relaxed">
                   Our service vehicles are stocked with the most commonly needed parts and tools, allowing 
-                  us to complete most Same-Day repairs on the first visit.
+                  us to complete most same-day repairs on the first visit.
                 </p>
               </div>
 
@@ -511,7 +511,7 @@ export default function SameDayPlumbingPage() {
                 </div>
                 <h3 className="text-2xl font-heading font-bold mb-4">Licensed & Insured</h3>
                 <p className="text-white/90 leading-relaxed">
-                  All our Same-Day technicians are fully licensed, insured, and experienced in handling 
+                  All our technicians are fully licensed, insured, and experienced in handling 
                   urgent plumbing situations safely and effectively.
                 </p>
               </div>
@@ -524,9 +524,9 @@ export default function SameDayPlumbingPage() {
       <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(220,38,38,0.15),transparent_60%)]" aria-hidden="true"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Don't Let a Plumbing <span className="text-brand-cyan">Emergency</span> Ruin Your Day
-          </h2>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+              Need Same-Day Plumbing Help?
+            </h2>
           <p className="text-xl mb-10 max-w-3xl mx-auto text-slate-300 leading-relaxed">
             When plumbing disasters strike, H2O Plumbing is here to help. Call now for fast, 
             professional same-day plumbing services throughout Vancouver, Battle Ground, Longview, Camas, Washougal, Ridgefield, Woodland, and all of Southwest Washington.

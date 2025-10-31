@@ -158,11 +158,11 @@ export default function CommercialPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
-                    Family-Owned Since 2004
+                    Family-Backed by All County Plumbing
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-brand-cyan rounded-full"></div>
-                    24/7 Priority Response
+                    Priority Same-Day Response
                   </div>
                 </div>
               </div>

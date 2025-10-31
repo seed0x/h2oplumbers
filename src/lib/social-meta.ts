@@ -99,19 +99,19 @@ export function generateSocialMeta({
 export const socialMetaTemplates = {
   homepage: {
     title: 'H2O Plumbing | Licensed Plumbers in Vancouver, WA & Clark County',
-    description: 'Expert plumbing services in Vancouver, WA. 24/7 emergency plumbers near you, drain cleaning, water heater repair, repiping & more. Licensed & insured. Serving Clark County since 2004. Call (360) 883-2506.',
+    description: 'Expert plumbing services in Vancouver, WA. Same-day plumbers near you, drain cleaning, water heater repair, repiping & more. Licensed & insured. Founded in 2020 as the service division of All County Plumbing. Call (360) 883-2506.',
     image: '/images/social/homepage-social.jpg',
     url: '/',
   },
   services: {
     title: 'Professional Plumbing Services | H2O Plumbing',
-    description: 'Complete plumbing services: emergency repairs, drain cleaning, water heater installation, leak repair & more. Licensed, insured, and available 24/7.',
+    description: 'Complete plumbing services: same-day repairs, drain cleaning, water heater installation, leak repair & more. Licensed and insured.',
     image: '/images/social/services-social.jpg',
     url: '/services',
   },
   emergency: {
-    title: '24/7 Emergency Plumbing Services | H2O Plumbing',
-    description: 'Emergency plumbing services available 24/7 in Southwest Washington. Fast response, licensed plumbers. Call (360) 883-2506 for immediate help.',
+    title: 'Same-Day Plumbing Services | H2O Plumbing',
+    description: 'Same-day plumbing services in Southwest Washington. Fast response, licensed plumbers. Call (360) 883-2506 for immediate help.',
     image: '/images/social/emergency-social.jpg',
     url: '/services/emergency-plumbing',
   },
@@ -123,7 +123,7 @@ export const socialMetaTemplates = {
   },
   reviews: {
     title: 'Customer Reviews | H2O Plumbing',
-    description: 'Read what customers say about H2O Plumbing. 4.9/5 stars on Google, Yelp & Facebook. Trusted licensed plumbers since 2004.',
+    description: 'Read what customers say about H2O Plumbing. 4.9/5 stars on Google, Yelp & Facebook. Trusted, family-backed licensed plumbers.',
     image: '/images/social/reviews-social.jpg',
     url: '/reviews',
   },
@@ -163,8 +163,8 @@ export const socialProfileSchema = {
       'Yacolt, WA'
     ]
   },
-  foundingDate: '2004',
-  description: 'Licensed plumbing contractors providing emergency repairs, drain cleaning, water heater services and complete plumbing solutions in Southwest Washington since 2004.',
+  foundingDate: '2020',
+  description: 'Licensed plumbing contractors providing same-day repairs, drain cleaning, water heater services and complete plumbing solutions in Southwest Washington.',
 }
 
 

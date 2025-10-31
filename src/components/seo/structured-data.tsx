@@ -36,7 +36,7 @@ export function LocalBusinessStructuredData() {
     '@id': `${BUSINESS_DATA.website}#business`,
     name: BUSINESS_DATA.name,
     alternateName: 'H2O Plumbing',
-    description: `Professional plumbing services in ${BUSINESS_DATA.serviceArea.primary} and ${BUSINESS_DATA.serviceArea.counties.join(', ')}. Family-owned since ${BUSINESS_DATA.established} with ${BUSINESS_DATA.yearsInBusiness} years of experience in residential, commercial, and new construction plumbing.`,
+    description: `Professional plumbing services in ${BUSINESS_DATA.serviceArea.primary} and ${BUSINESS_DATA.serviceArea.counties.join(', ')}. Launched in 2020 as the service division of All County Plumbing. Licensed residential, commercial, and new construction plumbing.`,
     url: BUSINESS_DATA.website,
     telephone: BUSINESS_DATA.phoneRaw,
     email: BUSINESS_DATA.email,
@@ -113,7 +113,7 @@ export function LocalBusinessStructuredData() {
     
     // Business attributes
     foundingDate: BUSINESS_DATA.established,
-    slogan: 'Your Trusted Vancouver WA Plumbing Experts Since 2004'
+    slogan: 'Trusted Vancouver WA Plumbing — Backed by All County Plumbing'
   }
 
   return (
@@ -127,9 +127,9 @@ export function LocalBusinessStructuredData() {
 export function PlumbingServiceStructuredData() {
   const services = [
     {
-      name: 'Emergency Plumbing Repair',
-  description: 'Emergency plumbing assistance for burst pipes, leaks, and urgent repairs during business hours',
-      serviceType: 'Emergency Repair'
+      name: 'Same-Day Plumbing Repair',
+  description: 'Same-day plumbing assistance for burst pipes, leaks, and urgent repairs during business hours',
+      serviceType: 'Same-Day Repair'
     },
     {
       name: 'Drain Cleaning',
@@ -184,8 +184,8 @@ export function PlumbingServiceStructuredData() {
 export function FAQStructuredData() {
   const faqs = [
     {
-  question: 'Do you offer emergency plumbing services?',
-  answer: 'We prioritize urgent issues like burst pipes, major leaks, and sewer backups during business hours. Call us to check current availability.'
+  question: 'Do you offer same-day plumbing?',
+  answer: 'Yes. We prioritize urgent issues like burst pipes, major leaks, and sewer backups during business hours. Call us to check current availability.'
     },
     {
       question: 'What areas do you service?',

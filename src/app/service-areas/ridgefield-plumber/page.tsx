@@ -4,8 +4,8 @@ import { ServiceAreaPage } from '@/components/service-areas/ServiceAreaPage';
 
 export const metadata: Metadata = {
   title: 'Ridgefield WA Plumber | Local Plumbing Services | H2O Plumbing',
-  description: 'Professional plumber in Ridgefield, WA. Emergency plumbing, drain cleaning, water heater repair. Licensed, insured, local experts. Call (360) 883-2506 today!',
-  keywords: 'Ridgefield WA plumber, plumber Ridgefield Washington, emergency plumbing Ridgefield, drain cleaning Ridgefield WA, water heater repair Ridgefield'
+  description: 'Professional plumber in Ridgefield, WA. Same-day plumbing, drain cleaning, water heater repair. Licensed, insured, local experts. Call (360) 883-2506 today!',
+  keywords: 'Ridgefield WA plumber, plumber Ridgefield Washington, same day plumbing Ridgefield, drain cleaning Ridgefield WA, water heater repair Ridgefield'
 };
 
 export default function RidgefieldPlumberPage() {

@@ -7,6 +7,11 @@ import { SectionAnimation, StaggerAnimation, AnimatedCounter, PulsingCTA } from 
 import { SnapScroll, ScrollNavigation, ScrollProgressBar } from '../ui/snap-scroll';
 import { BUSINESS_DATA } from '@/lib/business-data';
 import { WaterAnimation } from '../ui/water-animation';
+import { CouponSection } from '@/components/sections/coupon-section';
+import { DynamicCouponSection } from '@/components/sections/dynamic-coupon-section';
+import { HeroesDiscountSection } from '@/components/sections/heroes-discount-section';
+import { WhyChooseUsSection } from '@/components/sections/why-choose-us-section';
+import { H2OHero } from '@/components/sections/h2o-hero';
 
 interface ServiceHighlight {
   title: string;
@@ -21,10 +26,11 @@ interface HomeContentSnapProps {
 }
 
 export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
-  const totalSections = 8;
+  const totalSections = 10;
 
   return (
     <>
+
       {/* Subtle water droplets throughout */}
       <WaterAnimation />
       
@@ -33,7 +39,7 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
       <ScrollNavigation totalSections={totalSections} />
 
       {/* Section 1: Hero with CTA */}
-      <section className="snap-section relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-slate-50 to-brand-cyan/5 overflow-hidden pt-20 md:pt-0">
+      <section className="snap-section relative min-h-screen w-full p-0 overflow-visible">
         {/* Animated background pattern */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div
@@ -52,91 +58,7 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-brand-cyan/8 to-transparent rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-brand-turquoise/8 to-transparent rounded-full blur-3xl" />
 
-        <div className="relative z-10 container mx-auto px-4 py-12">
-          <div className="max-w-6xl mx-auto text-center">
-            <SectionAnimation animationType="fade" delay={0.2}>
-              <div className="inline-flex items-center gap-2 rounded-full bg-brand-cyan/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-brand-cyan mb-8">
-                <Clock className="h-4 w-4" />
-                Same-Day Service
-              </div>
-            </SectionAnimation>
-
-            <SectionAnimation animationType="slide-up" delay={0.4}>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] font-heading font-bold mb-6 md:mb-8 leading-[1.05] tracking-tight">
-                <span className="text-slate-900 block">Vancouver's Trusted</span>
-                <span className="bg-gradient-to-r from-brand-cyan via-brand-turquoise to-brand-cyan bg-clip-text text-transparent block">
-                  Plumbing Experts
-                </span>
-              </h1>
-            </SectionAnimation>
-
-            <SectionAnimation animationType="slide-up" delay={0.6}>
-              <p className="text-xl md:text-2xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-                <strong className="text-brand-cyan">Three generations</strong> serving Vancouver, Clark County, and Southwest Washington since {BUSINESS_DATA.established}. Licensed, insured, and family-owned.
-              </p>
-            </SectionAnimation>
-
-            <SectionAnimation animationType="scale" delay={0.8}>
-              <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-12 md:mb-16">
-                <PulsingCTA>
-                  <a
-                    href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                    className="group relative inline-flex items-center justify-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold px-10 md:px-14 py-5 md:py-6 rounded-2xl text-lg md:text-xl shadow-2xl hover:shadow-brand-cyan/30 transition-all duration-300 transform hover:scale-105 overflow-hidden"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                    <Phone className="w-6 h-6 relative z-10" />
-                    <span className="relative z-10">Call {BUSINESS_DATA.phone}</span>
-                  </a>
-                </PulsingCTA>
-                <a
-                  href="#services"
-                  className="inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-50 text-brand-cyan border-2 border-brand-cyan font-bold px-10 md:px-14 py-5 md:py-6 rounded-2xl text-lg md:text-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  View Services
-                  <ArrowRight className="w-5 h-5" />
-                </a>
-              </div>
-            </SectionAnimation>
-
-            {/* Trust stats - Brand consistent style */}
-            <SectionAnimation animationType="fade" delay={1}>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
-                <div className="text-center p-6 bg-white rounded-xl shadow-lg border-2 border-brand-cyan/20 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
-                  <div className="w-16 h-16 bg-brand-cyan rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Clock className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-1">
-                    <AnimatedCounter endValue={30} suffix="+" />
-                  </div>
-                  <div className="text-sm text-slate-600 font-semibold">Years Serving</div>
-                </div>
-                <div className="text-center p-6 bg-white rounded-xl shadow-lg border-2 border-brand-cyan/20 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
-                  <div className="w-16 h-16 bg-brand-cyan rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-1">
-                    <AnimatedCounter endValue={5000} suffix="+" />
-                  </div>
-                  <div className="text-sm text-slate-600 font-semibold">Happy Customers</div>
-                </div>
-                <div className="text-center p-6 bg-white rounded-xl shadow-lg border-2 border-brand-cyan/20 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
-                  <div className="w-16 h-16 bg-brand-cyan rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Star className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-1">4.9</div>
-                  <div className="text-sm text-slate-600 font-semibold">Star Rating</div>
-                </div>
-                <div className="text-center p-6 bg-white rounded-xl shadow-lg border-2 border-brand-cyan/20 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
-                  <div className="w-16 h-16 bg-brand-cyan rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-3xl md:text-4xl font-heading font-bold text-slate-900 mb-1">24/7</div>
-                  <div className="text-sm text-slate-600 font-semibold">Emergency</div>
-                </div>
-              </div>
-            </SectionAnimation>
-          </div>
-        </div>
+        <H2OHero />
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-scroll-indicator">
@@ -148,33 +70,33 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
       </section>
 
       {/* Section 2: Services Grid */}
-      <section id="services" className="snap-section relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-slate-50 py-20 md:py-32">
+      <section id="services" className="snap-section relative min-h-screen flex items-start justify-center bg-gradient-to-br from-slate-50 via-white to-slate-50 py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <SectionAnimation animationType="slide-up">
-              <div className="text-center mb-16">
+              <div className="text-center mb-12 md:mb-14">
                 <div className="inline-flex items-center gap-2 rounded-full bg-brand-cyan/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-brand-cyan mb-6">
                   <Wrench className="h-4 w-4" />
                   Service Expertise
                 </div>
-                <h2 className="text-4xl md:text-6xl font-heading font-bold uppercase tracking-tight text-slate-900 mb-6">
+                <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight text-slate-900 mb-4">
                   Complete Plumbing Services in Vancouver WA
                 </h2>
-                <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
-                  From emergency repairs to full remodels—residential and commercial plumbing solutions for Clark County and Southwest Washington.
+                <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                  From same-day repairs to full remodels—residential and commercial plumbing solutions for Clark County and Southwest Washington.
                 </p>
               </div>
             </SectionAnimation>
 
-            <StaggerAnimation staggerDelay={0.15}>
+            <StaggerAnimation staggerDelay={0.12} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
               {serviceHighlights.map((service, index) => {
                 const Icon = service.icon === 'home' ? Home : service.icon === 'building2' ? Building2 : Hammer;
                 return (
                   <article
                     key={index}
-                    className="group bg-white rounded-3xl border-2 border-slate-200 hover:border-brand-cyan p-6 md:p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 mb-6 last:mb-0"
+                    className="group h-full bg-white rounded-3xl border-2 border-slate-200 hover:border-brand-cyan p-6 md:p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
                   >
-                    <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+                    <div className="flex flex-col md:flex-row md:items-start gap-6 h-full">
                       <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-brand-cyan/10 to-brand-turquoise/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                         <Icon className="w-10 h-10 text-brand-cyan" />
                       </div>
@@ -185,15 +107,15 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
                         <h3 className="text-2xl md:text-3xl font-heading font-semibold text-slate-900 mt-2 mb-3">
                           {service.title}
                         </h3>
-                        <p className="text-base text-slate-600 leading-relaxed">{service.description}</p>
+                        <p className="text-base text-slate-600 leading-relaxed mb-4 md:mb-6">{service.description}</p>
+                        <Link
+                          href={service.href}
+                          className="inline-flex items-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:gap-4"
+                        >
+                          Learn More
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
                       </div>
-                      <Link
-                        href={service.href}
-                        className="flex-shrink-0 inline-flex items-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:gap-4"
-                      >
-                        Learn More
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
                     </div>
                   </article>
                 );
@@ -203,108 +125,25 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
         </div>
       </section>
 
-      {/* Section 3: Quick Contact CTA */}
-      <section className="snap-section relative min-h-screen flex items-center justify-center overflow-hidden py-20">
-        {/* Split background - stacks on mobile */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 lg:w-1/2 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
-          <div className="absolute inset-0 lg:left-1/2 bg-gradient-to-br from-white to-slate-50" />
-        </div>
-
-        <div className="relative z-10 container mx-auto px-4 py-20">
-          <div className="grid lg:grid-cols-2 gap-0">
-            {/* Left - CTA */}
-            <SectionAnimation animationType="slide-right">
-              <div className="text-white py-12 md:py-20 pr-0 lg:pr-12">
-                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-                  <Phone className="w-4 h-4" />
-                  <span className="text-sm font-semibold">Get Started Now</span>
-                </div>
-                <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
-                  Need a Plumber in Vancouver?
-                </h2>
-                <p className="text-xl md:text-2xl mb-8 text-slate-300">
-                  Same-day service available. <strong className="text-white">Call now</strong> or request a free quote. Serving all of Clark County.
-                </p>
-                <div className="space-y-4 mb-10">
-                  {[
-                    'Licensed & insured professionals',
-                    'Upfront, transparent pricing',
-                    'Satisfaction guaranteed',
-                    '24/7 emergency availability',
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <CheckCircle2 className="w-6 h-6 text-brand-cyan flex-shrink-0" />
-                      <span className="text-lg">{item}</span>
-                    </div>
-                  ))}
-                </div>
-                <PulsingCTA>
-                  <a
-                    href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                    className="inline-flex items-center gap-3 bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold px-10 py-5 rounded-2xl text-xl shadow-2xl transition-all duration-300 transform hover:scale-105"
-                  >
-                    <Phone className="w-6 h-6" />
-                    {BUSINESS_DATA.phone}
-                  </a>
-                </PulsingCTA>
-              </div>
-            </SectionAnimation>
-
-            {/* Right - Quick Form */}
-            <SectionAnimation animationType="slide-left" delay={0.2}>
-              <div className="bg-white py-12 md:py-20 pl-0 lg:pl-12">
-                <div className="bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 border-2 border-slate-200 shadow-xl">
-                  <h3 className="text-3xl font-heading font-bold text-slate-900 mb-2">Get Your Free Quote</h3>
-                  <p className="text-slate-600 mb-6"><strong className="text-brand-cyan">Fast response</strong> • No obligation • Vancouver & Clark County</p>
-                  
-                  <form className="space-y-4">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      required
-                      className="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-xl focus:border-brand-cyan focus:ring-4 focus:ring-brand-cyan/10 outline-none transition-all text-slate-900"
-                    />
-                    <input
-                      type="tel"
-                      placeholder="Phone Number"
-                      required
-                      className="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-xl focus:border-brand-cyan focus:ring-4 focus:ring-brand-cyan/10 outline-none transition-all text-slate-900"
-                    />
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      required
-                      className="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-xl focus:border-brand-cyan focus:ring-4 focus:ring-brand-cyan/10 outline-none transition-all text-slate-900"
-                    />
-                    <select
-                      required
-                      className="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-xl focus:border-brand-cyan focus:ring-4 focus:ring-brand-cyan/10 outline-none transition-all text-slate-900"
-                    >
-                      <option value="">Select Service...</option>
-                      <option>Emergency Repair</option>
-                      <option>Drain Cleaning</option>
-                      <option>Water Heater</option>
-                      <option>Leak Detection</option>
-                      <option>Pipe Repair</option>
-                      <option>Bathroom Remodel</option>
-                      <option>Commercial Services</option>
-                    </select>
-                    <button
-                      type="submit"
-                      className="w-full bg-gradient-to-r from-brand-cyan to-brand-turquoise hover:from-brand-cyan-dark hover:to-brand-cyan text-white font-bold py-4 rounded-xl text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]"
-                    >
-                      Get Free Quote
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </SectionAnimation>
-          </div>
+      {/* Section 3: Coupons (links to coupons page) */}
+      <section className="snap-section relative min-h-screen flex items-center justify-center bg-white py-20 md:py-32">
+        <div className="w-full">
+          <SectionAnimation animationType="fade">
+            <DynamicCouponSection />
+          </SectionAnimation>
         </div>
       </section>
 
-      {/* Section 4: Why Choose Us */}
+      {/* Section 4: Why Choose Us (Original) */}
+      <section className="snap-section relative min-h-screen flex items-center justify-center bg-slate-50 py-20 md:py-32">
+        <div className="w-full">
+          <SectionAnimation animationType="slide-up">
+            <WhyChooseUsSection />
+          </SectionAnimation>
+        </div>
+      </section>
+
+      {/* Section 5: Why Vancouver Trusts H2O */}
       <section className="snap-section relative min-h-screen flex items-center justify-center bg-gradient-to-br from-brand-cyan/5 via-white to-brand-cyan/5 py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -312,7 +151,7 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-6xl font-heading font-bold text-slate-900 mb-6">Why Vancouver Trusts H2O</h2>
                 <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
-                  <strong className="text-brand-cyan">Three generations.</strong> We're not just plumbers—we're your Clark County neighbors, committed to excellence since {BUSINESS_DATA.established}.
+                  Backed by All County Plumbing, H2O launched in 2020 to bring family-backed, professional service to Clark County.
                 </p>
               </div>
             </SectionAnimation>
@@ -442,8 +281,8 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
             <SectionAnimation animationType="fade" delay={0.8}>
               <div className="mt-16 text-center">
                 <div className="inline-block bg-gradient-to-r from-slate-800 to-slate-700 rounded-2xl p-8 border-2 border-slate-700 max-w-3xl">
-                  <p className="text-xl md:text-2xl mb-6 text-slate-300 italic">
-                    "Three generations strong. We're not just a team, we're a family. We treat every home like it's our own and every customer like family."
+                  <p className="text-lg md:text-2xl mb-6 text-slate-300 italic">
+                    "We’re a family-backed team. We treat every home like it’s our own and every customer like family."
                   </p>
                   <div className="flex items-center justify-center gap-2 mb-2">
                     {[...Array(5)].map((_, i) => (
@@ -595,7 +434,25 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
         </div>
       </section>
 
-      {/* Section 8: Final CTA */}
+      {/* Section 8: Coupons */}
+      <section className="snap-section relative min-h-screen flex items-center justify-center bg-white py-20 md:py-32">
+        <div className="w-full">
+          <SectionAnimation animationType="fade">
+            <CouponSection />
+          </SectionAnimation>
+        </div>
+      </section>
+
+      {/* Section 9: Heroes Discount */}
+      <section className="snap-section relative min-h-screen flex items-center justify-center bg-slate-50 py-20 md:py-32">
+        <div className="w-full">
+          <SectionAnimation animationType="slide-up">
+            <HeroesDiscountSection />
+          </SectionAnimation>
+        </div>
+      </section>
+
+      {/* Section 10: Final CTA */}
       <section className="snap-section relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
         {/* Animated background */}
         <div className="absolute inset-0 opacity-5">
@@ -665,7 +522,7 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
 
             <StaggerAnimation staggerDelay={0.15} className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
               {[
-                { icon: Clock, title: '24/7 Emergency', desc: 'Always available' },
+                { icon: Clock, title: 'Same-Day Service', desc: 'Priority response' },
                 { icon: Shield, title: 'Licensed & Insured', desc: 'WA & OR certified' },
                 { icon: Award, title: '30-Year Warranty', desc: 'On installations' },
                 { icon: Star, title: '4.9/5 Rating', desc: '500+ reviews' },

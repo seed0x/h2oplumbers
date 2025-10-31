@@ -31,7 +31,7 @@ export const BUSINESS_DATA = {
   },
   hours: {
     weekdays: "Monday - Friday: 7:00 AM - 3:30 PM",
-    weekend: "Saturday - Sunday: Emergency Calls Only",
+    weekend: "Saturday - Sunday: On-Call Same-Day Support",
     display: "Mon-Fri 7:00 AM - 3:30 PM",
     structured: [
       "Mo-Fr 07:00-15:30"
@@ -42,12 +42,12 @@ export const BUSINESS_DATA = {
     or: "", 
     display: "WA Licensed & Insured"
   },
-  yearsInBusiness: "15+",
-  established: "2009",
+  yearsInBusiness: "Founded 2020",
+  established: "2020",
   specialties: [
     "Residential Plumbing Repair",
     "Commercial Plumbing Services", 
-    "Emergency Plumbing",
+    "Same-Day Plumbing",
     "Drain Cleaning",
     "Water Heater Services",
     "Repipe Services"
@@ -57,7 +57,7 @@ export const BUSINESS_DATA = {
     "plumber Vancouver WA",
     "Vancouver Washington plumbing", 
     "H2O plumbing services",
-    "emergency plumber Vancouver WA",
+    "same day plumber Vancouver WA",
     "residential plumbing Vancouver",
     "commercial plumbing Vancouver WA"
   ],

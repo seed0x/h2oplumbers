@@ -29,6 +29,7 @@ import { WaterAnimation, WaterGradientFlowMedium } from '@/components/ui/water-a
 import { HeroesDiscountSection } from '@/components/sections/heroes-discount-section';
 import { HomeContent } from '@/components/pages/home-content';
 import { HomeContentSnap } from '@/components/pages/home-content-snap';
+import { SmoothScroll } from '@/components/ui/smooth-scroll';
 
 export const metadata: Metadata = generateSocialMeta({
   ...socialMetaTemplates.homepage,
@@ -117,6 +118,20 @@ export default function HomePage() {
   return (
     <>
       {/* <LocalBusinessStructuredData /> */}
+      <SmoothScroll />
+      <SkipNavigation />
+      <FloatingShareButton />
+      <FloatingElementsManager>
+        {{
+          discountBanner: <DiscountBanner />,
+          socialProof: <SocialProofNotifications />,
+          floatingBook: <FloatingBookButton />,
+          urgency: <UrgencyIndicators />,
+          recentlyViewed: <RecentlyViewedServices />,
+          backToTop: <BackToTopButton />,
+        }}
+      </FloatingElementsManager>
+      <StickyCtaBar />
       <HomeContentSnap 
         serviceHighlights={serviceHighlights}
       />

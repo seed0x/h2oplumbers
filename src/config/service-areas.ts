@@ -6,17 +6,17 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     slug: 'vancouver-wa-plumber',
     name: 'Vancouver',
     meta: {
-      title: 'Plumbers Vancouver WA | Emergency Plumber Near Me | H2O Plumbing',
-      description: 'Top-rated plumbers in Vancouver, WA. Fast emergency plumber near you, drain cleaning, water heater repair, repiping. Licensed & insured. Serving all Vancouver neighborhoods: Downtown, East Vancouver, Cascade Park, Salmon Creek, Hazel Dell. Call (360) 883-2506 for same-day service!',
-      keywords: 'plumbers vancouver wa, plumber vancouver, vancouver plumbers, plumbers near me, emergency plumber vancouver wa, plumbing contractors vancouver wa, licensed plumber vancouver washington, drain cleaning vancouver, clark county plumbing'
+      title: 'Plumbers Vancouver WA | Same-Day Plumber Near Me | H2O Plumbing',
+      description: 'Top-rated plumbers in Vancouver, WA. Fast same-day plumber near you, drain cleaning, water heater repair, repiping. Licensed & insured. Serving all Vancouver neighborhoods: Downtown, East Vancouver, Cascade Park, Salmon Creek, Hazel Dell. Call (360) 883-2506 for same-day service!',
+      keywords: 'plumbers vancouver wa, plumber vancouver, vancouver plumbers, plumbers near me, same day plumber vancouver wa, plumbing contractors vancouver wa, licensed plumber vancouver washington, drain cleaning vancouver, clark county plumbing'
     },
     hero: {
       headline: 'Vancouver\'s Most Trusted Plumbers - Serving All Neighborhoods',
-      subheading: 'Professional plumbing services throughout Vancouver, WA from Downtown to Salmon Creek, Hazel Dell to Cascade Park. Same-day emergency service available. Licensed plumbing contractors with 20+ years serving Clark County.',
+      subheading: 'Professional plumbing services throughout Vancouver, WA from Downtown to Salmon Creek, Hazel Dell to Cascade Park. Same-day service available. Licensed plumbing contractors backed by All County Plumbing.',
       promotionKey: 'vancouverHomeowner' as PromotionKey
     },
     services: [
-      { title: 'Emergency Plumber Vancouver WA', description: '24/7 emergency plumbing services in Vancouver. Fast response for burst pipes, severe leaks, and urgent plumbing issues. Available nights, weekends & holidays.', href: '/services/emergency-plumbing' },
+      { title: 'Same-Day Plumber Vancouver WA', description: 'Priority same-day plumbing in Vancouver. Fast response for burst pipes, severe leaks, and urgent plumbing issues. Available during business hours with on-call support.', href: '/services/emergency-plumbing' },
       { title: 'Drain Cleaning Vancouver', description: 'Professional drain cleaning for Vancouver homes and businesses. Hydro jetting, camera inspections, kitchen drains, bathroom clogs, sewer lines. Same-day service.', href: '/services/drain-cleaning' },
       { title: 'Water Heater Repair Vancouver', description: 'Expert water heater repair and replacement in Vancouver, WA. Tank and tankless systems. Gas and electric. Emergency repairs and new installations.', href: '/services/water-heater-repair' },
       { title: 'Commercial Plumbing Vancouver WA', description: 'Reliable commercial plumbing contractors for Vancouver businesses. Restaurants, offices, retail, tenant improvements. Licensed and insured.', href: '/commercial' }
@@ -26,13 +26,13 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     testimonials: [
       { author: 'John D.', area: 'Salmon Creek', quote: 'Best plumber in Vancouver! Fixed our leaking pipe same day. Professional, courteous, and reasonably priced. Highly recommend.' },
       { author: 'Sarah L.', area: 'Cascade Park', quote: 'Called them for a water heater replacement. They helped us choose the perfect unit and installed it quickly. Great plumbing contractors!' },
-      { author: 'Mike R.', area: 'Downtown Vancouver', quote: 'Emergency drain cleaning for our restaurant. They cleared a major clog during peak hours without disrupting service. True professionals.' },
+      { author: 'Mike R.', area: 'Downtown Vancouver', quote: 'Same-day drain cleaning for our restaurant. They cleared a major clog during peak hours without disrupting service. True professionals.' },
       { author: 'Jennifer K.', area: 'Hazel Dell', quote: 'After searching "plumbers near me" I found H2O. They arrived within an hour and solved our plumbing emergency. Will use them again!' },
       { author: 'Robert T.', area: 'East Vancouver', quote: 'Excellent service from start to finish. The plumber explained everything clearly and the pricing was fair. Best plumbing company in Clark County.' }
     ],
     cta: {
       headline: "Vancouver WA's Top-Rated Plumbers",
-      blurb: 'When you need a reliable plumber in Vancouver, Washington, trust H2O Plumbing. We\'re your local plumbing contractors serving all of Clark County with emergency service, drain cleaning, water heaters, and complete plumbing solutions. Licensed, insured, and family-owned since 2004. Call now for same-day service!'
+      blurb: 'When you need a reliable plumber in Vancouver, trust H2O Plumbing. We\'re your local plumbing contractors serving all of Clark County with same-day support, drain cleaning, water heaters, and complete plumbing solutions. Launched in 2020 as the service division of All County Plumbing. Call now for same-day service!'
     }
   }
   ,
@@ -41,8 +41,8 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     name: 'Camas',
     meta: {
       title: 'Camas WA Plumber | Local Plumbing Services | H2O Plumbing',
-      description: 'Professional plumber in Camas, WA. Emergency plumbing, drain cleaning, water heater repair. Licensed & insured local experts. Call (360) 883-2506 today!',
-      keywords: 'Camas WA plumber, plumber Camas Washington, emergency plumbing Camas, drain cleaning Camas WA, water heater repair Camas'
+      description: 'Professional plumber in Camas, WA. Same-day plumbing, drain cleaning, water heater repair. Licensed & insured local experts. Call (360) 883-2506 today!',
+      keywords: 'Camas WA plumber, plumber Camas Washington, same day plumbing Camas, drain cleaning Camas WA, water heater repair Camas'
     },
     hero: {
       headline: 'Serving historic downtown Camas to Prune Hill with trusted plumbing solutions.',
@@ -50,7 +50,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
       promotionKey: 'camasNewCustomer' as PromotionKey
     },
     services: [
-      { title: 'Emergency Plumbing Camas', description: '24/7 emergency help for burst pipes, severe leaks & urgent failures.', href: '/services/emergency-plumbing' },
+      { title: 'Same-Day Plumbing Camas', description: 'Priority same-day help for burst pipes, severe leaks & urgent failures.', href: '/services/emergency-plumbing' },
       { title: 'Camas Drain Cleaning', description: 'Drain & sewer cleaning including root intrusion and hydro jetting.', href: '/services/drain-cleaning' },
       { title: 'Water Heater Service Camas', description: 'Tank & tankless repairs, installs, maintenance & upgrades.', href: '/services/water-heater-repair' },
       { title: 'Camas Commercial Plumbing', description: 'Restaurants, light industrial & retail plumbing specialists.', href: '/commercial' }
@@ -72,8 +72,8 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     name: 'Battle Ground',
     meta: {
       title: 'Battle Ground WA Plumber | Plumbing Services | H2O Plumbing',
-      description: 'Reliable plumber in Battle Ground, WA for emergency repairs, drain cleaning, and water heaters. Call (360) 883-2506 today!',
-      keywords: 'Battle Ground plumber, plumber Battle Ground WA, emergency plumbing Battle Ground, drain cleaning Battle Ground, water heater repair Battle Ground'
+      description: 'Reliable plumber in Battle Ground, WA for same-day repairs, drain cleaning, and water heaters. Call (360) 883-2506 today!',
+      keywords: 'Battle Ground plumber, plumber Battle Ground WA, same day plumbing Battle Ground, drain cleaning Battle Ground, water heater repair Battle Ground'
     },
     hero: {
       headline: 'Rural properties & suburban neighborhoods—Battle Ground plumbing pros.',
@@ -81,7 +81,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
       promotionKey: 'battleGroundSavings' as PromotionKey
     },
     services: [
-      { title: 'Emergency Plumbing Battle Ground', description: 'Rapid response for urgent leaks & failures—24/7 availability.', href: '/services/emergency-plumbing' },
+      { title: 'Same-Day Plumbing Battle Ground', description: 'Rapid response for urgent leaks & failures—priority same-day support.', href: '/services/emergency-plumbing' },
       { title: 'Battle Ground Drain Cleaning', description: 'Root ingress, slow drains, sewer backups & maintenance programs.', href: '/services/drain-cleaning' },
       { title: 'Water Heater Service Battle Ground', description: 'Diagnostic, repair & replacement of tank/tankless systems.', href: '/services/water-heater-repair' },
       { title: 'Battle Ground Commercial Plumbing', description: 'Retail, food service & light industrial building service.', href: '/services/commercial-plumbing' }
@@ -102,8 +102,8 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     name: 'Ridgefield',
     meta: {
       title: 'Ridgefield WA Plumber | Local Plumbing Services | H2O Plumbing',
-      description: 'Expert plumber in Ridgefield, WA for homes & businesses. Emergency service, drains, water heaters. Call today!',
-      keywords: 'Ridgefield plumber, plumber Ridgefield WA, emergency plumbing Ridgefield, drain cleaning Ridgefield, water heater repair Ridgefield'
+      description: 'Expert plumber in Ridgefield, WA for homes & businesses. Same-day service, drains, water heaters. Call today!',
+      keywords: 'Ridgefield plumber, plumber Ridgefield WA, same day plumbing Ridgefield, drain cleaning Ridgefield, water heater repair Ridgefield'
     },
     hero: {
       headline: 'Supporting Ridgefield growth with modern plumbing solutions.',
@@ -111,7 +111,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
       promotionKey: 'ridgefieldIntro' as PromotionKey
     },
     services: [
-      { title: 'Emergency Plumbing Ridgefield', description: 'Immediate help for leaks, bursts and critical failures.', href: '/services/emergency-plumbing' },
+      { title: 'Same-Day Plumbing Ridgefield', description: 'Immediate help for leaks, bursts and critical failures.', href: '/services/emergency-plumbing' },
       { title: 'Ridgefield Drain Cleaning', description: 'Drain & sewer clearing, inspection & preventative maintenance.', href: '/services/drain-cleaning' },
       { title: 'Water Heater Service Ridgefield', description: 'Installation, repair & optimization of water heating systems.', href: '/services/water-heater-repair' },
       { title: 'Ridgefield Commercial Plumbing', description: 'Winery, retail & office plumbing specialists.', href: '/services/commercial-plumbing' }
@@ -133,7 +133,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     meta: {
       title: 'La Center WA Plumber | Trusted Local Plumbing | H2O Plumbing',
       description: 'Serving La Center with reliable plumbing repairs, installs & maintenance. Call (360) 883-2506.',
-      keywords: 'La Center plumber, plumber La Center WA, emergency plumbing La Center, drain cleaning La Center'
+      keywords: 'La Center plumber, plumber La Center WA, same day plumbing La Center, drain cleaning La Center'
     },
     hero: {
       headline: 'Reliable plumbing for La Center homes and small businesses.',
@@ -141,7 +141,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
       promotionKey: 'laCenterBonus' as PromotionKey
     },
     services: [
-      { title: 'Emergency Plumbing La Center', description: 'After-hours & weekend emergency response.', href: '/services/emergency-plumbing' },
+      { title: 'Same-Day Plumbing La Center', description: 'Priority same-day response with on-call support.', href: '/services/emergency-plumbing' },
       { title: 'La Center Drain Cleaning', description: 'Clog removal, inspection & maintenance.', href: '/services/drain-cleaning' },
       { title: 'Water Heater Service La Center', description: 'Repair & replacement for residential systems.', href: '/services/water-heater-repair' },
       { title: 'La Center Commercial Plumbing', description: 'Small office & hospitality plumbing services.', href: '/services/commercial-plumbing' }
@@ -162,7 +162,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     meta: {
       title: 'Woodland WA Plumber | Local Plumbing Experts | H2O Plumbing',
       description: 'Professional plumber in Woodland for repairs, drain service & water heaters. Call now!',
-      keywords: 'Woodland plumber, plumber Woodland WA, emergency plumbing Woodland, drain cleaning Woodland'
+      keywords: 'Woodland plumber, plumber Woodland WA, same day plumbing Woodland, drain cleaning Woodland'
     },
     hero: {
       headline: 'Trusted plumbing across Woodland & nearby rural properties.',
@@ -170,7 +170,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
       promotionKey: 'woodlandCredit' as PromotionKey
     },
     services: [
-      { title: 'Emergency Plumbing Woodland', description: 'Rapid dispatch for urgent plumbing failures.', href: '/services/emergency-plumbing' },
+      { title: 'Same-Day Plumbing Woodland', description: 'Rapid dispatch for urgent plumbing failures.', href: '/services/emergency-plumbing' },
       { title: 'Woodland Drain Cleaning', description: 'Sewer & drain cleaning, camera inspection & line locating.', href: '/services/drain-cleaning' },
       { title: 'Water Heater Service Woodland', description: 'Tank, tankless & maintenance plans.', href: '/services/water-heater-repair' },
       { title: 'Woodland Commercial Plumbing', description: 'Shops, food service & agricultural support plumbing.', href: '/services/commercial-plumbing' }
@@ -191,8 +191,8 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     name: 'Washougal',
     meta: {
       title: 'Washougal WA Plumber | River Community Plumbing | H2O Plumbing',
-      description: 'Washougal plumbing services: emergency repairs, drains, heaters & more. Call (360) 883-2506.',
-      keywords: 'Washougal plumber, plumber Washougal WA, emergency plumbing Washougal, drain cleaning Washougal'
+      description: 'Washougal plumbing services: same-day repairs, drains, heaters & more. Call (360) 883-2506.',
+      keywords: 'Washougal plumber, plumber Washougal WA, same day plumbing Washougal, drain cleaning Washougal'
     },
     hero: {
       headline: 'Serving Washougal riverfront & hillside neighborhoods.',
@@ -200,7 +200,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
       promotionKey: 'washougalOffer' as PromotionKey
     },
     services: [
-      { title: 'Emergency Plumbing Washougal', description: '24/7 emergency leak & failure response.', href: '/services/emergency-plumbing' },
+      { title: 'Same-Day Plumbing Washougal', description: 'Priority same-day leak & failure response.', href: '/services/emergency-plumbing' },
       { title: 'Washougal Drain Cleaning', description: 'Drain & sewer hydro jetting and camera inspections.', href: '/services/drain-cleaning' },
       { title: 'Water Heater Service Washougal', description: 'Efficient repair & replacement for water heating systems.', href: '/services/water-heater-repair' },
       { title: 'Washougal Commercial Plumbing', description: 'Retail storefront & light industrial plumbing support.', href: '/services/commercial-plumbing' }
@@ -221,7 +221,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
     meta: {
       title: 'Longview WA Plumber | Professional Plumbing Services | H2O Plumbing',
       description: 'Serving Longview with dependable plumbing repairs, drain cleaning & water heater service.',
-      keywords: 'Longview plumber, plumber Longview WA, emergency plumbing Longview, drain cleaning Longview'
+      keywords: 'Longview plumber, plumber Longview WA, same day plumbing Longview, drain cleaning Longview'
     },
     hero: {
       headline: 'Comprehensive residential & light commercial plumbing across Longview.',
@@ -229,7 +229,7 @@ export const serviceAreas: ServiceAreaConfigEntry[] = [
       promotionKey: 'longviewValue' as PromotionKey
     },
     services: [
-      { title: 'Emergency Plumbing Longview', description: 'Day or night emergency plumbing response.', href: '/services/emergency-plumbing' },
+      { title: 'Same-Day Plumbing Longview', description: 'Priority same-day plumbing response.', href: '/services/emergency-plumbing' },
       { title: 'Longview Drain Cleaning', description: 'Drain clog clearing & sewer cleaning services.', href: '/services/drain-cleaning' },
       { title: 'Water Heater Service Longview', description: 'Repair & replacement for tank & tankless systems.', href: '/services/water-heater-repair' },
       { title: 'Longview Commercial Plumbing', description: 'Office & retail plumbing maintenance & repair.', href: '/services/commercial-plumbing' }
