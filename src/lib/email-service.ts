@@ -189,7 +189,7 @@ export async function sendCustomerConfirmation(bookingData: BookingEmailData): P
                 <h3 style="color: #dc2626;">Need immediate assistance?</h3>
                 <p style="margin: 10px 0;">
                   📞 <strong>Call us:</strong> <a href="tel:+13608832506" style="color: #dc2626;">(360) 883-2506</a><br>
-                  📧 <strong>Email:</strong> <a href="mailto:office@h2oplumbers.com" style="color: #dc2626;">office@h2oplumbers.com</a>
+                  📧 <strong>Email:</strong> <a href="mailto:office@h2oplumbingllc.net" style="color: #dc2626;">office@h2oplumbingllc.net</a>
                 </p>
               </div>
               

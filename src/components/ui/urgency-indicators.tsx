@@ -27,7 +27,7 @@ export function UrgencyIndicators() {
   }, [appointmentsLeft])
 
   return (
-    <div className="fixed bottom-6 left-6 z-40 space-y-2">
+    <div className="fixed bottom-24 left-6 z-30 space-y-2">
       {/* Appointments Left */}
       {appointmentsLeft <= 5 && (
         <motion.div

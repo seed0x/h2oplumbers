@@ -125,8 +125,8 @@ export default function HomePage() {
         {{
           discountBanner: <DiscountBanner />,
           socialProof: <SocialProofNotifications />,
-          floatingBook: <FloatingBookButton />,
-          urgency: <UrgencyIndicators />,
+          floatingBook: null,
+          urgency: null,
           recentlyViewed: <RecentlyViewedServices />,
           backToTop: <BackToTopButton />,
         }}

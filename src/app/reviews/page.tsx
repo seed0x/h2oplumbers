@@ -61,49 +61,58 @@ export default function ReviewsPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white pt-20 pb-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `url('/images/hero-background-pattern.svg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}></div>
+      <section className="bg-gradient-to-br from-slate-50 via-white to-slate-50 pt-20 pb-24 relative overflow-hidden border-b border-slate-200">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              linear-gradient(to right, rgb(6 182 212) 1px, transparent 1px),
+              linear-gradient(to bottom, rgb(6 182 212) 1px, transparent 1px)
+            `,
+            backgroundSize: '80px 80px'
+          }} />
+        </div>
+        
+        {/* Gradient accents */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-brand-cyan/8 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-brand-turquoise/8 to-transparent rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-xs font-medium tracking-wide mb-6 ring-1 ring-white/10 shadow-lg shadow-black/10">
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-brand-cyan/10 to-brand-turquoise/10 backdrop-blur-sm rounded-full px-5 py-2.5 text-xs font-bold tracking-wide mb-6 border border-brand-cyan/30 shadow-lg">
               <span className="inline-block w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
-              <span>Trusted by Your Community</span>
+              <span className="text-slate-700">Trusted by Your Community</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight uppercase">
-              Customer <span className="text-brand-cyan">Reviews</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight tracking-tight">
+              <span className="text-slate-900">Customer</span> <span className="text-brand-cyan">Reviews</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-slate-200 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Real feedback from <span className="text-brand-cyan font-bold">real families and businesses</span> across Southwest Washington. See why your neighbors trust us.
+            <p className="text-xl md:text-2xl text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+              Real feedback from <span className="text-brand-cyan font-semibold">real families and businesses</span> across Southwest Washington. See why your neighbors trust us.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                <div className="flex items-center justify-center gap-2 mb-1">
-                  <Award className="w-5 h-5 text-brand-cyan" />
-                  <span className="text-2xl font-heading font-bold">450+</span>
+              <div className="bg-white backdrop-blur-sm rounded-2xl p-6 border-2 border-slate-200 shadow-lg hover:shadow-xl hover:border-brand-cyan transition-all duration-300">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <Award className="w-6 h-6 text-brand-cyan" />
+                  <span className="text-3xl font-heading font-bold text-slate-900">450+</span>
                 </div>
-                <p className="text-sm text-slate-300">5-Star Reviews</p>
+                <p className="text-sm text-slate-600 font-medium">5-Star Reviews</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                <div className="flex items-center justify-center gap-2 mb-1">
-                  <Users className="w-5 h-5 text-brand-cyan" />
-                  <span className="text-2xl font-heading font-bold">{BUSINESS_DATA.yearsInBusiness}</span>
+              <div className="bg-white backdrop-blur-sm rounded-2xl p-6 border-2 border-slate-200 shadow-lg hover:shadow-xl hover:border-brand-cyan transition-all duration-300">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <Users className="w-6 h-6 text-brand-cyan" />
+                  <span className="text-3xl font-heading font-bold text-slate-900">{BUSINESS_DATA.yearsInBusiness}</span>
                 </div>
-                <p className="text-sm text-slate-300">Years Family-Owned</p>
+                <p className="text-sm text-slate-600 font-medium">Years Family-Owned</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                <div className="flex items-center justify-center gap-2 mb-1">
-                  <ThumbsUp className="w-5 h-5 text-brand-cyan" />
-                  <span className="text-2xl font-heading font-bold">98%</span>
+              <div className="bg-white backdrop-blur-sm rounded-2xl p-6 border-2 border-slate-200 shadow-lg hover:shadow-xl hover:border-brand-cyan transition-all duration-300">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <ThumbsUp className="w-6 h-6 text-brand-cyan" />
+                  <span className="text-3xl font-heading font-bold text-slate-900">98%</span>
                 </div>
-                <p className="text-sm text-slate-300">Satisfaction Rate</p>
+                <p className="text-sm text-slate-600 font-medium">Satisfaction Rate</p>
               </div>
             </div>
           </div>
@@ -115,11 +124,11 @@ export default function ReviewsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 bg-red-100 rounded-full px-4 py-2 mb-4">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-cyan/10 to-brand-turquoise/10 rounded-full px-5 py-2.5 mb-4 border border-brand-cyan/30">
                 <Star className="w-5 h-5 text-brand-cyan" />
-                <span className="text-sm font-semibold text-brand-cyan uppercase tracking-wider">Review Platforms</span>
+                <span className="text-sm font-bold text-slate-700 uppercase tracking-wider">Review Platforms</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 uppercase">Where You Can Find Us</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900 tracking-tight">Where You Can Find Us</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {platforms.map(p => (
@@ -131,7 +140,7 @@ export default function ReviewsPage() {
                   className="bg-white rounded-2xl border-2 border-brand-cyan/20 p-8 text-center hover:border-brand-cyan hover:shadow-xl transition-all duration-300 group cursor-pointer"
                 >
                   <div className="flex items-center justify-center text-brand-cyan mb-4 group-hover:scale-110 transition-transform">{p.icon}</div>
-                  <h3 className="text-xl font-heading font-bold mb-3 uppercase text-slate-900">{p.platform}</h3>
+                  <h3 className="text-xl font-heading font-bold mb-3 text-slate-900">{p.platform}</h3>
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <span className="text-3xl font-heading font-bold text-brand-cyan">{p.rating}</span>
                     <div className="flex text-yellow-500">
@@ -157,11 +166,11 @@ export default function ReviewsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 bg-red-100 rounded-full px-4 py-2 mb-4">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-cyan/10 to-brand-turquoise/10 rounded-full px-5 py-2.5 mb-4 border border-brand-cyan/30">
                 <Heart className="w-5 h-5 text-brand-cyan" />
-                <span className="text-sm font-semibold text-brand-cyan uppercase tracking-wider">Testimonials</span>
+                <span className="text-sm font-bold text-slate-700 uppercase tracking-wider">Testimonials</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 uppercase">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 tracking-tight">
                 Hear From Your <span className="text-brand-cyan">Neighbors</span>
               </h2>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
@@ -199,7 +208,7 @@ export default function ReviewsPage() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-cyan/10 text-brand-cyan mb-6">
               <MessageCircle className="w-8 h-8" />
             </div>
-            <h3 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-4 uppercase">
+            <h3 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-4">
               Your Review Matters
             </h3>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">

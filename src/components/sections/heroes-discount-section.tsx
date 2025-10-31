@@ -3,24 +3,30 @@ import Link from 'next/link';
 import { BUSINESS_DATA } from '@/lib/business-data';
 
 const heroCategories = [
-  'Military & Veterans',
-  'Firefighters',
-  'Police Officers',
-  'EMS & Healthcare',
-  'Teachers & Educators'
+  { name: 'Military & Veterans', icon: Shield },
+  { name: 'Firefighters', icon: Flame },
+  { name: 'Police Officers', icon: Shield },
+  { name: 'EMS & Healthcare', icon: Stethoscope },
+  { name: 'Teachers & Educators', icon: GraduationCap }
 ];
 
 export function HeroesDiscountSection() {
   return (
-    <section className="section-padding bg-slate-50 relative overflow-hidden">
-      {/* Subtle patriotic accent - thin stripes */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-slate-200 via-brand-cyan to-slate-200"></div>
+    <section className="section-padding bg-gradient-to-br from-slate-50 via-white to-slate-50 relative overflow-hidden">
+      {/* Brand accent line */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-cyan via-brand-turquoise to-brand-cyan"></div>
       
       <div className="container mx-auto container-padding">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold uppercase tracking-tight text-slate-900 mb-4">
+          <div className="text-center mb-16">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full bg-brand-cyan/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-brand-cyan mb-6">
+              <Heart className="h-4 w-4" />
+              Heroes Discount
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold uppercase tracking-tight text-slate-900 mb-6">
               Honoring Those Who Serve
             </h2>
             
@@ -29,40 +35,45 @@ export function HeroesDiscountSection() {
             </p>
           </div>
 
-          {/* Clean list of eligible groups */}
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-slate-200 mb-8">
-            <h3 className="text-lg font-heading font-semibold uppercase tracking-wide text-slate-900 mb-6 text-center">
-              Eligible Heroes
-            </h3>
-            <div className="flex flex-wrap justify-center gap-4">
-              {heroCategories.map((category) => (
+          {/* Eligible Heroes Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
+            {heroCategories.map((category) => {
+              const Icon = category.icon;
+              return (
                 <div
-                  key={category}
-                  className="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-full text-sm font-medium text-slate-700"
+                  key={category.name}
+                  className="group bg-white rounded-2xl p-6 border-2 border-slate-200 hover:border-brand-cyan transition-all duration-300 hover:shadow-xl hover:-translate-y-1 text-center"
                 >
-                  {category}
+                  <div className="w-16 h-16 bg-gradient-to-br from-brand-cyan/10 to-brand-turquoise/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-8 h-8 text-brand-cyan" />
+                  </div>
+                  <p className="text-sm font-heading font-bold text-slate-900">
+                    {category.name}
+                  </p>
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
 
-          {/* Compact redeem section */}
-          <div className="bg-white rounded-2xl p-6 border border-slate-200 text-center">
-            <p className="text-sm text-slate-600 mb-4">
-              <span className="font-semibold text-slate-900">To redeem:</span> Simply show your valid ID when booking or at service. 
-              <span className="text-xs text-slate-500 block mt-1">Cannot be combined with other offers.</span>
+          {/* Redeem section */}
+          <div className="bg-gradient-to-r from-brand-cyan to-brand-turquoise rounded-2xl p-8 md:p-10 shadow-xl text-center">
+            <p className="text-white text-base md:text-lg mb-2 font-medium">
+              <span className="font-bold">To redeem:</span> Simply show your valid ID when booking or at service.
+            </p>
+            <p className="text-white/80 text-sm mb-6">
+              Cannot be combined with other offers.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                className="inline-flex items-center justify-center rounded-full bg-brand-cyan px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.22em] text-white shadow-sm transition-transform duration-200 hover:-translate-y-0.5 hover:bg-brand-cyan-dark"
+                className="inline-flex items-center justify-center rounded-xl bg-white hover:bg-slate-50 text-brand-cyan px-8 py-3.5 text-base font-bold shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
               >
                 Call {BUSINESS_DATA.phone}
               </a>
               <Link
                 href="/booking"
-                className="inline-flex items-center justify-center rounded-full border-2 border-slate-300 text-slate-700 hover:border-brand-cyan hover:text-brand-cyan px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.22em] transition-colors"
+                className="inline-flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border-2 border-white/50 hover:border-white px-8 py-3.5 text-base font-bold shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
               >
                 Book Online
               </Link>

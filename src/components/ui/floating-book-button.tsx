@@ -8,7 +8,7 @@ import Link from 'next/link'
 export function FloatingBookButton() {
   return (
     <motion.div
-      className="fixed bottom-6 right-28 z-40"
+      className="fixed bottom-24 right-6 z-30"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1, duration: 0.5 }}

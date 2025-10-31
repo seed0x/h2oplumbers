@@ -96,50 +96,58 @@ export default function RootLayout({
           </ErrorBoundary>
           {/* <EmailCapturePopup /> */} {/* Disabled - too intrusive */}
           
-          {/* Roto-Rooter style drain divider with H2O branding */}
-          <div className="relative bg-white py-8">
+          {/* H2O Drain Jingle Divider - Above Footer */}
+          <section className="snap-section relative min-h-[50vh] flex items-center justify-center bg-white pt-12 pb-20">
             <div className="container mx-auto px-4">
-              {/* Jingle with musical notes */}
-              <div className="text-center relative mb-6">
+              {/* Jingle Text with Musical Notes */}
+              <div className="text-center relative mb-12">
                 <div className="relative inline-block">
-                  {/* Left musical note */}
-                  <span className="absolute -left-12 top-0 text-4xl text-red-600 animate-pulse">🎵</span>
-                  {/* Right musical note */}
-                  <span className="absolute -right-12 top-0 text-4xl text-red-600 animate-pulse" style={{ animationDelay: '0.5s' }}>🎵</span>
+                  {/* Left musical note - animated */}
+                  <span className="absolute -left-14 top-0 text-5xl text-brand-cyan animate-bounce" style={{ animationDuration: '2s' }}>🎵</span>
+                  {/* Right musical note - animated */}
+                  <span className="absolute -right-14 top-0 text-5xl text-brand-cyan animate-bounce" style={{ animationDuration: '2s', animationDelay: '0.5s' }}>🎵</span>
                   
-                  <p className="text-xl md:text-2xl font-bold" style={{ color: '#1e3a8a' }}>
-                    And Away Go Troubles<br />Down the Drain
-                  </p>
+                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-slate-900">
+                    And Away Go Troubles<br />
+                    <span className="text-brand-cyan">Down the Drain</span>
+                  </h2>
                 </div>
               </div>
               
-              {/* Center drain graphic with lines */}
-              <div className="relative flex items-center">
+              {/* Horizontal line with centered drain - positioned to overlap footer */}
+              <div className="relative flex items-center justify-center">
                 {/* Left line */}
                 <div className="flex-1 h-px bg-gradient-to-r from-transparent via-slate-300 to-slate-400" />
                 
-                {/* Drain */}
-                <div className="relative mx-6">
-                  <div className="w-24 h-24 relative">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-slate-400 via-slate-500 to-slate-600 shadow-xl" />
-                    <div className="absolute inset-1 rounded-full bg-slate-800" />
-                    <div className="absolute inset-3 rounded-full bg-slate-950 border-2 border-slate-700">
+                {/* Drain graphic - animated and overlapping footer */}
+                <div className="relative mx-8 z-10" style={{ marginBottom: '-4rem' }}>
+                  <div className="w-28 h-28 relative">
+                    {/* Cyan glow effect */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-cyan via-brand-turquoise to-brand-cyan shadow-2xl opacity-20 blur-md animate-pulse" style={{ animationDuration: '3s' }} />
+                    {/* Outer ring */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-slate-300 via-slate-400 to-slate-500 shadow-xl" />
+                    {/* Inner ring */}
+                    <div className="absolute inset-2 rounded-full bg-slate-700" />
+                    {/* Drain grate */}
+                    <div className="absolute inset-4 rounded-full bg-slate-900 border-2 border-slate-600">
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="absolute w-full h-0.5 bg-slate-700" />
-                        <div className="absolute h-full w-0.5 bg-slate-700" />
-                        <div className="absolute w-2/3 h-0.5 bg-slate-700 rotate-45" />
-                        <div className="absolute w-2/3 h-0.5 bg-slate-700 -rotate-45" />
+                        <div className="absolute w-full h-0.5 bg-slate-600" />
+                        <div className="absolute h-full w-0.5 bg-slate-600" />
+                        <div className="absolute w-3/4 h-0.5 bg-slate-600 rotate-45" />
+                        <div className="absolute w-3/4 h-0.5 bg-slate-600 -rotate-45" />
                       </div>
-                      <div className="absolute inset-4 rounded-full bg-black">
+                      {/* Center hole with spinning water */}
+                      <div className="absolute inset-5 rounded-full bg-black overflow-hidden">
                         <div className="absolute inset-0 animate-spin" style={{ animationDuration: '2.5s' }}>
-                          <div className="absolute top-1/4 left-1/2 w-0.5 h-2 bg-brand-cyan/60 rounded-full" />
-                          <div className="absolute top-1/2 left-1/4 w-0.5 h-1.5 bg-brand-cyan/50 rounded-full" />
+                          <div className="absolute top-1/4 left-1/2 w-1 h-3 bg-brand-cyan/70 rounded-full blur-[1px]" />
+                          <div className="absolute top-1/2 left-1/4 w-1 h-2 bg-brand-turquoise/60 rounded-full blur-[1px]" />
+                          <div className="absolute bottom-1/4 right-1/3 w-1 h-2 bg-brand-cyan/50 rounded-full blur-[1px]" />
                         </div>
                       </div>
                     </div>
-                    {/* Water droplets falling in */}
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-brand-cyan rounded-full shadow-lg animate-[drip_2s_ease-in_infinite]" />
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-brand-cyan rounded-full shadow-lg animate-[drip_2s_ease-in_infinite]" style={{ animationDelay: '1s' }} />
+                    {/* Animated water droplets */}
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-3 h-3 bg-gradient-to-br from-brand-cyan to-brand-turquoise rounded-full shadow-lg animate-[drip_2s_ease-in_infinite]" />
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-3 h-3 bg-gradient-to-br from-brand-cyan to-brand-turquoise rounded-full shadow-lg animate-[drip_2s_ease-in_infinite] opacity-70" style={{ animationDelay: '1s' }} />
                   </div>
                 </div>
                 
@@ -147,9 +155,9 @@ export default function RootLayout({
                 <div className="flex-1 h-px bg-gradient-to-l from-transparent via-slate-300 to-slate-400" />
               </div>
             </div>
-          </div>
+          </section>
           
-          <footer role="contentinfo" className="bg-slate-900 text-white pt-16 pb-10">
+          <footer role="contentinfo" className="snap-section min-h-screen flex items-start justify-center bg-slate-900 text-white pt-20 pb-10">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 {/* Company */}

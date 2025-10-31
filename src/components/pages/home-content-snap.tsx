@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Star, Shield, Clock, CheckCircle2, Award, Users, Home, Building2, Hammer, Droplets, ArrowRight, Wrench, Mail, MapPin } from 'lucide-react';
+import { Phone, Star, Shield, Clock, CheckCircle2, Award, Users, Home, Building2, Hammer, Droplets, ArrowRight, Wrench, Mail, MapPin, Calendar } from 'lucide-react';
 import { SectionAnimation, StaggerAnimation, AnimatedCounter, PulsingCTA } from '../ui/section-animations';
 import { SnapScroll, ScrollNavigation, ScrollProgressBar } from '../ui/snap-scroll';
 import { BUSINESS_DATA } from '@/lib/business-data';
@@ -26,7 +26,8 @@ interface HomeContentSnapProps {
 }
 
 export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
-  const totalSections = 10;
+  // Total sections includes mobile form section (it's hidden on desktop with lg:hidden)
+  const totalSections = 11;
 
   return (
     <>
@@ -38,8 +39,8 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
       <ScrollProgressBar />
       <ScrollNavigation totalSections={totalSections} />
 
-      {/* Section 1: Hero with CTA */}
-      <section className="snap-section relative min-h-screen w-full p-0 overflow-visible">
+      {/* Section 1: Hero with CTA (includes mobile form as section 2 on mobile) */}
+      <section className="md:snap-section relative min-h-screen w-full p-0 overflow-visible">
         {/* Animated background pattern */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div
@@ -70,7 +71,7 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
       </section>
 
       {/* Section 2: Services Grid */}
-      <section id="services" className="snap-section relative min-h-screen flex items-start justify-center bg-gradient-to-br from-slate-50 via-white to-slate-50 py-16 md:py-24">
+      <section id="services" className="snap-section relative min-h-screen flex items-start justify-center bg-gradient-to-b from-slate-100 via-slate-50 to-white py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <SectionAnimation animationType="slide-up">
@@ -94,26 +95,29 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
                 return (
                   <article
                     key={index}
-                    className="group h-full bg-white rounded-3xl border-2 border-slate-200 hover:border-brand-cyan p-6 md:p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
+                    className="group h-full bg-white rounded-3xl border-2 border-slate-200 hover:border-brand-cyan p-8 md:p-10 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
                   >
-                    <div className="flex flex-col md:flex-row md:items-start gap-6 h-full">
-                      <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-brand-cyan/10 to-brand-turquoise/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                        <Icon className="w-10 h-10 text-brand-cyan" />
+                    <div className="flex flex-col items-center text-center h-full">
+                      {/* Icon centered at top */}
+                      <div className="flex-shrink-0 w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-brand-cyan/10 to-brand-turquoise/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 mb-6">
+                        <Icon className="w-12 h-12 md:w-14 md:h-14 text-brand-cyan" />
                       </div>
-                      <div className="flex-1 text-center md:text-left">
-                        <span className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-cyan/80">
+                      
+                      {/* Content centered */}
+                      <div className="flex-1 flex flex-col items-center">
+                        <span className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-cyan mb-3">
                           {service.category}
                         </span>
-                        <h3 className="text-2xl md:text-3xl font-heading font-semibold text-slate-900 mt-2 mb-3">
+                        <h3 className="text-2xl md:text-3xl font-heading font-bold text-slate-900 mb-4">
                           {service.title}
                         </h3>
-                        <p className="text-base text-slate-600 leading-relaxed mb-4 md:mb-6">{service.description}</p>
+                        <p className="text-base text-slate-600 leading-relaxed mb-6 flex-1">{service.description}</p>
                         <Link
                           href={service.href}
-                          className="inline-flex items-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:gap-4"
+                          className="inline-flex items-center gap-2 bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold px-8 py-3.5 rounded-full transition-all duration-300 hover:gap-4 shadow-lg hover:shadow-xl"
                         >
                           Learn More
-                          <ArrowRight className="w-4 h-4" />
+                          <ArrowRight className="w-5 h-5" />
                         </Link>
                       </div>
                     </div>
@@ -134,75 +138,55 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
         </div>
       </section>
 
-      {/* Section 4: Why Choose Us (Original) */}
+      {/* Section 4: Why Vancouver Trusts H2O */}
       <section className="snap-section relative min-h-screen flex items-center justify-center bg-slate-50 py-20 md:py-32">
-        <div className="w-full">
-          <SectionAnimation animationType="slide-up">
-            <WhyChooseUsSection />
-          </SectionAnimation>
-        </div>
-      </section>
-
-      {/* Section 5: Why Vancouver Trusts H2O */}
-      <section className="snap-section relative min-h-screen flex items-center justify-center bg-gradient-to-br from-brand-cyan/5 via-white to-brand-cyan/5 py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <SectionAnimation animationType="slide-up">
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-6xl font-heading font-bold text-slate-900 mb-6">Why Vancouver Trusts H2O</h2>
-                <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
-                  Backed by All County Plumbing, H2O launched in 2020 to bring family-backed, professional service to Clark County.
+                {/* Badge matching hero and services style */}
+                <div className="inline-flex items-center gap-2 rounded-full bg-brand-cyan/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-brand-cyan mb-6">
+                  <Award className="h-4 w-4" />
+                  Why Vancouver Trusts Us
+                </div>
+                <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold uppercase tracking-tight text-slate-900 mb-4">
+                  Why Vancouver Trusts H2O Plumbing
+                </h2>
+                <p className="text-base md:text-lg text-slate-600 max-w-3xl mx-auto">
+                  Backed by <strong className="text-brand-cyan">All County Plumbing</strong>, H2O launched in 2020 to bring family-backed, professional service to Clark County. Here's why your neighbors trust us:
                 </p>
               </div>
             </SectionAnimation>
 
-            <StaggerAnimation staggerDelay={0.2} className="grid md:grid-cols-2 gap-8">
+            <StaggerAnimation staggerDelay={0.15} className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {[
-                {
-                  icon: CheckCircle2,
-                  title: 'Same-Day Service',
-                  description: 'Emergency repairs available 24/7. We arrive fast and fix it right the first time.',
-                  color: 'text-brand-cyan',
-                  bgColor: 'from-brand-cyan/10 to-brand-cyan/5',
-                },
                 {
                   icon: Shield,
                   title: 'Licensed & Insured',
-                  description:
-                    'Fully bonded professionals with WA & OR licenses. Your property is protected with us.',
-                  color: 'text-brand-turquoise',
-                  bgColor: 'from-brand-turquoise/10 to-brand-turquoise/5',
+                  description: 'Fully licensed, bonded, and insured for your protection. All work is backed by comprehensive warranties and meets Washington state plumbing codes.'
                 },
                 {
-                  icon: Award,
-                  title: '30-Year Warranty',
-                  description: 'Industry-leading warranty on select installations. We stand behind our work.',
-                  color: 'text-brand-cyan',
-                  bgColor: 'from-brand-cyan/10 to-brand-cyan/5',
+                  icon: Clock,
+                  title: 'Same Day Service',
+                  description: 'Most plumbing issues can\'t wait. We offer same-day service for urgent repairs and try to accommodate your schedule for all other services.'
                 },
                 {
-                  icon: Star,
-                  title: 'Top-Rated Service',
-                  description: '4.9/5 stars from real customers. Read hundreds of verified reviews.',
-                  color: 'text-yellow-500',
-                  bgColor: 'from-yellow-50 to-yellow-25',
+                  icon: Users,
+                  title: 'Family Values, Family Service',
+                  description: 'Three generations of plumbers serving Southwest Washington families. We treat your home like our own and your family like ours. That\'s the H2O difference.'
                 },
               ].map((item, index) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={index}
-                    className={`bg-gradient-to-br ${item.bgColor} rounded-3xl p-6 md:p-8 border-2 border-slate-200 hover:border-brand-cyan transition-all duration-500 hover:shadow-2xl hover:-translate-y-1`}
+                    className="text-center p-6 bg-white rounded-xl shadow-lg border-2 border-brand-cyan/20 transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl group"
                   >
-                    <div className="flex items-start gap-5">
-                      <div className="flex-shrink-0 w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-md">
-                        <Icon className={`w-8 h-8 ${item.color}`} />
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                        <p className="text-slate-600 leading-relaxed">{item.description}</p>
-                      </div>
+                    <div className="w-20 h-20 bg-brand-cyan rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                      <Icon className="w-10 h-10 text-white" />
                     </div>
+                    <h3 className="text-2xl font-heading font-bold text-slate-900 mb-4">{item.title}</h3>
+                    <p className="text-slate-600 leading-relaxed">{item.description}</p>
                   </div>
                 );
               })}
@@ -269,7 +253,7 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
                           className="rounded-full object-cover ring-4 ring-brand-cyan group-hover:ring-brand-turquoise transition-all"
                         />
                       </div>
-                      <h3 className="text-xl font-bold text-center mb-2">{member.name}</h3>
+                      <h3 className="text-xl font-heading font-bold text-center mb-2">{member.name}</h3>
                       <p className="text-brand-cyan text-center font-semibold mb-4">{member.title}</p>
                       <p className="text-sm text-slate-300 leading-relaxed flex-1">{member.bio}</p>
                     </div>
@@ -424,7 +408,7 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
                   </div>
                   <p className="text-slate-700 mb-6 leading-relaxed italic">"{testimonial.text}"</p>
                   <div>
-                    <div className="font-bold text-slate-900">{testimonial.name}</div>
+                    <div className="font-heading font-bold text-slate-900">{testimonial.name}</div>
                     <div className="text-sm text-slate-500">{testimonial.role}</div>
                   </div>
                 </div>
@@ -452,45 +436,60 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
         </div>
       </section>
 
-      {/* Section 10: Final CTA */}
-      <section className="snap-section relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
-        {/* Animated background */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `
-              linear-gradient(to right, white 1px, transparent 1px),
-              linear-gradient(to bottom, white 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px',
-          }} />
+      {/* Section 10: Final CTA with Map Background */}
+      <section className="snap-section relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-slate-100 overflow-hidden">
+        {/* Map background with overlay */}
+        <div className="absolute inset-0">
+          {/* Vancouver/Clark County map background */}
+          <div 
+            className="absolute inset-0 opacity-[0.08]"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cpath d='M400 100L100 300L150 600L400 700L650 600L700 300Z' fill='none' stroke='%2306b6d4' stroke-width='2'/%3E%3Ccircle cx='400' cy='400' r='200' fill='none' stroke='%2306b6d4' stroke-width='1'/%3E%3Cline x1='400' y1='100' x2='400' y2='700' stroke='%2306b6d4' stroke-width='1' opacity='0.3'/%3E%3Cline x1='100' y1='400' x2='700' y2='400' stroke='%2306b6d4' stroke-width='1' opacity='0.3'/%3E%3C/svg%3E")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          />
+          {/* Hex pattern overlay */}
+          <div className="absolute inset-0 opacity-[0.03]">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `
+                linear-gradient(30deg, transparent 48%, #06b6d4 48%, #06b6d4 52%, transparent 52%),
+                linear-gradient(150deg, transparent 48%, #06b6d4 48%, #06b6d4 52%, transparent 52%),
+                linear-gradient(90deg, transparent 48%, #06b6d4 48%, #06b6d4 52%, transparent 52%)
+              `,
+              backgroundSize: '60px 104px',
+            }} />
+          </div>
         </div>
 
-        {/* Gradient orbs */}
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-brand-cyan/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-brand-turquoise/10 rounded-full blur-3xl" />
+        {/* Gradient overlays for depth */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-slate-50/95 to-white/90" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-brand-cyan/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-brand-turquoise/10 to-transparent rounded-full blur-3xl" />
 
         <div className="relative z-10 container mx-auto px-4 py-20">
           <div className="max-w-5xl mx-auto">
             {/* Service Areas at top */}
             <SectionAnimation animationType="fade">
               <div className="text-center mb-12">
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] mb-6">
+                <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-cyan/10 to-brand-turquoise/10 backdrop-blur-sm px-5 py-2.5 text-xs font-bold uppercase tracking-[0.32em] text-brand-cyan mb-6 border border-brand-cyan/30">
                   <MapPin className="h-4 w-4" />
                   Service Areas
                 </div>
-                <p className="text-slate-300 mb-8">
-                  Serving <strong className="text-white">Vancouver, Battle Ground, Camas, Washougal, Ridgefield, La Center</strong> and all of Clark County & Southwest Washington
+                <p className="text-slate-600 text-base md:text-lg mb-8 max-w-3xl mx-auto">
+                  Serving <strong className="text-brand-cyan">Vancouver, Battle Ground, Camas, Washougal, Ridgefield, La Center</strong> and all of <strong className="text-slate-900">Clark County & Southwest Washington</strong>
                 </p>
               </div>
             </SectionAnimation>
 
             <SectionAnimation animationType="slide-up" delay={0.3}>
               <div className="text-center mb-12">
-                <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 leading-tight">
-                  Ready to Get Started?
+                <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight text-slate-900">
+                  Ready to Get <span className="text-brand-cyan">Started?</span>
                 </h2>
-                <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-8">
-                  <strong className="text-white">Licensed, insured, and ready to help.</strong> Vancouver&apos;s most trusted plumbing team.
+                <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+                  <strong className="text-slate-900">Licensed, insured, and ready to help.</strong> Vancouver&apos;s most trusted plumbing team.
                 </p>
               </div>
             </SectionAnimation>
@@ -500,7 +499,7 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
                 <PulsingCTA>
                   <a
                     href={`tel:${BUSINESS_DATA.phoneRaw}`}
-                    className="group relative inline-flex items-center justify-center gap-4 bg-gradient-to-r from-brand-cyan to-brand-turquoise hover:from-brand-cyan-dark hover:to-brand-cyan text-white font-bold px-12 py-6 rounded-2xl text-xl shadow-2xl hover:shadow-brand-cyan/50 transition-all duration-300 transform hover:scale-105 overflow-hidden"
+                    className="group relative inline-flex items-center justify-center gap-4 bg-gradient-to-r from-brand-cyan to-brand-turquoise hover:from-brand-cyan-dark hover:to-brand-cyan text-white font-bold px-12 py-6 rounded-2xl text-xl shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(6,182,212,0.5)] transition-all duration-300 transform hover:scale-105 overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                     <Phone className="w-7 h-7 relative z-10" />
@@ -512,7 +511,7 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
                 </PulsingCTA>
                 <a
                   href={`mailto:${BUSINESS_DATA.email}`}
-                  className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold px-10 py-6 rounded-2xl text-lg border-2 border-white/20 hover:border-white/40 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-3 bg-white hover:bg-slate-50 text-brand-cyan font-bold px-10 py-6 rounded-2xl text-lg border-2 border-brand-cyan hover:border-brand-cyan-dark shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                 >
                   <Mail className="w-6 h-6" />
                   Email Us
@@ -520,17 +519,19 @@ export function HomeContentSnap({ serviceHighlights }: HomeContentSnapProps) {
               </div>
             </SectionAnimation>
 
-            <StaggerAnimation staggerDelay={0.15} className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+            <StaggerAnimation staggerDelay={0.15} className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 { icon: Clock, title: 'Same-Day Service', desc: 'Priority response' },
                 { icon: Shield, title: 'Licensed & Insured', desc: 'WA & OR certified' },
                 { icon: Award, title: '30-Year Warranty', desc: 'On installations' },
                 { icon: Star, title: '4.9/5 Rating', desc: '500+ reviews' },
               ].map((item, index) => (
-                <div key={index} className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-6 border-2 border-slate-700 text-center hover:border-brand-cyan transition-all duration-300">
-                  <item.icon className="w-12 h-12 text-brand-cyan mx-auto mb-3" />
-                  <div className="text-lg font-bold mb-1">{item.title}</div>
-                  <div className="text-sm text-slate-400">{item.desc}</div>
+                <div key={index} className="bg-white rounded-2xl p-6 border-2 border-slate-200 text-center hover:border-brand-cyan hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div className="w-16 h-16 bg-gradient-to-br from-brand-cyan/10 to-brand-turquoise/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-8 h-8 text-brand-cyan" />
+                  </div>
+                  <div className="text-lg font-heading font-bold text-slate-900 mb-1">{item.title}</div>
+                  <div className="text-sm text-slate-600">{item.desc}</div>
                 </div>
               ))}
             </StaggerAnimation>

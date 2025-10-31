@@ -1,9 +1,8 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MasterButton } from "@/components/ui/master-button";
 import { Phone, Tag } from "lucide-react";
 
@@ -24,6 +23,48 @@ type UnifiedHeroProps = {
 export function UnifiedHero({ promotion }: UnifiedHeroProps) {
   const { badgeLabel, headingLabel, detailsLine, couponCode, ctaLink, ctaText, isTelLink } = promotion;
   const badgeCircleLabel = badgeLabel.replace(/[^0-9$%]+$/,'').trim() || 'Save';
+  
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.service) {
+      setSubmitStatus('error');
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: `Service requested: ${formData.service}`,
+          formType: 'general',
+        }),
+      });
+      
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', phone: '', service: '' });
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -105,37 +146,76 @@ export function UnifiedHero({ promotion }: UnifiedHeroProps) {
               <h2 className="text-xl font-semibold text-slate-900 mb-1">Request a Free Quote</h2>
               <p className="text-sm text-slate-500">Fast response during business hours. No obligation.</p>
             </div>
-            <form className="space-y-4" aria-label="Request service quote form">
+            <form onSubmit={handleSubmit} className="space-y-4" aria-label="Request service quote form">
               <div>
                 <label className="sr-only" htmlFor="hero-name">Name</label>
-                <Input id="hero-name" placeholder="Your Name" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                <Input 
+                  id="hero-name" 
+                  placeholder="Your Name" 
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  required
+                  className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" 
+                />
+              </div>
+              <div>
+                <label className="sr-only" htmlFor="hero-email">Email Address</label>
+                <Input 
+                  id="hero-email" 
+                  type="email" 
+                  placeholder="Email Address" 
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  required
+                  className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" 
+                />
               </div>
               <div>
                 <label className="sr-only" htmlFor="hero-phone">Phone Number</label>
-                <Input id="hero-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" />
+                <Input 
+                  id="hero-phone" 
+                  type="tel" 
+                  placeholder="Phone Number" 
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  required
+                  className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600" 
+                />
               </div>
               <div>
-                <Select>
-                  <SelectTrigger className="text-black border-slate-300 focus:border-red-600 focus:ring-red-600">
-                    <SelectValue placeholder="Service Needed" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="drain-cleaning">Drain Cleaning</SelectItem>
-                    <SelectItem value="water-heater">Water Heater Repair</SelectItem>
-                    <SelectItem value="leak-detection">Leak Detection</SelectItem>
-                    <SelectItem value="repipe">Repipe & Pipe Repair</SelectItem>
-                    <SelectItem value="bathroom-remodel">Bathroom Remodel</SelectItem>
-                    <SelectItem value="new-construction">New Construction</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
+                <select 
+                  value={formData.service} 
+                  onChange={(e) => setFormData({...formData, service: e.target.value})} 
+                  required
+                  className="w-full h-10 px-3 py-2 text-black bg-white border border-slate-300 rounded-md focus:border-red-600 focus:ring-2 focus:ring-red-600 focus:outline-none"
+                >
+                  <option value="">Service Needed</option>
+                  <option value="drain-cleaning">Drain Cleaning</option>
+                  <option value="water-heater">Water Heater Repair</option>
+                  <option value="leak-detection">Leak Detection</option>
+                  <option value="repipe">Repipe & Pipe Repair</option>
+                  <option value="bathroom-remodel">Bathroom Remodel</option>
+                  <option value="new-construction">New Construction</option>
+                  <option value="other">Other</option>
+                </select>
               </div>
+              {submitStatus === 'success' && (
+                <div className="text-green-600 text-sm text-center font-medium">
+                  ✓ Thank you! We'll contact you soon.
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="text-red-600 text-sm text-center font-medium">
+                  Error submitting. Please call us directly.
+                </div>
+              )}
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                disabled={isSubmitting}
+                className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50"
               >
-                Get Free Quote
+                {isSubmitting ? 'Sending...' : 'Get Free Quote'}
               </Button>
             </form>
             <p className="text-[10px] text-slate-500 mt-4 text-center leading-relaxed">

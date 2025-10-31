@@ -17,7 +17,7 @@ const bookingSchema = z.object({
   city: z.string().min(1, 'City is required'),
   state: z.string().default('WA'),
   zipCode: z.string().min(5, 'Valid ZIP code is required'),
-  serviceId: z.string().cuid('Valid service ID is required'),
+  serviceId: z.string().min(1, 'Valid service ID is required'),
   scheduledAt: z.string().datetime('Valid date and time is required'),
   description: z.string().optional(),
   priority: z.nativeEnum(Priority).default('NORMAL'),

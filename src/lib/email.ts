@@ -1,54 +1,147 @@
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend';
+import { BUSINESS_DATA } from './business-data';
 
-export interface SendEmailOptions {
-  to: string | string[]
-  subject: string
-  text?: string
-  html?: string
-  from?: string
+let resend: Resend | null = null;
+
+function getResendClient() {
+  if (!resend && process.env.RESEND_API_KEY) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
 }
 
-let transporter: nodemailer.Transporter | null = null
-
-function ensureTransporter() {
-  if (transporter) return transporter
-  const host = process.env.SMTP_HOST || process.env.EMAIL_SERVER_HOST
-  const portStr = process.env.SMTP_PORT || process.env.EMAIL_SERVER_PORT
-  if (!host || !portStr) {
-    console.warn('Email disabled: missing SMTP host/port')
-    return null
-  }
-  transporter = nodemailer.createTransport({
-    host,
-    port: parseInt(portStr, 10) || 587,
-    secure: (parseInt(portStr || '0', 10) === 465),
-    auth: (process.env.SMTP_USER && process.env.SMTP_PASS) ? {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    } : (process.env.EMAIL_SERVER_USER && process.env.EMAIL_SERVER_PASSWORD) ? {
-      user: process.env.EMAIL_SERVER_USER!,
-      pass: process.env.EMAIL_SERVER_PASSWORD!,
-    } : undefined,
-  })
-  return transporter
+export interface SendEmailOptions {
+  to: string | string[];
+  subject: string;
+  html: string;
+  from?: string;
 }
 
 export async function sendEmail(opts: SendEmailOptions) {
-  const tx = ensureTransporter()
-  if (!tx) return { sent: false, reason: 'not-configured' }
-  try {
-    const info = await tx.sendMail({
-      from: opts.from || process.env.FROM_EMAIL || process.env.EMAIL_FROM || 'no-reply@localhost',
-      to: opts.to,
-      subject: opts.subject,
-      text: opts.text || opts.html?.replace(/<[^>]+>/g, '') || '',
-      html: opts.html,
-    })
-    return { sent: true, id: info.messageId }
-  } catch (e) {
-    console.error('Email send error:', e)
-    return { sent: false, reason: 'error' }
+  if (!process.env.RESEND_API_KEY) {
+    console.error('❌ RESEND_API_KEY not configured');
+    return { sent: false, reason: 'not-configured' };
   }
+
+  try {
+    const resendClient = getResendClient();
+    if (!resendClient) {
+      console.error('❌ Failed to initialize Resend client');
+      return { sent: false, reason: 'client-init-failed' };
+    }
+
+    const from = opts.from || process.env.EMAIL_FROM || 'onboarding@resend.dev';
+    
+    console.log('📧 Sending email via Resend:', {
+      from,
+      to: opts.to,
+      subject: opts.subject
+    });
+
+    const { data, error } = await resendClient.emails.send({
+      from: `${process.env.EMAIL_FROM_NAME || 'H2O Plumbers'} <${from}>`,
+      to: Array.isArray(opts.to) ? opts.to : [opts.to],
+      subject: opts.subject,
+      html: opts.html,
+    });
+
+    if (error) {
+      console.error('❌ Resend email error:', error);
+      return { sent: false, reason: 'error', error: error.message };
+    }
+
+    console.log('✅ Email sent successfully via Resend! ID:', data?.id);
+    return { sent: true, id: data?.id };
+  } catch (error: any) {
+    console.error('❌ Resend email error:', error);
+    return { sent: false, reason: 'error', error: error.message };
+  }
+}
+
+// Contact form notification email
+export async function sendContactFormEmail(data: {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+  formType?: string;
+  leadId?: string;
+}) {
+  const { name, email, phone, message, formType = 'general', leadId } = data;
+
+  return sendEmail({
+    to: process.env.CONTACT_EMAIL || process.env.NOTIFICATION_EMAIL || 'office@h2oplumbingllc.net',
+    subject: `🔔 New ${formType.toUpperCase()} Form Submission - ${name}`,
+    html: `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <div style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; padding: 30px; border-radius: 10px 10px 0 0; text-align: center;">
+            <h1 style="margin: 0; font-size: 28px;">🔧 New Form Submission</h1>
+            <p style="margin: 10px 0 0 0; opacity: 0.9; font-size: 14px;">${BUSINESS_DATA.name}</p>
+          </div>
+          
+          <div style="background: #f8fafc; padding: 30px; border: 1px solid #e2e8f0; border-top: none;">
+            <div style="background: white; padding: 25px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
+              <h2 style="color: #dc2626; margin-top: 0; font-size: 20px; border-bottom: 2px solid #dc2626; padding-bottom: 10px;">Customer Information</h2>
+              
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                  <td style="padding: 12px 0; font-weight: bold; width: 120px; color: #64748b;">Name:</td>
+                  <td style="padding: 12px 0; color: #1e293b;">${name}</td>
+                </tr>
+                <tr style="background: #f8fafc;">
+                  <td style="padding: 12px 0; font-weight: bold; color: #64748b;">Phone:</td>
+                  <td style="padding: 12px 0;"><a href="tel:${phone}" style="color: #dc2626; text-decoration: none; font-weight: 600;">${phone}</a></td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0; font-weight: bold; color: #64748b;">Email:</td>
+                  <td style="padding: 12px 0;"><a href="mailto:${email}" style="color: #dc2626; text-decoration: none;">${email}</a></td>
+                </tr>
+                ${leadId ? `
+                <tr style="background: #f8fafc;">
+                  <td style="padding: 12px 0; font-weight: bold; color: #64748b;">Lead ID:</td>
+                  <td style="padding: 12px 0; color: #1e293b; font-family: monospace;">${leadId}</td>
+                </tr>
+                ` : ''}
+              </table>
+            </div>
+
+            <div style="background: white; padding: 25px; border-radius: 8px; border: 1px solid #e2e8f0;">
+              <h2 style="color: #dc2626; margin-top: 0; font-size: 20px; border-bottom: 2px solid #dc2626; padding-bottom: 10px;">Message</h2>
+              <div style="background: #f8fafc; padding: 20px; border-radius: 6px; border-left: 4px solid #dc2626;">
+                <p style="margin: 0; white-space: pre-wrap; line-height: 1.8; color: #1e293b;">${message}</p>
+              </div>
+            </div>
+
+            <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 20px; margin-top: 20px;">
+              <h3 style="color: #92400e; margin-top: 0; font-size: 16px; display: flex; align-items: center;">
+                ⚡ Quick Actions
+              </h3>
+              <ul style="margin: 10px 0 0 0; padding-left: 20px; color: #92400e;">
+                <li style="margin-bottom: 8px;">Call <a href="tel:${phone}" style="color: #dc2626; font-weight: 600;">${phone}</a> within 15 minutes</li>
+                <li style="margin-bottom: 8px;">Send confirmation email to <a href="mailto:${email}" style="color: #dc2626;">${email}</a></li>
+                <li>Log interaction in CRM</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="background: #1e293b; color: white; padding: 20px; border-radius: 0 0 10px 10px; text-align: center;">
+            <p style="margin: 0; font-size: 12px; opacity: 0.8;">
+              ${BUSINESS_DATA.name} Contact Form<br>
+              Received: ${new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })}<br>
+              <a href="tel:${BUSINESS_DATA.phoneRaw}" style="color: #60a5fa; text-decoration: none;">${BUSINESS_DATA.phone}</a> • 
+              <a href="mailto:${BUSINESS_DATA.email}" style="color: #60a5fa; text-decoration: none;">${BUSINESS_DATA.email}</a>
+            </p>
+          </div>
+        </body>
+      </html>
+    `,
+  });
 }
 
 interface BookingConfirmationData {
@@ -96,14 +189,14 @@ export async function sendBookingConfirmation(data: BookingConfirmationData) {
           </ul>
         </div>
         
-        <p>If you need to reschedule or have questions, please call us at <strong>${process.env.BUSINESS_PHONE}</strong>.</p>
+        <p>If you need to reschedule or have questions, please call us at <strong>${BUSINESS_DATA.phone}</strong>.</p>
         
         <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
         
         <p style="color: #6b7280; font-size: 14px;">
-          H2O Plumbing<br>
-          ${process.env.BUSINESS_EMAIL}<br>
-          ${process.env.BUSINESS_PHONE}
+          ${BUSINESS_DATA.name}<br>
+          ${BUSINESS_DATA.email}<br>
+          ${BUSINESS_DATA.phone}
         </p>
       </div>
     `,

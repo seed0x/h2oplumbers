@@ -147,7 +147,7 @@ export function PlumbingChatbot() {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 rounded-2xl w-14 h-14 shadow-xl z-50 bg-gradient-to-br from-brand-cyan to-brand-turquoise hover:shadow-2xl text-white transition-all duration-300 hover:scale-105 flex items-center justify-center group"
+        className="fixed bottom-24 right-6 rounded-2xl w-14 h-14 shadow-xl z-50 bg-gradient-to-br from-brand-cyan to-brand-turquoise hover:shadow-2xl text-white transition-all duration-300 hover:scale-105 flex items-center justify-center group"
         aria-label="Open chat assistant"
       >
         <MessageCircle className="h-6 w-6 group-hover:scale-110 transition-transform" />
@@ -156,7 +156,7 @@ export function PlumbingChatbot() {
   }
 
   return (
-    <Card className="fixed bottom-6 right-6 w-96 h-[500px] shadow-2xl z-50 flex flex-col border-2 border-slate-200 overflow-hidden rounded-2xl">
+    <Card className="fixed bottom-24 right-6 w-96 h-[500px] shadow-2xl z-50 flex flex-col border-2 border-slate-200 overflow-hidden rounded-2xl">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 bg-gradient-to-r from-brand-cyan to-brand-turquoise text-white">
         <CardTitle className="text-lg font-bold">Chat with H2O Plumbing</CardTitle>
         <button

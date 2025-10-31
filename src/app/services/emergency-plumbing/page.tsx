@@ -1,19 +1,40 @@
-import { Metadata } from 'next';
+'use client'
+
+import { useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { Clock, Phone, AlertTriangle, Wrench, Shield, Star, Home, ChevronRight } from 'lucide-react';
 import { BUSINESS_DATA } from '@/lib/business-data';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Image from 'next/image';
 
-export const metadata: Metadata = {
-  title: `Same-Day Plumber Vancouver, Battle Ground, Longview WA | Clark & Cowlitz County | H2O`,
-  description: `Same-day plumber serving Vancouver, Battle Ground, Longview, Camas, Washougal, Ridgefield, Woodland. Clark County & Cowlitz County. Burst pipes, severe leaks, sewer backups. Licensed, insured, fast response. Call ${BUSINESS_DATA.phone}.`,
-  keywords: `same day plumber Vancouver WA, emergency plumber Longview, burst pipe Battle Ground, urgent plumbing Camas Washougal, emergency plumber Clark County Cowlitz County`,
-};
-
 export default function SameDayPlumbingPage() {
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.phone || !formData.service) return;
+
+    setIsSubmitting(true);
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          message: `Emergency service request: ${formData.service}`,
+          formType: 'general'
+        })
+      });
+      alert('Request received! We\'ll contact you immediately.');
+      setFormData({ name: '', email: '', phone: '', service: '' });
+    } catch (error) {
+      alert('Error submitting. Please call us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="min-h-screen">
       {/* Breadcrumbs */}
@@ -89,37 +110,66 @@ export default function SameDayPlumbingPage() {
                   <h2 className="text-2xl font-heading font-bold text-slate-900 mb-2">Get Help Right Now</h2>
                   <p className="text-sm text-slate-600">Same-day service • Licensed experts • Fast response</p>
                 </div>
-                <form className="space-y-4" aria-label="Request service quote form">
+                <form onSubmit={handleSubmit} className="space-y-4" aria-label="Request service quote form">
                   <div>
                     <label className="sr-only" htmlFor="hero-name">Name</label>
-                    <Input id="hero-name" placeholder="Your Name" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
+                    <Input 
+                      id="hero-name" 
+                      placeholder="Your Name" 
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      required
+                      className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" 
+                    />
+                  </div>
+                  <div>
+                    <label className="sr-only" htmlFor="hero-email">Email Address</label>
+                    <Input 
+                      id="hero-email" 
+                      type="email"
+                      placeholder="Email Address" 
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      required
+                      className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" 
+                    />
                   </div>
                   <div>
                     <label className="sr-only" htmlFor="hero-phone">Phone Number</label>
-                    <Input id="hero-phone" type="tel" placeholder="Phone Number" className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" />
+                    <Input 
+                      id="hero-phone" 
+                      type="tel" 
+                      placeholder="Phone Number" 
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      required
+                      className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan" 
+                    />
                   </div>
                   <div>
-                    <Select>
-                      <SelectTrigger className="text-black border-slate-300 focus:border-brand-cyan focus:ring-brand-cyan">
-                        <SelectValue placeholder="Service Needed" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="emergency">Same-Day Service</SelectItem>
-                        <SelectItem value="drain-cleaning">Drain Cleaning</SelectItem>
-                        <SelectItem value="water-heater">Water Heater Repair</SelectItem>
-                        <SelectItem value="camera-inspection">Camera Inspection</SelectItem>
-                        <SelectItem value="repipe">Repipe & Pipe Repair</SelectItem>
-                        <SelectItem value="bathroom-remodel">Bathroom Remodel</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <select
+                      value={formData.service}
+                      onChange={(e) => setFormData({...formData, service: e.target.value})}
+                      required
+                      className="w-full h-10 px-3 py-2 text-black bg-white border border-slate-300 rounded-md focus:border-brand-cyan focus:ring-2 focus:ring-brand-cyan focus:outline-none"
+                    >
+                      <option value="">Service Needed</option>
+                      <option value="emergency">Same-Day Service</option>
+                      <option value="drain-cleaning">Drain Cleaning</option>
+                      <option value="water-heater">Water Heater Repair</option>
+                      <option value="camera-inspection">Camera Inspection</option>
+                      <option value="repipe">Repipe & Pipe Repair</option>
+                      <option value="bathroom-remodel">Bathroom Remodel</option>
+                      <option value="other">Other</option>
+                    </select>
                   </div>
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold py-5 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    disabled={isSubmitting}
+                    className="w-full bg-brand-cyan hover:bg-brand-cyan-dark text-white font-bold py-5 text-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50"
                   >
-                    Get Help Now
+                    {isSubmitting ? 'Sending...' : 'Get Help Now'}
                   </Button>
                 </form>
                 <div className="flex items-center justify-center gap-4 mt-5 text-xs text-slate-500">

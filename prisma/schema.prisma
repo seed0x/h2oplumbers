@@ -1,4 +1,3 @@
-// All County Plumbing Database Schema
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,22 +7,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// NextAuth.js required tables
 model Account {
   id                String  @id @default(cuid())
   userId            String
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
   @@map("accounts")
@@ -48,9 +45,8 @@ model User {
   role          UserRole  @default(USER)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-
-  accounts Account[]
-  sessions Session[]
+  accounts      Account[]
+  sessions      Session[]
 
   @@map("users")
 }
@@ -64,29 +60,27 @@ model VerificationToken {
   @@map("verification_tokens")
 }
 
-// Custom application tables
 model Customer {
-  id          String   @id @default(cuid())
-  firstName   String
-  lastName    String
-  email       String   @unique
-  phone       String
-  address     String?
-  city        String?
-  state       String?  @default("WA")
-  zipCode     String?
-  latitude    Float?
-  longitude   Float?
-  notes       String?  @db.Text
-  source      String?  // How they found us
-  isActive    Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
+  id           String        @id @default(cuid())
+  firstName    String
+  lastName     String
+  email        String        @unique
+  phone        String
+  address      String?
+  city         String?
+  state        String?       @default("WA")
+  zipCode      String?
+  latitude     Float?
+  longitude    Float?
+  notes        String?
+  source       String?
+  isActive     Boolean       @default(true)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
   appointments Appointment[]
   leads        Lead[]
   reviews      Review[]
-  
+
   @@map("customers")
 }
 
@@ -95,16 +89,16 @@ model Appointment {
   customerId      String
   serviceId       String
   scheduledAt     DateTime
-  duration        Int               @default(60) // minutes
+  duration        Int               @default(60)
   status          AppointmentStatus @default(SCHEDULED)
   priority        Priority          @default(NORMAL)
-  description     String?           @db.Text
+  description     String?
   address         String
   city            String
   state           String            @default("WA")
   zipCode         String
-  technicianNotes String?           @db.Text
-  internalNotes   String?           @db.Text
+  technicianNotes String?
+  internalNotes   String?
   estimatedCost   Decimal?          @db.Decimal(10, 2)
   actualCost      Decimal?          @db.Decimal(10, 2)
   completedAt     DateTime?
@@ -114,9 +108,8 @@ model Appointment {
   followUpSentAt  DateTime?
   createdAt       DateTime          @default(now())
   updatedAt       DateTime          @updatedAt
-
-  customer Customer @relation(fields: [customerId], references: [id])
-  service  Service  @relation(fields: [serviceId], references: [id])
+  customer        Customer          @relation(fields: [customerId], references: [id])
+  service         Service           @relation(fields: [serviceId], references: [id])
 
   @@index([scheduledAt])
   @@index([status])
@@ -125,44 +118,42 @@ model Appointment {
 }
 
 model Service {
-  id               String   @id @default(cuid())
-  name             String
-  description      String   @db.Text
-  category         String
-  basePrice        Decimal  @db.Decimal(10, 2)
-  hourlyRate       Decimal? @db.Decimal(10, 2)
-  isEmergency      Boolean  @default(false)
-  isActive         Boolean  @default(true)
-  estimatedDuration Int     @default(60) // minutes
-  metadata         Json?    // Additional service data
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
-
-  appointments Appointment[]
-  leads        Lead[]
+  id                String        @id @default(cuid())
+  name              String
+  description       String
+  category          String
+  basePrice         Decimal       @db.Decimal(10, 2)
+  hourlyRate        Decimal?      @db.Decimal(10, 2)
+  isEmergency       Boolean       @default(false)
+  isActive          Boolean       @default(true)
+  estimatedDuration Int           @default(60)
+  metadata          Json?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  appointments      Appointment[]
+  leads             Lead[]
 
   @@map("services")
 }
 
 model Review {
-  id           String     @id @default(cuid())
+  id           String    @id @default(cuid())
   customerId   String?
-  googleId     String?    @unique // Google Reviews ID
-  platform     String     @default("google") // google, yelp, facebook, etc.
-  rating       Int        // 1-5 stars
+  googleId     String?   @unique
+  platform     String    @default("google")
+  rating       Int
   title        String?
-  content      String     @db.Text
+  content      String
   authorName   String
   authorImage  String?
-  isPublished  Boolean    @default(false)
-  isVerified   Boolean    @default(false)
+  isPublished  Boolean   @default(false)
+  isVerified   Boolean   @default(false)
   reviewDate   DateTime
-  responseText String?    @db.Text
+  responseText String?
   responseDate DateTime?
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
-
-  customer Customer? @relation(fields: [customerId], references: [id])
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  customer     Customer? @relation(fields: [customerId], references: [id])
 
   @@index([platform])
   @@index([rating])
@@ -171,33 +162,32 @@ model Review {
 }
 
 model Lead {
-  id              String     @id @default(cuid())
-  customerId      String?
-  serviceId       String?
-  name            String
-  email           String
-  phone           String
-  address         String?
-  city            String?
-  state           String?    @default("WA")
-  zipCode         String?
-  description     String     @db.Text
-  urgency         Priority   @default(NORMAL)
-  preferredDate   DateTime?
-  preferredTime   String?    // "morning", "afternoon", "evening"
-  budget          Decimal?   @db.Decimal(10, 2)
-  source          String?    // website, google, referral, etc.
-  status          LeadStatus @default(NEW)
-  assignedTo      String?    // User ID
-  followUpDate    DateTime?
-  convertedAt     DateTime?  // When lead became customer
-  notes           String?    @db.Text
-  metadata        Json?      // Additional lead data
-  createdAt       DateTime   @default(now())
-  updatedAt       DateTime   @updatedAt
-
-  customer Customer? @relation(fields: [customerId], references: [id])
-  service  Service?  @relation(fields: [serviceId], references: [id])
+  id            String     @id @default(cuid())
+  customerId    String?
+  serviceId     String?
+  name          String
+  email         String
+  phone         String
+  address       String?
+  city          String?
+  state         String?    @default("WA")
+  zipCode       String?
+  description   String
+  urgency       Priority   @default(NORMAL)
+  preferredDate DateTime?
+  preferredTime String?
+  budget        Decimal?   @db.Decimal(10, 2)
+  source        String?
+  status        LeadStatus @default(NEW)
+  assignedTo    String?
+  followUpDate  DateTime?
+  convertedAt   DateTime?
+  notes         String?
+  metadata      Json?
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  customer      Customer?  @relation(fields: [customerId], references: [id])
+  service       Service?   @relation(fields: [serviceId], references: [id])
 
   @@index([status])
   @@index([createdAt])
@@ -206,43 +196,43 @@ model Lead {
 }
 
 model ServiceArea {
-  id          String   @id @default(cuid())
-  zipCode     String   @unique
-  city        String
-  state       String   @default("WA")
-  county      String?
-  isActive    Boolean  @default(true)
-  travelTime  Int?     // minutes from base
-  surcharge   Decimal? @db.Decimal(8, 2)
+  id           String   @id @default(cuid())
+  zipCode      String   @unique
+  city         String
+  state        String   @default("WA")
+  county       String?
+  isActive     Boolean  @default(true)
+  travelTime   Int?
+  surcharge    Decimal? @db.Decimal(8, 2)
   emergencyFee Decimal? @db.Decimal(8, 2)
-  notes       String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  notes        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 
   @@map("service_areas")
 }
 
 model EmergencyQueue {
-  id          String           @id @default(cuid())
-  customerId  String?
-  name        String
-  phone       String
-  email       String?
-  address     String
-  city        String
-  state       String           @default("WA")
-  zipCode     String
-  description String           @db.Text
-  severity    EmergencySeverity @default(MODERATE)
-  status      EmergencyStatus  @default(PENDING)
-  assignedTo  String?          // User ID
+  id               String            @id @default(cuid())
+  customerId       String?
+  name             String
+  phone            String
+  email            String?
+  address          String
+  city             String
+  state            String            @default("WA")
+  zipCode          String
+  description      String
+  severity         EmergencySeverity @default(MODERATE)
+  status           EmergencyStatus   @default(PENDING)
+  assignedTo       String?
   estimatedArrival DateTime?
-  arrivedAt   DateTime?
-  completedAt DateTime?
-  totalCost   Decimal?         @db.Decimal(10, 2)
-  notes       String?          @db.Text
-  createdAt   DateTime         @default(now())
-  updatedAt   DateTime         @updatedAt
+  arrivedAt        DateTime?
+  completedAt      DateTime?
+  totalCost        Decimal?          @db.Decimal(10, 2)
+  notes            String?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
 
   @@index([status])
   @@index([createdAt])
@@ -251,24 +241,23 @@ model EmergencyQueue {
 }
 
 model Newsletter {
-  id              String   @id @default(cuid())
-  email           String   @unique
-  firstName       String?
-  lastName        String?
-  isActive        Boolean  @default(true)
-  isVerified      Boolean  @default(false)
-  verificationToken String? @unique
-  source          String?  // Where they subscribed
-  tags            String[] // Interests/preferences
-  subscribedAt    DateTime @default(now())
-  unsubscribedAt  DateTime?
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  id                String    @id @default(cuid())
+  email             String    @unique
+  firstName         String?
+  lastName          String?
+  isActive          Boolean   @default(true)
+  isVerified        Boolean   @default(false)
+  verificationToken String?   @unique
+  source            String?
+  tags              String[]
+  subscribedAt      DateTime  @default(now())
+  unsubscribedAt    DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
 
   @@map("newsletter")
 }
 
-// Enums
 enum UserRole {
   USER
   ADMIN

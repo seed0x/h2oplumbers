@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
-import { sendEmail } from '@/lib/email';
+import { sendContactFormEmail } from '@/lib/email';
 import { validateHoneypot } from '@/lib/security';
 import { prisma } from '@/lib/prisma';
 
@@ -313,13 +313,25 @@ function getSuccessMessage(formType: string): string {
 
 // Helper function to send form notifications
 async function sendFormNotification(formType: string, data: any, leadId: string) {
-  const { name, email, phone } = data;
-  const urgencyFlag = formType === 'emergency' ? '🚨 EMERGENCY - ' : '';
+  const { name, email, phone, ...formData } = data;
   
-  const emailResult = await sendEmail({
-    to: process.env.CONTACT_NOTIFICATION_EMAIL || process.env.NOTIFICATION_EMAIL || 'scheduling@h2oplumbers.com',
-    subject: `${urgencyFlag}New ${formType.toUpperCase()} Form - ${name}`,
-    html: getEmailTemplate(formType, data, leadId)
+  // Extract message based on form type
+  let message = '';
+  if (formType === 'general') {
+    message = formData.message || '';
+  } else if (formType === 'emergency' || formType === 'service') {
+    message = formData.description || '';
+  } else if (formType === 'construction') {
+    message = `Project: ${formData.projectType || 'N/A'}\n${formData.description || ''}`;
+  }
+  
+  const emailResult = await sendContactFormEmail({
+    name,
+    email,
+    phone,
+    message,
+    formType,
+    leadId
   });
 
   if (!emailResult.sent) {
@@ -327,103 +339,5 @@ async function sendFormNotification(formType: string, data: any, leadId: string)
   }
 }
 
-// Helper function to generate email template
-function getEmailTemplate(formType: string, data: any, leadId: string): string {
-  const { name, email, phone, ...formData } = data;
-  
-  let formSpecificContent = '';
-  
-  switch (formType) {
-    case 'emergency':
-      formSpecificContent = `
-        <div style="background: #fef2f2; border-left: 4px solid #dc2626; padding: 20px; margin: 20px 0;">
-          <h3 style="color: #dc2626; margin-top: 0;">🚨 EMERGENCY REQUEST</h3>
-          <p><strong>Address:</strong> ${formData.address}</p>
-          <p><strong>Zip Code:</strong> ${formData.zipCode}</p>
-          <p><strong>Severity:</strong> ${formData.severity}</p>
-          <p><strong>Description:</strong></p>
-          <p style="white-space: pre-line;">${formData.description}</p>
-        </div>
-      `;
-      break;
-    case 'service':
-      formSpecificContent = `
-        <div style="background: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <h3 style="color: #92400e; margin-top: 0;">Service Request</h3>
-          <p><strong>Address:</strong> ${formData.address}</p>
-          <p><strong>Zip Code:</strong> ${formData.zipCode}</p>
-          <p><strong>Preferred Time:</strong> ${formData.preferredTime || 'Any time'}</p>
-          <p><strong>Urgency:</strong> ${formData.urgency}</p>
-          <p><strong>Description:</strong></p>
-          <p style="white-space: pre-line;">${formData.description}</p>
-        </div>
-      `;
-      break;
-    case 'construction':
-      formSpecificContent = `
-        <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <h3 style="color: #15803d; margin-top: 0;">Construction Project</h3>
-          <p><strong>Project Address:</strong> ${formData.projectAddress}</p>
-          <p><strong>Zip Code:</strong> ${formData.zipCode}</p>
-          <p><strong>Project Type:</strong> ${formData.projectType}</p>
-          <p><strong>Timeline:</strong> ${formData.timeline || 'Not specified'}</p>
-          <p><strong>Budget:</strong> ${formData.budget || 'Not specified'}</p>
-          ${formData.builderName ? `<p><strong>Builder:</strong> ${formData.builderName}</p>` : ''}
-          ${formData.builderContact ? `<p><strong>Builder Contact:</strong> ${formData.builderContact}</p>` : ''}
-          <p><strong>Description:</strong></p>
-          <p style="white-space: pre-line;">${formData.description}</p>
-        </div>
-      `;
-      break;
-    case 'general':
-    default:
-      formSpecificContent = `
-        <div style="background: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <h3 style="color: #92400e; margin-top: 0;">${formData.subject || 'General Inquiry'}</h3>
-          <p style="white-space: pre-line; line-height: 1.6;">${formData.message}</p>
-        </div>
-      `;
-      break;
-  }
-  
-  return `
-    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #1e40af; margin-bottom: 20px;">New ${formType.charAt(0).toUpperCase() + formType.slice(1)} Form Submission</h2>
-      
-      <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
-        <h3 style="color: #374151; margin-top: 0;">Customer Information</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-        <p><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></p>
-        <p><strong>Lead ID:</strong> ${leadId}</p>
-        <p><strong>Submitted:</strong> ${new Date().toLocaleString('en-US', { 
-          timeZone: 'America/Los_Angeles',
-          dateStyle: 'full',
-          timeStyle: 'short'
-        })}</p>
-      </div>
-      
-      ${formSpecificContent}
-      
-      <div style="background: #ecfccb; padding: 15px; border-radius: 8px; margin: 20px 0;">
-        <h4 style="color: #365314; margin-top: 0;">Recommended Actions</h4>
-        <ul style="margin-bottom: 0; color: #365314;">
-          <li>Respond within ${formType === 'emergency' ? '15 minutes' : '2 hours during business hours'}</li>
-          <li>Call ${phone} ${formType === 'emergency' ? 'IMMEDIATELY' : 'for urgent plumbing issues'}</li>
-          <li>Send service confirmation to ${email}</li>
-          ${formType === 'emergency' ? '<li><strong>Dispatch emergency team NOW</strong></li>' : ''}
-        </ul>
-      </div>
-      
-      <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
-      
-      <p style="color: #6b7280; font-size: 14px; text-align: center;">
-        H2O Plumbers Contact Form<br>
-        <a href="tel:+13608832506">(360) 883-2506</a> • 
-        <a href="mailto:scheduling@h2oplumbers.com">scheduling@h2oplumbers.com</a>
-      </p>
-    </div>
-  `;
-}
 
 

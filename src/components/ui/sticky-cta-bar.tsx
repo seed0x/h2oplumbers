@@ -27,7 +27,7 @@ export function StickyCtaBar() {
 
   return (
     <div 
-      className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t-2 border-slate-200 shadow-2xl transform transition-transform duration-300 ease-in-out"
+      className="fixed bottom-0 left-0 right-0 z-40 backdrop-blur-xl bg-white/95 border-t-2 border-brand-cyan shadow-2xl transform transition-transform duration-300 ease-in-out"
       style={{ transform: isVisible ? 'translateY(0)' : 'translateY(100%)' }}
     >
       {/* Brand accent line */}
@@ -37,29 +37,30 @@ export function StickyCtaBar() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
           {/* Text */}
           <div className="text-center sm:text-left">
-            <p className="text-slate-900 font-bold text-base">
-              Need Plumbing Service Today?
+            <p className="text-slate-900 font-heading font-bold text-base md:text-lg">
+              Need Service Today?
             </p>
-            <p className="text-slate-600 text-xs">
-              Same-day service • Licensed & Insured
+            <p className="text-slate-600 text-xs md:text-sm font-medium">
+              Same-day • Licensed & Insured
             </p>
           </div>
           
           {/* CTA Buttons */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-3">
             <a
               href={`tel:${BUSINESS_DATA.phoneRaw}`}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-cyan to-brand-turquoise hover:from-brand-cyan-dark hover:to-brand-cyan text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-all duration-200 hover:scale-105 shadow-lg"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-cyan to-brand-turquoise hover:from-brand-cyan-dark hover:to-brand-cyan text-white px-6 py-3 rounded-xl font-bold text-sm md:text-base transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              <Phone className="w-4 h-4" />
-              <span>{BUSINESS_DATA.phone}</span>
+              <Phone className="w-4 h-4 md:w-5 md:h-5" />
+              <span className="hidden sm:inline">{BUSINESS_DATA.phone}</span>
+              <span className="sm:hidden">Call Now</span>
             </a>
             
             <Link
               href="/booking"
-              className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-brand-cyan border-2 border-brand-cyan px-5 py-2.5 rounded-lg font-bold text-sm transition-all duration-200 hover:scale-105 shadow-lg"
+              className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-brand-cyan border-2 border-brand-cyan hover:border-brand-cyan-dark px-6 py-3 rounded-xl font-bold text-sm md:text-base transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-4 h-4 md:w-5 md:h-5" />
               <span>Book Online</span>
             </Link>
           </div>

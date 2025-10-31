@@ -14,19 +14,19 @@
 - [x] Run `npm run build` - SUCCESS (55 pages generated)
 - [x] Run `npm run lint` - PASSED (3 minor warnings)
 - [x] Run `npm run type-check` - PASSED
-- [ ] Deploy to Vercel and verify
+- [x] Deploy to Vercel (DEPLOYING NOW)
 - [ ] Test redirects working on Vercel
-- [ ] Update NEXT_PUBLIC_SITE_URL environment variable to h2oplumbers.com
+- [x] NEXT_PUBLIC_SITE_URL environment variable added
 - [x] Set up production database (Prisma) and push schema
-- [ ] Add all environment variables to Vercel
+- [x] Add all environment variables to Vercel (11 vars)
 
 ### 2. SEO Verification
 - [x] Test all redirects work correctly (verified on Vercel)
 - [x] Verify sitemap.xml generates at /sitemap.xml (working)
 - [x] Check robots.txt is accessible at /robots.txt (working)
 - [ ] Add canonical tags to pages with duplicates
-- [ ] Implement LocalBusiness schema on homepage
-- [ ] Add Service schema to service pages
+- [x] Implement LocalBusiness schema on homepage
+- [x] Add Service schema to service pages (already in code)
 - [x] Test meta titles and descriptions are rendering (done for Vancouver, homepage, fixture installation)
 
 ### 3. Content Review
@@ -88,9 +88,9 @@
   - /service-areas/
 
 ### 7. Google Analytics
-- [ ] Set up GA4 property (if not already done)
-- [ ] Add tracking code to all pages
-- [ ] Verify data collection
+- [x] Set up GA4 property (existing H2O property)
+- [x] Add tracking code to all pages (G-G4N95KVWB8)
+- [ ] Verify data collection (after deployment)
 - [ ] Set up conversion goals
 - [ ] Create custom dashboards for:
   - Service page performance

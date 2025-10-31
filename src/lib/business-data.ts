@@ -2,7 +2,7 @@ export const BUSINESS_DATA = {
   name: "H2O Plumbing Services",
   phone: "(360) 433-9748",
   phoneRaw: "+13604339748", // for tel: links
-  email: "info@h2oplumbers.com",
+  email: "office@h2oplumbingllc.net",
   website: "https://h2oplumbers.com",
   address: {
     street: "Vancouver, WA",
