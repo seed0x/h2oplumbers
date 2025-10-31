@@ -117,7 +117,7 @@ export default function HomePage() {
 
   return (
     <>
-      {/* <LocalBusinessStructuredData /> */}
+      <LocalBusinessStructuredData />
       <SmoothScroll />
       <SkipNavigation />
       <FloatingShareButton />
