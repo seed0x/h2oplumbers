@@ -18,16 +18,24 @@ export const BUSINESS_DATA = {
   },
   serviceArea: {
     primary: "Vancouver, WA",
-    counties: ["Clark County, WA"],
+    counties: ["Clark County, WA", "Cowlitz County, WA", "Skamania County, WA"],
     cities: [
+      // Clark County
       "Vancouver, WA",
       "Camas, WA", 
       "Washougal, WA",
       "Battle Ground, WA",
       "Ridgefield, WA",
-      "La Center, WA"
+      "La Center, WA",
+      // Cowlitz County
+      "Longview, WA",
+      "Kelso, WA",
+      "Woodland, WA",
+      // Skamania County
+      "Stevenson, WA",
+      "North Bonneville, WA"
     ],
-    radius: "25 miles"
+    radius: "40 miles"
   },
   hours: {
     weekdays: "Monday - Friday: 7:00 AM - 3:30 PM",

@@ -1,0 +1,48 @@
+# ----------------------------------------
+# Landing page: Landing page
+# Account: H2O Plumbers
+# Property: www.h2oplumbers.com
+# ----------------------------------------
+# 
+# All Users
+# Start date: 20250101
+# End date: 20251030
+Landing page,Sessions,Active users,New users,Average engagement time per session,Key events,Total revenue,Session key event rate
+/,5941,3812,7397,84.07911126073051,0,0,0
+/contact-us,240,144,267,17.5125,0,0,0
+/h2o-specials,124,74,145,20.64516129032258,0,0,0
+/vancouverwa,122,76,148,29.25409836065574,0,0,0
+/drainc,88,54,104,20.636363636363637,0,0,0
+/about,86,54,98,32.22093023255814,0,0,0
+(not set),84,51,0,5.380952380952381,0,0,0
+/vancouverw,81,56,96,24.814814814814813,0,0,0
+/plumbing,78,39,70,9.974358974358974,0,0,0
+/vancouvers,58,35,65,16.344827586206897,0,0,0
+/myh2o,49,35,51,9.10204081632653,0,0,0
+/drain,46,23,31,6.260869565217392,0,0,0
+/vancouverrepair,41,27,49,51.048780487804876,0,0,0
+/privacy-policy,38,24,46,5.868421052631579,0,0,0
+/boilermate-installation-and-service,33,21,42,37.93939393939394,0,0,0
+/vancouverwater,32,20,38,18.625,0,0,0
+/vancouverf,28,19,34,7.892857142857143,0,0,0
+/repipevancouverwa,21,16,32,33.76190476190476,0,0,0
+/repipespecialists,15,10,20,16.866666666666667,0,0,0
+/resources,12,7,14,11.75,0,0,0
+/special-offers,12,7,14,11.166666666666666,0,0,0
+/category/water-heaters,11,6,11,11.181818181818182,0,0,0
+/piping-repair,10,8,15,15.8,0,0,0
+/water-heater-maintenance-a-step-by-step-guide,10,7,14,10.8,0,0,0
+/leaky-faucets-and-valve-issues,8,5,10,15.25,0,0,0
+/plumbingcommercial,8,4,8,17.5,0,0,0
+/repiping-project,8,5,10,8,0,0,0
+/tag/pex-pipe,8,5,10,10,0,0,0
+/author/h2oplumbing,7,5,10,16.142857142857142,0,0,0
+/category/all,7,4,8,13.571428571428571,0,0,0
+/404.html,6,6,6,7.666666666666667,0,0,0
+/tag/new-plumbing-pipe,6,5,10,12.833333333333334,0,0,0
+/author/h2oplumbing/page/2,3,3,3,5.666666666666667,0,0,0
+/category/fixtures,2,1,2,6.5,0,0,0
+/category/repiping,2,2,4,13,0,0,0
+/cdn-cgi/l/email-protection,1,1,1,11,0,0,0
+/leadership,1,1,1,0,0,0,0
+/team,1,1,1,0,0,0,0

@@ -1,19 +1,24 @@
-# Site Migration Deployment Checklist
+# H2O Plumbing - Site Migration Deployment Checklist
 
 ## Pre-Launch Preparation
 
-### 1. Code & Configuration ✅
-- [x] Add URL redirects to next.config.js
-- [x] Update sitemap with Search Console priorities
-- [x] Create robots.txt
-- [x] Fix redirects to work with trailing slashes
-- [x] Deploy to Vercel and verify
-- [x] Test redirects working on Vercel
-- [ ] Update NEXT_PUBLIC_SITE_URL environment variable to production domain
-- [ ] Verify all API keys and secrets are in production environment
-- [ ] Run `npm run build` to test production build (done via Vercel)
-- [ ] Run `npm run lint` to check for errors
-- [ ] Run `npm run type-check` for TypeScript errors
+### 1. Code & Configuration
+- [x] Review and update business data config (expanded to Clark, Cowlitz, Skamania counties)
+- [x] Analyze WordPress site data (GA, Search Console, sitemap)
+- [x] Create URL redirect mapping (see data/url-redirect-mapping.md)
+- [x] Add URL redirects from old WordPress URLs to next.config.js (40+ redirects)
+- [x] Optimize Vancouver WA page metadata for #1 rankings
+- [x] Update sitemap with correct domain (h2oplumbers.com)
+- [x] Update robots.txt with correct sitemap URL
+- [x] Enable LocalBusiness structured data on homepage
+- [x] Run `npm run build` - SUCCESS (55 pages generated)
+- [x] Run `npm run lint` - PASSED (3 minor warnings)
+- [x] Run `npm run type-check` - PASSED
+- [ ] Deploy to Vercel and verify
+- [ ] Test redirects working on Vercel
+- [ ] Update NEXT_PUBLIC_SITE_URL environment variable to h2oplumbers.com
+- [x] Set up production database (Prisma) and push schema
+- [ ] Add all environment variables to Vercel
 
 ### 2. SEO Verification
 - [x] Test all redirects work correctly (verified on Vercel)
@@ -34,35 +39,32 @@
 
 ## Email Configuration (CURRENT STEP)
 
-### 3A. Email Setup - MUST COMPLETE BEFORE DNS SWAP
-- [ ] **Complete Hostinger email setup for office@all-county-plumbing.net**
-- [ ] **Set a strong password and save it securely**
-- [ ] **Add environment variables to Vercel:**
+### 3A. Email Setup - Resend Configuration
+- [x] **Create Resend account and get API key**
+- [ ] **Add h2oplumbers.com domain to Resend**
+- [ ] **Configure DNS records for Resend domain verification**
+- [ ] **Verify domain in Resend dashboard**
+- [x] **Add environment variables to Vercel:**
   ```
-  SMTP_HOST=smtp.hostinger.com
-  SMTP_PORT=465
-  SMTP_SECURE=true
-  SMTP_USER=office@all-county-plumbing.net
-  SMTP_PASSWORD=[your password from Hostinger]
-  EMAIL_FROM=office@all-county-plumbing.net
-  BUSINESS_EMAIL=office@all-county-plumbing.net
-  BUSINESS_PHONE=(360) 883-2506
+  DATABASE_URL=postgres://...
+  PRISMA_ACCELERATE_URL=prisma+postgres://...
+  RESEND_API_KEY=re_Nxfoo3Dv_DQPkyTBea14D1qhvJrq7Vy24
+  FROM_EMAIL=onboarding@resend.dev (update after domain verified)
   ```
 - [ ] **Set variables for Production, Preview, and Development**
 - [ ] **Redeploy Vercel site after adding variables**
-- [ ] **Test contact form at https://allcountyplumbers.vercel.app/contact/**
-- [ ] **Test booking form at https://allcountyplumbers.vercel.app/booking/**
-- [ ] **Verify emails arrive at office@all-county-plumbing.net**
+- [ ] **Test contact form on Vercel staging URL**
+- [ ] **Test booking form on Vercel staging URL**
+- [ ] **Verify emails are being sent successfully**
 
 ## DNS & Domain Setup
 
 ### 4. Domain Configuration
-- [ ] Backup old site completely
-- [ ] Document current DNS settings from Hostinger
-- [x] Set up new hosting/deployment platform (Vercel - DONE)
-- [x] Deploy new site to staging URL first (https://allcountyplumbers.vercel.app/)
-- [x] Test staging site thoroughly (redirects working, pages loading)
-- [ ] Update DNS A/CNAME records to point to new hosting
+- [ ] Set up new hosting/deployment platform (Vercel)
+- [ ] Deploy new site to staging URL first (Vercel preview URL)
+- [ ] Test staging site thoroughly (forms, pages loading)
+- [ ] Add h2oplumbers.com domain to Vercel project
+- [ ] Update DNS A/CNAME records to point to Vercel
 - [ ] Keep TTL low (300s) for quick rollback if needed
 
 ### 5. SSL Certificate
@@ -73,18 +75,17 @@
 ## Search Console & Analytics
 
 ### 6. Google Search Console
-- [ ] Add new property for new site if domain changes
+- [ ] Add new property for h2oplumbers.com
 - [ ] Verify ownership via DNS or HTML file
-- [ ] Submit sitemap.xml (https://allcountyplumbers.com/sitemap.xml)
-- [ ] Use Change of Address tool (if domain changing)
+- [ ] Submit sitemap.xml (https://h2oplumbers.com/sitemap.xml)
 - [ ] Monitor crawl errors in Coverage report
 - [ ] Request re-indexing for top pages:
   - Homepage
   - /contact/
-  - /services/fixture-installation/ (was ADA bathroom)
-  - /services/drain-cleaning/
-  - /services/repipe/
-  - /service-areas/vancouver-wa-plumber/
+  - /services/
+  - /residential/
+  - /commercial/
+  - /service-areas/
 
 ### 7. Google Analytics
 - [ ] Set up GA4 property (if not already done)
@@ -106,25 +107,25 @@
 ## Monitoring & Validation
 
 ### 9. Post-Launch Checks (Day 1)
-- [ ] Test all top 20 old URLs redirect correctly
 - [ ] Verify sitemap is being crawled
 - [ ] Check Search Console for crawl errors
 - [ ] Monitor server logs for 404 errors
 - [ ] Test contact forms receiving submissions
-- [ ] Verify phone tracking working
+- [ ] Verify phone tracking working (if implemented)
 - [ ] Check page load speeds with Lighthouse
 - [ ] Test mobile responsiveness
+- [ ] Verify all pages loading correctly
 
 ### 10. Weekly Monitoring (Week 1-4)
 - [ ] Review Search Console performance data
-- [ ] Check for ranking drops on key terms:
-  - "all county plumbing"
-  - "plumbers vancouver wa"
+- [ ] Check for ranking improvements on key terms:
+  - "h2o plumbing"
+  - "plumbers battle ground wa"
   - "plumber near me"
+  - "residential plumbing battle ground"
 - [ ] Monitor click-through rates
 - [ ] Track conversion rates
 - [ ] Review server error logs
-- [ ] Check backlinks still pointing correctly
 
 ### 11. Monthly Review (Month 1-3)
 - [ ] Compare traffic vs old site baseline
@@ -137,11 +138,10 @@
 ## Backlink Maintenance
 
 ### 12. Top Backlink Verification
-Based on Search Console linking sites data:
-- [ ] Verify sociallink.com links (49 pages) still work
-- [ ] Check mytrueguard.com links (6 pages)
-- [ ] Confirm biaofclarkcounty.org links (5 pages)
-- [ ] Test nextdoor.com profile (4 pages)
+- [ ] Set up Google Business Profile and verify backlink
+- [ ] Submit to local directories (Yelp, Angi, HomeAdvisor)
+- [ ] Add to local business listings
+- [ ] Monitor backlink profile in Search Console
 - [ ] Update any broken backlinks manually
 
 ## Rollback Plan
@@ -155,13 +155,13 @@ Based on Search Console linking sites data:
 ## Key Performance Indicators
 
 ### 14. Success Metrics (3-month targets)
-- [ ] Homepage: Maintain 397+ clicks/month
-- [ ] "Plumbers Vancouver WA": Improve from position 38 to top 10
-- [ ] Overall organic traffic: Increase 20%
-- [ ] Contact form submissions: Maintain or improve
-- [ ] Phone calls from site: Track baseline and improve
-- [ ] ADA fixture page: 15+ clicks (was 14 on old URL)
-- [ ] Vancouver service area: 50+ clicks (currently 5)
+- [ ] Homepage: Establish baseline traffic
+- [ ] "Plumbers Battle Ground WA": Target top 10
+- [ ] Overall organic traffic: Track growth month-over-month
+- [ ] Contact form submissions: Set baseline and improve
+- [ ] Phone calls from site: Track and optimize
+- [ ] Service pages: Monitor engagement and conversions
+- [ ] Service area pages: Track local search performance
 
 ## Technical SEO Tasks
 
@@ -204,10 +204,10 @@ Based on Search Console linking sites data:
 ## Notes & Observations
 
 ### Critical Success Factors
-1. **Vancouver targeting** - This is your biggest opportunity (4,740 impressions/month)
-2. **Redirect accuracy** - All old URLs must redirect properly
-3. **Search Console monitoring** - Watch for coverage issues
-4. **Brand keywords** - Maintain strong positions (currently #4-5)
+1. **Local SEO** - Focus on Battle Ground and surrounding areas
+2. **Brand establishment** - Build H2O Plumbing brand presence
+3. **Search Console monitoring** - Watch for coverage issues and indexing
+4. **Email functionality** - Ensure lead capture is working properly
 5. **Local citations** - Keep NAP consistent everywhere
 
 ### Timeline Expectations
@@ -228,37 +228,37 @@ Based on Search Console linking sites data:
 ## Current Status Summary
 
 ### ✅ Completed:
-- SEO optimizations (Vancouver, homepage, ADA content)
-- 301 redirects configured and working
-- Vercel deployment live: https://allcountyplumbers.vercel.app/
-- robots.txt and sitemap.xml working
-- All redirect tests passing
+- Database created and schema pushed (Prisma)
+- Resend account created with API key
+- Local environment variables configured (.env.local)
+- Business data config reviewed
 
 ### 🔄 In Progress:
-- **Email setup (Hostinger)** - MUST complete before DNS swap
+- **Adding environment variables to Vercel**
+- **Resend domain verification setup**
 
-### ⏸️ Paused / Not Started:
-- Form testing (blocked by email setup)
-- DNS configuration
+### ⏸️ Next Steps:
+- Deploy to Vercel staging
+- Test email functionality
+- Configure DNS for domain
 - Google Search Console setup
 - Live deployment
 
 ## Final Pre-Launch Checklist
 
 Before changing DNS:
-- [x] Staging site fully tested (Vercel working)
-- [x] All redirects verified (308 redirects working)
+- [ ] Staging site fully tested (Vercel working)
+- [ ] Environment variables added to Vercel
 - [ ] **Email configuration completed and tested**
-- [ ] Backups completed
-- [ ] Team notified
+- [ ] Database migrations verified
 - [ ] Rollback plan documented
 - [ ] Monitoring tools ready
 - [ ] Search Console configured
-- [ ] Off-hours deployment scheduled
+- [ ] Off-hours deployment scheduled (optional for new site)
 
-**Vercel Staging URL**: https://allcountyplumbers.vercel.app/
-**Current Live Site**: Hostinger (WordPress)
-**Target Domain**: allcountyplumbers.com
+**Vercel Staging URL**: TBD after first deployment
+**Current Live Site**: h2oplumbers.com (WordPress)
+**Target Domain**: h2oplumbers.com (migrating to Next.js/Vercel)
 **Deployment Date**: _____________
 **Deployed By**: _____________
 **Rollback Deadline**: 72 hours

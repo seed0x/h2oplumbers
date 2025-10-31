@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
  
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://allcountyplumbing.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://h2oplumbers.com'
   
   // Priority based on Search Console data (clicks + impressions)
   const staticPages = [

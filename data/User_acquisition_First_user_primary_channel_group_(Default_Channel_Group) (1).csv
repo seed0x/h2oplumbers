@@ -1,0 +1,16 @@
+# ----------------------------------------
+# User acquisition: First user primary channel group (Default Channel Group)
+# Account: H2O Plumbers
+# Property: www.h2oplumbers.com - GA4
+# ----------------------------------------
+# 
+# All Users
+# Start date: 20250101
+# End date: 20251030
+First user primary channel group (Default Channel Group),Total users,New users,Returning users,Average engagement time per active user,Engaged sessions per active user,Event count,Key events,User key event rate
+Paid Search,4221,4223,61,0,0.11661531168523347,14217,0,0
+Direct,1344,1343,24,0,0.1630516080777861,5580,0,0
+Referral,709,707,1,220.51060820367752,0.867043847241867,3892,0,0
+Organic Search,425,423,23,0,0.4431279620853081,2056,0,0
+Organic Social,27,27,1,0,0.1111111111111111,88,0,0
+Cross-network,11,11,1,0,0.6666666666666666,45,0,0

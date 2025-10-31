@@ -116,8 +116,8 @@ export default function HomePage() {
 
   return (
     <>
-      {/* <LocalBusinessStructuredData /> */}
-      <HomeContentSnap 
+      <LocalBusinessStructuredData />
+      <HomeContentSnap
         serviceHighlights={serviceHighlights}
       />
     </>

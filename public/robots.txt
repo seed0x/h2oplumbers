@@ -14,7 +14,7 @@ Allow: /_next/static/
 Allow: /_next/image
 
 # Sitemap location
-Sitemap: https://allcountyplumbers.com/sitemap.xml
+Sitemap: https://h2oplumbers.com/sitemap.xml
 
 # Crawl-delay for polite bots
 Crawl-delay: 1

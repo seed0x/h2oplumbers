@@ -113,7 +113,7 @@ export function LocalBusinessStructuredData() {
     
     // Business attributes
     foundingDate: BUSINESS_DATA.established,
-    slogan: 'Your Trusted Vancouver WA Plumbing Experts Since 2004'
+    slogan: 'Your Trusted Southwest Washington Plumbing Experts Since 2009'
   }
 
   return (

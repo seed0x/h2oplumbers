@@ -1,0 +1,48 @@
+# ----------------------------------------
+# Pages and screens: Page path and screen class
+# Account: H2O Plumbers
+# Property: www.h2oplumbers.com
+# ----------------------------------------
+# 
+# All Users
+# Start date: 20250101
+# End date: 20251030
+Page path and screen class,Views,Active users,Views per active user,Average engagement time per active user,Event count,Key events,Total revenue
+/,9850,3834,2.5691184141888366,125.41471048513301,30951,0,0
+/contact-us/,536,248,2.161290322580645,32.83870967741935,1389,0,0
+/about/,315,142,2.2183098591549295,46.00704225352113,732,0,0
+/plumbing/,201,69,2.9130434782608696,54.20289855072464,477,0,0
+/vancouverwa/,185,90,2.0555555555555554,43.2,588,0,0
+/h2o-specials/,165,78,2.1153846153846154,33.34615384615385,534,0,0
+/drain/,139,53,2.6226415094339623,40.77358490566038,293,0,0
+/privacy-policy/,135,63,2.142857142857143,24.38095238095238,279,0,0
+/vancouverw/,132,67,1.9701492537313432,37.46268656716418,426,0,0
+/drainc/,109,56,1.9464285714285714,32.892857142857146,387,0,0
+/repipevancouverwa/,94,40,2.35,36.2,226,0,0
+/vancouvers/,78,42,1.8571428571428572,34.166666666666664,251,0,0
+/vancouverwater/,75,31,2.4193548387096775,84.03225806451613,209,0,0
+/vancouverrepair/,70,33,2.121212121212121,62.57575757575758,227,0,0
+/vancouverf/,60,35,1.7142857142857142,16.885714285714286,152,0,0
+/boilermate-installation-and-service/,51,21,2.4285714285714284,59.61904761904762,181,0,0
+/myh2o/,51,35,1.457142857142857,12.742857142857142,181,0,0
+/repipespecialists/,46,16,2.875,23.8125,120,0,0
+/piping-repair/,27,14,1.9285714285714286,21.714285714285715,83,0,0
+/plumbingcommercial/,20,9,2.2222222222222223,53.333333333333336,53,0,0
+/category/water-heaters/,15,8,1.875,17.75,49,0,0
+/resources/,14,7,2,20.142857142857142,56,0,0
+/special-offers/,14,7,2,19.142857142857142,54,0,0
+/water-heater-maintenance-a-step-by-step-guide/,14,7,2,15.428571428571429,54,0,0
+/repiping-project/,12,6,2,10.666666666666666,42,0,0
+/author/h2oplumbing/,10,5,2,22.6,40,0,0
+/category/all/,10,5,2,25.2,36,0,0
+/category/repiping/,10,5,2,22.6,26,0,0
+/leaky-faucets-and-valve-issues/,10,5,2,24.4,40,0,0
+/tag/new-plumbing-pipe/,10,5,2,15.4,40,0,0
+/tag/pex-pipe/,10,5,2,16,40,0,0
+/404.html,7,8,0.875,7.5,23,0,0
+/category/fixtures/,6,3,2,20,14,0,0
+/author/h2oplumbing/page/2/,3,3,1,5.666666666666667,11,0,0
+/cdn-cgi/l/email-protection/,1,1,1,11,4,0,0
+/leadership/,1,1,1,0,3,0,0
+/team/,1,1,1,0,3,0,0
+/wpadmin/,1,1,1,0,1,0,0

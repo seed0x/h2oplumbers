@@ -25,25 +25,107 @@ const nextConfig = {
   // Redirects from old WordPress site
   async redirects() {
     return [
-      // Handle both with and without trailing slashes for WordPress compatibility
+      // === HIGH PRIORITY: Top Traffic Pages ===
+      // Contact page variations
       {
-        source: '/residential/plumbing-remodel/ada-compliant-bathroom/:path*',
-        destination: '/services/fixture-installation/',
+        source: '/contact-us/:path*',
+        destination: '/contact/',
         permanent: true,
       },
       {
-        source: '/new-construction-plumbing/:path*',
-        destination: '/new-construction/',
+        source: '/contact-us',
+        destination: '/contact/',
+        permanent: true,
+      },
+      
+      // === SERVICE AREA REDIRECTS (Massive SEO opportunity) ===
+      // Vancouver WA variations (40K+ impressions combined!)
+      {
+        source: '/vancouverwa/:path*',
+        destination: '/service-areas/vancouver-wa-plumber/',
         permanent: true,
       },
       {
-        source: '/contact/about-us/:path*',
-        destination: '/about/',
+        source: '/vancouverw/:path*',
+        destination: '/service-areas/vancouver-wa-plumber/',
         permanent: true,
       },
       {
-        source: '/commercial/drain-cleaning/snake-drain-cleaning/:path*',
+        source: '/vancouvers/:path*',
+        destination: '/service-areas/vancouver-wa-plumber/',
+        permanent: true,
+      },
+      {
+        source: '/vancouverf/:path*',
+        destination: '/service-areas/vancouver-wa-plumber/',
+        permanent: true,
+      },
+      {
+        source: '/vancouverrepair/:path*',
+        destination: '/service-areas/vancouver-wa-plumber/',
+        permanent: true,
+      },
+      {
+        source: '/vancouverwater/:path*',
+        destination: '/service-areas/vancouver-wa-plumber/',
+        permanent: true,
+      },
+      
+      // === COMMERCIAL SERVICES ===
+      {
+        source: '/plumbingcommercial/:path*',
+        destination: '/commercial/',
+        permanent: true,
+      },
+      {
+        source: '/drain/:path*',
         destination: '/services/drain-cleaning/',
+        permanent: true,
+      },
+      {
+        source: '/drainc/:path*',
+        destination: '/services/drain-cleaning/',
+        permanent: true,
+      },
+      
+      // === RESIDENTIAL SERVICES ===
+      {
+        source: '/plumbing/:path*',
+        destination: '/residential/',
+        permanent: true,
+      },
+      {
+        source: '/repipespecialists/:path*',
+        destination: '/residential/plumbing-repipes/',
+        permanent: true,
+      },
+      {
+        source: '/repipevancouverwa/:path*',
+        destination: '/residential/plumbing-repipes/',
+        permanent: true,
+      },
+      {
+        source: '/piping-repair/:path*',
+        destination: '/residential/',
+        permanent: true,
+      },
+      
+      // === WATER HEATER SERVICES ===
+      {
+        source: '/boilermate-installation-and-service/:path*',
+        destination: '/commercial/water-heater-services/',
+        permanent: true,
+      },
+      
+      // === COUPONS & SPECIALS ===
+      {
+        source: '/h2o-specials/:path*',
+        destination: '/coupons/',
+        permanent: true,
+      },
+      {
+        source: '/special-offers/:path*',
+        destination: '/coupons/',
         permanent: true,
       },
       {
@@ -51,60 +133,95 @@ const nextConfig = {
         destination: '/coupons/',
         permanent: true,
       },
+      
+      // === CUSTOMER PORTAL & RESOURCES ===
       {
-        source: '/residential/drain-cleaning/hydro-jetting/:path*',
-        destination: '/services/drain-cleaning/',
+        source: '/myh2o/:path*',
+        destination: '/',
         permanent: true,
       },
       {
-        source: '/residential/plumbing-repipes/pex-pipes/:path*',
-        destination: '/services/repipe/',
+        source: '/resources/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      
+      // === BLOG & CONTENT ===
+      {
+        source: '/water-heater-maintenance-a-step-by-step-guide/:path*',
+        destination: '/',
         permanent: true,
       },
       {
-        source: '/residential/plumbing-repipes/copper-pipes/:path*',
-        destination: '/services/repipe/',
+        source: '/repiping-project/:path*',
+        destination: '/residential/plumbing-repipes/',
         permanent: true,
       },
       {
-        source: '/commercial/drain-cleaning/hydro-jet/:path*',
-        destination: '/services/drain-cleaning/',
+        source: '/leaky-faucets-and-valve-issues/:path*',
+        destination: '/residential/',
         permanent: true,
       },
       {
-        source: '/residential/plumbing-repipes/:path*',
-        destination: '/services/repipe/',
+        source: '/author/:path*',
+        destination: '/',
         permanent: true,
       },
       {
-        source: '/all-county-plumbing-site-map/:path*',
-        destination: '/sitemap.xml',
+        source: '/category/water-heaters/:path*',
+        destination: '/commercial/water-heater-services/',
         permanent: true,
       },
       {
-        source: '/residential/drain-cleaning/drain-snake-cleaning/:path*',
-        destination: '/services/drain-cleaning/',
+        source: '/category/all/:path*',
+        destination: '/',
         permanent: true,
       },
       {
-        source: '/plumbing-contractor-reviews/:path*',
-        destination: '/reviews/',
+        source: '/category/repiping/:path*',
+        destination: '/residential/plumbing-repipes/',
         permanent: true,
       },
       {
-        source: '/commercial/drain-cleaning/:path*',
-        destination: '/services/drain-cleaning/',
+        source: '/category/fixtures/:path*',
+        destination: '/residential/',
         permanent: true,
       },
       {
-        source: '/shop/:path*',
-        destination: '/contact/',
+        source: '/tag/pex-pipe/:path*',
+        destination: '/residential/plumbing-repipes/',
         permanent: true,
       },
-      // Catch-all for remaining /residential/* to /services/* (must be last)
       {
-        source: '/residential/:path*',
-        destination: '/services/:path*',
+        source: '/tag/new-plumbing-pipe/:path*',
+        destination: '/residential/plumbing-repipes/',
+        permanent: true,
+      },
+      
+      // === LEGACY & MISC ===
+      {
+        source: '/leadership/:path*',
+        destination: '/about/',
+        permanent: true,
+      },
+      {
+        source: '/team/:path*',
+        destination: '/about/',
+        permanent: true,
+      },
+      {
+        source: '/wpadmin/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-admin/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/privacy-policy',
+        destination: '/privacy-policy/',
         permanent: true,
       },
     ]

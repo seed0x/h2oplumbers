@@ -1,0 +1,17 @@
+# ----------------------------------------
+# Traffic acquisition: Session primary channel group (Default Channel Group)
+# Account: H2O Plumbers
+# Property: www.h2oplumbers.com
+# ----------------------------------------
+# 
+# All Users
+# Start date: 20250101
+# End date: 20251030
+Session primary channel group (Default Channel Group),Sessions,Engaged sessions,Engagement rate,Average engagement time per session,Events per session,Event count,Key events,Session key event rate,Total revenue
+Paid Search,4395,1544,0.35130830489192266,34.91581342434585,4.543117178612059,19967,0,0,0
+Direct,1679,533,0.31745086360929126,16.194758784991066,4.710541989279333,7909,0,0,0
+Referral,671,619,0.9225037257824144,472.77496274217583,10.8822652757079,7302,0,0,0
+Organic Search,463,285,0.6155507559395248,57.73218142548596,6.123110151187905,2835,0,0,0
+Unassigned,23,0,0,34.130434782608695,2.3043478260869565,53,0,0,0
+Cross-network,16,12,0.75,45.625,9.3125,149,0,0,0
+Organic Social,15,8,0.5333333333333333,3.1333333333333333,4,60,0,0,0
